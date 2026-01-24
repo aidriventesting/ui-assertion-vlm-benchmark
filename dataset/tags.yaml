@@ -1,0 +1,155 @@
+# UI Assertion Benchmark - Tag Taxonomy
+# Structured tags for scientific evaluation of VLM assertion capabilities
+
+# =============================================================================
+# A) ASSERTION TYPES - What you're verifying
+# =============================================================================
+assertion_types:
+  presence:
+    description: "Element exists in view"
+    examples: ["Verify button X is visible", "Check icon appears"]
+  
+  absence:
+    description: "Element does NOT exist in view"
+    examples: ["Verify no error message displayed", "Check loading spinner is gone"]
+  
+  count:
+    description: "Number of elements matches expected"
+    examples: ["Verify 3 items in list", "Check exactly 2 buttons present"]
+  
+  exact_text:
+    description: "Text matches character-for-character"
+    examples: ["Verify text shows 'Annuler'", "Check price is '$19.99'"]
+  
+  semantic_text:
+    description: "Text has same meaning, different wording"
+    examples: ["Verify error message indicates network failure", "Check welcome text present"]
+  
+  order:
+    description: "Items sorted correctly (alphabetic, price, time, etc.)"
+    examples: ["Verify list is A-Z sorted", "Check prices ascending"]
+  
+  layout_relation:
+    description: "Spatial relationship between elements"
+    examples: ["Verify icon is left of text", "Check button below input", "Elements aligned"]
+  
+  state:
+    description: "Widget interaction state"
+    examples: ["Verify toggle is ON", "Check button is disabled", "Switch is active"]
+  
+  consistency:
+    description: "Cross-field or rule validation"
+    examples: ["Verify total = sum of items", "Check date is valid", "Price matches selection"]
+  
+  a11y_visual:
+    description: "Visual accessibility checks"
+    examples: ["Verify sufficient contrast", "Check focus indicator visible", "Error text readable"]
+
+# =============================================================================
+# B) DIFFICULTY DRIVERS - Why it's hard
+# =============================================================================
+difficulty_drivers:
+  near_miss:
+    description: "Difference is very subtle"
+    examples: ["Typo (1 char diff)", "Near-identical icon", "Almost correct order"]
+    impact: "High FPR risk - model may miss subtle differences"
+  
+  small_text:
+    description: "Text is small or requires zoom to read"
+    examples: ["Footer disclaimers", "Legal text", "Timestamps"]
+    impact: "OCR/vision resolution dependent"
+  
+  occluded:
+    description: "Element partially hidden by overlay or clipping"
+    examples: ["Modal covering content", "Dropdown overlapping", "Scroll cutoff"]
+    impact: "Ambiguous ground truth - what counts as visible?"
+  
+  partial_visibility:
+    description: "Element at edge of viewport, partially visible"
+    examples: ["Card half in view", "Text truncated with ellipsis"]
+    impact: "Context interpretation required"
+  
+  low_contrast:
+    description: "Low color contrast or dark mode challenges"
+    examples: ["Gray on gray", "Dark mode UI", "Subtle hover states"]
+    impact: "Vision model sensitivity to color differences"
+  
+  busy_screen:
+    description: "Many competing visual elements"
+    examples: ["Dense dashboard", "Complex form", "Multi-card layout"]
+    impact: "Attention/focus challenges for model"
+  
+  confusable_icons:
+    description: "Similar looking icons that could be mistaken"
+    examples: ["Edit vs Settings gear", "Close vs Cancel", "Similar colored badges"]
+    impact: "Fine-grained visual discrimination required"
+  
+  dynamic_content:
+    description: "Content that changes (live data, ads, A/B tests)"
+    examples: ["Real-time timestamps", "Personalized content", "Ad placements"]
+    impact: "Ground truth stability concerns"
+  
+  localization:
+    description: "Language or format variations"
+    examples: ["FR/EN text", "Date formats (DD/MM vs MM/DD)", "Currency symbols"]
+    impact: "Multi-lingual understanding required"
+  
+  scroll_required:
+    description: "Information requires scrolling to see"
+    examples: ["Below fold content", "Long lists", "Paginated views"]
+    impact: "Tests grounding awareness - is scrolling part of the task?"
+
+# =============================================================================
+# C) SEVERITY / IMPACT - Business criticality
+# =============================================================================
+severity:
+  low:
+    description: "Minor cosmetic issue"
+    examples: ["Spacing off", "Minor text variation", "Non-critical visual"]
+    priority: 3
+  
+  med:
+    description: "Functional but degraded UX"
+    examples: ["Button works but mislabeled", "Order wrong but all items present"]
+    priority: 2
+  
+  high:
+    description: "Blocks user flow or critical error"
+    examples: ["Missing CTA", "Wrong price", "Error not shown", "Data loss"]
+    priority: 1
+
+# =============================================================================
+# COGNITIVE LEVELS - Complexity of reasoning required
+# =============================================================================
+cognitive_levels:
+  L1:
+    name: "Perceptive Direct"
+    description: "Direct observation, no reasoning required"
+    examples:
+      - "Is element X visible? (presence/absence)"
+      - "How many items in list? (counting)"
+      - "What exact text is shown? (verbatim reading)"
+      - "What color is the button? (obvious color)"
+    skills: ["Object detection", "OCR", "Color recognition"]
+  
+  L2:
+    name: "Relational / Constraints"
+    description: "Comparison or spatial reasoning between elements"
+    examples:
+      - "Is list sorted alphabetically? (ordering)"
+      - "Is button A to the left of button B? (spatial relation)"
+      - "Are these elements aligned? (layout)"
+      - "Is value X within range Y-Z? (constraint check)"
+      - "Compare text in zone A vs zone B"
+    skills: ["Spatial reasoning", "Comparison", "Constraint validation"]
+  
+  L3:
+    name: "Semantic / Intention"
+    description: "Understanding meaning, intent, or business rules"
+    examples:
+      - "Does this message indicate an error? (semantic interpretation)"
+      - "Does the displayed journey match the search criteria? (intent matching)"
+      - "Does this screen comply with the business rule X? (rule application)"
+      - "Is the user flow logically correct? (workflow validation)"
+    skills: ["Semantic understanding", "Domain knowledge", "Intent inference"]
+    warning: "Must remain anchored to observable facts - avoid philosophical UX judgments"
