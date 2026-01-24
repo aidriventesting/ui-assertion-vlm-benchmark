@@ -1,0 +1,322 @@
+[
+  {
+    "image_id": "shot_001",
+    "file": "screenshots/shot_001.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_002",
+    "file": "screenshots/shot_002.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_003",
+    "file": "screenshots/shot_003.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_004",
+    "file": "screenshots/shot_004.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_005",
+    "file": "screenshots/shot_005.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_006",
+    "file": "screenshots/shot_006.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_007",
+    "file": "screenshots/shot_007.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_008",
+    "file": "screenshots/shot_008.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_009",
+    "file": "screenshots/shot_009.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_010",
+    "file": "screenshots/shot_010.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_011",
+    "file": "screenshots/shot_011.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_012",
+    "file": "screenshots/shot_012.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_013",
+    "file": "screenshots/shot_013.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_014",
+    "file": "screenshots/shot_014.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_015",
+    "file": "screenshots/shot_015.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_016",
+    "file": "screenshots/shot_016.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_017",
+    "file": "screenshots/shot_017.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_018",
+    "file": "screenshots/shot_018.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_019",
+    "file": "screenshots/shot_019.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  },
+  {
+    "image_id": "shot_020",
+    "file": "screenshots/shot_020.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "notes": []
+  }
+]

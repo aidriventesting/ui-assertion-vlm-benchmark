@@ -1,0 +1,29 @@
+[
+  {
+    "id": "t_loc_shot001_L1",
+    "image_id": "shot_001",
+    "claim_id": "location_permission_dialog_present",
+    "level": "L1_text_only",
+    "assertion_text": "Vérifier que le texte 'Autoriser la localisation' est visible.",
+    "expected": "PASS",
+    "tags": ["ocr_required"]
+  },
+  {
+    "id": "t_loc_shot001_L2",
+    "image_id": "shot_001",
+    "claim_id": "location_permission_dialog_present",
+    "level": "L2_ui_object",
+    "assertion_text": "Vérifier qu'une popup de permission de localisation est affichée et contient les boutons 'Autoriser' et 'Annuler'.",
+    "expected": "PASS",
+    "tags": ["system_dialog"]
+  },
+  {
+    "id": "t_loc_shot001_L3",
+    "image_id": "shot_001",
+    "claim_id": "location_permission_dialog_present",
+    "level": "L3_semantic_state",
+    "assertion_text": "Vérifier que la popup native de permission de localisation est affichée.",
+    "expected": "PASS",
+    "tags": ["system_dialog"]
+  }
+]
