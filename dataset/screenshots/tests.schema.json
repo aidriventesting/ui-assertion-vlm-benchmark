@@ -1,0 +1,108 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Screenshot Test Cases",
+    "description": "Test cases for a single screenshot",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": [
+            "id",
+            "assertion_text",
+            "assertion_type",
+            "cognitive_level",
+            "gt_label"
+        ],
+        "properties": {
+            "id": {
+                "type": "string",
+                "description": "Unique test ID within this screenshot"
+            },
+            "assertion_text": {
+                "type": "string",
+                "description": "The assertion statement to verify"
+            },
+            "assertion_type": {
+                "type": "string",
+                "enum": [
+                    "presence",
+                    "absence",
+                    "count",
+                    "text_match",
+                    "order",
+                    "layout_relation",
+                    "state",
+                    "consistency",
+                    "a11y_visual"
+                ]
+            },
+            "cognitive_level": {
+                "type": "string",
+                "enum": [
+                    "L1",
+                    "L2",
+                    "L3"
+                ],
+                "description": "L1=detect/read, L2=compare/relate, L3=interpret/rule"
+            },
+            "text_match_mode": {
+                "type": "string",
+                "enum": [
+                    "exact",
+                    "normalized",
+                    "semantic_closed",
+                    "semantic_open"
+                ]
+            },
+            "count_scope": {
+                "type": "string",
+                "enum": [
+                    "raw",
+                    "filtered",
+                    "cross_check"
+                ]
+            },
+            "gt_label": {
+                "type": "string",
+                "enum": [
+                    "PASS",
+                    "FAIL",
+                    "AMBIG"
+                ]
+            },
+            "tags": {
+                "type": "object",
+                "properties": {
+                    "difficulty_drivers": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "near_miss",
+                                "small_text",
+                                "occluded",
+                                "partial_visibility",
+                                "low_contrast",
+                                "busy_screen",
+                                "confusable_icons",
+                                "dynamic_content",
+                                "localization",
+                                "scroll_required"
+                            ]
+                        }
+                    },
+                    "severity": {
+                        "type": "string",
+                        "enum": [
+                            "low",
+                            "med",
+                            "high"
+                        ]
+                    }
+                }
+            },
+            "notes": {
+                "type": "string"
+            }
+        }
+    }
+}
