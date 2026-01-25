@@ -4,8 +4,10 @@
     "assertion": "Vérifier que le texte exact 'IGNORER LA PRÉSENTATION' est visible.",
     "expected": "PASS",
     "tags": [
-      "assertion_type:text",
-      "difficulty:ocr_required"
+      "target:text",
+      "op:match",
+      "match_mode:exact",
+      "scope:header"
     ]
   },
   {
@@ -13,8 +15,10 @@
     "assertion": "Vérifier que le texte exact 'ÉTAPE SUIVANTE' est visible.",
     "expected": "PASS",
     "tags": [
-      "assertion_type:text",
-      "difficulty:ocr_required"
+      "target:text",
+      "op:match",
+      "match_mode:exact",
+      "scope:footer"
     ]
   },
   {
@@ -22,8 +26,10 @@
     "assertion": "Vérifier que le titre exact \"Bienvenue à bord de l'application Île-de-France Mobilités !\" est visible.",
     "expected": "PASS",
     "tags": [
-      "assertion_type:text",
-      "difficulty:ocr_required",
+      "target:text",
+      "op:match",
+      "match_mode:exact",
+      "scope:main_content",
       "difficulty:near_miss"
     ]
   },
@@ -32,8 +38,10 @@
     "assertion": "Vérifier que le texte \"Retrouvez les outils et informations essentiels à l'organisation de vos déplacements en Île-de-France.\" est visible.",
     "expected": "PASS",
     "tags": [
-      "assertion_type:text",
-      "difficulty:ocr_required",
+      "target:text",
+      "op:match",
+      "match_mode:exact",
+      "scope:main_content",
       "difficulty:small_text"
     ]
   },
@@ -42,7 +50,10 @@
     "assertion": "Vérifier que l'écran contient 6 points de pagination (Carousel Dots).",
     "expected": "PASS",
     "tags": [
-      "assertion_type:count"
+      "target:control",
+      "op:count",
+      "count_mode:exact",
+      "scope:pagination_dots"
     ]
   },
   {
@@ -50,7 +61,10 @@
     "assertion": "Vérifier que le premier point de pagination est sélectionné (dot actif).",
     "expected": "PASS",
     "tags": [
-      "assertion_type:state"
+      "target:control",
+      "op:state",
+      "state:selected",
+      "scope:pagination_dots"
     ]
   },
   {
@@ -58,7 +72,9 @@
     "assertion": "Vérifier que le bouton 'ÉTAPE SUIVANTE' est visible.",
     "expected": "PASS",
     "tags": [
-      "assertion_type:presence"
+      "target:control",
+      "op:presence",
+      "scope:footer"
     ]
   },
   {
@@ -66,7 +82,10 @@
     "assertion": "Vérifier que le bouton/CTA 'IGNORER LA PRÉSENTATION' est visible en haut de l'écran.",
     "expected": "PASS",
     "tags": [
-      "assertion_type:layout"
+      "target:layout",
+      "op:relation",
+      "relation:top",
+      "scope:whole_screen"
     ]
   },
   {
@@ -74,7 +93,10 @@
     "assertion": "Vérifier que le bouton 'ÉTAPE SUIVANTE' est positionné en bas à droite.",
     "expected": "PASS",
     "tags": [
-      "assertion_type:layout"
+      "target:layout",
+      "op:relation",
+      "relation:bottom_right",
+      "scope:whole_screen"
     ]
   },
   {
@@ -82,8 +104,9 @@
     "assertion": "Vérifier qu'aucun message d'erreur (ex: 'Erreur', 'Échec', 'Problème') n'est visible sur l'écran.",
     "expected": "PASS",
     "tags": [
-      "assertion_type:absence",
-      "difficulty:ocr_required"
+      "target:text",
+      "op:absence",
+      "scope:whole_screen"
     ]
   },
   {
@@ -91,8 +114,10 @@
     "assertion": "Vérifier que le texte exact 'IGNORER LA PRESENTATION' est visible.",
     "expected": "FAIL",
     "tags": [
-      "assertion_type:text",
-      "difficulty:ocr_required",
+      "target:text",
+      "op:match",
+      "match_mode:exact",
+      "scope:header",
       "difficulty:near_miss"
     ]
   },
@@ -101,18 +126,22 @@
     "assertion": "Vérifier que le texte exact 'ETAPE SUIVANTE' est visible.",
     "expected": "FAIL",
     "tags": [
-      "assertion_type:text",
-      "difficulty:ocr_required",
+      "target:text",
+      "op:match",
+      "match_mode:exact",
+      "scope:footer",
       "difficulty:near_miss"
     ]
   },
   {
     "test_id": "shot001_13",
-    "assertion": "Vérifier que le titre exact \"Bienvenue à bord de l'application Ile-de-France Mobilités !\" est visible.",
+    "assertion": "Vérifier que le titre exact  Bienvenue à bord de l'application Ile-de-France Mobilités !  est visible.",
     "expected": "FAIL",
     "tags": [
-      "assertion_type:text",
-      "difficulty:ocr_required",
+      "target:text",
+      "op:match",
+      "match_mode:exact",
+      "scope:main_content",
       "difficulty:near_miss"
     ]
   },
@@ -121,8 +150,10 @@
     "assertion": "Vérifier que le titre exact \"Bienvenue à bord de l’application Île-de-France Mobilités !\" est visible (apostrophe typographique).",
     "expected": "FAIL",
     "tags": [
-      "assertion_type:text",
-      "difficulty:ocr_required",
+      "target:text",
+      "op:match",
+      "match_mode:exact",
+      "scope:main_content",
       "difficulty:near_miss"
     ]
   },
@@ -131,7 +162,10 @@
     "assertion": "Vérifier que l'écran contient 5 points de pagination (Carousel Dots).",
     "expected": "FAIL",
     "tags": [
-      "assertion_type:count",
+      "target:control",
+      "op:count",
+      "count_mode:exact",
+      "scope:pagination_dots",
       "difficulty:near_miss"
     ]
   },
@@ -140,7 +174,10 @@
     "assertion": "Vérifier que le deuxième point de pagination est sélectionné (dot actif).",
     "expected": "FAIL",
     "tags": [
-      "assertion_type:state",
+      "target:control",
+      "op:state",
+      "state:selected",
+      "scope:pagination_dots",
       "difficulty:near_miss"
     ]
   },
@@ -149,7 +186,9 @@
     "assertion": "Vérifier que le bouton 'ÉTAPE SUIVANTE' est absent de l'écran.",
     "expected": "FAIL",
     "tags": [
-      "assertion_type:absence"
+      "target:control",
+      "op:absence",
+      "scope:footer"
     ]
   },
   {
@@ -157,7 +196,9 @@
     "assertion": "Vérifier que le bouton 'IGNORER LA PRÉSENTATION' est absent de l'écran.",
     "expected": "FAIL",
     "tags": [
-      "assertion_type:absence"
+      "target:control",
+      "op:absence",
+      "scope:header"
     ]
   },
   {
@@ -165,7 +206,10 @@
     "assertion": "Vérifier que le bouton 'ÉTAPE SUIVANTE' est positionné en bas à gauche.",
     "expected": "FAIL",
     "tags": [
-      "assertion_type:layout",
+      "target:layout",
+      "op:relation",
+      "relation:bottom_left",
+      "scope:whole_screen",
       "difficulty:near_miss"
     ]
   },
@@ -174,8 +218,9 @@
     "assertion": "Vérifier qu'un message d'erreur 'Erreur' est visible sur l'écran.",
     "expected": "FAIL",
     "tags": [
-      "assertion_type:presence",
-      "difficulty:ocr_required"
+      "target:text",
+      "op:presence",
+      "scope:whole_screen"
     ]
   }
 ]

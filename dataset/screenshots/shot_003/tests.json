@@ -1,0 +1,226 @@
+[
+    {
+        "test_id": "shot003_01",
+        "assertion": "Vérifier que le titre exact 'Mon espace' est visible.",
+        "expected": "PASS",
+        "tags": [
+            "target:text",
+            "op:match",
+            "match_mode:exact",
+            "scope:header",
+            "difficulty:near_miss"
+        ]
+    },
+    {
+        "test_id": "shot003_02",
+        "assertion": "Vérifier que le texte exact 'Connectez-vous !' est visible.",
+        "expected": "PASS",
+        "tags": [
+            "target:text",
+            "op:match",
+            "match_mode:exact",
+            "scope:header",
+            "difficulty:near_miss"
+        ]
+    },
+    {
+        "test_id": "shot003_03",
+        "assertion": "Vérifier que le bouton 'Me connecter / m'inscrire' est visible.",
+        "expected": "PASS",
+        "tags": [
+            "target:control",
+            "op:presence",
+            "scope:main_cta"
+        ]
+    },
+    {
+        "test_id": "shot003_04",
+        "assertion": "Vérifier que le bouton 'Me connecter / m'inscrire' est activé (style bouton principal).",
+        "expected": "PASS",
+        "tags": [
+            "target:control",
+            "op:state",
+            "state:enabled",
+            "scope:main_cta"
+        ]
+    },
+    {
+        "test_id": "shot003_05",
+        "assertion": "Vérifier que la section 'Mes services' est visible.",
+        "expected": "PASS",
+        "tags": [
+            "target:text",
+            "op:match",
+            "match_mode:exact",
+            "scope:services_section"
+        ]
+    },
+    {
+        "test_id": "shot003_06",
+        "assertion": "Vérifier que le bandeau d'alerte 'Problème d'affichage' est visible.",
+        "expected": "PASS",
+        "tags": [
+            "target:text",
+            "op:match",
+            "match_mode:exact",
+            "scope:error_card",
+            "difficulty:near_miss"
+        ]
+    },
+    {
+        "test_id": "shot003_07",
+        "assertion": "Vérifier que l'icône d'alerte (symbole d'avertissement) est visible à gauche du texte 'Problème d'affichage'.",
+        "expected": "PASS",
+        "tags": [
+            "target:icon",
+            "op:presence",
+            "scope:error_card"
+        ]
+    },
+    {
+        "test_id": "shot003_08",
+        "assertion": "Vérifier que la carte 'Découvrir les services' est visible.",
+        "expected": "PASS",
+        "tags": [
+            "target:text",
+            "op:match",
+            "match_mode:exact",
+            "scope:services_section"
+        ]
+    },
+    {
+        "test_id": "shot003_09",
+        "assertion": "Vérifier que la flèche (>) est visible à droite de la carte 'Découvrir les services'.",
+        "expected": "PASS",
+        "tags": [
+            "target:icon",
+            "op:presence",
+            "scope:services_section"
+        ]
+    },
+    {
+        "test_id": "shot003_10",
+        "assertion": "Vérifier que l'onglet 'Mon espace' est sélectionné dans la barre de navigation du bas.",
+        "expected": "PASS",
+        "tags": [
+            "target:control",
+            "op:state",
+            "state:selected",
+            "scope:bottom_nav"
+        ]
+    },
+    {
+        "test_id": "shot003_11",
+        "assertion": "Vérifier que le titre exact 'Mon espacee' est visible.",
+        "expected": "FAIL",
+        "tags": [
+            "target:text",
+            "op:match",
+            "match_mode:exact",
+            "scope:header",
+            "difficulty:near_miss"
+        ]
+    },
+    {
+        "test_id": "shot003_12",
+        "assertion": "Vérifier que le texte exact 'Connectez vous !' est visible (sans tiret).",
+        "expected": "FAIL",
+        "tags": [
+            "target:text",
+            "op:match",
+            "match_mode:exact",
+            "scope:header",
+            "difficulty:near_miss"
+        ]
+    },
+    {
+        "test_id": "shot003_13",
+        "assertion": "Vérifier que le bouton 'Se connecter' est visible.",
+        "expected": "FAIL",
+        "tags": [
+            "target:control",
+            "op:presence",
+            "scope:main_cta"
+        ]
+    },
+    {
+        "test_id": "shot003_14",
+        "assertion": "Vérifier que le bouton 'Me connecter / m'inscrire' est désactivé.",
+        "expected": "FAIL",
+        "tags": [
+            "target:control",
+            "op:state",
+            "state:disabled",
+            "scope:main_cta",
+            "difficulty:near_miss"
+        ]
+    },
+    {
+        "test_id": "shot003_15",
+        "assertion": "Vérifier que le texte 'Problème d’affichage' est visible (apostrophe typographique).",
+        "expected": "FAIL",
+        "tags": [
+            "target:text",
+            "op:match",
+            "match_mode:exact",
+            "scope:error_card",
+            "difficulty:near_miss"
+        ]
+    },
+    {
+        "test_id": "shot003_16",
+        "assertion": "Vérifier que le bandeau d'alerte 'Problème d'affichage' est absent de l'écran.",
+        "expected": "FAIL",
+        "tags": [
+            "target:text",
+            "op:absence",
+            "scope:whole_screen"
+        ]
+    },
+    {
+        "test_id": "shot003_17",
+        "assertion": "Vérifier que la carte 'Découvrir les services' est absente de l'écran.",
+        "expected": "FAIL",
+        "tags": [
+            "target:text",
+            "op:absence",
+            "scope:services_section"
+        ]
+    },
+    {
+        "test_id": "shot003_18",
+        "assertion": "Vérifier que la carte 'Problème d'affichage' est affichée en dessous de la carte 'Découvrir les services'.",
+        "expected": "FAIL",
+        "tags": [
+            "target:layout",
+            "op:relation",
+            "relation:below",
+            "scope:services_section",
+            "difficulty:near_miss"
+        ]
+    },
+    {
+        "test_id": "shot003_19",
+        "assertion": "Vérifier que l'onglet 'Achat' est sélectionné dans la barre de navigation du bas.",
+        "expected": "FAIL",
+        "tags": [
+            "target:control",
+            "op:state",
+            "state:selected",
+            "scope:bottom_nav",
+            "difficulty:near_miss"
+        ]
+    },
+    {
+        "test_id": "shot003_20",
+        "assertion": "Vérifier que la barre de navigation du bas contient exactement 4 onglets.",
+        "expected": "FAIL",
+        "tags": [
+            "target:control",
+            "op:count",
+            "count_mode:exact",
+            "scope:bottom_nav",
+            "difficulty:near_miss"
+        ]
+    }
+]

@@ -1,7 +1,7 @@
 [
   {
     "image_id": "shot_001",
-    "file": "screenshots/shot_001.png",
+    "file": "screenshots/shot_001/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -10,14 +10,17 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
-    "notes": []
+    "notes": [
+      "onboarding",
+      "carousel"
+    ]
   },
   {
     "image_id": "shot_002",
-    "file": "screenshots/shot_002.png",
+    "file": "screenshots/shot_002/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -26,14 +29,17 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
-    "notes": []
+    "notes": [
+      "permission_dialog",
+      "location"
+    ]
   },
   {
     "image_id": "shot_003",
-    "file": "screenshots/shot_003.png",
+    "file": "screenshots/shot_003/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -42,14 +48,17 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
-    "notes": []
+    "notes": [
+      "mon_espace",
+      "login_prompt"
+    ]
   },
   {
     "image_id": "shot_004",
-    "file": "screenshots/shot_004.png",
+    "file": "screenshots/shot_004/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -58,14 +67,17 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
-    "notes": []
+    "notes": [
+      "horaires",
+      "empty_state"
+    ]
   },
   {
     "image_id": "shot_005",
-    "file": "screenshots/shot_005.png",
+    "file": "screenshots/shot_005/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -74,14 +86,17 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
-    "notes": []
+    "notes": [
+      "favori",
+      "snackbar_error"
+    ]
   },
   {
     "image_id": "shot_006",
-    "file": "screenshots/shot_006.png",
+    "file": "screenshots/shot_006/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -90,14 +105,14 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
     "notes": []
   },
   {
     "image_id": "shot_007",
-    "file": "screenshots/shot_007.png",
+    "file": "screenshots/shot_007/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -106,14 +121,14 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
     "notes": []
   },
   {
     "image_id": "shot_008",
-    "file": "screenshots/shot_008.png",
+    "file": "screenshots/shot_008/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -122,14 +137,14 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
     "notes": []
   },
   {
     "image_id": "shot_009",
-    "file": "screenshots/shot_009.png",
+    "file": "screenshots/shot_009/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -138,14 +153,14 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
     "notes": []
   },
   {
     "image_id": "shot_010",
-    "file": "screenshots/shot_010.png",
+    "file": "screenshots/shot_010/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -154,14 +169,14 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
     "notes": []
   },
   {
     "image_id": "shot_011",
-    "file": "screenshots/shot_011.png",
+    "file": "screenshots/shot_011/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -170,14 +185,14 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
     "notes": []
   },
   {
     "image_id": "shot_012",
-    "file": "screenshots/shot_012.png",
+    "file": "screenshots/shot_012/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -186,14 +201,14 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
     "notes": []
   },
   {
     "image_id": "shot_013",
-    "file": "screenshots/shot_013.png",
+    "file": "screenshots/shot_013/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -202,14 +217,14 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
     "notes": []
   },
   {
     "image_id": "shot_014",
-    "file": "screenshots/shot_014.png",
+    "file": "screenshots/shot_014/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -218,14 +233,14 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
     "notes": []
   },
   {
     "image_id": "shot_015",
-    "file": "screenshots/shot_015.png",
+    "file": "screenshots/shot_015/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -234,14 +249,14 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
     "notes": []
   },
   {
     "image_id": "shot_016",
-    "file": "screenshots/shot_016.png",
+    "file": "screenshots/shot_016/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -250,14 +265,14 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
     "notes": []
   },
   {
     "image_id": "shot_017",
-    "file": "screenshots/shot_017.png",
+    "file": "screenshots/shot_017/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -266,14 +281,14 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
     "notes": []
   },
   {
     "image_id": "shot_018",
-    "file": "screenshots/shot_018.png",
+    "file": "screenshots/shot_018/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -282,14 +297,14 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
     "notes": []
   },
   {
     "image_id": "shot_019",
-    "file": "screenshots/shot_019.png",
+    "file": "screenshots/shot_019/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -298,14 +313,14 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
     "notes": []
   },
   {
     "image_id": "shot_020",
-    "file": "screenshots/shot_020.png",
+    "file": "screenshots/shot_020/screenshot.png",
     "env": {
       "ui_type": "mobile",
       "platform": "android",
@@ -314,7 +329,7 @@
       "theme": "light"
     },
     "app": {
-      "name": "unknown",
+      "name": "IDFM",
       "build": "unknown"
     },
     "notes": []

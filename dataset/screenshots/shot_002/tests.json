@@ -1,0 +1,223 @@
+[
+  {
+    "test_id": "shot002_01",
+    "assertion": "Vérifier que la boîte de dialogue de permission de localisation est visible.",
+    "expected": "PASS",
+    "tags": [
+      "target:control",
+      "op:presence",
+      "scope:modal"
+    ]
+  },
+  {
+    "test_id": "shot002_02",
+    "assertion": "Vérifier que le titre exact 'Autoriser la localisation' est visible dans la boîte de dialogue.",
+    "expected": "PASS",
+    "tags": [
+      "target:text",
+      "op:match",
+      "match_mode:exact",
+      "scope:modal_title",
+      "difficulty:near_miss"
+    ]
+  },
+  {
+    "test_id": "shot002_03",
+    "assertion": "Vérifier que le texte du message contient 'vous devez autoriser l'app à récupérer votre position actuelle'.",
+    "expected": "PASS",
+    "tags": [
+      "target:text",
+      "op:match",
+      "match_mode:normalized",
+      "scope:modal_body",
+      "difficulty:small_text"
+    ]
+  },
+  {
+    "test_id": "shot002_04",
+    "assertion": "Vérifier que le bouton 'Annuler' est visible dans la boîte de dialogue.",
+    "expected": "PASS",
+    "tags": [
+      "target:control",
+      "op:presence",
+      "scope:modal_actions"
+    ]
+  },
+  {
+    "test_id": "shot002_05",
+    "assertion": "Vérifier que le bouton 'OK' est visible dans la boîte de dialogue.",
+    "expected": "PASS",
+    "tags": [
+      "target:control",
+      "op:presence",
+      "scope:modal_actions"
+    ]
+  },
+  {
+    "test_id": "shot002_06",
+    "assertion": "Vérifier que la boîte de dialogue contient exactement 2 boutons d'action (Annuler, OK).",
+    "expected": "PASS",
+    "tags": [
+      "target:control",
+      "op:count",
+      "count_mode:exact",
+      "scope:modal_actions"
+    ]
+  },
+  {
+    "test_id": "shot002_07",
+    "assertion": "Vérifier que 'Annuler' est à gauche de 'OK' dans la boîte de dialogue.",
+    "expected": "PASS",
+    "tags": [
+      "target:layout",
+      "op:relation",
+      "relation:left_of",
+      "scope:modal_actions",
+      "difficulty:near_miss"
+    ]
+  },
+  {
+    "test_id": "shot002_08",
+    "assertion": "Vérifier la mise en surbrillance du popup affiché (arrière-plan atténué / focus sur le modal).",
+    "expected": "PASS",
+    "tags": [
+      "target:layout",
+      "op:state",
+      "state:highlighted",
+      "scope:modal_overlay"
+    ]
+  },
+  {
+    "test_id": "shot002_09",
+    "assertion": "Vérifier que l'onglet 'Itinéraires' est sélectionné dans la barre de navigation du bas.",
+    "expected": "PASS",
+    "tags": [
+      "target:control",
+      "op:state",
+      "state:selected",
+      "scope:bottom_nav"
+    ]
+  },
+  {
+    "test_id": "shot002_10",
+    "assertion": "Vérifier que les deux boutons 'OK' et 'Annuler' sont affichés en bleu.",
+    "expected": "PASS",
+    "tags": [
+      "target:control",
+      "op:state",
+      "state:text_color_blue",
+      "scope:modal_actions"
+    ]
+  },
+  {
+    "test_id": "shot002_11",
+    "assertion": "Vérifier que le titre exact 'Autoriser la géolocalisation' est visible dans la boîte de dialogue.",
+    "expected": "FAIL",
+    "tags": [
+      "target:text",
+      "op:match",
+      "match_mode:exact",
+      "scope:modal_title",
+      "difficulty:near_miss"
+    ]
+  },
+  {
+    "test_id": "shot002_12",
+    "assertion": "Vérifier que le bouton 'Refuser' est visible dans la boîte de dialogue.",
+    "expected": "FAIL",
+    "tags": [
+      "target:control",
+      "op:presence",
+      "scope:modal_actions"
+    ]
+  },
+  {
+    "test_id": "shot002_13",
+    "assertion": "Vérifier que 'OK' est à gauche de 'Annuler' dans la boîte de dialogue.",
+    "expected": "FAIL",
+    "tags": [
+      "target:layout",
+      "op:relation",
+      "relation:left_of",
+      "scope:modal_actions",
+      "difficulty:near_miss"
+    ]
+  },
+  {
+    "test_id": "shot002_14",
+    "assertion": "Vérifier que la boîte de dialogue contient exactement 3 boutons d'action.",
+    "expected": "FAIL",
+    "tags": [
+      "target:control",
+      "op:count",
+      "count_mode:exact",
+      "scope:modal_actions"
+    ]
+  },
+  {
+    "test_id": "shot002_15",
+    "assertion": "Vérifier que le bouton 'Autoriser' est visible dans la boîte de dialogue.",
+    "expected": "FAIL",
+    "tags": [
+      "target:control",
+      "op:presence",
+      "scope:modal_actions"
+    ]
+  },
+  {
+    "test_id": "shot002_16",
+    "assertion": "Vérifier que le texte du message contient 'elle sera utilisée en permanence'.",
+    "expected": "FAIL",
+    "tags": [
+      "target:text",
+      "op:match",
+      "match_mode:normalized",
+      "scope:modal_body",
+      "difficulty:small_text",
+      "difficulty:near_miss"
+    ]
+  },
+  {
+    "test_id": "shot002_17",
+    "assertion": "Vérifier que le titre 'Autoriser la localisation' est absent de l'écran.",
+    "expected": "FAIL",
+    "tags": [
+      "target:text",
+      "op:absence",
+      "scope:whole_screen"
+    ]
+  },
+  {
+    "test_id": "shot002_18",
+    "assertion": "Vérifier qu'aucune boîte de dialogue n'est visible (pas de modal).",
+    "expected": "FAIL",
+    "tags": [
+      "target:control",
+      "op:absence",
+      "scope:modal"
+    ]
+  },
+  {
+    "test_id": "shot002_19",
+    "assertion": "Vérifier que l'onglet 'Horaires' est sélectionné dans la barre de navigation du bas.",
+    "expected": "FAIL",
+    "tags": [
+      "target:control",
+      "op:state",
+      "state:selected",
+      "scope:bottom_nav",
+      "difficulty:near_miss"
+    ]
+  },
+  {
+    "test_id": "shot002_20",
+    "assertion": "Vérifier que le popup d'autorisation de localisation mentionne que la position actuelle sera utilisée pour les services de navigation.",
+    "expected": "FAIL",
+    "tags": [
+      "target:text",
+      "op:match",
+      "match_mode:semantic_open",
+      "scope:modal_body"
+    ]
+  }
+]
