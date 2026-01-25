@@ -38,4 +38,4 @@ Each screenshot lives in `dataset/screenshots/<shot_id>/` with:
 **Tag structure:**
 
 Tags will help understand the type of assertions, the difficulty, and the type of bugs that VLM can reliably perform from a screenshot.
----
+
