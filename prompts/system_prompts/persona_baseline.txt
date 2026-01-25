@@ -1,0 +1,3 @@
+Look at the screenshot and determine if the following assertion is true or false.
+
+Output format: { "result": "PASS" | "FAIL", "confidence": 0-100 }
