@@ -13,3 +13,29 @@ This project introduces a lightweight benchmark to evaluate Vision-Language Mode
 - Calibrate AI confidence to meet pass/fail thresholds.
 - Study which variables (via ablations) improve reliability.
 - Understand what verifications a VLM can reliably perform from a screenshot.
+
+## Goals
+
+1. Measure **false positive rate** (FPR) — avoiding missed bugs
+2. Test **calibration** — is confidence score useful?
+3. Study **what works** — which prompts, decomposition, grounding help? what type of assertions can a VLM reliably perform from a screenshot? a reference screenshot help? 
+
+## Dataset
+
+Each screenshot lives in `dataset/screenshots/<shot_id>/` with:
+- `screenshot.png` — the image
+- `tests.json` — assertions to verify
+
+**Test format:**
+```json
+{
+  "test_id": "shot001_01",
+  "assertion": "Vérifier que le texte exact 'ÉTAPE SUIVANTE' est visible.",
+  "expected": "PASS",
+}
+```
+
+**Tag structure:**
+
+Tags will help understand the type of assertions, the difficulty, and the type of bugs that VLM can reliably perform from a screenshot.
+---
