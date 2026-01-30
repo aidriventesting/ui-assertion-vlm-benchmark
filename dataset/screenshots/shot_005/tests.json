@@ -1,222 +1,299 @@
 [
     {
-        "test_id": "shot006_01",
-        "assertion": "Vérifier que le titre exact 'Ajouter un lieu favori' est visible.",
+        "test_id": "shot005_01",
+        "assertion": "Vérifier que le texte exact 'Ajouter un lieu favori' est visible.",
         "expected": "PASS",
         "tags": [
-            "target:text",
-            "op:match",
-            "match_mode:exact",
-            "scope:header"
+            "presence",
+            "text_match_exact"
         ]
     },
     {
-        "test_id": "shot006_02",
-        "assertion": "Vérifier que l’icône retour (flèche) est visible à gauche du titre.",
+        "test_id": "shot005_02",
+        "assertion": "Vérifier que le texte exact 'Ajouter un favori' est visible.",
+        "expected": "FAIL",
+        "tags": [
+            "presence",
+            "text_match_exact",
+            "near_miss"
+        ]
+    },
+    {
+        "test_id": "shot005_03",
+        "assertion": "Vérifier qu'une flèche retour (←) est visible en haut à gauche.",
         "expected": "PASS",
         "tags": [
-            "target:icon",
-            "op:presence",
-            "scope:header",
-            "op:relation",
-            "relation:left_of"
+            "presence",
+            "layout"
         ]
     },
     {
-        "test_id": "shot006_03",
-        "assertion": "Vérifier qu’une carte de sélection de type de favori (avec icônes) est visible en haut.",
+        "test_id": "shot005_04",
+        "assertion": "Vérifier que 3 icônes de type de favori sont visibles (Maison, Travail, Autre).",
         "expected": "PASS",
         "tags": [
-            "target:control",
-            "op:presence",
-            "scope:favorite_selector_card"
+            "presence",
+            "count_raw"
         ]
     },
     {
-        "test_id": "shot006_04",
-        "assertion": "Vérifier que la carte contient exactement 3 icônes de catégorie (Maison, Travail, Favori).",
+        "test_id": "shot005_05",
+        "assertion": "Vérifier que 4 icônes de type de favori sont visibles.",
+        "expected": "FAIL",
+        "tags": [
+            "presence",
+            "count_raw",
+            "near_miss"
+        ]
+    },
+    {
+        "test_id": "shot005_06",
+        "assertion": "Vérifier que l'icône étoile (Favori) est sélectionnée (fond bleu).",
         "expected": "PASS",
         "tags": [
-            "target:icon",
-            "op:count",
-            "count_mode:exact",
-            "scope:favorite_selector_icons"
+            "presence",
+            "state"
         ]
     },
     {
-        "test_id": "shot006_05",
-        "assertion": "Vérifier que l’icône étoile (Favori) est sélectionnée (fond bleu).",
+        "test_id": "shot005_07",
+        "assertion": "Vérifier que l'icône maison (Domicile) est sélectionnée.",
+        "expected": "FAIL",
+        "tags": [
+            "presence",
+            "state",
+            "near_miss"
+        ]
+    },
+    {
+        "test_id": "shot005_08",
+        "assertion": "Vérifier que l'icône travail (Valise) est sélectionnée.",
+        "expected": "FAIL",
+        "tags": [
+            "presence",
+            "state",
+            "near_miss"
+        ]
+    },
+    {
+        "test_id": "shot005_09",
+        "assertion": "Vérifier que les icônes sont ordonnées: Maison, Travail, Étoile (de gauche à droite).",
         "expected": "PASS",
         "tags": [
-            "target:control",
-            "op:state",
-            "state:selected",
-            "scope:favorite_selector_icons",
-            "difficulty:near_miss"
+            "presence",
+            "order"
         ]
     },
     {
-        "test_id": "shot006_06",
-        "assertion": "Vérifier qu’un marqueur de localisation (pin bleu) est visible sur la carte.",
+        "test_id": "shot005_10",
+        "assertion": "Vérifier qu'une carte géographique est visible.",
         "expected": "PASS",
         "tags": [
-            "target:icon",
-            "op:presence",
-            "scope:map"
+            "presence"
         ]
     },
     {
-        "test_id": "shot006_07",
-        "assertion": "Vérifier que le label 'Paris' est visible sur la carte (contexte de localisation).",
+        "test_id": "shot005_11",
+        "assertion": "Vérifier qu'un marqueur de localisation (pin bleu) est visible sur la carte.",
         "expected": "PASS",
         "tags": [
-            "target:text",
-            "op:presence",
-            "scope:map",
-            "difficulty:small_text"
+            "presence"
         ]
     },
     {
-        "test_id": "shot006_08",
-        "assertion": "Vérifier qu’un toast/snackbar d’erreur est visible en bas de l’écran.",
+        "test_id": "shot005_12",
+        "assertion": "Vérifier que le texte 'Paris' est visible sur la carte.",
         "expected": "PASS",
         "tags": [
-            "target:control",
-            "op:presence",
-            "scope:snackbar"
+            "presence",
+            "text_match_exact",
+            "small_text"
         ]
     },
     {
-        "test_id": "shot006_09",
-        "assertion": "Vérifier que le message exact 'Une erreur est survenue. Veuillez réessayer' est visible dans le toast.",
+        "test_id": "shot005_13",
+        "assertion": "Vérifier que le texte 'LE MARAIS' est visible sur la carte.",
         "expected": "PASS",
         "tags": [
-            "target:text",
-            "op:match",
-            "match_mode:exact",
-            "scope:snackbar",
-            "difficulty:near_miss"
+            "presence",
+            "text_match_exact",
+            "small_text"
         ]
     },
     {
-        "test_id": "shot006_10",
-        "assertion": "Vérifier la cohérence d’état: si un toast d’erreur est visible, alors le bouton principal 'Enregistrer ce favori' ne doit pas être visible (écran en état erreur).",
+        "test_id": "shot005_14",
+        "assertion": "Vérifier que le texte 'MONTPARNASSE' est visible sur la carte.",
         "expected": "PASS",
         "tags": [
-            "target:screen",
-            "op:consistency",
-            "scope:screen_state",
-            "difficulty:near_miss"
+            "presence",
+            "text_match_exact",
+            "small_text"
         ]
     },
     {
-        "test_id": "shot006_11",
-        "assertion": "Vérifier qu'une adresse complète est affichée dans la carte (ex: '3 Rue ... Paris ... (75004)').",
-        "expected": "FAIL",
+        "test_id": "shot005_15",
+        "assertion": "Vérifier que le texte exact 'Une erreur est survenue. Veuillez réessayer' est visible.",
+        "expected": "PASS",
         "tags": [
-            "target:text",
-            "op:presence",
-            "scope:favorite_selector_card",
-            "difficulty:small_text"
+            "presence",
+            "text_match_exact"
         ]
     },
     {
-        "test_id": "shot006_12",
-        "assertion": "Vérifier que la carte contient un code postal au format '(750xx)'.",
+        "test_id": "shot005_16",
+        "assertion": "Vérifier que le texte exact 'Une erreur est survenue. Veuillez reessayer' (sans accent) est visible.",
         "expected": "FAIL",
         "tags": [
-            "target:text",
-            "op:match",
-            "match_mode:normalized",
-            "scope:favorite_selector_card",
-            "difficulty:near_miss"
+            "presence",
+            "text_match_exact",
+            "near_miss"
         ]
     },
     {
-        "test_id": "shot006_13",
-        "assertion": "Vérifier que le bouton principal bleu 'Enregistrer ce favori' est visible en bas de l’écran.",
-        "expected": "FAIL",
+        "test_id": "shot005_17",
+        "assertion": "Vérifier qu'un toast d'erreur est affiché.",
+        "expected": "PASS",
         "tags": [
-            "target:control",
-            "op:presence",
-            "scope:footer_cta"
+            "presence",
+            "text_match_semantic"
         ]
     },
     {
-        "test_id": "shot006_14",
-        "assertion": "Vérifier que le bouton 'Enregistrer ce favori' occupe toute la largeur en bas (bouton principal).",
+        "test_id": "shot005_18",
+        "assertion": "Vérifier qu'aucun message d'erreur n'est visible.",
         "expected": "FAIL",
         "tags": [
-            "target:layout",
-            "op:relation",
-            "relation:full_width_bottom",
-            "scope:footer_cta",
-            "difficulty:near_miss"
+            "absence",
+            "text_match_semantic"
         ]
     },
     {
-        "test_id": "shot006_15",
-        "assertion": "Vérifier qu’aucun toast/snackbar d’erreur n’est visible.",
-        "expected": "FAIL",
+        "test_id": "shot005_19",
+        "assertion": "Vérifier que le texte exact 'Enregistrer ce favori' est visible.",
+        "expected": "PASS",
         "tags": [
-            "target:control",
-            "op:absence",
-            "scope:snackbar"
+            "presence",
+            "text_match_exact"
         ]
     },
     {
-        "test_id": "shot006_16",
-        "assertion": "Vérifier que le message 'Une erreur est survenue. Veuillez réessayer' est absent de l’écran.",
+        "test_id": "shot005_20",
+        "assertion": "Vérifier que le texte exact 'Sauvegarder ce favori' est visible.",
         "expected": "FAIL",
         "tags": [
-            "target:text",
-            "op:absence",
-            "scope:whole_screen"
+            "presence",
+            "text_match_exact",
+            "near_miss"
         ]
     },
     {
-        "test_id": "shot006_17",
-        "assertion": "Vérifier la cohérence d’état nominal: adresse visible ET bouton 'Enregistrer ce favori' visible ET aucun toast d’erreur.",
+        "test_id": "shot005_21",
+        "assertion": "Vérifier que le bouton 'Enregistrer ce favori' est actif et en bleu.",
         "expected": "FAIL",
         "tags": [
-            "target:screen",
-            "op:consistency",
-            "scope:screen_state",
-            "difficulty:near_miss"
+            "presence",
+            "state"
         ]
     },
     {
-        "test_id": "shot006_18",
-        "assertion": "Vérifier que le toast/snackbar ne masque aucune action critique: le bouton 'Enregistrer ce favori' reste visible et cliquable.",
-        "expected": "FAIL",
+        "test_id": "shot005_22",
+        "assertion": "Vérifier que le bouton 'Enregistrer ce favori' est désactivé (grisé).",
+        "expected": "PASS",
         "tags": [
-            "target:layout",
-            "op:consistency",
-            "scope:footer_area",
-            "difficulty:near_miss"
+            "presence",
+            "state"
         ]
     },
     {
-        "test_id": "shot006_19",
-        "assertion": "Vérifier que l’icône étoile n’est pas sélectionnée (elle doit être non active).",
-        "expected": "FAIL",
+        "test_id": "shot005_23",
+        "assertion": "Vérifier que le toast d'erreur est positionné au-dessus du bouton 'Enregistrer ce favori'.",
+        "expected": "PASS",
         "tags": [
-            "target:control",
-            "op:state",
-            "state:not_selected",
-            "scope:favorite_selector_icons",
-            "difficulty:near_miss"
+            "presence",
+            "layout"
         ]
     },
     {
-        "test_id": "shot006_20",
-        "assertion": "Vérifier que la carte de favori contient au moins 4 icônes (Maison, Travail, Favori, Autre).",
+        "test_id": "shot005_24",
+        "assertion": "Vérifier que le bouton 'Enregistrer ce favori' est positionné en bas de l'écran.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_exact",
+            "layout"
+        ]
+    },
+    {
+        "test_id": "shot005_25",
+        "assertion": "Vérifier qu'une adresse complète est affichée dans le champ de recherche.",
         "expected": "FAIL",
         "tags": [
-            "target:layout",
-            "op:consistency",
-            "scope:favorite_selector_card",
-            "difficulty:near_miss"
+            "presence",
+            "text_match_semantic"
+        ]
+    },
+    {
+        "test_id": "shot005_26",
+        "assertion": "Vérifier que le champ de recherche/adresse est vide.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "state"
+        ]
+    },
+    {
+        "test_id": "shot005_27",
+        "assertion": "Vérifier qu'une icône de localisation (cible) est visible à droite du champ d'adresse.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "layout"
+        ]
+    },
+    {
+        "test_id": "shot005_28",
+        "assertion": "Vérifier que le pin bleu est positionné près du label 'Paris' sur la carte.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "layout"
+        ]
+    },
+    {
+        "test_id": "shot005_29",
+        "assertion": "Vérifier que l'écran permet d'ajouter un lieu en favori.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_semantic"
+        ]
+    },
+    {
+        "test_id": "shot005_30",
+        "assertion": "Vérifier que l'écran affiche la confirmation d'un favori déjà enregistré.",
+        "expected": "FAIL",
+        "tags": [
+            "presence",
+            "text_match_semantic"
+        ]
+    },
+    {
+        "test_id": "shot005_31",
+        "assertion": "Vérifier que le texte 'Google' est visible (attribution carte).",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_exact",
+            "small_text"
+        ]
+    },
+    {
+        "test_id": "shot005_32",
+        "assertion": "Vérifier que l'erreur affichée et le bouton 'Enregistrer' sont visuellement incohérents (erreur présente mais action disponible).",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "consistency"
         ]
     }
 ]

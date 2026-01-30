@@ -4,223 +4,222 @@
     "assertion": "Vérifier que le texte exact 'IGNORER LA PRÉSENTATION' est visible.",
     "expected": "PASS",
     "tags": [
-      "target:text",
-      "op:match",
-      "match_mode:exact",
-      "scope:header"
+      "presence",
+      "text_match_exact"
     ]
   },
   {
     "test_id": "shot001_02",
-    "assertion": "Vérifier que le texte exact 'ÉTAPE SUIVANTE' est visible.",
-    "expected": "PASS",
+    "assertion": "Vérifier que le texte exact 'IGNORER LA PRESENTATION' (sans accent) est visible.",
+    "expected": "FAIL",
     "tags": [
-      "target:text",
-      "op:match",
-      "match_mode:exact",
-      "scope:footer"
+      "presence",
+      "text_match_exact",
+      "near_miss"
     ]
   },
   {
     "test_id": "shot001_03",
-    "assertion": "Vérifier que le titre exact \"Bienvenue à bord de l'application Île-de-France Mobilités !\" est visible.",
+    "assertion": "Vérifier que le texte exact 'ÉTAPE SUIVANTE' est visible.",
     "expected": "PASS",
     "tags": [
-      "target:text",
-      "op:match",
-      "match_mode:exact",
-      "scope:main_content",
-      "difficulty:near_miss"
+      "presence",
+      "text_match_exact"
     ]
   },
   {
     "test_id": "shot001_04",
-    "assertion": "Vérifier que le texte \"Retrouvez les outils et informations essentiels à l'organisation de vos déplacements en Île-de-France.\" est visible.",
-    "expected": "PASS",
+    "assertion": "Vérifier que le texte exact 'ETAPE SUIVANTE' (sans accent) est visible.",
+    "expected": "FAIL",
     "tags": [
-      "target:text",
-      "op:match",
-      "match_mode:exact",
-      "scope:main_content",
-      "difficulty:small_text"
+      "presence",
+      "text_match_exact",
+      "near_miss"
     ]
   },
   {
     "test_id": "shot001_05",
-    "assertion": "Vérifier que l'écran contient 6 points de pagination (Carousel Dots).",
+    "assertion": "Vérifier qu'un texte contenant 'ile de france mobilites' (insensible casse/accents) est visible.",
     "expected": "PASS",
     "tags": [
-      "target:control",
-      "op:count",
-      "count_mode:exact",
-      "scope:pagination_dots"
+      "presence",
+      "text_match_normalized"
     ]
   },
   {
     "test_id": "shot001_06",
-    "assertion": "Vérifier que le premier point de pagination est sélectionné (dot actif).",
+    "assertion": "Vérifier qu'un message de bienvenue pour une app de transport est affiché.",
     "expected": "PASS",
     "tags": [
-      "target:control",
-      "op:state",
-      "state:selected",
-      "scope:pagination_dots"
+      "presence",
+      "text_match_semantic"
     ]
   },
   {
     "test_id": "shot001_07",
-    "assertion": "Vérifier que le bouton 'ÉTAPE SUIVANTE' est visible.",
-    "expected": "PASS",
+    "assertion": "Vérifier qu'un message d'erreur est affiché.",
+    "expected": "FAIL",
     "tags": [
-      "target:control",
-      "op:presence",
-      "scope:footer"
+      "absence",
+      "text_match_semantic"
     ]
   },
   {
     "test_id": "shot001_08",
-    "assertion": "Vérifier que le bouton/CTA 'IGNORER LA PRÉSENTATION' est visible en haut de l'écran.",
+    "assertion": "Vérifier que 6 points de pagination sont visibles.",
     "expected": "PASS",
     "tags": [
-      "target:layout",
-      "op:relation",
-      "relation:top",
-      "scope:whole_screen"
+      "presence",
+      "count_raw"
     ]
   },
   {
     "test_id": "shot001_09",
-    "assertion": "Vérifier que le bouton 'ÉTAPE SUIVANTE' est positionné en bas à droite.",
-    "expected": "PASS",
+    "assertion": "Vérifier que 5 points de pagination sont visibles.",
+    "expected": "FAIL",
     "tags": [
-      "target:layout",
-      "op:relation",
-      "relation:bottom_right",
-      "scope:whole_screen"
+      "presence",
+      "count_raw",
+      "near_miss"
     ]
   },
   {
     "test_id": "shot001_10",
-    "assertion": "Vérifier qu'aucun message d'erreur (ex: 'Erreur', 'Échec', 'Problème') n'est visible sur l'écran.",
+    "assertion": "Vérifier qu'exactement 1 point de pagination est actif (rempli/blanc).",
     "expected": "PASS",
     "tags": [
-      "target:text",
-      "op:absence",
-      "scope:whole_screen"
+      "presence",
+      "count_filtered"
     ]
   },
   {
     "test_id": "shot001_11",
-    "assertion": "Vérifier que le texte exact 'IGNORER LA PRESENTATION' est visible.",
-    "expected": "FAIL",
+    "assertion": "Vérifier que le premier point de pagination (le plus à gauche) est actif.",
+    "expected": "PASS",
     "tags": [
-      "target:text",
-      "op:match",
-      "match_mode:exact",
-      "scope:header",
-      "difficulty:near_miss"
+      "presence",
+      "state"
     ]
   },
   {
     "test_id": "shot001_12",
-    "assertion": "Vérifier que le texte exact 'ETAPE SUIVANTE' est visible.",
+    "assertion": "Vérifier que le deuxième point de pagination est actif.",
     "expected": "FAIL",
     "tags": [
-      "target:text",
-      "op:match",
-      "match_mode:exact",
-      "scope:footer",
-      "difficulty:near_miss"
+      "presence",
+      "state",
+      "near_miss"
     ]
   },
   {
     "test_id": "shot001_13",
-    "assertion": "Vérifier que le titre exact  Bienvenue à bord de l'application Ile-de-France Mobilités !  est visible.",
-    "expected": "FAIL",
+    "assertion": "Vérifier que 'ÉTAPE SUIVANTE' est positionné en bas à droite de l'écran.",
+    "expected": "PASS",
     "tags": [
-      "target:text",
-      "op:match",
-      "match_mode:exact",
-      "scope:main_content",
-      "difficulty:near_miss"
+      "presence",
+      "text_match_exact",
+      "layout"
     ]
   },
   {
     "test_id": "shot001_14",
-    "assertion": "Vérifier que le titre exact \"Bienvenue à bord de l’application Île-de-France Mobilités !\" est visible (apostrophe typographique).",
+    "assertion": "Vérifier que 'ÉTAPE SUIVANTE' est positionné en bas à gauche de l'écran.",
     "expected": "FAIL",
     "tags": [
-      "target:text",
-      "op:match",
-      "match_mode:exact",
-      "scope:main_content",
-      "difficulty:near_miss"
+      "presence",
+      "text_match_exact",
+      "layout",
+      "near_miss"
     ]
   },
   {
     "test_id": "shot001_15",
-    "assertion": "Vérifier que l'écran contient 5 points de pagination (Carousel Dots).",
-    "expected": "FAIL",
+    "assertion": "Vérifier que 'IGNORER LA PRÉSENTATION' est positionné au-dessus de l'illustration.",
+    "expected": "PASS",
     "tags": [
-      "target:control",
-      "op:count",
-      "count_mode:exact",
-      "scope:pagination_dots",
-      "difficulty:near_miss"
+      "presence",
+      "text_match_exact",
+      "layout"
     ]
   },
   {
     "test_id": "shot001_16",
-    "assertion": "Vérifier que le deuxième point de pagination est sélectionné (dot actif).",
-    "expected": "FAIL",
+    "assertion": "Vérifier que les points de pagination sont positionnés entre le texte descriptif et 'ÉTAPE SUIVANTE'.",
+    "expected": "PASS",
     "tags": [
-      "target:control",
-      "op:state",
-      "state:selected",
-      "scope:pagination_dots",
-      "difficulty:near_miss"
+      "presence",
+      "layout"
     ]
   },
   {
     "test_id": "shot001_17",
-    "assertion": "Vérifier que le bouton 'ÉTAPE SUIVANTE' est absent de l'écran.",
-    "expected": "FAIL",
+    "assertion": "Vérifier que le logo Île-de-France Mobilités est visible.",
+    "expected": "PASS",
     "tags": [
-      "target:control",
-      "op:absence",
-      "scope:footer"
+      "presence"
     ]
   },
   {
     "test_id": "shot001_18",
-    "assertion": "Vérifier que le bouton 'IGNORER LA PRÉSENTATION' est absent de l'écran.",
-    "expected": "FAIL",
+    "assertion": "Vérifier qu'une illustration de bus est visible.",
+    "expected": "PASS",
     "tags": [
-      "target:control",
-      "op:absence",
-      "scope:header"
+      "presence"
     ]
   },
   {
     "test_id": "shot001_19",
-    "assertion": "Vérifier que le bouton 'ÉTAPE SUIVANTE' est positionné en bas à gauche.",
-    "expected": "FAIL",
+    "assertion": "Vérifier qu'aucune alerte ou popup n'est visible.",
+    "expected": "PASS",
     "tags": [
-      "target:layout",
-      "op:relation",
-      "relation:bottom_left",
-      "scope:whole_screen",
-      "difficulty:near_miss"
+      "absence"
     ]
   },
   {
     "test_id": "shot001_20",
-    "assertion": "Vérifier qu'un message d'erreur 'Erreur' est visible sur l'écran.",
+    "assertion": "Vérifier que le bouton 'ÉTAPE SUIVANTE' est absent.",
     "expected": "FAIL",
     "tags": [
-      "target:text",
-      "op:presence",
-      "scope:whole_screen"
+      "absence",
+      "text_match_exact"
+    ]
+  },
+  {
+    "test_id": "shot001_21",
+    "assertion": "Vérifier que les 6 points de pagination sont alignés horizontalement.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "order"
+    ]
+  },
+  {
+    "test_id": "shot001_22",
+    "assertion": "Vérifier que le texte 'Retrouvez les outils et informations essentiels' est visible.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_normalized",
+      "small_text"
+    ]
+  },
+  {
+    "test_id": "shot001_23",
+    "assertion": "Vérifier que l'heure '05:43' est visible dans la barre de statut.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact",
+      "small_text"
+    ]
+  },
+  {
+    "test_id": "shot001_24",
+    "assertion": "Vérifier que le nombre de points actifs (1) correspond à la position actuelle dans le carousel (étape 1 sur 6).",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "consistency"
     ]
   }
 ]

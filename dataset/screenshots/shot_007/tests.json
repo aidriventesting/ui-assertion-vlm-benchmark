@@ -1,0 +1,136 @@
+[
+    {
+        "test_id": "shot007_01",
+        "assertion": "Vérifier que l'onglet 'En cours' est sélectionné.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "state"
+        ]
+    },
+    {
+        "test_id": "shot007_02",
+        "assertion": "Vérifier que l'onglet 'À venir' est sélectionné.",
+        "expected": "FAIL",
+        "tags": [
+            "presence",
+            "state",
+            "near_miss"
+        ]
+    },
+    {
+        "test_id": "shot007_03",
+        "assertion": "Vérifier que des lignes avec perturbations en cours sont affichées (présence d'icônes d'alerte).",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_semantic"
+        ]
+    },
+    {
+        "test_id": "shot007_04",
+        "assertion": "Vérifier que les lignes RER avec une icône d'alerte orange sont au moins 6.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "count_filtered"
+        ]
+    },
+    {
+        "test_id": "shot007_05",
+        "assertion": "Vérifier que les lignes Métro avec une icône d'alerte orange sont au moins 3.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "count_filtered"
+        ]
+    },
+    {
+        "test_id": "shot007_06",
+        "assertion": "Vérifier que toutes les lignes affichées sont sans perturbation (aucune icône d'alerte).",
+        "expected": "FAIL",
+        "tags": [
+            "absence",
+            "text_match_semantic"
+        ]
+    },
+    {
+        "test_id": "shot007_07",
+        "assertion": "Vérifier que le nombre total de lignes RER affichées est 10.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "count_raw"
+        ]
+    },
+    {
+        "test_id": "shot007_08",
+        "assertion": "Vérifier que la ligne RER B n'a pas d'icône d'alerte (fonctionne normalement).",
+        "expected": "PASS",
+        "tags": [
+            "absence"
+        ]
+    },
+    {
+        "test_id": "shot007_09",
+        "assertion": "Vérifier que la ligne RER A a une icône d'alerte (perturbation en cours).",
+        "expected": "PASS",
+        "tags": [
+            "presence"
+        ]
+    },
+    {
+        "test_id": "shot007_10",
+        "assertion": "Vérifier que les lignes Métro 1 et 2 ont des icônes d'alerte.",
+        "expected": "PASS",
+        "tags": [
+            "presence"
+        ]
+    },
+    {
+        "test_id": "shot007_11",
+        "assertion": "Vérifier que la section 'Train - RER' est positionnée au-dessus de la section 'Métro'.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "layout",
+            "order"
+        ]
+    },
+    {
+        "test_id": "shot007_12",
+        "assertion": "Vérifier que l'écran affiche l'état du trafic en temps réel pour les transports franciliens.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_semantic"
+        ]
+    },
+    {
+        "test_id": "shot007_13",
+        "assertion": "Vérifier que l'écran affiche des horaires de passage.",
+        "expected": "FAIL",
+        "tags": [
+            "presence",
+            "text_match_semantic"
+        ]
+    },
+    {
+        "test_id": "shot007_14",
+        "assertion": "Vérifier que le ratio lignes perturbées / lignes totales est visuellement significatif (plus de 30% des lignes ont une alerte).",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "consistency"
+        ]
+    },
+    {
+        "test_id": "shot007_15",
+        "assertion": "Vérifier que les lignes sont organisées dans une grille cohérente (alignement horizontal et vertical).",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "layout"
+        ]
+    }
+]

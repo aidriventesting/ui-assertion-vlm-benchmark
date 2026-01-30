@@ -1,0 +1,137 @@
+[
+    {
+        "test_id": "shot008_01",
+        "assertion": "Vérifier que la gare 'Arpajon' est affichée comme destination.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_exact"
+        ]
+    },
+    {
+        "test_id": "shot008_02",
+        "assertion": "Vérifier que '3 perturbations en cours' est affiché.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_exact"
+        ]
+    },
+    {
+        "test_id": "shot008_03",
+        "assertion": "Vérifier que le nombre de départs affichés est exactement 3.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "count_raw"
+        ]
+    },
+    {
+        "test_id": "shot008_04",
+        "assertion": "Vérifier que le nombre de départs affichés est exactement 4.",
+        "expected": "FAIL",
+        "tags": [
+            "presence",
+            "count_raw",
+            "near_miss"
+        ]
+    },
+    {
+        "test_id": "shot008_05",
+        "assertion": "Vérifier que les départs sont triés chronologiquement (06:02, 06:26, 06:32).",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "order"
+        ]
+    },
+    {
+        "test_id": "shot008_06",
+        "assertion": "Vérifier que les temps d'attente sont cohérents avec les heures de départ.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "consistency"
+        ]
+    },
+    {
+        "test_id": "shot008_07",
+        "assertion": "Vérifier que tous les trajets sont sur la ligne RER C.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "consistency"
+        ]
+    },
+    {
+        "test_id": "shot008_08",
+        "assertion": "Vérifier que le RER C dessert les destinations 'Musée d'Orsay' et 'Dourdan'.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_normalized"
+        ]
+    },
+    {
+        "test_id": "shot008_09",
+        "assertion": "Vérifier que l'icône de la ligne 'C' est visible sur toutes les cartes de départ.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "count_filtered"
+        ]
+    },
+    {
+        "test_id": "shot008_10",
+        "assertion": "Vérifier que l'écran affiche les prochains départs depuis une gare spécifique.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_semantic"
+        ]
+    },
+    {
+        "test_id": "shot008_11",
+        "assertion": "Vérifier que l'écran affiche un itinéraire point A vers point B.",
+        "expected": "FAIL",
+        "tags": [
+            "presence",
+            "text_match_semantic"
+        ]
+    },
+    {
+        "test_id": "shot008_12",
+        "assertion": "Vérifier que l'indicateur de perturbations (bandeau orange) est cohérent avec l'état du réseau affiché.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "consistency"
+        ]
+    },
+    {
+        "test_id": "shot008_13",
+        "assertion": "Vérifier que les numéros de voie sont affichés (Voie 1, Voie 2).",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_normalized"
+        ]
+    },
+    {
+        "test_id": "shot008_15",
+        "assertion": "Vérifier que la carte montre la station arpajon.",
+        "expected": "FAIL",
+        "tags": [
+            "presence",
+            "text_match_semantic"
+        ]
+    },
+    {
+        "test_id": "shot008_16",
+        "assertion": "Vérifier que l'utilisateur peut modifier la direction (icône édition visible à côté de 'Toutes les directions').",
+        "expected": "PASS",
+        "tags": [
+            "presence"
+        ]
+    }
+]

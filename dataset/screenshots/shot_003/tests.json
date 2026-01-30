@@ -1,226 +1,276 @@
 [
     {
         "test_id": "shot003_01",
-        "assertion": "Vérifier que le titre exact 'Mon espace' est visible.",
+        "assertion": "Vérifier que le texte exact 'Mon espace' est visible.",
         "expected": "PASS",
         "tags": [
-            "target:text",
-            "op:match",
-            "match_mode:exact",
-            "scope:header",
-            "difficulty:near_miss"
+            "presence",
+            "text_match_exact"
         ]
     },
     {
         "test_id": "shot003_02",
-        "assertion": "Vérifier que le texte exact 'Connectez-vous !' est visible.",
-        "expected": "PASS",
+        "assertion": "Vérifier que le texte exact 'Mon compte' est visible.",
+        "expected": "FAIL",
         "tags": [
-            "target:text",
-            "op:match",
-            "match_mode:exact",
-            "scope:header",
-            "difficulty:near_miss"
+            "presence",
+            "text_match_exact",
+            "near_miss"
         ]
     },
     {
         "test_id": "shot003_03",
-        "assertion": "Vérifier que le bouton 'Me connecter / m'inscrire' est visible.",
+        "assertion": "Vérifier que le texte exact 'Connectez-vous !' est visible.",
         "expected": "PASS",
         "tags": [
-            "target:control",
-            "op:presence",
-            "scope:main_cta"
+            "presence",
+            "text_match_exact"
         ]
     },
     {
         "test_id": "shot003_04",
-        "assertion": "Vérifier que le bouton 'Me connecter / m'inscrire' est activé (style bouton principal).",
-        "expected": "PASS",
+        "assertion": "Vérifier que le texte exact 'Connectez vous !' (sans tiret) est visible.",
+        "expected": "FAIL",
         "tags": [
-            "target:control",
-            "op:state",
-            "state:enabled",
-            "scope:main_cta"
+            "presence",
+            "text_match_exact",
+            "near_miss"
         ]
     },
     {
         "test_id": "shot003_05",
-        "assertion": "Vérifier que la section 'Mes services' est visible.",
+        "assertion": "Vérifier que le texte exact 'Me connecter / m'inscrire' est visible.",
         "expected": "PASS",
         "tags": [
-            "target:text",
-            "op:match",
-            "match_mode:exact",
-            "scope:services_section"
+            "presence",
+            "text_match_exact"
         ]
     },
     {
         "test_id": "shot003_06",
-        "assertion": "Vérifier que le bandeau d'alerte 'Problème d'affichage' est visible.",
-        "expected": "PASS",
+        "assertion": "Vérifier que le texte exact 'Se connecter' est visible.",
+        "expected": "FAIL",
         "tags": [
-            "target:text",
-            "op:match",
-            "match_mode:exact",
-            "scope:error_card",
-            "difficulty:near_miss"
+            "presence",
+            "text_match_exact",
+            "near_miss"
         ]
     },
     {
         "test_id": "shot003_07",
-        "assertion": "Vérifier que l'icône d'alerte (symbole d'avertissement) est visible à gauche du texte 'Problème d'affichage'.",
+        "assertion": "Vérifier que le texte exact 'Problème d'affichage' est visible.",
         "expected": "PASS",
         "tags": [
-            "target:icon",
-            "op:presence",
-            "scope:error_card"
+            "presence",
+            "text_match_exact"
         ]
     },
     {
         "test_id": "shot003_08",
-        "assertion": "Vérifier que la carte 'Découvrir les services' est visible.",
-        "expected": "PASS",
+        "assertion": "Vérifier qu'aucune alerte 'Problème d'affichage' n'est visible.",
+        "expected": "FAIL",
         "tags": [
-            "target:text",
-            "op:match",
-            "match_mode:exact",
-            "scope:services_section"
+            "absence",
+            "text_match_exact"
         ]
     },
     {
         "test_id": "shot003_09",
-        "assertion": "Vérifier que la flèche (>) est visible à droite de la carte 'Découvrir les services'.",
+        "assertion": "Vérifier qu'un message d'erreur ou d'alerte technique est affiché.",
         "expected": "PASS",
         "tags": [
-            "target:icon",
-            "op:presence",
-            "scope:services_section"
+            "presence",
+            "text_match_semantic"
         ]
     },
     {
         "test_id": "shot003_10",
-        "assertion": "Vérifier que l'onglet 'Mon espace' est sélectionné dans la barre de navigation du bas.",
-        "expected": "PASS",
+        "assertion": "Vérifier que l'écran affiche une confirmation de connexion réussie.",
+        "expected": "FAIL",
         "tags": [
-            "target:control",
-            "op:state",
-            "state:selected",
-            "scope:bottom_nav"
+            "presence",
+            "text_match_semantic"
         ]
     },
     {
         "test_id": "shot003_11",
-        "assertion": "Vérifier que le titre exact 'Mon espacee' est visible.",
-        "expected": "FAIL",
+        "assertion": "Vérifier que le texte exact 'Mes services' est visible.",
+        "expected": "PASS",
         "tags": [
-            "target:text",
-            "op:match",
-            "match_mode:exact",
-            "scope:header",
-            "difficulty:near_miss"
+            "presence",
+            "text_match_exact"
         ]
     },
     {
         "test_id": "shot003_12",
-        "assertion": "Vérifier que le texte exact 'Connectez vous !' est visible (sans tiret).",
-        "expected": "FAIL",
+        "assertion": "Vérifier que le texte exact 'Découvrir les services' est visible.",
+        "expected": "PASS",
         "tags": [
-            "target:text",
-            "op:match",
-            "match_mode:exact",
-            "scope:header",
-            "difficulty:near_miss"
+            "presence",
+            "text_match_exact"
         ]
     },
     {
         "test_id": "shot003_13",
-        "assertion": "Vérifier que le bouton 'Se connecter' est visible.",
-        "expected": "FAIL",
+        "assertion": "Vérifier que le texte exact 'Mes déplacements' est visible.",
+        "expected": "PASS",
         "tags": [
-            "target:control",
-            "op:presence",
-            "scope:main_cta"
+            "presence",
+            "text_match_exact"
         ]
     },
     {
         "test_id": "shot003_14",
-        "assertion": "Vérifier que le bouton 'Me connecter / m'inscrire' est désactivé.",
+        "assertion": "Vérifier que le texte exact 'Mes trajets' est visible.",
         "expected": "FAIL",
         "tags": [
-            "target:control",
-            "op:state",
-            "state:disabled",
-            "scope:main_cta",
-            "difficulty:near_miss"
+            "presence",
+            "text_match_exact",
+            "near_miss"
         ]
     },
     {
         "test_id": "shot003_15",
-        "assertion": "Vérifier que le texte 'Problème d’affichage' est visible (apostrophe typographique).",
-        "expected": "FAIL",
+        "assertion": "Vérifier que l'onglet 'Mon espace' est sélectionné dans la barre de navigation.",
+        "expected": "PASS",
         "tags": [
-            "target:text",
-            "op:match",
-            "match_mode:exact",
-            "scope:error_card",
-            "difficulty:near_miss"
+            "presence",
+            "state"
         ]
     },
     {
         "test_id": "shot003_16",
-        "assertion": "Vérifier que le bandeau d'alerte 'Problème d'affichage' est absent de l'écran.",
+        "assertion": "Vérifier que l'onglet 'Achat' est sélectionné dans la barre de navigation.",
         "expected": "FAIL",
         "tags": [
-            "target:text",
-            "op:absence",
-            "scope:whole_screen"
+            "presence",
+            "state",
+            "near_miss"
         ]
     },
     {
         "test_id": "shot003_17",
-        "assertion": "Vérifier que la carte 'Découvrir les services' est absente de l'écran.",
-        "expected": "FAIL",
+        "assertion": "Vérifier que 5 onglets sont visibles dans la barre de navigation.",
+        "expected": "PASS",
         "tags": [
-            "target:text",
-            "op:absence",
-            "scope:services_section"
+            "presence",
+            "count_raw"
         ]
     },
     {
         "test_id": "shot003_18",
-        "assertion": "Vérifier que la carte 'Problème d'affichage' est affichée en dessous de la carte 'Découvrir les services'.",
+        "assertion": "Vérifier que 4 onglets sont visibles dans la barre de navigation.",
         "expected": "FAIL",
         "tags": [
-            "target:layout",
-            "op:relation",
-            "relation:below",
-            "scope:services_section",
-            "difficulty:near_miss"
+            "presence",
+            "count_raw",
+            "near_miss"
         ]
     },
     {
         "test_id": "shot003_19",
-        "assertion": "Vérifier que l'onglet 'Achat' est sélectionné dans la barre de navigation du bas.",
-        "expected": "FAIL",
+        "assertion": "Vérifier qu'une icône d'alerte (rouge/orange) est visible à côté de 'Problème d'affichage'.",
+        "expected": "PASS",
         "tags": [
-            "target:control",
-            "op:state",
-            "state:selected",
-            "scope:bottom_nav",
-            "difficulty:near_miss"
+            "presence",
+            "layout"
         ]
     },
     {
         "test_id": "shot003_20",
-        "assertion": "Vérifier que la barre de navigation du bas contient exactement 4 onglets.",
+        "assertion": "Vérifier qu'une flèche (→) est visible à droite de 'Découvrir les services'.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "layout"
+        ]
+    },
+    {
+        "test_id": "shot003_21",
+        "assertion": "Vérifier que le logo 'Île-de-France Mobilités CONNECT' est visible.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_normalized"
+        ]
+    },
+    {
+        "test_id": "shot003_22",
+        "assertion": "Vérifier que le bouton 'Me connecter / m'inscrire' est positionné au-dessus de 'Mes services'.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_exact",
+            "layout"
+        ]
+    },
+    {
+        "test_id": "shot003_23",
+        "assertion": "Vérifier qu'une pastille de notification est visible sur l'onglet 'Achat'.",
+        "expected": "PASS",
+        "tags": [
+            "presence"
+        ]
+    },
+    {
+        "test_id": "shot003_24",
+        "assertion": "Vérifier qu'un indicateur signale une action en attente ou une nouveauté sur la section Achat.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_semantic"
+        ]
+    },
+    {
+        "test_id": "shot003_25",
+        "assertion": "Vérifier qu'aucune pastille de notification n'est visible sur aucun onglet.",
         "expected": "FAIL",
         "tags": [
-            "target:control",
-            "op:count",
-            "count_mode:exact",
-            "scope:bottom_nav",
-            "difficulty:near_miss"
+            "absence"
+        ]
+    },
+    {
+        "test_id": "shot003_26",
+        "assertion": "Vérifier que l'utilisateur n'est pas connecté (absence de nom/avatar).",
+        "expected": "PASS",
+        "tags": [
+            "absence"
+        ]
+    },
+    {
+        "test_id": "shot003_27",
+        "assertion": "Vérifier qu'un nom d'utilisateur connecté est affiché.",
+        "expected": "FAIL",
+        "tags": [
+            "presence",
+            "text_match_semantic"
+        ]
+    },
+    {
+        "test_id": "shot003_28",
+        "assertion": "Vérifier que les sections sont ordonnées: 'Mes services' avant 'Mes déplacements'.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "order"
+        ]
+    },
+    {
+        "test_id": "shot003_29",
+        "assertion": "Vérifier que l'écran invite l'utilisateur à se connecter pour accéder aux fonctionnalités.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_semantic"
+        ]
+    },
+    {
+        "test_id": "shot003_30",
+        "assertion": "Vérifier que le nombre de cartes/sections visibles dans 'Mes services' est exactement 2.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "count_raw"
         ]
     }
 ]

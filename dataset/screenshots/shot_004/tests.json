@@ -1,221 +1,275 @@
 [
     {
         "test_id": "shot004_01",
-        "assertion": "Vérifier que le titre exact 'Horaires' est visible en haut de l'écran.",
+        "assertion": "Vérifier que le texte exact 'Horaires' est visible.",
         "expected": "PASS",
         "tags": [
-            "target:text",
-            "op:match",
-            "match_mode:exact",
-            "scope:header",
-            "difficulty:near_miss"
+            "presence",
+            "text_match_exact"
         ]
     },
     {
         "test_id": "shot004_02",
-        "assertion": "Vérifier que le champ de recherche est visible avec le placeholder 'Rechercher une gare, station ou arrêt'.",
-        "expected": "PASS",
+        "assertion": "Vérifier que le texte exact 'Schedules' est visible.",
+        "expected": "FAIL",
         "tags": [
-            "target:text",
-            "op:match",
-            "match_mode:exact",
-            "scope:search_bar",
-            "difficulty:near_miss"
+            "presence",
+            "text_match_exact",
+            "near_miss"
         ]
     },
     {
         "test_id": "shot004_03",
-        "assertion": "Vérifier que l'onglet 'Horaires' est sélectionné dans la barre de navigation du bas.",
+        "assertion": "Vérifier que le texte exact 'Aucune ligne disponible. Veuillez réessayer' est visible.",
         "expected": "PASS",
         "tags": [
-            "target:control",
-            "op:state",
-            "state:selected",
-            "scope:bottom_nav"
+            "presence",
+            "text_match_exact"
         ]
     },
     {
         "test_id": "shot004_04",
-        "assertion": "Vérifier que l'onglet RER est sélectionné dans les filtres en haut.",
-        "expected": "PASS",
+        "assertion": "Vérifier que le texte exact 'Aucune ligne disponible. Veuillez reessayer' (sans accent) est visible.",
+        "expected": "FAIL",
         "tags": [
-            "target:control",
-            "op:state",
-            "state:selected",
-            "scope:top_filters",
-            "difficulty:near_miss"
+            "presence",
+            "text_match_exact",
+            "near_miss"
         ]
     },
     {
         "test_id": "shot004_05",
-        "assertion": "Vérifier que le message exact 'Aucune ligne disponible. Veuillez réessayer' est visible.",
+        "assertion": "Vérifier que le texte exact 'Rafraîchir' est visible.",
         "expected": "PASS",
         "tags": [
-            "target:text",
-            "op:match",
-            "match_mode:exact",
-            "scope:empty_state",
-            "difficulty:near_miss"
+            "presence",
+            "text_match_exact"
         ]
     },
     {
         "test_id": "shot004_06",
-        "assertion": "Vérifier que le texte 'Rafraîchir' est visible.",
+        "assertion": "Vérifier que le texte exact 'Actualiser' est visible.",
         "expected": "FAIL",
         "tags": [
-            "target:text",
-            "op:presence",
-            "scope:empty_state_action"
+            "presence",
+            "text_match_exact",
+            "near_miss"
         ]
     },
     {
         "test_id": "shot004_07",
-        "assertion": "Vérifier qu'une icône (train/bus gris) est visible.",
+        "assertion": "Vérifier que le texte contenant 'rechercher une gare station ou arret' (insensible accents) est visible.",
         "expected": "PASS",
         "tags": [
-            "target:icon",
-            "op:presence",
-            "scope:empty_state"
+            "presence",
+            "text_match_normalized"
         ]
     },
     {
         "test_id": "shot004_08",
-        "assertion": "Vérifier qu'aucune carte de ligne (ex: 'RER A', 'RER B', etc.) n'est visible sur l'écran.",
+        "assertion": "Vérifier qu'un message d'erreur indiquant un problème de chargement est affiché.",
         "expected": "PASS",
         "tags": [
-            "target:list",
-            "op:absence",
-            "scope:lines_list"
+            "presence",
+            "text_match_semantic"
         ]
     },
     {
         "test_id": "shot004_09",
-        "assertion": "Vérifier qu'aucune pastille lettre de ligne (A, B, C, D, E, etc.) n'est visible dans la liste.",
-        "expected": "PASS",
+        "assertion": "Vérifier que l'écran affiche une liste de lignes de transport.",
+        "expected": "FAIL",
         "tags": [
-            "target:icon",
-            "op:absence",
-            "scope:lines_list"
+            "presence",
+            "text_match_semantic"
         ]
     },
     {
         "test_id": "shot004_10",
-        "assertion": "Vérifier que le lien 'Rafraîchir' est positionné sous le texte d'état vide (Aucune ligne disponible...).",
+        "assertion": "Vérifier que l'onglet 'Horaires' est sélectionné dans la barre de navigation.",
         "expected": "PASS",
         "tags": [
-            "target:layout",
-            "op:relation",
-            "relation:below",
-            "scope:empty_state",
-            "difficulty:near_miss"
+            "presence",
+            "state"
         ]
     },
     {
         "test_id": "shot004_11",
-        "assertion": "Vérifier que le message exact 'Aucune ligne disponible. Veuillez reessayer' est visible.",
+        "assertion": "Vérifier que l'onglet 'Itinéraires' est sélectionné dans la barre de navigation.",
         "expected": "FAIL",
         "tags": [
-            "target:text",
-            "op:match",
-            "match_mode:exact",
-            "scope:empty_state",
-            "difficulty:near_miss"
+            "presence",
+            "state",
+            "near_miss"
         ]
     },
     {
         "test_id": "shot004_12",
-        "assertion": "Vérifier que le bouton 'Actualiser' est visible.",
-        "expected": "FAIL",
+        "assertion": "Vérifier que le filtre RER est sélectionné dans les onglets de transport.",
+        "expected": "PASS",
         "tags": [
-            "target:text",
-            "op:presence",
-            "scope:empty_state_action"
+            "presence",
+            "state"
         ]
     },
     {
         "test_id": "shot004_13",
-        "assertion": "Vérifier que la ligne 'RER A' est visible dans la liste.",
+        "assertion": "Vérifier que le filtre BUS est sélectionné dans les onglets de transport.",
         "expected": "FAIL",
         "tags": [
-            "target:text",
-            "op:presence",
-            "scope:lines_list"
+            "presence",
+            "state",
+            "near_miss"
         ]
     },
     {
         "test_id": "shot004_14",
-        "assertion": "Vérifier que la ligne 'RER B' est visible dans la liste.",
-        "expected": "FAIL",
+        "assertion": "Vérifier que 5 icônes de filtre de transport sont visibles (Favoris, RER, Métro, Train, BUS).",
+        "expected": "PASS",
         "tags": [
-            "target:text",
-            "op:presence",
-            "scope:lines_list"
+            "presence",
+            "count_raw"
         ]
     },
     {
         "test_id": "shot004_15",
-        "assertion": "Vérifier qu'au moins 5 lignes (cartes) sont visibles dans la liste.",
+        "assertion": "Vérifier que 4 icônes de filtre de transport sont visibles.",
         "expected": "FAIL",
         "tags": [
-            "target:list",
-            "op:count",
-            "count_mode:at_least",
-            "scope:lines_list"
+            "presence",
+            "count_raw",
+            "near_miss"
         ]
     },
     {
         "test_id": "shot004_16",
-        "assertion": "Vérifier que le message d'état vide 'Aucune ligne disponible...' est absent de l'écran.",
-        "expected": "FAIL",
+        "assertion": "Vérifier qu'aucune carte de ligne (RER A, RER B, etc.) n'est visible.",
+        "expected": "PASS",
         "tags": [
-            "target:text",
-            "op:absence",
-            "scope:whole_screen"
+            "absence"
         ]
     },
     {
         "test_id": "shot004_17",
-        "assertion": "Vérifier que le filtre 'BUS' est sélectionné dans les filtres en haut.",
+        "assertion": "Vérifier que le texte 'RER A' est visible.",
         "expected": "FAIL",
         "tags": [
-            "target:control",
-            "op:state",
-            "state:selected",
-            "scope:top_filters",
-            "difficulty:near_miss"
+            "presence",
+            "text_match_exact"
         ]
     },
     {
         "test_id": "shot004_18",
-        "assertion": "Vérifier que l'onglet 'Itinéraires' est sélectionné dans la barre de navigation du bas.",
+        "assertion": "Vérifier que le texte 'RER B' est visible.",
         "expected": "FAIL",
         "tags": [
-            "target:control",
-            "op:state",
-            "state:selected",
-            "scope:bottom_nav",
-            "difficulty:near_miss"
+            "presence",
+            "text_match_exact"
         ]
     },
     {
         "test_id": "shot004_19",
-        "assertion": "Vérifier que le champ de recherche est absent de l'écran.",
+        "assertion": "Vérifier que le texte 'Train H' est visible.",
         "expected": "FAIL",
         "tags": [
-            "target:control",
-            "op:absence",
-            "scope:search_bar"
+            "presence",
+            "text_match_exact"
         ]
     },
     {
         "test_id": "shot004_20",
-        "assertion": "Vérifier que la liste des lignes est visible (au moins une carte de ligne affichée) et que le message d'état vide n'est pas affiché.",
+        "assertion": "Vérifier qu'au moins 5 cartes de ligne sont visibles.",
         "expected": "FAIL",
         "tags": [
-            "target:list",
-            "op:consistency",
-            "scope:lines_area",
-            "difficulty:near_miss"
+            "presence",
+            "count_raw"
+        ]
+    },
+    {
+        "test_id": "shot004_21",
+        "assertion": "Vérifier que 0 carte de ligne est visible (liste vide).",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "count_raw"
+        ]
+    },
+    {
+        "test_id": "shot004_22",
+        "assertion": "Vérifier qu'une icône de bus/transport grise est visible (état vide).",
+        "expected": "PASS",
+        "tags": [
+            "presence"
+        ]
+    },
+    {
+        "test_id": "shot004_23",
+        "assertion": "Vérifier que 'Rafraîchir' est positionné sous le message d'erreur.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_exact",
+            "layout"
+        ]
+    },
+    {
+        "test_id": "shot004_24",
+        "assertion": "Vérifier que les filtres de transport sont positionnés au-dessus du champ de recherche.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "layout"
+        ]
+    },
+    {
+        "test_id": "shot004_25",
+        "assertion": "Vérifier que le nombre d'onglets dans la barre de navigation est exactement 5.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "count_raw"
+        ]
+    },
+    {
+        "test_id": "shot004_26",
+        "assertion": "Vérifier que les filtres sont ordonnés: Favoris, RER, Métro, Train, BUS (de gauche à droite).",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "order"
+        ]
+    },
+    {
+        "test_id": "shot004_27",
+        "assertion": "Vérifier qu'aucune icône de pastille lettre (A, B, C, D, E) n'est visible.",
+        "expected": "PASS",
+        "tags": [
+            "absence"
+        ]
+    },
+    {
+        "test_id": "shot004_28",
+        "assertion": "Vérifier qu'une pastille avec la lettre 'A' (rouge) est visible.",
+        "expected": "FAIL",
+        "tags": [
+            "presence"
+        ]
+    },
+    {
+        "test_id": "shot004_29",
+        "assertion": "Vérifier que l'écran est dans un état d'erreur (empty state avec invitation à réessayer).",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_semantic"
+        ]
+    },
+    {
+        "test_id": "shot004_30",
+        "assertion": "Vérifier que l'écran affiche les horaires pour les lignes favorites de l'utilisateur.",
+        "expected": "FAIL",
+        "tags": [
+            "presence",
+            "text_match_semantic"
         ]
     }
 ]

@@ -1,223 +1,246 @@
 [
   {
     "test_id": "shot002_01",
-    "assertion": "Vérifier que la boîte de dialogue de permission de localisation est visible.",
+    "assertion": "Vérifier qu'une boîte de dialogue (modal) est visible.",
     "expected": "PASS",
     "tags": [
-      "target:control",
-      "op:presence",
-      "scope:modal"
+      "presence"
     ]
   },
   {
     "test_id": "shot002_02",
-    "assertion": "Vérifier que le titre exact 'Autoriser la localisation' est visible dans la boîte de dialogue.",
-    "expected": "PASS",
+    "assertion": "Vérifier qu'aucune boîte de dialogue n'est visible.",
+    "expected": "FAIL",
     "tags": [
-      "target:text",
-      "op:match",
-      "match_mode:exact",
-      "scope:modal_title",
-      "difficulty:near_miss"
+      "absence"
     ]
   },
   {
     "test_id": "shot002_03",
-    "assertion": "Vérifier que le texte du message contient 'vous devez autoriser l'app à récupérer votre position actuelle'.",
+    "assertion": "Vérifier que le texte exact 'Autoriser la localisation' est visible.",
     "expected": "PASS",
     "tags": [
-      "target:text",
-      "op:match",
-      "match_mode:normalized",
-      "scope:modal_body",
-      "difficulty:small_text"
+      "presence",
+      "text_match_exact"
     ]
   },
   {
     "test_id": "shot002_04",
-    "assertion": "Vérifier que le bouton 'Annuler' est visible dans la boîte de dialogue.",
-    "expected": "PASS",
+    "assertion": "Vérifier que le texte exact 'Autoriser la géolocalisation' est visible.",
+    "expected": "FAIL",
     "tags": [
-      "target:control",
-      "op:presence",
-      "scope:modal_actions"
+      "presence",
+      "text_match_exact",
+      "near_miss"
     ]
   },
   {
     "test_id": "shot002_05",
-    "assertion": "Vérifier que le bouton 'OK' est visible dans la boîte de dialogue.",
+    "assertion": "Vérifier que le texte exact 'OK' est visible.",
     "expected": "PASS",
     "tags": [
-      "target:control",
-      "op:presence",
-      "scope:modal_actions"
+      "presence",
+      "text_match_exact"
     ]
   },
   {
     "test_id": "shot002_06",
-    "assertion": "Vérifier que la boîte de dialogue contient exactement 2 boutons d'action (Annuler, OK).",
+    "assertion": "Vérifier que le texte exact 'Annuler' est visible.",
     "expected": "PASS",
     "tags": [
-      "target:control",
-      "op:count",
-      "count_mode:exact",
-      "scope:modal_actions"
+      "presence",
+      "text_match_exact"
     ]
   },
   {
     "test_id": "shot002_07",
-    "assertion": "Vérifier que 'Annuler' est à gauche de 'OK' dans la boîte de dialogue.",
-    "expected": "PASS",
+    "assertion": "Vérifier que le texte exact 'Refuser' est visible.",
+    "expected": "FAIL",
     "tags": [
-      "target:layout",
-      "op:relation",
-      "relation:left_of",
-      "scope:modal_actions",
-      "difficulty:near_miss"
+      "presence",
+      "text_match_exact",
+      "near_miss"
     ]
   },
   {
     "test_id": "shot002_08",
-    "assertion": "Vérifier la mise en surbrillance du popup affiché (arrière-plan atténué / focus sur le modal).",
-    "expected": "PASS",
+    "assertion": "Vérifier que le texte exact 'Autoriser' est visible comme bouton.",
+    "expected": "FAIL",
     "tags": [
-      "target:layout",
-      "op:state",
-      "state:highlighted",
-      "scope:modal_overlay"
+      "presence",
+      "text_match_exact",
+      "near_miss"
     ]
   },
   {
     "test_id": "shot002_09",
-    "assertion": "Vérifier que l'onglet 'Itinéraires' est sélectionné dans la barre de navigation du bas.",
+    "assertion": "Vérifier que 2 boutons d'action sont visibles dans la boîte de dialogue.",
     "expected": "PASS",
     "tags": [
-      "target:control",
-      "op:state",
-      "state:selected",
-      "scope:bottom_nav"
+      "presence",
+      "count_raw"
     ]
   },
   {
     "test_id": "shot002_10",
-    "assertion": "Vérifier que les deux boutons 'OK' et 'Annuler' sont affichés en bleu.",
-    "expected": "PASS",
+    "assertion": "Vérifier que 3 boutons d'action sont visibles dans la boîte de dialogue.",
+    "expected": "FAIL",
     "tags": [
-      "target:control",
-      "op:state",
-      "state:text_color_blue",
-      "scope:modal_actions"
+      "presence",
+      "count_raw",
+      "near_miss"
     ]
   },
   {
     "test_id": "shot002_11",
-    "assertion": "Vérifier que le titre exact 'Autoriser la géolocalisation' est visible dans la boîte de dialogue.",
-    "expected": "FAIL",
+    "assertion": "Vérifier que 'Annuler' est positionné à gauche de 'OK'.",
+    "expected": "PASS",
     "tags": [
-      "target:text",
-      "op:match",
-      "match_mode:exact",
-      "scope:modal_title",
-      "difficulty:near_miss"
+      "presence",
+      "text_match_exact",
+      "layout"
     ]
   },
   {
     "test_id": "shot002_12",
-    "assertion": "Vérifier que le bouton 'Refuser' est visible dans la boîte de dialogue.",
+    "assertion": "Vérifier que 'OK' est positionné à gauche de 'Annuler'.",
     "expected": "FAIL",
     "tags": [
-      "target:control",
-      "op:presence",
-      "scope:modal_actions"
+      "presence",
+      "text_match_exact",
+      "layout",
+      "near_miss"
     ]
   },
   {
     "test_id": "shot002_13",
-    "assertion": "Vérifier que 'OK' est à gauche de 'Annuler' dans la boîte de dialogue.",
-    "expected": "FAIL",
+    "assertion": "Vérifier que le texte contenant 'uniquement quand l app est ouverte' (insensible casse/accents) est visible.",
+    "expected": "PASS",
     "tags": [
-      "target:layout",
-      "op:relation",
-      "relation:left_of",
-      "scope:modal_actions",
-      "difficulty:near_miss"
+      "presence",
+      "text_match_normalized",
+      "small_text"
     ]
   },
   {
     "test_id": "shot002_14",
-    "assertion": "Vérifier que la boîte de dialogue contient exactement 3 boutons d'action.",
+    "assertion": "Vérifier que le texte contenant 'en permanence' est visible.",
     "expected": "FAIL",
     "tags": [
-      "target:control",
-      "op:count",
-      "count_mode:exact",
-      "scope:modal_actions"
+      "presence",
+      "text_match_normalized",
+      "near_miss"
     ]
   },
   {
     "test_id": "shot002_15",
-    "assertion": "Vérifier que le bouton 'Autoriser' est visible dans la boîte de dialogue.",
-    "expected": "FAIL",
+    "assertion": "Vérifier qu'une demande de permission de localisation est affichée.",
+    "expected": "PASS",
     "tags": [
-      "target:control",
-      "op:presence",
-      "scope:modal_actions"
+      "presence",
+      "text_match_semantic"
     ]
   },
   {
     "test_id": "shot002_16",
-    "assertion": "Vérifier que le texte du message contient 'elle sera utilisée en permanence'.",
+    "assertion": "Vérifier qu'une demande de permission pour les notifications est affichée.",
     "expected": "FAIL",
     "tags": [
-      "target:text",
-      "op:match",
-      "match_mode:normalized",
-      "scope:modal_body",
-      "difficulty:small_text",
-      "difficulty:near_miss"
+      "presence",
+      "text_match_semantic",
+      "near_miss"
     ]
   },
   {
     "test_id": "shot002_17",
-    "assertion": "Vérifier que le titre 'Autoriser la localisation' est absent de l'écran.",
-    "expected": "FAIL",
+    "assertion": "Vérifier que l'onglet 'Itinéraires' est sélectionné dans la barre de navigation.",
+    "expected": "PASS",
     "tags": [
-      "target:text",
-      "op:absence",
-      "scope:whole_screen"
+      "presence",
+      "state"
     ]
   },
   {
     "test_id": "shot002_18",
-    "assertion": "Vérifier qu'aucune boîte de dialogue n'est visible (pas de modal).",
+    "assertion": "Vérifier que l'onglet 'Horaires' est sélectionné dans la barre de navigation.",
     "expected": "FAIL",
     "tags": [
-      "target:control",
-      "op:absence",
-      "scope:modal"
+      "presence",
+      "state",
+      "near_miss"
     ]
   },
   {
     "test_id": "shot002_19",
-    "assertion": "Vérifier que l'onglet 'Horaires' est sélectionné dans la barre de navigation du bas.",
-    "expected": "FAIL",
+    "assertion": "Vérifier que l'arrière-plan est atténué (overlay sombre derrière le modal).",
+    "expected": "PASS",
     "tags": [
-      "target:control",
-      "op:state",
-      "state:selected",
-      "scope:bottom_nav",
-      "difficulty:near_miss"
+      "presence",
+      "state"
     ]
   },
   {
     "test_id": "shot002_20",
-    "assertion": "Vérifier que le popup d'autorisation de localisation mentionne que la position actuelle sera utilisée pour les services de navigation.",
-    "expected": "FAIL",
+    "assertion": "Vérifier que 5 onglets sont visibles dans la barre de navigation du bas.",
+    "expected": "PASS",
     "tags": [
-      "target:text",
-      "op:match",
-      "match_mode:semantic_open",
-      "scope:modal_body"
+      "presence",
+      "count_raw"
+    ]
+  },
+  {
+    "test_id": "shot002_21",
+    "assertion": "Vérifier que le texte exact 'Maison' est visible.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ]
+  },
+  {
+    "test_id": "shot002_22",
+    "assertion": "Vérifier que le texte exact 'Travail' est visible.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ]
+  },
+  {
+    "test_id": "shot002_23",
+    "assertion": "Vérifier que le titre 'Autoriser la localisation' est positionné au-dessus des boutons 'Annuler' et 'OK'.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact",
+      "layout"
+    ]
+  },
+  {
+    "test_id": "shot002_24",
+    "assertion": "Vérifier qu'une icône de marqueur de localisation (pin bleu) est visible dans le modal.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ]
+  },
+  {
+    "test_id": "shot002_25",
+    "assertion": "Vérifier que les boutons 'Définir' sont absents du modal.",
+    "expected": "PASS",
+    "tags": [
+      "absence",
+      "text_match_exact"
+    ]
+  },
+  {
+    "test_id": "shot002_26",
+    "assertion": "Vérifier que le nombre de boutons 'Définir' visibles est exactement 2.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "count_filtered",
+      "text_match_exact"
     ]
   }
 ]

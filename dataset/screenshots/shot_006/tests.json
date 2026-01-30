@@ -1,0 +1,186 @@
+[
+    {
+        "test_id": "shot006_01",
+        "assertion": "Vérifier que le texte exact 'Démarrer' est visible sur le bouton bleu.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_exact"
+        ]
+    },
+    {
+        "test_id": "shot006_02",
+        "assertion": "Vérifier que les horaires affichés sont '05:47 → 06:07'.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_exact"
+        ]
+    },
+    {
+        "test_id": "shot006_03",
+        "assertion": "Vérifier que la durée totale affichée est '20 min'.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_exact"
+        ]
+    },
+    {
+        "test_id": "shot006_04",
+        "assertion": "Vérifier que la durée affichée (20 min) est cohérente avec les horaires (06:07 - 05:47 = 20 min).",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "consistency"
+        ]
+    },
+    {
+        "test_id": "shot006_05",
+        "assertion": "Vérifier que la durée affichée (20 min) est cohérente avec les horaires (06:07 - 05:47 = 30 min).",
+        "expected": "FAIL",
+        "tags": [
+            "presence",
+            "consistency",
+            "near_miss"
+        ]
+    },
+    {
+        "test_id": "shot006_06",
+        "assertion": "Vérifier que 2 lignes de transport sont affichées (badges 15 et 11).",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "count_raw"
+        ]
+    },
+    {
+        "test_id": "shot006_07",
+        "assertion": "Vérifier que 3 lignes de transport sont affichées.",
+        "expected": "FAIL",
+        "tags": [
+            "presence",
+            "count_raw",
+            "near_miss"
+        ]
+    },
+    {
+        "test_id": "shot006_08",
+        "assertion": "Vérifier que l'adresse de départ contient 'Place Louis Lépine'.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_normalized"
+        ]
+    },
+    {
+        "test_id": "shot006_09",
+        "assertion": "Vérifier que l'adresse de départ contient 'Place de la Bastille'.",
+        "expected": "FAIL",
+        "tags": [
+            "presence",
+            "text_match_normalized",
+            "near_miss"
+        ]
+    },
+    {
+        "test_id": "shot006_10",
+        "assertion": "Vérifier que l'itinéraire inclut la station 'Théâtre de la Ville'.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_exact"
+        ]
+    },
+    {
+        "test_id": "shot006_11",
+        "assertion": "Vérifier que la distance à pied est '765 m'.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_exact",
+            "small_text"
+        ]
+    },
+    {
+        "test_id": "shot006_12",
+        "assertion": "Vérifier que le temps de marche est '15 min'.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_exact",
+            "small_text"
+        ]
+    },
+    {
+        "test_id": "shot006_13",
+        "assertion": "Vérifier que l'heure de départ (05:47) correspond à l'heure indiquée dans les détails.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "consistency"
+        ]
+    },
+    {
+        "test_id": "shot006_14",
+        "assertion": "Vérifier que le badge ligne 17 est visible dans les détails de l'itinéraire.",
+        "expected": "PASS",
+        "tags": [
+            "presence"
+        ]
+    },
+    {
+        "test_id": "shot006_15",
+        "assertion": "Vérifier que l'itinéraire proposé est cohérent: marche (15 min) + transport pour arriver à 06:07.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "consistency"
+        ]
+    },
+    {
+        "test_id": "shot006_16",
+        "assertion": "Vérifier que l'écran affiche un itinéraire de transport en commun.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_semantic"
+        ]
+    },
+    {
+        "test_id": "shot006_17",
+        "assertion": "Vérifier que l'écran affiche un itinéraire en voiture.",
+        "expected": "FAIL",
+        "tags": [
+            "presence",
+            "text_match_semantic"
+        ]
+    },
+    {
+        "test_id": "shot006_18",
+        "assertion": "Vérifier que le lien 'Accéder aux détails sur l'accessibilité' est visible.",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "text_match_normalized"
+        ]
+    },
+    {
+        "test_id": "shot006_19",
+        "assertion": "Vérifier que les badges de ligne sont ordonnés: 15, M, 11 (de gauche à droite).",
+        "expected": "PASS",
+        "tags": [
+            "presence",
+            "order"
+        ]
+    },
+    {
+        "test_id": "shot006_20",
+        "assertion": "Vérifier qu'aucun message d'erreur ou de perturbation n'est affiché.",
+        "expected": "PASS",
+        "tags": [
+            "absence",
+            "text_match_semantic"
+        ]
+    }
+]
