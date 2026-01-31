@@ -10,6 +10,7 @@ import json
 import os
 from pathlib import Path
 from datetime import datetime
+from typing import Optional, Any
 
 # Load .env file
 from dotenv import load_dotenv
@@ -19,7 +20,6 @@ from providers import get_provider, get_all_providers, PROVIDERS
 
 # Configuration
 DATASET_DIR = Path(__file__).parent.parent / "dataset" / "screenshots"
-PROMPTS_DIR = Path(__file__).parent.parent / "prompts" / "system_prompts"
 RESULTS_DIR = Path(__file__).parent.parent / "results"
 
 RESULTS_DIR.mkdir(exist_ok=True)
@@ -50,10 +50,12 @@ def load_tests_from_folder(folder: Path) -> list[dict]:
     return tests
 
 
-def load_system_prompts() -> dict[str, str]:
-    """Load all system prompt templates."""
+def load_system_prompts(prompts_dir: Path) -> dict[str, str]:
+    """Load all system prompt templates from specified directory."""
     prompts = {}
-    for prompt_file in sorted(PROMPTS_DIR.glob("*.txt")):
+    if not prompts_dir.exists():
+        return prompts
+    for prompt_file in sorted(prompts_dir.glob("*.txt")):
         prompts[prompt_file.stem] = prompt_file.read_text()
     return prompts
 
@@ -73,28 +75,33 @@ def find_screenshot(folder: Path) -> Path:
     raise FileNotFoundError(f"No screenshot found in {folder}")
 
 
-def run_evaluation(provider_names: list[str], model_override: str = None):
-    """Run all tests × all prompts × selected providers."""
+def run_evaluation(provider_names: list[str], model_override: str = None, 
+                   prompts_dir: Path = None, params: Optional[dict] = None):
+    """Run all tests × all prompts × selected providers.
+    
+    Args:
+        params: Model parameters (temperature, max_tokens, output_format, etc.)
+    """
+    params = params or {}
     folders = discover_test_folders()
-    prompts = load_system_prompts()
+    prompts = load_system_prompts(prompts_dir)
+    prompt_dir_name = prompts_dir.name if prompts_dir else "unknown"
+    output_format = params.get("output_format", "json")
     
     # Initialize providers
     providers = {}
     for name in provider_names:
         try:
             provider = get_provider(name)
-            # Override model if specified
             if model_override:
                 provider.model = model_override
             providers[name] = provider
             print(f"✓ {name}: {providers[name].model}")
-        except ValueError as e:
-            print(f"✗ {name}: {e}")
-        except ImportError as e:
+        except Exception as e:
             print(f"✗ {name}: {e}")
     
     if not providers:
-        print("\n❌ No providers available. Check your API keys in .env")
+        print("\n❌ No providers available.")
         return
     
     # Count total tests
@@ -114,9 +121,7 @@ def run_evaluation(provider_names: list[str], model_override: str = None):
     
     # Generate timestamped filename
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    model_suffix = model_override.replace("/", "-") if model_override else "default"
-    provider_suffix = "_".join(providers.keys())
-    results_file = RESULTS_DIR / f"raw_{timestamp}_{provider_suffix}_{model_suffix}.jsonl"
+    results_file = RESULTS_DIR / f"raw_{timestamp}.jsonl"
     
     # Also create a symlink to latest for convenience
     latest_link = RESULTS_DIR / "raw.jsonl"
@@ -142,22 +147,31 @@ def run_evaluation(provider_names: list[str], model_override: str = None):
                         print(f"  {test_id} × {prompt_name} × {provider_name}...", end=" ", flush=True)
                         
                         try:
-                            response = provider.call(image_path, system_prompt, assertion)
+                            # Pass params to provider
+                            response = provider.call(image_path, system_prompt, assertion, params=params)
                             
+                            # Standardized record schema
                             record = {
                                 "test_id": test_id,
                                 "image_id": test["image_id"],
-                                "profile": prompt_name,
                                 "provider": provider_name,
                                 "model": model_name,
+                                "prompt_dir": prompt_dir_name,
+                                "profile": prompt_name,
+                                "output_format": output_format,
                                 "assertion": assertion,
                                 "expected": expected,
                                 "result": response.result,
+                                "abstained": response.result in (None, "UNCLEAR"),
+                                "p_pass": (response.logprobs or {}).get("p_pass"),
+                                "p_fail": (response.logprobs or {}).get("p_fail"),
+                                "p_unclear": (response.logprobs or {}).get("p_unclear"),
                                 "confidence": response.confidence,
                                 "evidence": response.evidence,
                                 "reasoning": response.reasoning,
-                                "tags": test.get("tags", []),
+                                "raw": response.raw,
                                 "cost": response.cost,
+                                "error": None,
                                 "timestamp": datetime.now().isoformat()
                             }
                             
@@ -172,14 +186,13 @@ def run_evaluation(provider_names: list[str], model_override: str = None):
                             record = {
                                 "test_id": test_id,
                                 "image_id": test["image_id"],
-                                "profile": prompt_name,
                                 "provider": provider_name,
                                 "model": model_name,
-                                "assertion": assertion,
-                                "expected": expected,
+                                "prompt_dir": prompt_dir_name,
+                                "profile": prompt_name,
                                 "result": None,
+                                "abstained": True,
                                 "error": str(e),
-                                "tags": test.get("tags", []),
                                 "timestamp": datetime.now().isoformat()
                             }
                             f.write(json.dumps(record) + "\n")
@@ -194,6 +207,15 @@ def parse_args():
     parser = argparse.ArgumentParser(
         description="Run UI assertion benchmark with VLM providers"
     )
+    
+    # Config file (overrides other args)
+    parser.add_argument(
+        "--config", "-c",
+        type=str,
+        help="Path to experiment config YAML file"
+    )
+    
+    # Provider and model
     parser.add_argument(
         "--provider", "-p",
         type=str,
@@ -204,17 +226,73 @@ def parse_args():
         "--model", "-m",
         type=str,
         default=None,
-        help="Override model name (e.g., gpt-4o-mini, gpt-4o, claude-3-5-sonnet-20241022)"
+        help="Override model name (e.g., gpt-4o-mini, gemini-2.0-flash)"
     )
+    
+    # Prompt directory (each .txt file runs as separate experiment)
+    parser.add_argument(
+        "--prompt-dir",
+        type=str,
+        default="personas",
+        help="Prompt directory under prompts/ (each .txt runs separately)"
+    )
+    
     return parser.parse_args()
+
+
+def load_config(config_path: str) -> dict:
+    """Load experiment config from YAML file."""
+    import yaml
+    with open(config_path, "r") as f:
+        return yaml.safe_load(f)
+
+
+
+
+
 
 
 if __name__ == "__main__":
     args = parse_args()
     
-    if args.provider == "all":
+    # Load config if provided
+    params = {}
+    if args.config:
+        params = load_config(args.config)
+        provider_name = params.get("provider", "openai")
+        model_override = params.get("model")
+        prompt_dir = params.get("prompt_dir", "personas")
+    else:
+        provider_name = args.provider
+        model_override = args.model
+        prompt_dir = args.prompt_dir or "personas"
+    
+    # Deduce output_format from prompt_dir if not explicit in params
+    if "output_format" not in params:
+        if prompt_dir in ("scoring", "policies"):
+            params["output_format"] = "abc"
+        else:
+            params["output_format"] = "json"
+    
+    # Handle provider list
+    if provider_name == "all":
         provider_names = list(PROVIDERS.keys())
     else:
-        provider_names = [p.strip() for p in args.provider.split(",")]
+        provider_names = [p.strip() for p in provider_name.split(",")]
     
-    run_evaluation(provider_names, model_override=args.model)
+    # Resolve prompts directory
+    prompts_dir = Path(__file__).parent.parent / "prompts" / prompt_dir
+    if not prompts_dir.exists():
+        print(f"❌ Prompt directory not found: {prompts_dir}")
+        exit(1)
+    
+    # List prompts found
+    prompt_files = list(prompts_dir.glob("*.txt"))
+    print(f"📁 Using prompts from: {prompt_dir}")
+    print(f"   Found {len(prompt_files)} prompt(s): {[p.stem for p in prompt_files]}")
+    print(f"   Parameters: {params}")
+    
+    run_evaluation(provider_names, model_override=model_override, 
+                   prompts_dir=prompts_dir, params=params)
+
+

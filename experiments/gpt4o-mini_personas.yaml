@@ -1,0 +1,14 @@
+# Explain Experiment: JSON format with qualitative evidence
+# Command: python scripts/run_eval.py --config experiments/gpt4o-mini_personas.yaml
+
+provider: openai
+model: gpt-4o-mini
+prompt_dir: personas
+
+# Model parameters
+temperature: 0
+max_tokens: 500
+logprobs: false
+
+# Output parameters
+output_format: json

@@ -569,14 +569,25 @@ def parse_args():
     parser = argparse.ArgumentParser(
         description="Compute metrics from VLM benchmark results"
     )
+    # Support both positional and flagged input_file
     parser.add_argument(
-        "input_file",
+        "pos_input_file",
         type=str,
         nargs="?",
         default=None,
-        help="Path to results JSONL file (default: latest in results/)"
+        help="Path to results JSONL file (positional)"
     )
-    return parser.parse_args()
+    parser.add_argument(
+        "-i", "--input_file",
+        type=str,
+        default=None,
+        help="Path to results JSONL file (flagged)"
+    )
+    
+    args = parser.parse_args()
+    # Resolve which input file to use (flag takes precedence if both provided)
+    args.input_file = args.input_file or args.pos_input_file
+    return args
 
 
 def main():

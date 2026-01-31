@@ -1,0 +1,15 @@
+# Scoring Experiment: A/B/C format with logprobs calibration
+# Command: python scripts/run_eval.py --config experiments/gpt4o-mini_scoring.yaml
+
+provider: openai
+model: gpt-4o-mini
+prompt_dir: scoring
+
+# Model parameters
+temperature: 0
+max_tokens: 1
+logprobs: true
+top_logprobs: 20
+
+# Output parameters
+output_format: abc
