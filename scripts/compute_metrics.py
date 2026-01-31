@@ -1,24 +1,29 @@
 #!/usr/bin/env python3
 """
-Compute QA-focused metrics for UI Assertion VLM Benchmark.
+Compute standard ML metrics for UI Assertion VLM Benchmark.
 
-Core QA Metrics:
-- Confusion matrix (TP/FP/TN/FN)
-- Bug Escape Rate (FPR) - CRITICAL: bugs that slip through
-- Flaky Rate (FNR) - false alarms  
-- Yes-Bias - does model favor PASS?
-- False PASS Rate - P(bug | model says PASS)
+Convention: POSITIVE = BUG (expected FAIL)
+
+Core Metrics:
+- Confusion matrix (TP/FP/TN/FN with POSITIVE=BUG)
+- FNR (Miss Rate) - CRITICAL: bugs that escape
+- FPR (False Alarm Rate) - causes test flakiness
+- FOR (False Omission Rate) - P(bug | PASS predicted)
+- TPR/PPV/NPV/F1 - standard classification metrics
+- balanced_accuracy, mcc - robust to class imbalance
 
 Optional (if confidence available):
 - Brier Score, ECE for calibration
 
-Stratification by v3 tags:
+Stratification by tags:
 - Cognitive level (L1/L2/L3)
 - Operation tags (presence, text_match_*, count_*, etc.)
 - Difficulty tags (near_miss, small_text, etc.)
 """
 
 import json
+import re
+import argparse
 from pathlib import Path
 from collections import defaultdict
 from dataclasses import dataclass
@@ -44,100 +49,174 @@ DIFFICULTY_TAGS = {
 }
 
 
+def normalize_label(label: str | None) -> str | None:
+    """Normalize result/expected labels to standard values.
+    
+    Returns:
+        'PASS', 'FAIL', 'UNCLEAR', or None
+    """
+    if label is None:
+        return None
+    
+    upper = str(label).upper().strip()
+    
+    # PASS aliases (safe: OK/TRUE/SUCCESS are unambiguous)
+    if upper in ("PASS", "OK", "TRUE", "SUCCESS", "1"):
+        return "PASS"
+    
+    # FAIL aliases (safe: FALSE/FAILURE are unambiguous)
+    if upper in ("FAIL", "FALSE", "FAILURE", "0"):
+        return "FAIL"
+    
+    # Abstention aliases
+    if upper in ("UNCLEAR", "ABSTAIN", "UNKNOWN", "UNSURE", "SKIP", "N/A"):
+        return "UNCLEAR"
+    
+    return None  # Unrecognized
+
+
 # =============================================================================
-# CONFUSION MATRIX WITH QA METRICS
+# CONFUSION MATRIX WITH STANDARD ML METRICS
 # =============================================================================
+# Convention: POSITIVE = BUG (expected FAIL), NEGATIVE = OK (expected PASS)
+# This matches standard ML where we care about detecting the "problem" class.
 
 @dataclass
 class ConfusionMatrix:
-    """Confusion matrix with QA-focused metrics."""
-    tp: int = 0  # True PASS (predicted PASS, expected PASS)
-    fp: int = 0  # False PASS (predicted PASS, expected FAIL) - BUGS ESCAPED!
-    tn: int = 0  # True FAIL (predicted FAIL, expected FAIL)
-    fn: int = 0  # False FAIL (predicted FAIL, expected PASS) - flaky tests
-    abstained: int = 0
+    """Confusion matrix with standard ML naming.
+    
+    Convention (POSITIVE = BUG):
+    - TP: predicted FAIL, expected FAIL (correctly detected bug)
+    - FP: predicted FAIL, expected PASS (false alarm, causes flakiness)
+    - TN: predicted PASS, expected PASS (correctly passed)
+    - FN: predicted PASS, expected FAIL (missed bug! dangerous)
+    """
+    tp: int = 0  # True Positive: predicted FAIL, expected FAIL (bug caught)
+    fp: int = 0  # False Positive: predicted FAIL, expected PASS (false alarm)
+    tn: int = 0  # True Negative: predicted PASS, expected PASS (correct pass)
+    fn: int = 0  # False Negative: predicted PASS, expected FAIL (BUG ESCAPED!)
+    abstained: int = 0  # Model said UNCLEAR/abstained
+    skipped_invalid: int = 0  # Dataset issues (expected not PASS/FAIL)
 
     @property
     def total(self) -> int:
         return self.tp + self.fp + self.tn + self.fn
 
     @property
-    def total_answered(self) -> int:
-        return self.total
-
-    @property
-    def total_expected_pass(self) -> int:
+    def total_positive(self) -> int:
+        """Total actual bugs (expected FAIL)."""
         return self.tp + self.fn
 
     @property
-    def total_expected_fail(self) -> int:
+    def total_negative(self) -> int:
+        """Total actual OK (expected PASS)."""
         return self.tn + self.fp
 
-    # ========== CORE QA METRICS ==========
+    # ========== STANDARD ML METRICS ==========
 
     @property
     def accuracy(self) -> float:
-        """Overall accuracy. Careful: can be misleading if unbalanced."""
+        """Overall accuracy = (TP + TN) / Total."""
         return (self.tp + self.tn) / self.total if self.total > 0 else 0.0
 
     @property
-    def bug_escape_rate(self) -> float:
-        """CRITICAL: % of real bugs (expected FAIL) that model said PASS.
-        This is the same as FPR. Lower is better. Target: < 5%."""
-        actual_bugs = self.tn + self.fp
-        return self.fp / actual_bugs if actual_bugs > 0 else 0.0
+    def tpr(self) -> float:
+        """True Positive Rate (Recall/Sensitivity).
+        P(predict FAIL | actual bug). Higher = better bug detection."""
+        return self.tp / self.total_positive if self.total_positive > 0 else 0.0
 
     @property
-    def flaky_rate(self) -> float:
-        """% of good screens (expected PASS) that model said FAIL.
-        This is the same as FNR. Causes test flakiness. Lower is better."""
-        actual_good = self.tp + self.fn
-        return self.fn / actual_good if actual_good > 0 else 0.0
+    def fnr(self) -> float:
+        """False Negative Rate (Miss Rate).
+        P(predict PASS | actual bug). CRITICAL: bugs that escaped! Lower = safer."""
+        return self.fn / self.total_positive if self.total_positive > 0 else 0.0
 
     @property
-    def yes_bias(self) -> float:
-        """Ratio of PASS predictions. 0.5 = balanced, >0.5 favors PASS."""
-        total_predictions = self.tp + self.fp + self.tn + self.fn
-        pass_predictions = self.tp + self.fp
-        return pass_predictions / total_predictions if total_predictions > 0 else 0.5
+    def tnr(self) -> float:
+        """True Negative Rate (Specificity).
+        P(predict PASS | actual OK). Higher = fewer false alarms."""
+        return self.tn / self.total_negative if self.total_negative > 0 else 0.0
 
     @property
-    def false_pass_rate(self) -> float:
-        """When model says PASS, what % are actually bugs?
-        P(bug | predicted PASS). Lower is better."""
-        pass_predictions = self.tp + self.fp
-        return self.fp / pass_predictions if pass_predictions > 0 else 0.0
+    def fpr(self) -> float:
+        """False Positive Rate (False Alarm Rate).
+        P(predict FAIL | actual OK). Causes test flakiness. Lower = more stable."""
+        return self.fp / self.total_negative if self.total_negative > 0 else 0.0
 
     @property
-    def fail_detection_rate(self) -> float:
-        """When there's a bug, how often do we catch it?
-        Same as TNR / Recall on FAIL. Higher is better."""
-        actual_bugs = self.tn + self.fp
-        return self.tn / actual_bugs if actual_bugs > 0 else 0.0
+    def ppv(self) -> float:
+        """Positive Predictive Value (Precision).
+        P(actual bug | predict FAIL). Higher = confident FAILs are real bugs."""
+        predicted_positive = self.tp + self.fp
+        return self.tp / predicted_positive if predicted_positive > 0 else 0.0
 
     @property
-    def coverage(self) -> float:
-        """% of tests that got an answer (not abstained)."""
-        total = self.total + self.abstained
-        return self.total / total if total > 0 else 0.0
-
-    # ========== TRADITIONAL ML METRICS (for reference) ==========
-
-    @property
-    def precision(self) -> float:
-        """Precision for PASS class."""
-        return self.tp / (self.tp + self.fp) if (self.tp + self.fp) > 0 else 0.0
+    def npv(self) -> float:
+        """Negative Predictive Value.
+        P(actual OK | predict PASS). Higher = confident PASSes are truly OK."""
+        predicted_negative = self.tn + self.fn
+        return self.tn / predicted_negative if predicted_negative > 0 else 0.0
 
     @property
-    def recall(self) -> float:
-        """Recall for PASS class."""
-        return self.tp / (self.tp + self.fn) if (self.tp + self.fn) > 0 else 0.0
+    def fdr(self) -> float:
+        """False Discovery Rate = 1 - PPV.
+        P(actual OK | predict FAIL). False alarms among FAILs."""
+        return 1.0 - self.ppv
+
+    @property
+    def for_(self) -> float:
+        """False Omission Rate = 1 - NPV.
+        P(actual bug | predict PASS). Bugs hidden in PASSes! Critical."""
+        return 1.0 - self.npv
 
     @property
     def f1(self) -> float:
-        """F1 score for PASS class."""
-        p, r = self.precision, self.recall
+        """F1 score = harmonic mean of precision and recall."""
+        p, r = self.ppv, self.tpr
         return 2 * p * r / (p + r) if (p + r) > 0 else 0.0
+
+    @property
+    def coverage(self) -> float:
+        """% of tests decided (not abstained/UNCLEAR)."""
+        total_with_abstained = self.total + self.abstained
+        return self.total / total_with_abstained if total_with_abstained > 0 else 0.0
+
+    @property
+    def abstain_rate(self) -> float:
+        """% of tests where model abstained (said UNCLEAR)."""
+        total_with_abstained = self.total + self.abstained
+        return self.abstained / total_with_abstained if total_with_abstained > 0 else 0.0
+
+    @property
+    def fail_rate_decided(self) -> float:
+        """% of decided predictions that are FAIL."""
+        predicted_positive = self.tp + self.fp
+        return predicted_positive / self.total if self.total > 0 else 0.0
+
+    @property
+    def balanced_accuracy(self) -> float:
+        """Balanced accuracy = (TPR + TNR) / 2. Robust to class imbalance."""
+        return (self.tpr + self.tnr) / 2
+
+    @property
+    def mcc(self) -> float:
+        """Matthews Correlation Coefficient. Best single metric for imbalanced binary.
+        Range: -1 (worst) to +1 (perfect). 0 = random."""
+        import math
+        numerator = (self.tp * self.tn) - (self.fp * self.fn)
+        denominator = math.sqrt(
+            (self.tp + self.fp) * (self.tp + self.fn) *
+            (self.tn + self.fp) * (self.tn + self.fn)
+        )
+        return numerator / denominator if denominator > 0 else 0.0
+
+    # Aliases for readability
+    precision = ppv
+    recall = tpr
+    sensitivity = tpr
+    specificity = tnr
+    miss_rate = fnr
+    false_alarm_rate = fpr
 
     def to_dict(self) -> dict:
         return {
@@ -147,19 +226,24 @@ class ConfusionMatrix:
             "tn": self.tn,
             "fn": self.fn,
             "abstained": self.abstained,
-            "total": self.total,
-            # QA metrics (primary)
+            "skipped_invalid": self.skipped_invalid,
+            "decided": self.total,
+            "total_with_abstained": self.total + self.abstained,
+            # Standard ML metrics
             "accuracy": round(self.accuracy, 4),
-            "bug_escape_rate": round(self.bug_escape_rate, 4),
-            "flaky_rate": round(self.flaky_rate, 4),
-            "yes_bias": round(self.yes_bias, 4),
-            "false_pass_rate": round(self.false_pass_rate, 4),
-            "fail_detection_rate": round(self.fail_detection_rate, 4),
-            "coverage": round(self.coverage, 4),
-            # Traditional ML (secondary)
-            "precision": round(self.precision, 4),
-            "recall": round(self.recall, 4),
+            "tpr": round(self.tpr, 4),  # recall / sensitivity
+            "fnr": round(self.fnr, 4),  # miss rate (bugs escaped)
+            "tnr": round(self.tnr, 4),  # specificity
+            "fpr": round(self.fpr, 4),  # false alarm rate
+            "ppv": round(self.ppv, 4),  # precision
+            "npv": round(self.npv, 4),
+            "for": round(self.for_, 4),  # P(bug|PASS) - critical!
             "f1": round(self.f1, 4),
+            "balanced_accuracy": round(self.balanced_accuracy, 4),
+            "mcc": round(self.mcc, 4),
+            "coverage": round(self.coverage, 4),
+            "abstain_rate": round(self.abstain_rate, 4),
+            "fail_rate_decided": round(self.fail_rate_decided, 4),
         }
 
 
@@ -203,10 +287,21 @@ def compute_ece(predictions: list[tuple[float, int]], n_bins: int = 10) -> float
 # DATA LOADING
 # =============================================================================
 
-def load_results() -> list[dict]:
-    """Load evaluation results from raw.jsonl."""
+def load_results(results_path: Path = None) -> list[dict]:
+    """Load evaluation results from raw.jsonl or specified file."""
     results = []
-    results_file = RESULTS_DIR / "raw.jsonl"
+    
+    if results_path:
+        results_file = results_path
+    else:
+        results_file = RESULTS_DIR / "raw.jsonl"
+        
+        # If symlink doesn't exist, find the latest raw_*.jsonl
+        if not results_file.exists():
+            raw_files = sorted(RESULTS_DIR.glob("raw_*.jsonl"), reverse=True)
+            if raw_files:
+                results_file = raw_files[0]
+                print(f"Using latest results: {results_file.name}")
     
     if not results_file.exists():
         print(f"Warning: {results_file} not found")
@@ -264,28 +359,44 @@ def compute_cognitive_level(tags: list[str]) -> str:
 
 
 def build_confusion_matrix(results: list[dict]) -> ConfusionMatrix:
-    """Build confusion matrix from results."""
+    """Build confusion matrix from results.
+    
+    Convention: POSITIVE = BUG (expected FAIL)
+    - TP: predicted FAIL, expected FAIL (bug caught)
+    - FP: predicted FAIL, expected PASS (false alarm)
+    - TN: predicted PASS, expected PASS (correct pass)
+    - FN: predicted PASS, expected FAIL (bug escaped!)
+    
+    Handles various label formats via normalize_label().
+    """
     cm = ConfusionMatrix()
     
     for r in results:
-        result = r.get("result")
-        expected = r.get("expected")
+        result = normalize_label(r.get("result"))
+        expected = normalize_label(r.get("expected"))
         abstained = r.get("abstained", False)
         
-        if abstained or result == "ABSTAIN" or result is None:
+        # Handle abstention: UNCLEAR, None, or explicit flag
+        if abstained or result == "UNCLEAR" or result is None:
             cm.abstained += 1
             continue
         
-        if expected == "PASS":
-            if result == "PASS":
-                cm.tp += 1
+        # Skip if expected is not recognized (dataset issue, not model abstention)
+        if expected not in ("PASS", "FAIL"):
+            cm.skipped_invalid += 1
+            continue
+        
+        # POSITIVE = BUG = expected FAIL
+        if expected == "FAIL":  # Actual positive (bug exists)
+            if result == "FAIL":
+                cm.tp += 1  # Correctly detected bug
             else:
-                cm.fn += 1
-        elif expected == "FAIL":
-            if result == "PASS":
-                cm.fp += 1
+                cm.fn += 1  # Bug escaped! (predicted PASS)
+        elif expected == "PASS":  # Actual negative (no bug)
+            if result == "FAIL":
+                cm.fp += 1  # False alarm (flaky)
             else:
-                cm.tn += 1
+                cm.tn += 1  # Correctly passed
     
     return cm
 
@@ -312,6 +423,8 @@ def stratify_results(results: list[dict], test_metadata: dict[str, dict]) -> dic
     by_operation = defaultdict(list)
     by_difficulty = defaultdict(list)
     by_polarity = defaultdict(list)
+    by_profile = defaultdict(list)
+    by_screenshot = defaultdict(list)  # NEW
     
     for r in results:
         test_id = r.get("test_id")
@@ -323,13 +436,22 @@ def stratify_results(results: list[dict], test_metadata: dict[str, dict]) -> dic
         
         tags = meta.get("tags", [])
         expected = r.get("expected", meta.get("expected", "unknown"))
+        profile = r.get("profile", "unknown")
+        image_id = r.get("image_id", meta.get("image_id", "unknown"))  # NEW
+        
+        # System prompt profile
+        by_profile[profile].append(r)
+        
+        # Screenshot
+        by_screenshot[image_id].append(r)  # NEW
         
         # Cognitive level
         level = compute_cognitive_level(tags) if tags else "unknown"
         by_cognitive_level[level].append(r)
         
-        # Polarity
-        by_polarity[expected].append(r)
+        # Polarity (normalized)
+        expected_norm = normalize_label(expected) or "unknown"
+        by_polarity[expected_norm].append(r)
         
         # Operations
         for tag in tags:
@@ -353,6 +475,8 @@ def stratify_results(results: list[dict], test_metadata: dict[str, dict]) -> dic
         }
     
     return {
+        "by_profile": compute_metrics(by_profile),
+        "by_screenshot": compute_metrics(by_screenshot),  # NEW
         "by_cognitive_level": compute_metrics(by_cognitive_level),
         "by_polarity": compute_metrics(by_polarity),
         "by_operation": compute_metrics(by_operation),
@@ -367,31 +491,35 @@ def stratify_results(results: list[dict], test_metadata: dict[str, dict]) -> dic
 def print_summary(analysis: dict, stratification: dict):
     """Print formatted summary to console."""
     print("\n" + "=" * 70)
-    print("UI ASSERTION VLM BENCHMARK - QA METRICS")
+    print("UI ASSERTION VLM BENCHMARK - STANDARD ML METRICS")
+    print("Convention: POSITIVE = BUG (expected FAIL)")
     print("=" * 70)
     
     for provider, metrics in analysis.items():
         print(f"\n### Provider: {provider}")
         print("-" * 50)
         
-        print(f"\nConfusion Matrix:")
-        print(f"  TP={metrics['tp']:3d}  FP={metrics['fp']:3d}  (FP = bugs escaped!)")
-        print(f"  FN={metrics['fn']:3d}  TN={metrics['tn']:3d}  (Abstained: {metrics['abstained']})")
+        print(f"\nConfusion Matrix (POSITIVE = BUG):")
+        print(f"  TP={metrics['tp']:3d}  FP={metrics['fp']:3d}  (TP=bug caught, FP=false alarm)")
+        print(f"  FN={metrics['fn']:3d}  TN={metrics['tn']:3d}  (FN=BUG ESCAPED!, TN=correct pass)")
+        print(f"  Abstained: {metrics['abstained']}  Skipped: {metrics['skipped_invalid']}")
         
-        print(f"\n🔴 CRITICAL QA METRICS:")
-        print(f"  Bug Escape Rate:    {metrics['bug_escape_rate']:.1%} (want < 5%)")
-        print(f"  False PASS Rate:    {metrics['false_pass_rate']:.1%} (P(bug|PASS))")
+        print(f"\n🔴 CRITICAL METRICS:")
+        print(f"  FNR (Miss Rate):    {metrics['fnr']:.1%} (bugs escaped! want < 5%)")
+        print(f"  FOR:                {metrics['for']:.1%} (P(bug|PASS) - hidden bugs)")
         
-        print(f"\n🟡 Other QA Metrics:")
-        print(f"  Flaky Rate:         {metrics['flaky_rate']:.1%}")
-        print(f"  Yes-Bias:           {metrics['yes_bias']:.1%} (50% = balanced)")
-        print(f"  Fail Detection:     {metrics['fail_detection_rate']:.1%} (want high)")
+        print(f"\n🟡 Other Rates:")
+        print(f"  FPR (False Alarm):  {metrics['fpr']:.1%} (causes flakiness)")
+        print(f"  TPR (Recall):       {metrics['tpr']:.1%} (bug detection rate, want high)")
+        print(f"  FAIL Rate:          {metrics['fail_rate_decided']:.1%} (of decided)")
         
         print(f"\n📊 Standard Metrics:")
         print(f"  Accuracy:           {metrics['accuracy']:.1%}")
-        print(f"  Precision:          {metrics['precision']:.1%}")
+        print(f"  PPV (Precision):    {metrics['ppv']:.1%}")
+        print(f"  NPV:                {metrics['npv']:.1%}")
         print(f"  F1:                 {metrics['f1']:.1%}")
         print(f"  Coverage:           {metrics['coverage']:.1%}")
+        print(f"  Abstain Rate:       {metrics['abstain_rate']:.1%}")
     
     # Stratification
     print("\n" + "=" * 70)
@@ -400,18 +528,29 @@ def print_summary(analysis: dict, stratification: dict):
     
     for dim_name, dim_data in stratification.items():
         print(f"\n### {dim_name.replace('by_', '').replace('_', ' ').title()}")
-        print(f"{'Group':<25} {'BugEsc':<8} {'Flaky':<8} {'Acc':<8} {'N':<6}")
+        print(f"{'Group':<25} {'FNR':<8} {'FPR':<8} {'Acc':<8} {'N':<6}")
         print("-" * 55)
         for group, metrics in sorted(dim_data.items()):
-            if metrics["total"] > 0:
-                print(f"{group:<25} {metrics['bug_escape_rate']:.1%}    "
-                      f"{metrics['flaky_rate']:.1%}    "
-                      f"{metrics['accuracy']:.1%}    {metrics['total']}")
+            if metrics["decided"] > 0:
+                print(f"{group:<25} {metrics['fnr']:.1%}    "
+                      f"{metrics['fpr']:.1%}    "
+                      f"{metrics['accuracy']:.1%}    {metrics['decided']}")
 
 
-def save_report(analysis: dict, stratification: dict):
-    """Save JSON report."""
-    output = RESULTS_DIR / "metrics.json"
+def extract_timestamp(filepath: Path) -> str | None:
+    """Extract timestamp from filename like raw_20260131_014523.jsonl."""
+    match = re.search(r'(\d{8}_\d{6})', filepath.name)
+    return match.group(1) if match else None
+
+
+def save_report(analysis: dict, stratification: dict, input_file: Path = None):
+    """Save JSON report. Uses timestamp from input file if available."""
+    timestamp = extract_timestamp(input_file) if input_file else None
+    
+    if timestamp:
+        output = RESULTS_DIR / f"metrics_{timestamp}.json"
+    else:
+        output = RESULTS_DIR / "metrics.json"
     
     report = {
         "by_provider": analysis,
@@ -422,10 +561,29 @@ def save_report(analysis: dict, stratification: dict):
         json.dump(report, f, indent=2)
     
     print(f"\nReport saved to {output}")
+    return output
+
+
+def parse_args():
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Compute metrics from VLM benchmark results"
+    )
+    parser.add_argument(
+        "input_file",
+        type=str,
+        nargs="?",
+        default=None,
+        help="Path to results JSONL file (default: latest in results/)"
+    )
+    return parser.parse_args()
 
 
 def main():
-    results = load_results()
+    args = parse_args()
+    
+    input_path = Path(args.input_file) if args.input_file else None
+    results = load_results(input_path)
     
     if not results:
         print("No results found. Run evaluation first with: python scripts/run_eval.py")
@@ -439,7 +597,7 @@ def main():
     stratification = stratify_results(results, test_metadata)
     
     print_summary(analysis, stratification)
-    save_report(analysis, stratification)
+    save_report(analysis, stratification, input_path)
 
 
 if __name__ == "__main__":
