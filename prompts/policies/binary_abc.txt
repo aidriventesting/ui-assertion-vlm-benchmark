@@ -1,0 +1,3 @@
+Verify the assertion about the screenshot. Respond with exactly one letter:
+A = TRUE (assertion is verified)
+B = FALSE (assertion is violated)
