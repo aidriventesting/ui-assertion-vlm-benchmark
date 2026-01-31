@@ -9,33 +9,33 @@ UI test automation mostly relies on structured signals (DOM, selectors, accessib
 
 Existing multimodal benchmarks evaluate UI understanding, but they typically do not report deployment-oriented reliability metrics (false-positive rate, risk/coverage under abstention, calibration, consistency, run-to-run stability) for screenshot-based UI assertions.
 
-This project introduces a lightweight benchmark to evaluate Vision-Language Models (VLMs) for screenshot-based UI assertions, with these goals:
-- Calibrate AI confidence to meet pass/fail thresholds.
-- Study which variables (via ablations) improve reliability.
-- Understand what verifications a VLM can reliably perform from a screenshot.
+This project is a lightweight experiment to evaluate Vision-Language Models (VLMs) for screenshot-based UI assertions, with some goals:
+- Understanding how AI confidence can be used to meet pass/fail thresholds.
+- Studying which variables (via ablations) improve reliability.
+- Understanding how prompts can influence the results.
+- Understanding what verifications a VLM can reliably perform from a screenshot.
+- Make and provide some metrics (False positive rate, calibration, consistency, run-to-run stability) that help this understanding.
 
-## Goals
 
-1. Measure **false positive rate** (FPR) — avoiding missed bugs
-2. Test **calibration** — is confidence score useful?
-3. Study **what works** — which prompts, decomposition, grounding help? what type of assertions can a VLM reliably perform from a screenshot? a reference screenshot help? 
+## Quick Start
 
-## Dataset
+### 1. Add an Experiment
+Create a `.yaml` file in `experiments/`. See [experiments/README.md](ui-assertion-vlm-benchmark/experiments/README.md) for the full schema.
 
-Each screenshot lives in `dataset/screenshots/<shot_id>/` with:
-- `screenshot.png` — the image
-- `tests.json` — assertions to verify
-
-**Test format:**
-```json
-{
-  "test_id": "shot001_01",
-  "assertion": "Vérifier que le texte exact 'ÉTAPE SUIVANTE' est visible.",
-  "expected": "PASS",
-}
+### 2. Run Evaluation
+```bash
+env/bin/python3 scripts/run_eval.py --config experiments/gpt4o-mini_personas.yaml
 ```
 
-**Tag structure:**
+### 3. Compute Metrics
+```bash
+env/bin/python3 scripts/compute_metrics.py --input_file results/raw_latest.jsonl
+```
 
-Tags will help understand the type of assertions, the difficulty, and the type of bugs that VLM can reliably perform from a screenshot.
 
+## Documentation
+- [Dataset](file:///Users/abdelkader/Documents/ui-assertion-vlm-benchmark/docs/dataset.md): Directory structure and `tests.json`.
+- [Tags & Taxonomy](file:///Users/abdelkader/Documents/ui-assertion-vlm-benchmark/docs/tags.md): Classification of UI verifications.
+- [Experiments](file:///Users/abdelkader/Documents/ui-assertion-vlm-benchmark/docs/experiments.md): Configuring and running evaluations.
+- [Prompts](file:///Users/abdelkader/Documents/ui-assertion-vlm-benchmark/docs/prompts.md): Factorial design of personas and policies.
+- [Metrics](file:///Users/abdelkader/Documents/ui-assertion-vlm-benchmark/docs/metrics.md): ML reporting (FNR, FPR, Accuracy).
