@@ -7,6 +7,7 @@ import time
 import base64
 from pathlib import Path
 
+from typing import Optional, Any
 from .base import VLMProvider, VLMResponse
 
 
@@ -45,15 +46,31 @@ class AnthropicProvider(VLMProvider):
         
         return base64_data, media_type
     
-    def call(self, image_path: Path, system_prompt: str, assertion: str) -> VLMResponse:
-        """Call Anthropic Claude Vision API."""
+    def call(self, image_path: Path, system_prompt: str, assertion: str,
+             params: Optional[dict] = None) -> VLMResponse:
+        """Call Anthropic Claude Vision API.
+        
+        Args:
+            params: Dictionary of parameters like:
+                - temperature (float)
+                - max_tokens (int)
+                - output_format (str): 'abc' or 'json'
+                - Note: logprobs are NOT supported by Anthropic API.
+        """
+        params = params or {}
         base64_data, media_type = self._encode_image_base64(image_path)
+        
+        # Extract parameters with defaults
+        temperature = params.get("temperature", 0.0)
+        max_tokens = params.get("max_tokens", 500)
+        output_format = params.get("output_format", "json")
         
         try:
             start_time = time.time()
             response = self.client.messages.create(
                 model=self.model,
-                max_tokens=500,
+                max_tokens=max_tokens,
+                temperature=temperature,
                 system=system_prompt,
                 messages=[
                     {
@@ -86,8 +103,22 @@ class AnthropicProvider(VLMProvider):
         input_tokens = usage.input_tokens if usage else 0
         output_tokens = usage.output_tokens if usage else 0
         
-        # Parse response
-        result, confidence, evidence, reasoning = self._parse_response(raw_text)
+        # Parse result based on output_format
+        if output_format == "abc":
+            # Handle A/B/C scoring format
+            raw_upper = raw_text.strip().upper() if raw_text else ""
+            if raw_upper == "A":
+                result = "PASS"
+            elif raw_upper == "B":
+                result = "FAIL"
+            elif raw_upper == "C":
+                result = "UNCLEAR"
+            else:
+                result = None
+            confidence, evidence, reasoning = None, None, None
+        else:
+            # Parse response (JSON track)
+            result, confidence, evidence, reasoning = self._parse_response(raw_text)
         
         return VLMResponse(
             result=result,
@@ -125,7 +156,9 @@ class AnthropicProvider(VLMProvider):
         # Fallback: extract PASS/FAIL from text
         if result is None:
             text_upper = raw_text.upper()
-            if "PASS" in text_upper:
+            if "UNCLEAR" in text_upper:
+                result = "UNCLEAR"
+            elif "PASS" in text_upper:
                 result = "PASS"
             elif "FAIL" in text_upper:
                 result = "FAIL"

@@ -7,6 +7,7 @@ import time
 import base64
 from pathlib import Path
 
+from typing import Optional, Any
 from .base import VLMProvider, VLMResponse
 
 
@@ -47,26 +48,50 @@ class GeminiProvider(VLMProvider):
         
         return {"mime_type": mime_type, "data": image_data}
     
-    def call(self, image_path: Path, system_prompt: str, assertion: str) -> VLMResponse:
-        """Call Gemini Vision API."""
+    def call(self, image_path: Path, system_prompt: str, assertion: str,
+             params: Optional[dict] = None) -> VLMResponse:
+        """Call Gemini Vision API.
+        
+        Args:
+            params: Dictionary of parameters like:
+                - temperature (float)
+                - max_tokens (int)
+                - logprobs (bool)
+                - top_logprobs (int)
+                - output_format (str): 'abc' or 'json'
+        """
+        params = params or {}
         image_part = self._load_image(image_path)
         
-        # Combine system prompt with user message (Gemini doesn't have separate system role in older API)
+        # Extract parameters with defaults
+        temperature = params.get("temperature", 0.0)
+        max_tokens = params.get("max_tokens", 500)
+        use_logprobs = params.get("logprobs", False)
+        top_logprobs = params.get("top_logprobs", 5 if use_logprobs else None)
+        output_format = params.get("output_format", "json")
+        
+        # Combine system prompt with user message
         full_prompt = f"""{system_prompt}
 
 Assertion: {assertion}"""
         
         try:
             start_time = time.time()
+            
+            generation_config = {
+                "temperature": temperature,
+                "max_output_tokens": max_tokens,
+            }
+            if use_logprobs:
+                generation_config["response_logprobs"] = True
+                generation_config["logprobs"] = top_logprobs
+
             response = self.client.generate_content(
                 [
                     {"inline_data": image_part},
                     full_prompt
                 ],
-                generation_config={
-                    "temperature": 0.0,
-                    "max_output_tokens": 500,
-                }
+                generation_config=generation_config
             )
             latency_ms = int((time.time() - start_time) * 1000)
         except Exception as e:
@@ -79,8 +104,27 @@ Assertion: {assertion}"""
         input_tokens = getattr(usage_metadata, 'prompt_token_count', 0) if usage_metadata else 0
         output_tokens = getattr(usage_metadata, 'candidates_token_count', 0) if usage_metadata else 0
         
-        # Parse response
-        result, confidence, evidence, reasoning = self._parse_response(raw_text)
+        # Parse result based on output_format
+        if output_format == "abc":
+            # Handle A/B/C scoring format
+            raw_upper = raw_text.strip().upper() if raw_text else ""
+            if raw_upper == "A":
+                result = "PASS"
+            elif raw_upper == "B":
+                result = "FAIL"
+            elif raw_upper == "C":
+                result = "UNCLEAR"
+            else:
+                result = None
+            confidence, evidence, reasoning = None, None, None
+        else:
+            # Parse response (JSON track)
+            result, confidence, evidence, reasoning = self._parse_response(raw_text)
+        
+        # Extract logprobs-based confidence
+        logprob_confidence, logprobs_dist = self._extract_logprob_confidence(response)
+        if logprob_confidence is not None:
+            confidence = logprob_confidence
         
         return VLMResponse(
             result=result,
@@ -93,7 +137,8 @@ Assertion: {assertion}"""
                 "output_tokens": output_tokens,
                 "latency_ms": latency_ms,
                 "api_calls": 1
-            }
+            },
+            logprobs=logprobs_dist
         )
     
     def _parse_response(self, raw_text: str) -> tuple:
@@ -118,7 +163,9 @@ Assertion: {assertion}"""
         # Fallback: extract PASS/FAIL from text
         if result is None:
             text_upper = raw_text.upper()
-            if "PASS" in text_upper:
+            if "UNCLEAR" in text_upper:
+                result = "UNCLEAR"
+            elif "PASS" in text_upper:
                 result = "PASS"
             elif "FAIL" in text_upper:
                 result = "FAIL"
@@ -128,3 +175,44 @@ Assertion: {assertion}"""
                 result = "FAIL"
         
         return result, confidence, evidence, reasoning
+
+    def _extract_logprob_confidence(self, response) -> tuple[int | None, dict | None]:
+        """Extract probability-based confidence from Gemini logprobs."""
+        import math
+        try:
+            # Gemini SDK response structure for logprobs
+            candidate = response.candidates[0]
+            if not hasattr(candidate, 'logprobs_result') or candidate.logprobs_result is None:
+                return None, None
+            
+            top_candidates = candidate.logprobs_result.top_candidates
+            if not top_candidates:
+                return None, None
+            
+            # Look at the first token's logprobs
+            token_info = top_candidates[0]
+            
+            prob_dist = {"p_pass": 0.0, "p_fail": 0.0, "p_unclear": 0.0}
+            
+            # Map A/B/C or PASS/FAIL
+            for cand in token_info.candidates:
+                tok = cand.token.upper().strip()
+                prob = math.exp(cand.logprob)
+                
+                # Scoring track (A/B/C)
+                if tok == "A": prob_dist["p_pass"] = prob
+                elif tok == "B": prob_dist["p_fail"] = prob
+                elif tok == "C": prob_dist["p_unclear"] = prob
+                
+                # Direct labels
+                elif tok == "PASS": prob_dist["p_pass"] = prob
+                elif tok == "FAIL": prob_dist["p_fail"] = prob
+                elif tok == "UNCLEAR": prob_dist["p_unclear"] = prob
+
+            # Confidence is the probability of the most likely token
+            main_cand = token_info.candidates[0]
+            confidence = int(math.exp(main_cand.logprob) * 100)
+            
+            return min(confidence, 100), prob_dist
+        except Exception:
+            return None, None

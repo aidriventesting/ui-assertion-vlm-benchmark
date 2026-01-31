@@ -9,12 +9,13 @@ from typing import Optional
 @dataclass
 class VLMResponse:
     """Standardized response from VLM providers."""
-    result: Optional[str]  # PASS, FAIL, or None (abstain)
+    result: Optional[str]  # PASS, FAIL, UNCLEAR, or None (abstain)
     confidence: Optional[int]  # 0-100
     evidence: Optional[str]
     reasoning: Optional[str]
     raw: str  # Raw response text
     cost: dict  # {input_tokens, output_tokens, latency_ms, api_calls}
+    logprobs: Optional[dict] = None  # {p_pass, p_fail, p_unclear} for scoring track
     
     def to_dict(self) -> dict:
         return {
@@ -24,6 +25,7 @@ class VLMResponse:
             "reasoning": self.reasoning,
             "raw": self.raw,
             "cost": self.cost,
+            "logprobs": self.logprobs,
         }
 
 
@@ -34,13 +36,15 @@ class VLMProvider(ABC):
     model: str = ""
     
     @abstractmethod
-    def call(self, image_path: Path, system_prompt: str, assertion: str) -> VLMResponse:
+    def call(self, image_path: Path, system_prompt: str, assertion: str, 
+             params: Optional[dict] = None) -> VLMResponse:
         """Call the VLM with an image and assertion.
         
         Args:
             image_path: Path to the screenshot image
             system_prompt: System prompt template
             assertion: The assertion to verify
+            params: Dictionary of model parameters (temperature, max_tokens, etc.)
             
         Returns:
             VLMResponse with result, confidence, evidence, etc.
