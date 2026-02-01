@@ -1,0 +1,14 @@
+# Personas Experiment: Detailed reasoning (GPT-4o)
+# Command: env/bin/python3 scripts/run_eval.py --config experiments/gpt4o_personas.yaml
+
+provider: openai
+model: gpt-4o
+prompt_dir: personas
+
+# Model parameters
+temperature: 0
+max_tokens: 500
+logprobs: false
+
+# Output parameters
+output_format: json
