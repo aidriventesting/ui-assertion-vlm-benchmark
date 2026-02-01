@@ -1,0 +1,9 @@
+
+# Core VLM Providers
+openai
+google-generativeai
+anthropic
+
+# Configuration & Environment
+python-dotenv
+PyYAML
