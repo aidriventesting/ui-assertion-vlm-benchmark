@@ -584,6 +584,14 @@ def parse_args():
         help="Path to results JSONL file (flagged)"
     )
     
+    parser.add_argument(
+        "--dataset-dir",
+        type=str,
+        default=None,
+        help="Path to dataset dir (default: dataset). "
+             "Use 'dataset_screenqa' for ScreenQA data."
+    )
+
     args = parser.parse_args()
     # Resolve which input file to use (flag takes precedence if both provided)
     args.input_file = args.input_file or args.pos_input_file
@@ -592,7 +600,11 @@ def parse_args():
 
 def main():
     args = parse_args()
-    
+
+    global DATASET_DIR
+    if args.dataset_dir:
+        DATASET_DIR = Path(__file__).parent.parent / args.dataset_dir
+
     input_path = Path(args.input_file) if args.input_file else None
     results = load_results(input_path)
     

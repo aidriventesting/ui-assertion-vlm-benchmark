@@ -1,0 +1,80 @@
+# UI Assertion Benchmark - Tag Taxonomy (v3)
+# Flat tags, no categories. Multiple tags per test.
+# Cognitive level is DERIVED, not manually tagged.
+
+# =============================================================================
+# OPERATION TAGS — What the test verifies
+# =============================================================================
+
+# Presence/Absence
+presence: "Element exists in view"
+absence: "Element does NOT exist"
+
+# Text Matching (pick ONE)
+text_match_exact: "Character-for-character match"
+text_match_normalized: "Match after case/whitespace normalization"  
+text_match_semantic: "Meaning match, open interpretation"
+
+# Counting (pick ONE if applicable)
+count_raw: "Count all visible elements of a type"
+count_filtered: "Count elements matching a condition"
+
+# State
+state: "Widget state verification (on/off, selected, enabled, disabled)"
+
+# Layout/Spatial
+layout: "Spatial relationship (left-of, above, aligned, contains)"
+
+# Order
+order: "Sorting verification (alphabetical, numeric, chronological)"
+
+# Consistency
+consistency: "Cross-field validation, arithmetic check, business rule"
+
+# =============================================================================
+# DIFFICULTY TAGS — Why it's hard (0 to N, additive)
+# If none apply → test is "baseline" difficulty
+# =============================================================================
+
+near_miss: "Subtle difference (typo, off-by-one, similar icon)"
+small_text: "Text requires fine OCR / zoom"
+low_contrast: "Poor visibility, dark mode issues"
+cluttered: "Busy screen with competing elements"
+occluded: "Element partially hidden or cropped"
+confusable: "Similar looking elements that could be confused"
+
+# =============================================================================
+# DERIVED METRICS (computed in analysis, not tagged)
+# =============================================================================
+
+# polarity: PASS/FAIL → derived from "expected" field
+# cognitive_level: L1/L2/L3 → derived from tag combination:
+#   L1: Single operation (presence, text_match_*, count_raw, state)
+#   L2: Multiple operations OR layout OR order OR count_filtered
+#   L3: consistency OR text_match_semantic
+
+# =============================================================================
+# TAGGING RULES
+# =============================================================================
+# 1. Add ALL applicable operation tags (can be multiple)
+# 2. Add difficulty tags ONLY if they apply (0 = baseline)
+# 3. Don't tag cognitive level - it's computed
+# 4. Don't tag polarity - it's derived from expected field
+
+# =============================================================================
+# EXAMPLES
+# =============================================================================
+# "Vérifier que 'OK' est visible"
+#   → ["presence", "text_match_exact"]
+#
+# "Vérifier que 'OK' est à gauche de 'Annuler'"  
+#   → ["presence", "text_match_exact", "layout"]
+#
+# "Vérifier que 'ETAPE SUIVANTE' (sans accent) est visible"
+#   → ["text_match_exact", "near_miss"]
+#
+# "Compter les trajets directs uniquement"
+#   → ["count_filtered"]
+#
+# "Vérifier que le badge affiche le même nombre que la liste"
+#   → ["count_raw", "consistency"]

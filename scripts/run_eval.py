@@ -18,8 +18,9 @@ load_dotenv()
 
 from providers import get_provider, get_all_providers, PROVIDERS
 
-# Configuration
-DATASET_DIR = Path(__file__).parent.parent / "dataset" / "screenshots"
+# Configuration (defaults, can be overridden via --dataset-dir)
+DEFAULT_DATASET_DIR = Path(__file__).parent.parent / "dataset" / "screenshots"
+DATASET_DIR = DEFAULT_DATASET_DIR
 RESULTS_DIR = Path(__file__).parent.parent / "results"
 
 RESULTS_DIR.mkdir(exist_ok=True)
@@ -236,7 +237,14 @@ def parse_args():
         default="personas",
         help="Prompt directory under prompts/ (each .txt runs separately)"
     )
-    
+    parser.add_argument(
+        "--dataset-dir",
+        type=str,
+        default=None,
+        help="Path to dataset screenshots dir (default: dataset/screenshots). "
+             "Use 'dataset_screenqa/screenshots' for ScreenQA data."
+    )
+
     return parser.parse_args()
 
 
@@ -255,6 +263,13 @@ def load_config(config_path: str) -> dict:
 if __name__ == "__main__":
     args = parse_args()
     
+    # Override dataset dir if specified
+    global DATASET_DIR
+    if args.dataset_dir:
+        DATASET_DIR = Path(__file__).parent.parent / args.dataset_dir
+    elif args.config:
+        pass  # will check config below
+
     # Load config if provided
     params = {}
     if args.config:
@@ -262,6 +277,8 @@ if __name__ == "__main__":
         provider_name = params.get("provider", "openai")
         model_override = params.get("model")
         prompt_dir = params.get("prompt_dir", "personas")
+        if "dataset_dir" in params and not args.dataset_dir:
+            DATASET_DIR = Path(__file__).parent.parent / params["dataset_dir"]
     else:
         provider_name = args.provider
         model_override = args.model

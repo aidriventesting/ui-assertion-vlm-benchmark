@@ -1,0 +1,1152 @@
+[
+  {
+    "image_id": "rico_359",
+    "file": "screenshots/rico_359/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "359",
+      "rico_file": "images/rico/359.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_2677",
+    "file": "screenshots/rico_2677/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "2677",
+      "rico_file": "images/rico/2677.jpg",
+      "n_qa_pairs": 4
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_2776",
+    "file": "screenshots/rico_2776/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "2776",
+      "rico_file": "images/rico/2776.jpg",
+      "n_qa_pairs": 4
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_3043",
+    "file": "screenshots/rico_3043/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "3043",
+      "rico_file": "images/rico/3043.jpg",
+      "n_qa_pairs": 7
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_3124",
+    "file": "screenshots/rico_3124/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "3124",
+      "rico_file": "images/rico/3124.jpg",
+      "n_qa_pairs": 4
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_4052",
+    "file": "screenshots/rico_4052/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "4052",
+      "rico_file": "images/rico/4052.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_7607",
+    "file": "screenshots/rico_7607/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "7607",
+      "rico_file": "images/rico/7607.jpg",
+      "n_qa_pairs": 6
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_8676",
+    "file": "screenshots/rico_8676/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "8676",
+      "rico_file": "images/rico/8676.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_9138",
+    "file": "screenshots/rico_9138/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "9138",
+      "rico_file": "images/rico/9138.jpg",
+      "n_qa_pairs": 7
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_9231",
+    "file": "screenshots/rico_9231/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "9231",
+      "rico_file": "images/rico/9231.jpg",
+      "n_qa_pairs": 4
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_9432",
+    "file": "screenshots/rico_9432/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "9432",
+      "rico_file": "images/rico/9432.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_10247",
+    "file": "screenshots/rico_10247/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "10247",
+      "rico_file": "images/rico/10247.jpg",
+      "n_qa_pairs": 4
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_11660",
+    "file": "screenshots/rico_11660/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "11660",
+      "rico_file": "images/rico/11660.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_14064",
+    "file": "screenshots/rico_14064/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "14064",
+      "rico_file": "images/rico/14064.jpg",
+      "n_qa_pairs": 5
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_15257",
+    "file": "screenshots/rico_15257/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "15257",
+      "rico_file": "images/rico/15257.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_17386",
+    "file": "screenshots/rico_17386/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "17386",
+      "rico_file": "images/rico/17386.jpg",
+      "n_qa_pairs": 4
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_18046",
+    "file": "screenshots/rico_18046/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "18046",
+      "rico_file": "images/rico/18046.jpg",
+      "n_qa_pairs": 7
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_22874",
+    "file": "screenshots/rico_22874/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "22874",
+      "rico_file": "images/rico/22874.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_24577",
+    "file": "screenshots/rico_24577/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "24577",
+      "rico_file": "images/rico/24577.jpg",
+      "n_qa_pairs": 5
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_24955",
+    "file": "screenshots/rico_24955/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "24955",
+      "rico_file": "images/rico/24955.jpg",
+      "n_qa_pairs": 4
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_25218",
+    "file": "screenshots/rico_25218/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "25218",
+      "rico_file": "images/rico/25218.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_25366",
+    "file": "screenshots/rico_25366/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "25366",
+      "rico_file": "images/rico/25366.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_26823",
+    "file": "screenshots/rico_26823/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "26823",
+      "rico_file": "images/rico/26823.jpg",
+      "n_qa_pairs": 4
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_28437",
+    "file": "screenshots/rico_28437/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "28437",
+      "rico_file": "images/rico/28437.jpg",
+      "n_qa_pairs": 7
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_31054",
+    "file": "screenshots/rico_31054/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "31054",
+      "rico_file": "images/rico/31054.jpg",
+      "n_qa_pairs": 4
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_31856",
+    "file": "screenshots/rico_31856/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "31856",
+      "rico_file": "images/rico/31856.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_32328",
+    "file": "screenshots/rico_32328/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "32328",
+      "rico_file": "images/rico/32328.jpg",
+      "n_qa_pairs": 4
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_33632",
+    "file": "screenshots/rico_33632/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "33632",
+      "rico_file": "images/rico/33632.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_38231",
+    "file": "screenshots/rico_38231/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "38231",
+      "rico_file": "images/rico/38231.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_39082",
+    "file": "screenshots/rico_39082/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "39082",
+      "rico_file": "images/rico/39082.jpg",
+      "n_qa_pairs": 4
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_39686",
+    "file": "screenshots/rico_39686/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "39686",
+      "rico_file": "images/rico/39686.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_41683",
+    "file": "screenshots/rico_41683/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "41683",
+      "rico_file": "images/rico/41683.jpg",
+      "n_qa_pairs": 4
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_43741",
+    "file": "screenshots/rico_43741/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "43741",
+      "rico_file": "images/rico/43741.jpg",
+      "n_qa_pairs": 6
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_43815",
+    "file": "screenshots/rico_43815/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "43815",
+      "rico_file": "images/rico/43815.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_47851",
+    "file": "screenshots/rico_47851/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "47851",
+      "rico_file": "images/rico/47851.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_48069",
+    "file": "screenshots/rico_48069/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "48069",
+      "rico_file": "images/rico/48069.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_48105",
+    "file": "screenshots/rico_48105/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "48105",
+      "rico_file": "images/rico/48105.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_50340",
+    "file": "screenshots/rico_50340/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "50340",
+      "rico_file": "images/rico/50340.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_51454",
+    "file": "screenshots/rico_51454/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "51454",
+      "rico_file": "images/rico/51454.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_56633",
+    "file": "screenshots/rico_56633/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "56633",
+      "rico_file": "images/rico/56633.jpg",
+      "n_qa_pairs": 5
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_60591",
+    "file": "screenshots/rico_60591/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "60591",
+      "rico_file": "images/rico/60591.jpg",
+      "n_qa_pairs": 7
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_61809",
+    "file": "screenshots/rico_61809/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "61809",
+      "rico_file": "images/rico/61809.jpg",
+      "n_qa_pairs": 4
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_62338",
+    "file": "screenshots/rico_62338/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "62338",
+      "rico_file": "images/rico/62338.jpg",
+      "n_qa_pairs": 4
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_63459",
+    "file": "screenshots/rico_63459/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "63459",
+      "rico_file": "images/rico/63459.jpg",
+      "n_qa_pairs": 4
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_66914",
+    "file": "screenshots/rico_66914/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "66914",
+      "rico_file": "images/rico/66914.jpg",
+      "n_qa_pairs": 6
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_66981",
+    "file": "screenshots/rico_66981/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "66981",
+      "rico_file": "images/rico/66981.jpg",
+      "n_qa_pairs": 4
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_68560",
+    "file": "screenshots/rico_68560/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "68560",
+      "rico_file": "images/rico/68560.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_68796",
+    "file": "screenshots/rico_68796/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "68796",
+      "rico_file": "images/rico/68796.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_70243",
+    "file": "screenshots/rico_70243/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "70243",
+      "rico_file": "images/rico/70243.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  },
+  {
+    "image_id": "rico_71580",
+    "file": "screenshots/rico_71580/screenshot.jpg",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "unknown",
+      "locale": "en_US",
+      "theme": "unknown"
+    },
+    "app": {
+      "name": "unknown",
+      "build": "unknown"
+    },
+    "source": {
+      "dataset": "ScreenQA",
+      "split": "test",
+      "screen_id": "71580",
+      "rico_file": "images/rico/71580.jpg",
+      "n_qa_pairs": 3
+    },
+    "notes": []
+  }
+]
