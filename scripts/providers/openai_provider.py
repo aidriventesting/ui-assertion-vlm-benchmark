@@ -1,4 +1,5 @@
 """OpenAI VLM Provider (GPT-4 Vision)."""
+from __future__ import annotations
 
 import json
 import os

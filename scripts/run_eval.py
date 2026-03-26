@@ -263,13 +263,6 @@ def load_config(config_path: str) -> dict:
 if __name__ == "__main__":
     args = parse_args()
     
-    # Override dataset dir if specified
-    global DATASET_DIR
-    if args.dataset_dir:
-        DATASET_DIR = Path(__file__).parent.parent / args.dataset_dir
-    elif args.config:
-        pass  # will check config below
-
     # Load config if provided
     params = {}
     if args.config:
@@ -277,13 +270,16 @@ if __name__ == "__main__":
         provider_name = params.get("provider", "openai")
         model_override = params.get("model")
         prompt_dir = params.get("prompt_dir", "personas")
-        if "dataset_dir" in params and not args.dataset_dir:
-            DATASET_DIR = Path(__file__).parent.parent / params["dataset_dir"]
     else:
         provider_name = args.provider
         model_override = args.model
         prompt_dir = args.prompt_dir or "personas"
     
+    # Override dataset dir if specified via CLI or config
+    dataset_override = args.dataset_dir or params.get("dataset_dir")
+    if dataset_override:
+        DATASET_DIR = Path(__file__).parent.parent / dataset_override
+
     # Deduce output_format from prompt_dir if not explicit in params
     if "output_format" not in params:
         if prompt_dir in ("scoring", "policies"):

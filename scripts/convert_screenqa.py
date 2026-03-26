@@ -31,50 +31,56 @@ from datasets import load_dataset
 # Question classification → tag mapping
 # ---------------------------------------------------------------------------
 
-# Patterns that map ScreenQA question types to our tag taxonomy
+# Patterns that map ScreenQA question types to our tag taxonomy.
+#
+# Design principle: assign the SINGLE most specific operation tag.
+# Multiple operations → L2 cognitive level, so only combine when the
+# assertion genuinely requires cross-referencing (e.g., count + filter).
+# "presence" is reserved for assertions about element existence,
+# not as a generic base tag.
 QUESTION_PATTERNS = [
-    # Counting questions
-    (r"\bhow many\b", ["presence", "count_raw"]),
-    (r"\bnumber of\b", ["presence", "count_raw"]),
-    (r"\bcount\b", ["presence", "count_raw"]),
-    # State / selection questions
-    (r"\bselected\b", ["presence", "state"]),
-    (r"\bactive\b", ["presence", "state"]),
-    (r"\benabled\b", ["presence", "state"]),
-    (r"\bdisabled\b", ["presence", "state"]),
-    (r"\bchecked\b", ["presence", "state"]),
-    (r"\btoggle\b", ["presence", "state"]),
-    (r"\bunlocked\b", ["presence", "state"]),
-    (r"\blocked\b", ["presence", "state"]),
-    (r"\bcurrent mode\b", ["presence", "state"]),
-    (r"\bcurrent tab\b", ["presence", "state"]),
-    (r"\bwhich tab\b", ["presence", "state"]),
-    # Layout / position questions
-    (r"\bwhere\b", ["presence", "layout"]),
-    (r"\bposition\b", ["presence", "layout"]),
-    (r"\btop.?right\b", ["presence", "layout"]),
-    (r"\btop.?left\b", ["presence", "layout"]),
-    (r"\bbottom\b", ["presence", "layout"]),
-    (r"\babove\b", ["presence", "layout"]),
-    (r"\bbelow\b", ["presence", "layout"]),
-    (r"\bnext to\b", ["presence", "layout"]),
-    # List / enumeration questions (multiple elements)
-    (r"\bwhat are the\b.*\boptions\b", ["presence", "count_raw"]),
-    (r"\bwhat are the\b.*\bcategories\b", ["presence", "count_raw"]),
-    (r"\bwhat are the\b.*\bitems\b", ["presence", "count_raw"]),
-    (r"\blist\b", ["presence", "count_raw"]),
-    # Text presence (most common — default)
-    (r"\bwhat is the\b.*\bname\b", ["presence", "text_match_exact"]),
-    (r"\bwhat is the\b.*\btitle\b", ["presence", "text_match_exact"]),
-    (r"\bwhat is the\b.*\btext\b", ["presence", "text_match_exact"]),
-    (r"\bwhat does\b.*\bsay\b", ["presence", "text_match_exact"]),
-    (r"\bwhat is\b.*\bshown\b", ["presence", "text_match_exact"]),
-    (r"\bwhat is\b.*\bdisplayed\b", ["presence", "text_match_exact"]),
-    (r"\bsearch\b", ["presence", "text_match_exact"]),
+    # Counting questions → L2 (requires scanning + aggregation)
+    (r"\bhow many\b", ["count_raw"]),
+    (r"\bnumber of\b", ["count_raw"]),
+    (r"\bcount\b", ["count_raw"]),
+    # State / selection questions → L2 (requires identifying active state)
+    (r"\bselected\b", ["state"]),
+    (r"\bactive\b", ["state"]),
+    (r"\benabled\b", ["state"]),
+    (r"\bdisabled\b", ["state"]),
+    (r"\bchecked\b", ["state"]),
+    (r"\btoggle\b", ["state"]),
+    (r"\bunlocked\b", ["state"]),
+    (r"\blocked\b", ["state"]),
+    (r"\bcurrent mode\b", ["state"]),
+    (r"\bcurrent tab\b", ["state"]),
+    (r"\bwhich tab\b", ["state"]),
+    # Layout / position questions → L2 (spatial reasoning)
+    (r"\bwhere\b", ["layout"]),
+    (r"\bposition\b", ["layout"]),
+    (r"\btop.?right\b", ["layout"]),
+    (r"\btop.?left\b", ["layout"]),
+    (r"\bbottom\b", ["layout"]),
+    (r"\babove\b", ["layout"]),
+    (r"\bbelow\b", ["layout"]),
+    (r"\bnext to\b", ["layout"]),
+    # List / enumeration questions → L2 (multi-element scan)
+    (r"\bwhat are the\b.*\boptions\b", ["count_raw"]),
+    (r"\bwhat are the\b.*\bcategories\b", ["count_raw"]),
+    (r"\bwhat are the\b.*\bitems\b", ["count_raw"]),
+    (r"\blist\b", ["count_raw"]),
+    # Text reading (most common) → L1 (direct perception)
+    (r"\bwhat is the\b.*\bname\b", ["text_match_exact"]),
+    (r"\bwhat is the\b.*\btitle\b", ["text_match_exact"]),
+    (r"\bwhat is the\b.*\btext\b", ["text_match_exact"]),
+    (r"\bwhat does\b.*\bsay\b", ["text_match_exact"]),
+    (r"\bwhat is\b.*\bshown\b", ["text_match_exact"]),
+    (r"\bwhat is\b.*\bdisplayed\b", ["text_match_exact"]),
+    (r"\bsearch\b", ["text_match_exact"]),
 ]
 
-# Default tags if no pattern matches
-DEFAULT_TAGS = ["presence", "text_match_exact"]
+# Default: simple text reading → L1 (single operation, direct perception)
+DEFAULT_TAGS = ["text_match_exact"]
 
 
 def classify_question(question: str) -> list[str]:
@@ -90,22 +96,28 @@ def classify_question(question: str) -> list[str]:
 # FAIL assertion generation (perturbation strategies)
 # ---------------------------------------------------------------------------
 
-def perturb_text(text: str) -> str | None:
-    """Create a plausible but incorrect version of text."""
-    if not text or text == "<no answer>":
-        return None
+def perturb_text(text: str):
+    """Create a plausible but incorrect version of text.
 
+    Returns (perturbed_text, perturbation_tag) or (None, None).
+    perturbation_tag is one of: perturb_char_swap, perturb_case,
+    perturb_word_drop, perturb_number, perturb_antonym.
+    """
+    if not text or text == "<no answer>":
+        return None, None
+
+    # Each strategy: (perturbed_text, tag)
     strategies = []
 
     # Strategy 1: swap case
     if text != text.lower() and text != text.upper():
-        strategies.append(text.swapcase())
+        strategies.append((text.swapcase(), "perturb_case"))
 
     # Strategy 2: remove a word (if multi-word)
     words = text.split()
     if len(words) > 1:
         idx = random.randint(0, len(words) - 1)
-        strategies.append(" ".join(words[:idx] + words[idx + 1:]))
+        strategies.append((" ".join(words[:idx] + words[idx + 1:]), "perturb_word_drop"))
 
     # Strategy 3: numeric perturbation
     numbers = re.findall(r"\d+", text)
@@ -114,16 +126,16 @@ def perturb_text(text: str) -> str | None:
         n = int(num)
         delta = random.choice([-1, 1, 2, -2])
         new_n = max(0, n + delta)
-        strategies.append(text.replace(num, str(new_n), 1))
+        strategies.append((text.replace(num, str(new_n), 1), "perturb_number"))
 
     # Strategy 4: character swap (for short texts)
     if len(text) >= 4:
         chars = list(text)
         i = random.randint(0, len(chars) - 2)
         chars[i], chars[i + 1] = chars[i + 1], chars[i]
-        strategies.append("".join(chars))
+        strategies.append(("".join(chars), "perturb_char_swap"))
 
-    # Strategy 5: replace with a plausible alternative
+    # Strategy 5: replace with a plausible alternative (antonym)
     alternatives = {
         "yes": "no", "no": "yes",
         "on": "off", "off": "on",
@@ -132,15 +144,15 @@ def perturb_text(text: str) -> str | None:
     }
     text_lower = text.lower().strip()
     if text_lower in alternatives:
-        strategies.append(alternatives[text_lower])
+        strategies.append((alternatives[text_lower], "perturb_antonym"))
 
     if not strategies:
-        return None
+        return None, None
 
     return random.choice(strategies)
 
 
-def perturb_number(text: str) -> str | None:
+def perturb_number(text: str) :
     """Specifically perturb numeric answers."""
     numbers = re.findall(r"\d+", text)
     if not numbers:
@@ -158,7 +170,7 @@ def perturb_number(text: str) -> str | None:
 # Assertion generation from QA pairs
 # ---------------------------------------------------------------------------
 
-def extract_key_text(ground_truth: list[dict]) -> str | None:
+def extract_key_text(ground_truth: list[dict]) :
     """Extract the key answer text from ground truth annotations."""
     for gt in ground_truth:
         if gt.get("full_answer", "") == "<no answer>":
@@ -189,7 +201,7 @@ def extract_all_element_texts(ground_truth: list[dict]) -> list[str]:
 
 
 def make_pass_assertion(question: str, ground_truth: list[dict],
-                        tags: list[str]) -> dict | None:
+                        tags: list[str]) :
     """Create a PASS assertion from a QA pair."""
     key_text = extract_key_text(ground_truth)
     if not key_text:
@@ -215,8 +227,18 @@ def make_pass_assertion(question: str, ground_truth: list[dict],
                 assertion = f"Verify that the text '{key_text}' is visible on the screen."
 
     elif re.search(r"\bselected\b|\bactive\b|\bcurrent\b|\btab\b|\bunlocked\b|\blocked\b|\bmode\b", q_lower):
-        # State assertion
-        assertion = f"Verify that '{key_text}' is the currently selected/active element."
+        # State assertion — formulate based on question context
+        # Avoid "selected/active element" which implies visual highlight
+        if re.search(r"\btab\b", q_lower):
+            assertion = f"Verify that the tab '{key_text}' is currently active (its content is displayed)."
+        elif re.search(r"\bselected\b.*\b(sort|filter|option|setting|voice|display|sound|speed|unit)\b", q_lower):
+            assertion = f"Verify that the current value shown for this setting is '{key_text}'."
+        elif re.search(r"\bchecked\b|\btoggle\b", q_lower):
+            assertion = f"Verify that the option '{key_text}' is checked or toggled on."
+        elif re.search(r"\bmode\b", q_lower):
+            assertion = f"Verify that the current mode displayed is '{key_text}'."
+        else:
+            assertion = f"Verify that '{key_text}' is shown as the current selection or active option."
 
     elif re.search(r"\bwhere\b|\bposition\b", q_lower):
         # Layout assertion
@@ -245,7 +267,7 @@ def make_pass_assertion(question: str, ground_truth: list[dict],
 
 
 def make_fail_assertion(question: str, ground_truth: list[dict],
-                        tags: list[str]) -> dict | None:
+                        tags: list[str]) :
     """Create a FAIL assertion (perturbed answer) from a QA pair."""
     key_text = extract_key_text(ground_truth)
     if not key_text:
@@ -267,29 +289,33 @@ def make_fail_assertion(question: str, ground_truth: list[dict],
                     return {
                         "assertion": assertion,
                         "expected": "FAIL",
-                        "tags": tags + ["near_miss"],
+                        "tags": tags + ["near_miss", "perturb_number"],
                         "_source_question": question,
                         "_source_answer": key_text,
                         "_perturbation": f"{nums_orig[0]} → {nums_new[0]}",
                     }
 
-    # General text perturbation
-    perturbed = perturb_text(key_text)
+    # General text perturbation (now returns (text, tag))
+    perturbed, perturb_tag = perturb_text(key_text)
     if not perturbed or perturbed == key_text:
         return None
 
     assertion = f"Verify that the exact text '{perturbed}' is visible on the screen."
+    fail_tags = tags + ["near_miss"]
+    if perturb_tag:
+        fail_tags.append(perturb_tag)
+
     return {
         "assertion": assertion,
         "expected": "FAIL",
-        "tags": tags + ["near_miss"],
+        "tags": fail_tags,
         "_source_question": question,
         "_source_answer": key_text,
         "_perturbation": f"'{key_text}' → '{perturbed}'",
     }
 
 
-def make_absence_assertion(ground_truth: list[dict]) -> dict | None:
+def make_absence_assertion(ground_truth: list[dict]) :
     """Create an absence assertion — assert something that IS present is absent."""
     key_text = extract_key_text(ground_truth)
     if not key_text:
@@ -299,7 +325,7 @@ def make_absence_assertion(ground_truth: list[dict]) -> dict | None:
     return {
         "assertion": assertion,
         "expected": "FAIL",
-        "tags": ["absence", "text_match_exact"],
+        "tags": ["absence", "perturb_absence"],
         "_source_answer": key_text,
         "_perturbation": "absence of present element",
     }

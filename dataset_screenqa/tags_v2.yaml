@@ -1,0 +1,106 @@
+# UI Assertion Benchmark — Tag Taxonomy v4
+# Flat tags, multiple per test.
+#
+# NOTE: This dataset (ScreenQA-derived) operates at the PERCEPTION level only.
+# All assertions are direct visual grounding (text matching, counting, state reading).
+# Cognitive complexity levels (P/U/R per LENS, MMBench, etc.) are NOT applicable
+# here — they require semantically rich assertions that go beyond OCR-level checks.
+# See feature/motif-aitw-dataset branch for higher-level assertion work.
+#
+# References:
+#   - ScreenQA (Hsiao et al., 2022) — direct reading QA pairs
+#   - Complex ScreenQA — counting, comparison, arithmetic
+#   - MLLM-as-a-Judge (ICML 2024) — position bias, calibration gaps
+
+# =============================================================================
+# OPERATION TAGS — What the test verifies
+# =============================================================================
+
+presence: "Element exists in the viewport"
+absence: "Element does NOT exist in the viewport"
+text_match_exact: "Character-for-character string comparison (OCR fidelity)"
+text_match_normalized: "Match after Unicode/case/whitespace normalization"
+text_match_semantic: "Meaning match requiring paraphrase understanding"
+count_raw: "Count all visible instances of an element type"
+count_filtered: "Count elements matching a boolean condition"
+state: "Widget state (toggle, selection, enabled/disabled, active tab)"
+layout: "Spatial relation (above, below, left-of, aligned, contains)"
+order: "Sequence verification (alphabetical, numeric, chronological)"
+consistency: "Cross-field validation (badge count = list length)"
+arithmetic: "Numeric computation from on-screen values (price × qty)"
+comparison: "Relational judgment between two on-screen values (A > B)"
+negation: "Verify something is NOT in a specific state (inverse logic)"
+
+# =============================================================================
+# DIFFICULTY TAGS — Visual/perceptual challenge modifiers (0..N, additive)
+# =============================================================================
+# If none apply → "baseline" difficulty (clean, large, high-contrast)
+
+near_miss: "Minimal difference from ground truth (off-by-one, typo, accent)"
+small_text: "Text < ~10px rendered or fine print requiring zoom"
+low_contrast: "Poor foreground/background distinction"
+cluttered: "Dense layout with > 15 competing elements"
+occluded: "Element partially hidden, cropped, or overlapping"
+confusable: "Multiple visually similar elements (e.g., 3 toggle rows)"
+truncated: "Text cut off with '...' or overflow hidden"
+
+# =============================================================================
+# PERTURBATION TAGS — How the FAIL assertion was generated
+# =============================================================================
+# Only for expected=FAIL tests. Documents the adversarial strategy.
+
+perturb_char_swap: "Adjacent character transposition (Alerts → lAerts)"
+perturb_case: "Case change (ON → on, Title → TITLE)"
+perturb_word_drop: "Word removed from multi-word text"
+perturb_number: "Numeric off-by-one or off-by-few"
+perturb_antonym: "Semantic opposite (enabled → disabled, yes → no)"
+perturb_absence: "Assert present element is absent"
+
+# =============================================================================
+# DERIVED DIMENSIONS (computed, not tagged)
+# =============================================================================
+#
+# polarity: PASS / FAIL → from "expected" field
+#
+# assertion_source: "ground_truth" | "perturbation" | "absence" | "unanswerable"
+#   → derived from presence of _perturbation field and tag combination
+
+# =============================================================================
+# INDEPENDENT VARIABLES (experiment-level, not per-test)
+# =============================================================================
+# These are controlled in experiment YAML configs, not in test tags.
+#
+# IV1: system_prompt    — persona / reasoning strategy (evidence_first, minimal, strict_oracle)
+# IV2: output_format    — json (CoT, 500 tokens) vs abc (1 token, logprobs)
+# IV3: model            — gpt-4o-mini, gpt-4o, claude-3.5-sonnet, gemini-2.0-flash
+# IV4: temperature      — 0.0 (deterministic) vs 0.3 vs 0.7 (diversity)
+# IV5: image_resolution — original vs downscaled (50%, 25%) to test resolution sensitivity
+# IV6: few_shot         — 0-shot vs 1-shot vs 3-shot (prepend exemplars to prompt)
+# IV7: language         — en vs fr (assertion text language)
+#
+# NOTE: Temperature 0.0→1.0 has near-null effect on accuracy (Renze & Guven, 2024).
+#       Only interesting if comparing deterministic vs multi-sample inference.
+#       Image resolution is high-signal per VisualWebBench and PaliGemma ablations.
+
+# =============================================================================
+# METRICS FRAMEWORK
+# =============================================================================
+# Primary DV (deployment-oriented):
+#   - FNR (Miss Rate): P(predict PASS | actual bug) — bugs escaped, want < 5%
+#   - FPR (False Alarm): P(predict FAIL | actual OK) — test flakiness
+#   - FOR (False Omission): P(bug | predict PASS) — hidden danger
+#
+# Classification:
+#   - Accuracy, Balanced Accuracy, MCC, F1, PPV, NPV
+#
+# Calibration (requires confidence/logprobs):
+#   - Brier Score: mean squared error of probabilistic predictions
+#   - ECE (10 bins): expected calibration error
+#   - Reliability diagram data: per-bin (confidence, accuracy, count)
+#   - Overconfidence ratio: % of bins where confidence > accuracy
+#
+# Statistical rigor:
+#   - Bootstrap 95% CI (1000 iterations) for all metrics
+#   - McNemar's test for prompt-pair significance
+#   - Cohen's kappa for inter-prompt agreement
+#   - Effect size (Cohen's d) for significant differences
