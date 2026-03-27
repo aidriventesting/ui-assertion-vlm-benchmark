@@ -20,6 +20,7 @@ Measure where Vision Language Models break down as test oracles — not just "ca
 | **RQ4** | Does screen complexity degrade VLM accuracy? | `screen_complexity` | "Simplify screens before testing" or "doesn't matter" |
 | **RQ5** | At what confidence threshold should you trust the VLM vs route to a human? | `logprobs` (confidence) | "Set threshold at X% — below that, send to human review" |
 | **RQ6** | Is the model's confidence well-calibrated, and does it vary by tier? | `calibration × tier` | "Trust confidence scores on P-tier, ignore them on R-tier" |
+| **RQ7** | Does allowing the model to say "UNCERTAIN" improve reliability on decided cases? | `verdict_options` (binary vs ternary) | "Let the model abstain — it routes X% to human but FNR drops by Y%" |
 
 ---
 
@@ -41,6 +42,7 @@ Measure where Vision Language Models break down as test oracles — not just "ca
 | Model | gpt-4o-mini | Cheap, fast, representative of "practical" deployment |
 | System prompt | evidence_first | Best performer from ScreenQA study |
 | Output format | json (CoT) | Provides reasoning trace for error analysis |
+| Verdict options | binary (PASS/FAIL) | Baseline — no abstention allowed |
 | Few-shot | 0-shot | Simplest setup |
 | Temperature | 0.0 | Deterministic |
 | Image | Original resolution | No preprocessing |
@@ -289,14 +291,79 @@ For each of the 240 U/R assertions:
 
 **Insight for test auto**: "For P-tier assertions, auto-decide when confidence > 75%. For U-tier, require 85%. For R-tier, even at 90% threshold you're still routing 45% to humans — consider if VLM adds value vs direct human review."
 
+### E4: Binary vs Ternary — Does abstention improve reliability? (RQ7)
+
+| Parameter | Value |
+|-----------|-------|
+| Assertions | 360 (imperative phrasing only) |
+| Model | gpt-4o-mini |
+| Prompt | evidence_first, **modified to allow UNCERTAIN** |
+| Format | json (CoT) |
+| API calls | **360** |
+| Est. cost | ~$1.50 |
+
+**Design**: Run the same 360 assertions with a modified prompt that adds UNCERTAIN as a third option:
+
+```
+Binary (E1):    {"result": "PASS"} or {"result": "FAIL"}
+Ternary (E4):   {"result": "PASS"} or {"result": "FAIL"} or {"result": "UNCERTAIN"}
+```
+
+The prompt for E4 adds:
+```
+If you cannot determine with reasonable confidence whether the assertion passes
+or fails based on the screenshot, respond with {"result": "UNCERTAIN"}.
+Only use UNCERTAIN when genuinely unsure — not as a default.
+```
+
+**Analysis**:
+
+```
+From E4:
+  abstain_rate = |UNCERTAIN| / |total|         → how often does it abstain?
+  abstain_rate_P, abstain_rate_U, abstain_rate_R → does it abstain more on R?
+
+On decided cases only (PASS/FAIL):
+  FNR_decided, FPR_decided, MCC_decided
+
+Compare E1 (binary) vs E4 (ternary, decided only):
+  Δ_FNR = FNR_E1 - FNR_E4_decided   → did abstention improve miss rate?
+  Δ_FPR = FPR_E1 - FPR_E4_decided   → did abstention reduce false alarms?
+  McNemar on decided pairs
+
+Key question per tier:
+  Is routing via UNCERTAIN better than routing via confidence threshold (RQ5)?
+```
+
+**Two routing strategies compared**:
+
+| Strategy | How it routes to human | Metric |
+|----------|----------------------|--------|
+| **Confidence routing** (E3) | `max(p_pass, p_fail) < threshold` | continuous, tunable |
+| **Abstention routing** (E4) | Model says UNCERTAIN | binary, model-decided |
+
+If abstention routing ≈ confidence routing in FNR/routing rate → simpler to deploy (no logprobs needed, works with any provider).
+If confidence routing >> abstention routing → logprobs are worth the OpenAI lock-in.
+
+**Expected findings**:
+
+| Tier | Abstain rate | FNR (binary E1) | FNR (ternary decided) | Improvement |
+|------|-------------|-----------------|----------------------|-------------|
+| P | ~5% | ~4% | ~2% | Small — model is already confident |
+| U | ~15% | ~10% | ~6% | Moderate — UNCERTAIN catches edge cases |
+| R | ~30% | ~20% | ~12% | Large — model knows when it's guessing |
+
+**Insight for test auto**: "Adding UNCERTAIN as an option reduces FNR by ~40% on decided cases, at the cost of routing 15-30% to human review. This is the cheapest way to improve reliability — no logprobs, no multi-sample, works with any provider."
+
 ### Total
 
 | | Calls | Cost |
 |-|-------|------|
-| E1 (JSON, baseline) | 360 | ~$1.50 |
-| E2 (JSON, phrasing) | 1,080 | ~$4.50 |
-| E3 (ABC, logprobs) | 360 | ~$0.50 |
-| **Total** | **1,800** | **~$6.50** |
+| E1 (JSON, binary baseline) | 360 | ~$1.50 |
+| E2 (JSON, phrasing ×3) | 1,080 | ~$4.50 |
+| E3 (ABC, logprobs binary) | 360 | ~$0.50 |
+| E4 (JSON, ternary UNCERTAIN) | 360 | ~$1.50 |
+| **Total** | **2,160** | **~$8** |
 
 ---
 
@@ -433,23 +500,49 @@ Bars = histogram of prediction count per bin
 
 **Insight for test auto**: "Don't trust raw confidence scores on reasoning assertions — the model thinks it knows but it doesn't. Apply tier-specific calibration or use the routing thresholds from RQ5 instead."
 
-### 6.7. Combined Deployment Recommendation (the takeaway figure)
+### 6.7. RQ7 — Binary vs Ternary (Abstention)
+
+```
+From E1 (binary) and E4 (ternary):
+
+Overall:
+  abstain_rate_E4 = |UNCERTAIN| / 360
+  FNR_E1 vs FNR_E4_decided (on PASS/FAIL only)
+  FPR_E1 vs FPR_E4_decided
+  McNemar on common decided pairs
+
+Per tier:
+  abstain_rate_T → does the model abstain more on R-tier? (expected: yes)
+  FNR improvement per tier
+
+Compare routing strategies:
+  confidence_routing (E3, threshold t*) vs abstention_routing (E4):
+  - At matched routing rates: which has lower FNR?
+  - At matched FNR: which routes fewer to human?
+```
+
+**Expected**: Abstention is a cheap approximation of confidence routing. It catches ~70% of what threshold-based routing catches, with zero infrastructure (no logprobs, any provider).
+
+**Insight**: "If you can't use logprobs (Anthropic, Gemini, self-hosted models), add UNCERTAIN to your prompt. You'll get ~70% of the benefit of confidence-based routing, at zero extra cost."
+
+### 6.8. Combined Deployment Recommendation (the takeaway figure)
 
 A single summary figure for the paper/blog:
 
 ```
-┌─────────────────────────────────────────────────────┐
-│         VLM Test Oracle Deployment Guide             │
-├─────────┬──────────┬──────────┬─────────────────────┤
-│  Tier   │ FNR      │ Trust?   │ Recommendation      │
-├─────────┼──────────┼──────────┼─────────────────────┤
-│ P       │ ~3%  ✅  │ conf>0.75│ Auto-decide         │
-│ U       │ ~10% ⚠️  │ conf>0.85│ Auto + route 25%    │
-│ R       │ ~20% ❌  │ conf>0.90│ Route 45% to human  │
-└─────────┴──────────┴──────────┴─────────────────────┘
+┌────────────────────────────────────────────────────────────────────────┐
+│              VLM Test Oracle Deployment Guide                          │
+├─────────┬──────────┬──────────────────────┬───────────────────────────┤
+│  Tier   │ FNR      │ With logprobs (OpenAI)│ Without logprobs (any)   │
+├─────────┼──────────┼──────────────────────┼───────────────────────────┤
+│ P       │ ~3%  ✅  │ conf > 0.75 → auto   │ Binary prompt → auto     │
+│ U       │ ~10% ⚠️  │ conf > 0.85 → auto   │ Ternary → route UNCERTAIN│
+│ R       │ ~20% ❌  │ conf > 0.90 → 45% human │ Ternary → ~30% human  │
+└─────────┴──────────┴──────────────────────┴───────────────────────────┘
 
-"Match your assertion complexity to VLM capability.
- Use confidence routing to handle the gray zone."
+"Match assertion complexity to VLM capability.
+ Use confidence routing (logprobs) or abstention routing (UNCERTAIN)
+ to handle the gray zone. Both beat forcing a binary decision."
 ```
 
 ---
@@ -506,10 +599,12 @@ A single summary figure for the paper/blog:
 | Fig 4 | Scatter + regression | n_elements vs accuracy, colored by tier | RQ4 |
 | **Fig 5** | **Routing curve** | **Threshold vs FNR vs human_rate, per tier** | **RQ5** |
 | **Fig 6** | **Reliability diagram** | **3 subplots: P/U/R calibration** | **RQ6** |
-| **Fig 7** | **Deployment guide** | **Summary table: tier → threshold → action** | All |
+| **Fig 7** | **Routing comparison** | **Confidence routing vs abstention routing: FNR vs human rate** | **RQ5 vs RQ7** |
+| **Fig 8** | **Deployment guide** | **Summary table: tier → strategy → action** | All |
 | Table 1 | Full metrics | All DVs × tier, with bootstrap CIs | RQ1 |
 | Table 2 | McNemar results | Pairwise significance tests | RQ1-2 |
 | **Table 3** | **Threshold sweep** | **t, FNR@t, FPR@t, F1@t, routing_rate per tier** | **RQ5** |
+| **Table 4** | **Abstention analysis** | **abstain_rate, FNR_decided, FPR_decided per tier** | **RQ7** |
 
 ---
 
@@ -522,13 +617,14 @@ A single summary figure for the paper/blog:
 | 3 | Generate U/R-tier assertions (GPT-4o + templates) | 2h + ~$3 | 240 U/R assertions |
 | 4 | Human validation of U/R + annotation | 3h | validated `tests.json` per screen |
 | 5 | Generate phrasing variants (template-based) | 30min | 3× assertion variants |
-| 6 | Run E1 — baseline JSON (360 calls) | 30min + ~$1.50 | `results/raw_E1.jsonl` |
+| 6 | Run E1 — binary baseline (360 calls) | 30min + ~$1.50 | `results/raw_E1.jsonl` |
 | 7 | Run E2 — phrasing ablation (1,080 calls) | 1h + ~$4.50 | `results/raw_E2.jsonl` |
 | 8 | Run E3 — ABC logprobs (360 calls) | 20min + ~$0.50 | `results/raw_E3.jsonl` |
-| 9 | Compute metrics + calibration + threshold sweep | 1h | `results/metrics_*.json` |
-| 10 | Generate figures (7 figs + 3 tables) | 1h | `docs/figures/` |
-| 11 | Write paper/blog | 4h | `docs/paper.md` |
-| **Total** | | **~2.5 days + ~$10** | |
+| 9 | Run E4 — ternary UNCERTAIN (360 calls) | 30min + ~$1.50 | `results/raw_E4.jsonl` |
+| 10 | Compute metrics + calibration + threshold sweep + abstention analysis | 1h | `results/metrics_*.json` |
+| 11 | Generate figures (8 figs + 4 tables) | 1.5h | `docs/figures/` |
+| 12 | Write paper/blog | 4h | `docs/paper.md` |
+| **Total** | | **~2.5 days + ~$11** | |
 
 ---
 
