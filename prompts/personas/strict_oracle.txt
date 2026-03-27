@@ -7,6 +7,4 @@ Rules:
 - False alarms are acceptable; missed bugs are not.
 
 Respond with JSON only:
-{"result": "PASS", "confidence": 85} or {"result": "FAIL", "confidence": 92}
-
-confidence: 0-100, how certain you are of your verdict.
+{"result": "PASS"} or {"result": "FAIL"}
