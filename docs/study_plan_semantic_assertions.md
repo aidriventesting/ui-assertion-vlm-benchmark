@@ -143,82 +143,188 @@ Examples of good R-level assertions:
 
 ---
 
-## 4. Tag Taxonomy (v5)
+## 4. Annotation Schema
 
-### Operation Tags (what cognitive skill is tested)
+Every data point in the benchmark carries **three levels of annotation**: per-screenshot, per-assertion, and per-evaluation-result. This is critical for meaningful stratified analysis.
+
+### 4.1. Screenshot-Level Annotations
+
+Annotated **once per screenshot** (100 screenshots = 100 annotations). These are covariates — they don't change between experiments but may explain variance.
+
+| Field | Type | Values | Source | Why it matters |
+|-------|------|--------|--------|----------------|
+| `screen_id` | str | `amex_{app}_{idx}` | auto | Primary key |
+| `app_name` | str | e.g. "Amazon", "Spotify" | AMEX metadata | App-level analysis |
+| `app_category` | categorical | `shopping`, `social`, `finance`, `productivity`, `media`, `travel`, `health`, `settings`, `communication`, `food`, `other` | AMEX metadata or manual | Performance may vary by domain (shopping UIs are more standardized than games) |
+| `screen_type` | categorical | `login`, `home`, `list`, `detail`, `settings`, `form`, `search`, `confirmation`, `error`, `modal`, `navigation`, `other` | Manual or LLM-assisted | Screen type may correlate with difficulty — forms are easier than modals |
+| `n_elements` | int | 5-100+ | AMEX element_anno count | **Visual complexity proxy** — more elements = harder to find the right one |
+| `n_text_elements` | int | 0-50+ | count elements with text | OCR load — many text elements = more confusables |
+| `n_interactive_elements` | int | 0-30+ | count tappable elements | State/role assertions are harder with many interactive elements |
+| `visual_density` | ordinal | `sparse` (≤10 elem), `moderate` (11-25), `dense` (26-50), `cluttered` (>50) | derived from n_elements | Binned version for stratification |
+| `has_scrollable_content` | bool | true/false | AMEX view hierarchy or manual | Partial visibility affects absence assertions |
+| `dominant_color_scheme` | categorical | `light`, `dark`, `mixed` | image analysis or manual | Dark mode may affect OCR/element detection |
+| `device` | str | "Pixel 7 Pro", "Samsung S10" | AMEX metadata | Device variation (resolution, density) |
+| `resolution` | str | "1080x2400" etc. | AMEX image metadata | Covariate for resolution sensitivity analysis |
+| `language` | str | "en", "es", "mixed" | manual | Multilingual screens may confuse models |
+
+**Annotation effort**: ~80% auto-extractable from AMEX metadata. Manual: `screen_type`, `has_scrollable_content`, `dominant_color_scheme`, `language` (~30 sec/screenshot = ~50 min total).
+
+### 4.2. Assertion-Level Annotations
+
+Annotated **once per test assertion** (550 assertions). These define what we're measuring.
+
+| Field | Type | Values | Source | Why it matters |
+|-------|------|--------|--------|----------------|
+| `test_id` | str | `amex_{screen}_{tier}_{idx}` | auto | Primary key |
+| `assertion` | str | Natural language | generated | The test input |
+| `expected` | str | `PASS`, `FAIL` | generated + validated | Ground truth |
+| `cognitive_tier` | categorical | `P`, `U`, `R` | derived from tags | **Primary IV** |
+| **Operation tags** | | | | |
+| `operation` | categorical | see §4.3 | manual/auto | What cognitive skill is required |
+| **Difficulty tags** | | | | |
+| `difficulty_tags` | list[str] | 0..N from set | manual | Visual/perceptual challenge modifiers |
+| **Assertion characteristics** | | | | |
+| `assertion_length` | int | word count | auto | Longer assertions may be harder to parse |
+| `assertion_specificity` | ordinal | `vague`, `moderate`, `precise` | manual | *"Check the header"* vs *"Verify the header says 'Cart (3)'"* |
+| `assertion_phrasing` | categorical | `imperative`, `interrogative`, `declarative` | auto (regex) | Phrasing style as potential confound |
+| `n_visual_cues_required` | int | 1, 2, 3+ | manual | How many distinct screen regions must be checked |
+| `requires_domain_knowledge` | bool | true/false | manual | *"Verify the price includes tax"* needs shopping domain knowledge |
+| **Provenance** | | | | |
+| `generation_method` | categorical | `auto_from_element`, `llm_generated`, `llm_perturbed`, `manual` | auto | Track how the assertion was created |
+| `perturbation_type` | categorical | `none`, `char_swap`, `case`, `word_drop`, `number`, `antonym`, `semantic_inversion`, `absence_inversion` | auto | For FAIL assertions: what was changed |
+| `source_element_id` | str | AMEX element ID | auto | Traceability to source annotation |
+| `validated_by` | str | `human`, `auto` | manual | Was ground truth human-verified? |
+| `validation_confidence` | ordinal | `certain`, `probable`, `ambiguous` | manual | Annotator's confidence in the label |
+
+**Annotation effort**: Auto fields (~60%) are computed. Manual fields for U/R tier assertions (~350): `specificity`, `n_visual_cues`, `requires_domain_knowledge`, `validation_confidence` (~45 sec/assertion = ~4.5h).
+
+### 4.3. Operation Tags (v5 — tier-aligned)
 
 ```yaml
 # Tier P — Perception
 text_match_exact: "Character-for-character string match"
+text_match_normalized: "Match after case/whitespace normalization"
 presence: "Element exists in viewport"
 absence: "Element does NOT exist"
 icon_recognition: "Identify an icon by its visual appearance"
+color_check: "Verify an element's color/style"
 
 # Tier U — Understanding
 element_role: "Identify what a UI element does (not what it says)"
 screen_type: "Classify the screen's purpose (login, settings, checkout)"
 widget_state: "Understand interactive state (enabled, selected, expanded)"
 navigation: "Identify navigation affordances (back, menu, tabs)"
+grouping: "Understand that elements form a logical group (e.g., a form)"
+content_type: "Classify what kind of content is displayed (image, map, video)"
 
 # Tier R — Reasoning
 task_completion: "Judge whether a multi-step task goal was achieved"
 error_detection: "Identify error states or failure conditions"
 data_consistency: "Cross-reference multiple UI values for coherence"
 workflow_state: "Determine where in a workflow the user currently is"
+conditional_logic: "If X is true, then Y should be visible/enabled"
+constraint_check: "Verify a business rule (e.g., can't checkout with empty cart)"
 ```
 
-### Difficulty Tags (unchanged from v4)
+### 4.4. Difficulty Tags
 
 ```yaml
-near_miss, small_text, low_contrast, cluttered, occluded, confusable, truncated
+# Visual challenges
+near_miss: "Minimal visual difference from correct state"
+small_text: "Text < ~10px rendered, requires fine OCR"
+low_contrast: "Poor foreground/background distinction"
+cluttered: "Dense layout with competing elements"
+occluded: "Element partially hidden, cropped, or overlapping"
+confusable: "Multiple visually similar elements"
+truncated: "Text cut off with '...' or overflow hidden"
+# Semantic challenges
+ambiguous_element: "Element could be interpreted multiple ways"
+multi_region: "Answer requires scanning multiple screen areas"
+implicit_state: "State is implied, not explicitly shown (e.g., no error = success)"
 ```
 
-### Cognitive Tier (derived, NOT ad-hoc)
+### 4.5. Evaluation-Result-Level Fields
 
-```
-tier = "R" if any R-tag in tags
-      else "U" if any U-tag in tags
-      else "P"
-```
+These are recorded **per API call** (each assertion × prompt × model = 1 result). They come from `run_eval.py` output.
 
-This is now **meaningful** because the tiers are defined by what cognitive operation the assertion *requires*, not by how many tags it has.
+| Field | Source | Notes |
+|-------|--------|-------|
+| `result` | model output | PASS/FAIL/UNCLEAR |
+| `confidence` | model output (json) or logprobs (abc) | 0.0-1.0 |
+| `evidence` | model CoT output | What the model cited as proof |
+| `reasoning` | model CoT output | How it reached the verdict |
+| `latency_ms` | measured | Response time |
+| `input_tokens` | API response | Token count for cost analysis |
+| `output_tokens` | API response | Token count |
+| `cost` | computed | USD cost per call |
 
 ---
 
-## 5. Independent Variables
+## 5. Independent Variables — Full Matrix
 
-| IV | Values | Rationale |
-|----|--------|-----------|
-| **cognitive_tier** | P, U, R | Primary research question: where does the VLM break? |
-| **system_prompt** | minimal, evidence_first, strict_oracle | Carried from ScreenQA study |
-| **model** | gpt-4o-mini, gpt-4o, gemini-2.0-flash, claude-3.5-sonnet | Cross-model comparison |
-| **output_format** | json (CoT), abc (logprobs) | CoT may help R-tier more than P-tier |
-| **few_shot** | 0-shot, 1-shot (per tier) | Exemplars may anchor correct reasoning strategy |
+### 5.1. Test-Level IVs (vary per assertion, within same experiment)
 
-### Experiment Matrix (minimum viable)
+| IV | Type | Values | Controlled how |
+|----|------|--------|---------------|
+| `cognitive_tier` | categorical | P, U, R | Assertion tag |
+| `operation` | categorical | 16 operation tags | Assertion tag |
+| `difficulty` | categorical | 0..N difficulty tags | Assertion tag |
+| `assertion_specificity` | ordinal | vague, moderate, precise | Assertion annotation |
+| `n_visual_cues_required` | int | 1, 2, 3+ | Assertion annotation |
+| `screen_complexity` (n_elements) | continuous | 5-100+ | Screenshot annotation |
+| `app_category` | categorical | 11 categories | Screenshot annotation |
+| `expected_polarity` | binary | PASS, FAIL | Assertion label |
 
-| Experiment | Model | Prompt | Format | Tiers | Est. API calls |
-|------------|-------|--------|--------|-------|----------------|
-| E1: Baseline | gpt-4o-mini | 3 personas | json | P+U+R | 550 × 3 = 1,650 |
-| E2: Strong model | gpt-4o | evidence_first | json | P+U+R | 550 |
-| E3: Calibration | gpt-4o-mini | evidence_first | abc | P+U+R | 550 |
-| E4: Few-shot | gpt-4o-mini | evidence_first+1shot | json | P+U+R | 550 |
-| **Total** | | | | | ~3,300 |
+These are **observed** — we don't control them experimentally but stratify results by them.
+
+### 5.2. Experiment-Level IVs (vary between experiments)
+
+| IV | Values | Rationale | Priority |
+|----|--------|-----------|----------|
+| **system_prompt** | `minimal`, `evidence_first`, `strict_oracle` | Prompt strategy affects reasoning | HIGH — primary ablation |
+| **model** | `gpt-4o-mini`, `gpt-4o`, `gemini-2.0-flash`, `claude-sonnet-4` | Model capability ceiling | HIGH — cross-model comparison |
+| **output_format** | `json` (CoT, 500 tokens), `abc` (1 token, logprobs) | CoT vs direct; enables calibration | HIGH — unlocks Brier/ECE |
+| **assertion_phrasing** | `imperative` ("Verify that..."), `interrogative` ("Is the...?"), `declarative` ("The cart is empty") | Phrasing may shift model behavior | MEDIUM — cheap to test |
+| **few_shot** | `0-shot`, `1-shot` (tier-matched exemplar), `3-shot` | Exemplars may anchor reasoning | MEDIUM — especially for R-tier |
+| **image_preprocessing** | `original`, `resized_50%`, `element_highlighted` (bbox overlay) | Resolution sensitivity; highlighting may help R-tier | MEDIUM — VisualWebBench finding |
+| **multi_sample** | `single`, `majority_vote_3`, `majority_vote_5` | Trading cost for reliability | LOW — expensive, but key for deployment |
+| **temperature** | `0.0`, `0.7` | Only relevant for multi_sample | LOW — near-null effect in literature |
+
+### 5.3. Experiment Matrix (expanded)
+
+| ID | What it tests | Model | Prompt | Format | Phrasing | Few-shot | Image | Multi | Calls |
+|----|--------------|-------|--------|--------|----------|----------|-------|-------|-------|
+| **E1** | Baseline × prompts | gpt-4o-mini | 3 personas | json | imperative | 0 | original | 1 | 1,650 |
+| **E2** | Strong model | gpt-4o | evidence_first | json | imperative | 0 | original | 1 | 550 |
+| **E3** | Calibration | gpt-4o-mini | evidence_first | abc | imperative | 0 | original | 1 | 550 |
+| **E4** | Few-shot | gpt-4o-mini | evidence_first | json | imperative | 1-shot | original | 1 | 550 |
+| **E5** | Phrasing | gpt-4o-mini | evidence_first | json | 3 styles | 0 | original | 1 | 1,650 |
+| **E6** | Resolution | gpt-4o-mini | evidence_first | json | imperative | 0 | 3 sizes | 1 | 1,650 |
+| **E7** | Multi-sample | gpt-4o-mini | evidence_first | json | imperative | 0 | original | mv3 | 1,650 |
+| **E8** | Cross-model | gemini-2.0-flash | evidence_first | json | imperative | 0 | original | 1 | 550 |
+| **E9** | Cross-model | claude-sonnet-4 | evidence_first | json | imperative | 0 | original | 1 | 550 |
+| | | | | | | | | **Total** | **~9,350** |
+
+**Cost estimate**: ~$25-40 depending on models (gpt-4o is the most expensive at ~$7.50/1K images).
+
+**Execution strategy**: Run E1 first (baseline), analyze, then prioritize E2-E9 based on findings.
 
 ---
 
 ## 6. Metrics Framework
 
-### Primary DV (same convention: POSITIVE = BUG)
+### 6.1. Primary DVs (same convention: POSITIVE = BUG)
 
 | Metric | What it measures | Target |
 |--------|-----------------|--------|
 | FNR (Miss Rate) | Bugs that escape | < 5% |
 | FPR (False Alarm) | Test flakiness | < 15% |
 | Balanced Accuracy | Robust overall | > 85% |
-| MCC | Best single metric | > 0.7 |
+| MCC | Best single metric for imbalanced binary | > 0.7 |
 
-### Stratified by Cognitive Tier (the key analysis)
+### 6.2. Stratified Analysis (the key analyses)
+
+#### A. By Cognitive Tier (primary research question)
 
 ```
 For each tier T in {P, U, R}:
@@ -228,56 +334,171 @@ For each tier T in {P, U, R}:
   - Effect size: Cohen's d for tier differences
 ```
 
-**Expected insight**: FNR_R >> FNR_P (models miss more bugs when reasoning is needed). If FNR_R ≈ FNR_P, the model uses linguistic shortcuts.
+**Expected**: FNR_R >> FNR_P. If FNR_R ≈ FNR_P, the model uses linguistic shortcuts.
 
-### Calibration (per tier)
+#### B. By Screen Complexity (confound check)
+
+```
+For each visual_density bin {sparse, moderate, dense, cluttered}:
+  - Same metrics
+  - Cross with tier: is complexity orthogonal to tier, or confounded?
+```
+
+**Expected**: Dense screens hurt P-tier (more text to scan) but not necessarily R-tier (reasoning doesn't depend on element count).
+
+#### C. By App Category
+
+```
+For each app_category:
+  - FNR, FPR, Acc
+  - Identify categories where VLMs struggle (games? maps? custom UI?)
+```
+
+**Expected**: Standardized UIs (settings, forms) are easier; creative/custom UIs (games, media players) are harder.
+
+#### D. By Assertion Characteristics
+
+```
+For each specificity level {vague, moderate, precise}:
+  - Is precision good? (vague assertions → more FP? more FN?)
+
+For each n_visual_cues bin {1, 2, 3+}:
+  - Does multi-cue requirement degrade performance?
+
+For each domain_knowledge {true, false}:
+  - Does domain knowledge requirement hurt more than visual complexity?
+```
+
+#### E. Prompt × Tier Interaction (2-way)
+
+```
+For each (prompt, tier) combination:
+  - FNR, FPR
+  - Interaction test: does evidence_first help more on R-tier than P-tier?
+```
+
+#### F. Phrasing Effect (E5)
+
+```
+For each (phrasing, tier):
+  - Does interrogative framing reduce overconfidence?
+  - Does declarative framing increase false PASSes?
+```
+
+### 6.3. Calibration (per tier, requires E3)
 
 ```
 For each tier:
   - Brier score
-  - ECE (10 bins) + reliability diagram
+  - ECE (10 bins) + reliability diagram data
   - Overconfidence ratio
+  - Per-bin: (avg_confidence, avg_accuracy, count)
 ```
 
-**Expected insight**: Models are likely overconfident on R-tier (high confidence but low accuracy), matching findings from "Overconfidence in LLM-as-a-Judge" (2025).
+**Expected**: Overconfidence_R >> Overconfidence_P (models are confident but wrong on reasoning).
 
-### Prompt × Tier Interaction
+### 6.4. Cost-Effectiveness Analysis
 
 ```
-2-way analysis: prompt_strategy × cognitive_tier
-- Does evidence_first help more on R-tier than P-tier?
-- Does strict_oracle's conservatism reduce FNR_R at the cost of FPR_R?
+For each experiment:
+  - Cost per correct decision (USD)
+  - Cost per caught bug (USD)
+  - Cost per avoided false alarm (USD)
+  - ROI vs human QA baseline (estimate human at $30/h, ~2 min/assertion)
 ```
+
+### 6.5. Statistical Rigor
+
+| Method | Used for | When |
+|--------|----------|------|
+| Bootstrap 95% CI (1000 iter) | All metrics | Always |
+| McNemar's test | Paired prompt/model comparison | E1 (3 prompts), E5 (3 phrasings), E8-E9 (cross-model) |
+| Cohen's κ | Inter-prompt/model agreement | Same as McNemar |
+| Bonferroni correction | Multiple comparison control | When testing >3 pairs |
+| Cohen's d | Effect size for significant differences | When McNemar p < 0.05 |
+| Spearman ρ | Correlation of continuous covariates | screen_complexity × accuracy, assertion_length × accuracy |
 
 ---
 
 ## 7. Annotation Protocol
 
-### Phase 1: Assertion Generation (automated)
+### Phase 1: Data Collection (automated, ~2h)
 
-1. Download AMEX screenshots + annotations from HuggingFace
-2. Sample 100 diverse screens (stratified by app category)
-3. Generate P-tier assertions automatically from element annotations
-4. Generate U-tier and R-tier assertions via GPT-4o (with element + screen context)
-5. Target: 200 P + 200 U + 150 R = 550 assertions
+1. Download AMEX from HuggingFace (`Yuxiang007/AMEX`)
+2. Sample 100 diverse screenshots:
+   - Stratified by app_category (at least 5 per category for top-8 categories)
+   - Stratified by n_elements (25 sparse + 25 moderate + 25 dense + 25 cluttered)
+   - Deduplicate similar screens from same app
+3. Extract screenshot-level metadata from AMEX annotations
 
-### Phase 2: Human Validation (manual, ~4h)
+### Phase 2: Assertion Generation (semi-automated, ~4h)
 
-For each U/R assertion:
-- [ ] Is the assertion unambiguous? (can a human answer PASS/FAIL from screenshot alone?)
-- [ ] Is the expected label correct?
-- [ ] Is the tier assignment correct? (does it genuinely require understanding/reasoning?)
-- [ ] Rate difficulty: easy / medium / hard
+1. **P-tier** (auto): Extract element text → generate exact-match assertions + perturbations
+   - Target: 200 assertions (120 PASS + 80 FAIL)
+   - Auto-tag: `text_match_exact`, `presence`, `absence`
+   - Auto-tag perturbation: `char_swap`, `case`, `number`, etc.
 
-Reject assertions that are ambiguous or where the tier is wrong.
+2. **U-tier** (LLM + human): Feed screenshot + element annotations to GPT-4o
+   - Generate 3 understanding assertions per screen (pick best 2)
+   - Target: 200 assertions (120 PASS + 80 FAIL)
+   - Generate FAIL via semantic inversion, role confusion, state mismatch
 
-### Phase 3: Balance Check
+3. **R-tier** (LLM + human): Feed task instruction + final screenshot to GPT-4o
+   - Generate 2 reasoning assertions per task
+   - Target: 150 assertions (85 PASS + 65 FAIL)
+   - Use TASK_COMPLETE/IMPOSSIBLE labels as ground truth anchor
 
-Target distribution:
-- PASS/FAIL ratio: 55/45 to 60/40 (slight PASS majority, realistic)
-- Per tier: minimum 100 assertions after validation
-- Per app category: minimum 3 apps represented
-- Difficulty: at least 20% "hard" per tier
+### Phase 3: Human Validation (manual, ~5h)
+
+**Annotation guide** for each U/R assertion:
+
+```
+For each assertion, answer:
+
+1. AMBIGUITY CHECK: Can a human determine PASS/FAIL from the screenshot alone?
+   [ ] Yes, clearly    [ ] Probably    [ ] Ambiguous → REJECT
+
+2. LABEL CHECK: Is the expected label correct?
+   [ ] Correct    [ ] Wrong → FIX    [ ] Can't tell → REJECT
+
+3. TIER CHECK: Does this assertion genuinely require the tagged tier?
+   - P: Could be answered by text search / OCR alone
+   - U: Requires understanding element function, not just reading
+   - R: Requires cross-referencing multiple cues or inferring state
+   [ ] Correct tier    [ ] Should be {P/U/R} → RE-TAG
+
+4. SPECIFICITY: How specific is the assertion?
+   [ ] Vague (many interpretations)
+   [ ] Moderate (some room for interpretation)
+   [ ] Precise (only one way to check)
+
+5. VISUAL CUES: How many distinct screen regions must be checked?
+   [ ] 1    [ ] 2    [ ] 3+
+
+6. DOMAIN KNOWLEDGE: Does answering require knowledge beyond what's on screen?
+   [ ] No    [ ] Yes (describe: ________________)
+
+7. CONFIDENCE: How confident are you in your annotation?
+   [ ] Certain    [ ] Probable    [ ] Unsure
+```
+
+**Quality targets**:
+- Inter-annotator agreement: κ > 0.7 (if using 2 annotators on a subset)
+- Rejection rate: < 20% of generated assertions
+- After validation: minimum 150 P + 150 U + 100 R = 400 usable assertions
+
+### Phase 4: Balance & Diversity Check
+
+| Dimension | Target | Check |
+|-----------|--------|-------|
+| PASS/FAIL ratio | 55-60% / 40-45% | Per tier |
+| Per tier | ≥ 100 assertions after validation | Count |
+| Per app category (top-8) | ≥ 5 assertions each | Count |
+| Specificity distribution | ≥ 20% vague, ≥ 20% precise | Per tier |
+| n_visual_cues | ≥ 30% multi-cue for U/R | Count |
+| Screen complexity | ≥ 15 per density bin | Count |
+
+If imbalanced, generate additional targeted assertions for underrepresented cells.
 
 ---
 
@@ -285,21 +506,39 @@ Target distribution:
 
 Based on the literature, we expect to show:
 
-1. **Steep cognitive tier gradient**: Accuracy drops 15-25% from P→R, confirming VLMs are visual grounding tools, not reasoning engines (consistent with LENS, MMBench-GUI)
+### H1: Steep cognitive tier gradient
+Accuracy drops 15-25% from P→R, confirming VLMs are visual grounding tools, not reasoning engines (consistent with LENS, MMBench-GUI).
 
-2. **Prompt strategy × tier interaction**: CoT/evidence_first helps on R-tier (forces step-by-step reasoning) but adds noise on P-tier (overthinks simple checks)
+### H2: Prompt × tier interaction
+CoT/evidence_first helps on R-tier (forces step-by-step reasoning) but adds noise on P-tier (overthinks simple checks). Strict_oracle may show lowest FNR_R but highest FPR_R.
 
-3. **Calibration gap widens with complexity**: Models are well-calibrated on P-tier but overconfident on R-tier (Brier_R >> Brier_P)
+### H3: Calibration gap widens with tier
+Models are well-calibrated on P-tier but overconfident on R-tier (Brier_R >> Brier_P). This means confidence thresholds are reliable for P/U but not R.
 
-4. **FNR varies by tier**: FNR_P < 5% (acceptable for deployment) but FNR_R > 15% (not deployable for complex assertions without human review)
+### H4: FNR deployment threshold varies by tier
+- FNR_P < 5% → deployable without human oversight
+- FNR_U ~ 8-12% → deployable with confidence-based routing to human review
+- FNR_R > 15% → not deployable as autonomous oracle; useful as assistant
 
-5. **Cross-model divergence increases with tier**: gpt-4o-mini ≈ gpt-4o on P-tier but gpt-4o >> gpt-4o-mini on R-tier (reasoning capability matters more at higher tiers)
+### H5: Cross-model divergence increases with tier
+gpt-4o-mini ≈ gpt-4o on P-tier, but gpt-4o >> gpt-4o-mini on R-tier. Reasoning capability matters more at higher tiers.
+
+### H6: Phrasing effect
+Interrogative phrasing (*"Is the cart empty?"*) reduces overconfidence on R-tier assertions. Declarative phrasing (*"The cart is empty"*) increases false PASS rate.
+
+### H7: Resolution sensitivity
+Downscaled images hurt P-tier disproportionately (OCR degrades) but barely affect R-tier (reasoning is resolution-independent once elements are recognizable).
+
+### H8: Screen complexity is a confound, not an explanation
+Visual density correlates with difficulty, but does not explain the tier gradient — R-tier assertions on sparse screens are still harder than P-tier on cluttered screens.
 
 ### Practical Implications for Test Automation
 
-- **P-tier assertions**: VLMs are production-ready. Can replace manual visual checks.
-- **U-tier assertions**: VLMs are useful but need confidence thresholds. Route low-confidence to human review.
-- **R-tier assertions**: VLMs are assistive, not autonomous. Best used as a "second pair of eyes" with human final decision.
+| Tier | Recommendation | Confidence threshold |
+|------|---------------|---------------------|
+| **P** | Deploy autonomously. VLM replaces manual visual checks. | conf > 0.7 → auto-decide |
+| **U** | Deploy with routing. Low-confidence → human review. | conf > 0.85 → auto, else human |
+| **R** | Assistive only. VLM flags potential issues, human decides. | Always review |
 
 ---
 
@@ -310,13 +549,16 @@ Based on the literature, we expect to show:
 | 1 | Write `convert_amex.py` — download + convert AMEX to benchmark format | 1 day | HuggingFace access |
 | 2 | Generate P-tier assertions from element annotations | 2h | Step 1 |
 | 3 | Generate U/R-tier assertions via GPT-4o | 3h + ~$5 API | Step 1 |
-| 4 | Human validation of U/R assertions | 4h manual | Step 3 |
-| 5 | Run E1 (baseline, 1,650 calls) | 1h + ~$3 API | Step 4 |
-| 6 | Run E2-E4 (comparisons) | 2h + ~$10 API | Step 5 |
-| 7 | Compute metrics + generate report | 30min | Step 6 |
-| 8 | Write findings | 1 day | Step 7 |
+| 4 | Screenshot-level annotation (auto + manual) | 1.5h | Step 1 |
+| 5 | Human validation of U/R assertions (Phase 3) | 5h manual | Step 3 |
+| 6 | Balance check + gap filling | 1h | Step 5 |
+| 7 | Run E1 (baseline, 1,650 calls) | 1h + ~$3 API | Step 6 |
+| 8 | Analyze E1, decide priority for E2-E9 | 1h | Step 7 |
+| 9 | Run prioritized experiments (E2-E9) | 3h + ~$25 API | Step 8 |
+| 10 | Compute metrics + generate full report | 1h | Step 9 |
+| 11 | Write findings + practical recommendations | 1 day | Step 10 |
 
-**Total estimated effort**: 3-4 days + ~$18 API costs
+**Total estimated effort**: 4-5 days + ~$35 API costs
 
 ---
 
@@ -331,4 +573,8 @@ Based on the literature, we expect to show:
 - AitZ (EMNLP 2024): Chain-of-Action-Thought, screen descriptions
 - MLLM-as-a-Judge (ICML 2024): Position bias, calibration gaps
 - Overconfidence in LLM-as-a-Judge (2025): ECE 0.11-0.43, format-dependent
+- VisualWebBench (2024): Resolution sensitivity, 7 tasks across 3 granularity levels
+- PaliGemma 2 (2024): Resolution × model size interaction ablations
+- Renze & Guven (2024): Temperature has near-null effect on accuracy 0.0-1.0
 - Lee & Zeng (2025): Bias-corrected CIs for LLM-judge evaluations
+- VHELM (NeurIPS 2024): 22 VLMs, 9 aspects — efficiency vs full model gaps on bias
