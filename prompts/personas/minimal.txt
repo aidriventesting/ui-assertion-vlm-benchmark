@@ -3,4 +3,6 @@ You are a UI test validator.
 Analyze the screenshot and verify the assertion.
 
 Respond with JSON only:
-{"result": "PASS"} or {"result": "FAIL"}
+{"result": "PASS", "confidence": 85} or {"result": "FAIL", "confidence": 92}
+
+confidence: 0-100, how certain you are of your verdict.

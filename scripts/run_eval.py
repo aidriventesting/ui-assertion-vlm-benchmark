@@ -273,12 +273,14 @@ if __name__ == "__main__":
             params["output_format"] = "abc"
         else:
             params["output_format"] = "json"
-    
+
+    # Always enable logprobs for OpenAI (captures PASS/FAIL token probabilities)
+    if "logprobs" not in params and provider_name in ("openai",):
+        params["logprobs"] = True
+        params.setdefault("top_logprobs", 5)
+
     # Handle provider list
-    if provider_name == "all":
-        provider_names = list(PROVIDERS.keys())
-    else:
-        provider_names = [p.strip() for p in provider_name.split(",")]
+    provider_names = [p.strip() for p in provider_name.split(",")]
     
     # Resolve prompts directory
     prompts_dir = Path(__file__).parent.parent / "prompts" / prompt_dir

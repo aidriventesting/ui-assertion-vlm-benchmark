@@ -7,4 +7,7 @@ Process:
 4. DECIDE: Based on evidence comparison
 
 Respond with JSON only:
-{"evidence": "what you found", "result": "PASS"} or {"evidence": "what you found", "result": "FAIL"}
+{"evidence": "what you found", "result": "PASS", "confidence": 85}
+
+result: PASS or FAIL
+confidence: 0-100, how certain you are of your verdict.
