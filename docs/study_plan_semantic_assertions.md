@@ -18,6 +18,8 @@ Measure where Vision Language Models break down as test oracles — not just "ca
 | **RQ2** | Does how you phrase the assertion matter? | `assertion_phrasing` | "Write your test assertions like THIS" |
 | **RQ3** | Are some app categories harder to test with VLMs? | `app_category` | "Be careful with category X" |
 | **RQ4** | Does screen complexity degrade VLM accuracy? | `screen_complexity` | "Simplify screens before testing" or "doesn't matter" |
+| **RQ5** | At what confidence threshold should you trust the VLM vs route to a human? | `logprobs` (confidence) | "Set threshold at X% — below that, send to human review" |
+| **RQ6** | Is the model's confidence well-calibrated, and does it vary by tier? | `calibration × tier` | "Trust confidence scores on P-tier, ignore them on R-tier" |
 
 ---
 
@@ -51,6 +53,27 @@ Measure where Vision Language Models break down as test oracles — not just "ca
 | **FPR** (False Alarm) | False test failures → dev productivity loss |
 | **MCC** | Overall oracle quality (single number) |
 | **Balanced Accuracy** | Robust to class imbalance |
+
+#### Calibration DVs (from logprobs — E3 only)
+
+| DV | What it means for test auto |
+|----|-----------------------------|
+| **Brier Score** | Overall quality of confidence estimates (lower = better, 0.25 = random) |
+| **ECE** (10 bins) | Expected Calibration Error — are confidence scores trustworthy? |
+| **Overconfidence Ratio** | % of bins where model is more confident than accurate |
+| **Optimal Threshold** | Confidence cutoff that maximizes F1 (the deployment setting) |
+| **Reliability Diagram** | Per-bin (confidence, accuracy, count) — visual calibration check |
+| **FNR@threshold** | Miss rate when filtering below confidence threshold |
+| **Human Routing Rate** | % of assertions routed to human at optimal threshold |
+
+### Provider Constraint
+
+**Logprobs are OpenAI-only.** Anthropic and Google do not expose token-level log-probabilities on vision API calls. This means:
+- E1 (JSON/CoT) and E2 (phrasing): any provider works, but we use OpenAI for consistency
+- E3 (ABC/logprobs): **must be OpenAI** (gpt-4o-mini with `logprobs=true, top_logprobs=5`)
+- The ABC format sends 3 tokens (A=PASS, B=FAIL, C=UNCLEAR) and reads the log-probability of each — no chain-of-thought, just a calibrated probability
+
+This is a real constraint for deployment: **confidence-based routing only works with OpenAI today.**
 
 ---
 
@@ -234,13 +257,46 @@ For each of the 240 U/R assertions:
 - McNemar's test: imperative vs interrogative, imperative vs declarative
 - Key question: does interrogative reduce FPR on R-tier?
 
+### E3: Logprobs & Calibration (RQ5 + RQ6)
+
+| Parameter | Value |
+|-----------|-------|
+| Assertions | 360 (imperative phrasing only) |
+| Model | gpt-4o-mini |
+| Prompt | evidence_first |
+| Format | **abc** (1 token, logprobs=true, top_logprobs=5) |
+| API calls | **360** |
+| Est. cost | ~$0.50 (1 token output per call) |
+
+**Why a separate experiment**: JSON format gives reasoning traces (useful for debugging) but no calibrated confidence. ABC format gives `p_pass`, `p_fail`, `p_unclear` from logprobs — needed for threshold analysis.
+
+**Analysis**:
+- Reliability diagram: 10-bin plot of (confidence vs accuracy) → **visual calibration check**
+- ECE and Brier score, overall and per tier → **RQ6**
+- Sweep confidence thresholds 0.5→0.99:
+  - At each threshold t: compute FNR, FPR, and human_routing_rate for decisions where max(p_pass, p_fail) ≥ t
+  - Find **optimal t** that maximizes F1 on decided cases → **RQ5**
+  - Find **safe t** where FNR < 5% → the deployment threshold
+- Key output: **routing curve** (threshold vs FNR vs human_routing_rate per tier)
+
+**Expected findings**:
+
+| Tier | Optimal threshold | FNR@optimal | Human routing rate | Interpretation |
+|------|------------------|-------------|-------------------|---------------|
+| P | ~0.75 | ~3% | ~10% | Mostly autonomous, few edge cases |
+| U | ~0.85 | ~8% | ~25% | Viable with routing |
+| R | ~0.90 | ~15% | ~45% | Half the assertions need human review |
+
+**Insight for test auto**: "For P-tier assertions, auto-decide when confidence > 75%. For U-tier, require 85%. For R-tier, even at 90% threshold you're still routing 45% to humans — consider if VLM adds value vs direct human review."
+
 ### Total
 
 | | Calls | Cost |
 |-|-------|------|
-| E1 | 360 | ~$1.50 |
-| E2 | 1,080 | ~$4.50 |
-| **Total** | **1,440** | **~$6** |
+| E1 (JSON, baseline) | 360 | ~$1.50 |
+| E2 (JSON, phrasing) | 1,080 | ~$4.50 |
+| E3 (ABC, logprobs) | 360 | ~$0.50 |
+| **Total** | **1,800** | **~$6.50** |
 
 ---
 
@@ -306,6 +362,96 @@ Box plot: accuracy by visual_density bins, colored by tier
 
 **Insight for test auto**: "Screen complexity hurts text-matching assertions but doesn't affect functional verification. Don't avoid VLMs on complex screens — just avoid OCR-level assertions on them."
 
+### 6.5. RQ5 — Optimal Confidence Threshold
+
+```
+From E3 (ABC logprobs):
+For each threshold t ∈ {0.50, 0.55, 0.60, ..., 0.95, 0.99}:
+  decided = results where max(p_pass, p_fail) ≥ t
+  routed  = results where max(p_pass, p_fail) < t  → sent to human
+  FNR_t   = FNR on decided subset
+  FPR_t   = FPR on decided subset
+  F1_t    = F1 on decided subset
+  routing_rate_t = |routed| / |total|
+
+Find:
+  t_optimal = argmax_t F1_t
+  t_safe    = min t such that FNR_t < 0.05
+
+Stratify by tier: t_optimal_P, t_optimal_U, t_optimal_R
+```
+
+This produces the **routing curve** — the key deployment artifact:
+
+```
+X-axis: threshold (0.5 → 1.0)
+Y-axis (left): FNR (want low)
+Y-axis (right): human routing rate (want low)
+Lines: one per tier (P=green, U=orange, R=red)
+Annotation: mark t_optimal and t_safe on each line
+```
+
+**Expected**: P-tier has a wide "sweet spot" (low FNR + low routing from 0.7-0.9). R-tier curve is flat — no threshold gives both low FNR and low routing.
+
+**Insight for test auto**: Concrete deployment config:
+```yaml
+# Recommended VLM test oracle settings
+confidence_thresholds:
+  perception_assertions: 0.75    # auto-decide above this
+  understanding_assertions: 0.85
+  reasoning_assertions: 0.90     # but expect 40%+ human routing
+
+routing:
+  below_threshold: "send_to_human_review"
+  above_threshold: "auto_decide"
+```
+
+### 6.6. RQ6 — Calibration by Tier
+
+```
+From E3 (ABC logprobs):
+For each tier T:
+  Brier_T = mean((confidence - correct)^2)
+  ECE_T   = expected calibration error (10 bins)
+  overconfidence_ratio_T = |bins where conf > acc| / |nonempty bins|
+
+Compare: Brier_P vs Brier_U vs Brier_R
+```
+
+Reliability diagram per tier (3 subplots):
+```
+X-axis: predicted confidence (10 bins)
+Y-axis: observed accuracy
+Diagonal = perfect calibration
+Bars = histogram of prediction count per bin
+```
+
+**Expected**:
+- P-tier: well-calibrated (points close to diagonal), Brier ~0.10
+- U-tier: slightly overconfident (points below diagonal at high confidence), Brier ~0.18
+- R-tier: significantly overconfident (says 90% confident but only 65% accurate), Brier ~0.25
+
+**Insight for test auto**: "Don't trust raw confidence scores on reasoning assertions — the model thinks it knows but it doesn't. Apply tier-specific calibration or use the routing thresholds from RQ5 instead."
+
+### 6.7. Combined Deployment Recommendation (the takeaway figure)
+
+A single summary figure for the paper/blog:
+
+```
+┌─────────────────────────────────────────────────────┐
+│         VLM Test Oracle Deployment Guide             │
+├─────────┬──────────┬──────────┬─────────────────────┤
+│  Tier   │ FNR      │ Trust?   │ Recommendation      │
+├─────────┼──────────┼──────────┼─────────────────────┤
+│ P       │ ~3%  ✅  │ conf>0.75│ Auto-decide         │
+│ U       │ ~10% ⚠️  │ conf>0.85│ Auto + route 25%    │
+│ R       │ ~20% ❌  │ conf>0.90│ Route 45% to human  │
+└─────────┴──────────┴──────────┴─────────────────────┘
+
+"Match your assertion complexity to VLM capability.
+ Use confidence routing to handle the gray zone."
+```
+
 ---
 
 ## 7. Paper Outline
@@ -331,31 +477,39 @@ Box plot: accuracy by visual_density bins, colored by tier
    - Phrasing ablation design
    - Annotation protocol
 
-4. **Results** (2 pages)
-   - RQ1: Tier gradient (the main figure — bar chart with CIs)
+4. **Results** (3 pages)
+   - RQ1: Tier gradient (bar chart with CIs)
    - RQ2: Phrasing × tier interaction (heatmap)
    - RQ3: App category ranking (horizontal bar chart)
    - RQ4: Complexity correlation (scatter plot)
+   - RQ5: Routing curve — threshold vs FNR vs human rate (the deployment figure)
+   - RQ6: Reliability diagrams per tier (calibration)
 
 5. **Discussion** (1 page)
-   - Deployment recommendations per tier
-   - When to trust, when to verify
-   - Limitations (single model, English only, AMEX apps)
+   - Deployment guide: threshold config per tier
+   - When to trust, when to route, when to skip VLM
+   - Cost-benefit: VLM + routing vs pure human QA
+   - Limitations (single model, OpenAI-only for logprobs, English, AMEX apps)
 
 6. **Conclusion** (0.5 page)
-   - VLMs are P-ready, U-cautious, R-not-ready
-   - Test teams should match assertion level to VLM capability
+   - VLMs are P-ready, U-routable, R-assistive
+   - Confidence routing is the key enabler — not just accuracy
+   - Test teams should match assertion level to VLM capability AND set confidence thresholds
 
 ### Key Figures
 
-| Fig | Type | Shows |
-|-----|------|-------|
-| Fig 1 | Bar chart + CI whiskers | FNR by tier (P < U < R) — the money shot |
-| Fig 2 | Grouped bar chart | FNR × phrasing × tier interaction |
-| Fig 3 | Horizontal bar chart | MCC by app category, sorted |
-| Fig 4 | Scatter + regression line | n_elements vs accuracy, colored by tier |
-| Table 1 | Full metrics | All DVs × tier, with bootstrap CIs |
-| Table 2 | McNemar results | Pairwise significance tests |
+| Fig | Type | Shows | RQ |
+|-----|------|-------|----|
+| Fig 1 | Bar chart + CI whiskers | FNR by tier (P < U < R) | RQ1 |
+| Fig 2 | Grouped bar chart | FNR × phrasing × tier | RQ2 |
+| Fig 3 | Horizontal bar chart | MCC by app category, sorted | RQ3 |
+| Fig 4 | Scatter + regression | n_elements vs accuracy, colored by tier | RQ4 |
+| **Fig 5** | **Routing curve** | **Threshold vs FNR vs human_rate, per tier** | **RQ5** |
+| **Fig 6** | **Reliability diagram** | **3 subplots: P/U/R calibration** | **RQ6** |
+| **Fig 7** | **Deployment guide** | **Summary table: tier → threshold → action** | All |
+| Table 1 | Full metrics | All DVs × tier, with bootstrap CIs | RQ1 |
+| Table 2 | McNemar results | Pairwise significance tests | RQ1-2 |
+| **Table 3** | **Threshold sweep** | **t, FNR@t, FPR@t, F1@t, routing_rate per tier** | **RQ5** |
 
 ---
 
@@ -368,11 +522,13 @@ Box plot: accuracy by visual_density bins, colored by tier
 | 3 | Generate U/R-tier assertions (GPT-4o + templates) | 2h + ~$3 | 240 U/R assertions |
 | 4 | Human validation of U/R + annotation | 3h | validated `tests.json` per screen |
 | 5 | Generate phrasing variants (template-based) | 30min | 3× assertion variants |
-| 6 | Run E1 (360 calls) | 30min + ~$1.50 | `results/raw_E1.jsonl` |
-| 7 | Run E2 (1,080 calls) | 1h + ~$4.50 | `results/raw_E2.jsonl` |
-| 8 | Compute metrics + generate figures | 1h | `results/metrics_*.json`, plots |
-| 9 | Write paper/blog | 4h | `docs/paper.md` |
-| **Total** | | **~2 days + ~$9** | |
+| 6 | Run E1 — baseline JSON (360 calls) | 30min + ~$1.50 | `results/raw_E1.jsonl` |
+| 7 | Run E2 — phrasing ablation (1,080 calls) | 1h + ~$4.50 | `results/raw_E2.jsonl` |
+| 8 | Run E3 — ABC logprobs (360 calls) | 20min + ~$0.50 | `results/raw_E3.jsonl` |
+| 9 | Compute metrics + calibration + threshold sweep | 1h | `results/metrics_*.json` |
+| 10 | Generate figures (7 figs + 3 tables) | 1h | `docs/figures/` |
+| 11 | Write paper/blog | 4h | `docs/paper.md` |
+| **Total** | | **~2.5 days + ~$10** | |
 
 ---
 
@@ -387,3 +543,5 @@ Box plot: accuracy by visual_density bins, colored by tier
 - VisualWebBench (2024): Resolution sensitivity, granularity levels
 - arXiv:2503.01747: Don't use CLT for LLM evaluation with small N — use bootstrap
 - Lee & Zeng (2025): Bias-corrected CIs for LLM-judge evaluation
+- Overconfidence in LLM-as-a-Judge (2025): ECE 0.11-0.43, float repr best calibration
+- Calibrating LLM Judges (2025): Brier score loss for training calibrated uncertainty probes
