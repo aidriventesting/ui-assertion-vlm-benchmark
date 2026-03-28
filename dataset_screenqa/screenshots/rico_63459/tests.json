@@ -1,0 +1,51 @@
+[
+  {
+    "test_id": "rico63459_01",
+    "assertion": "Verify that the exact text 'Viggle' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the name of the application?"
+  },
+  {
+    "test_id": "rico63459_02",
+    "assertion": "Verify that the text '100' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "What is the number of Perk Points shown in the application?"
+  },
+  {
+    "test_id": "rico63459_03",
+    "assertion": "Verify that '101' is displayed as the count related to: What is the number of Perk Points shown in the application?",
+    "expected": "FAIL",
+    "tags": [
+      "count_raw",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "What is the number of Perk Points shown in the application?",
+    "_perturbation": "100 → 101"
+  },
+  {
+    "test_id": "rico63459_04",
+    "assertion": "Verify that the exact text 'The Big Bang Theory' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the name of the movie we are watching?"
+  },
+  {
+    "test_id": "rico63459_05",
+    "assertion": "Verify that the screen does NOT contain a direct answer to: 'How many stars has the show been given?'",
+    "expected": "PASS",
+    "tags": [
+      "absence"
+    ],
+    "_source_question": "How many stars has the show been given?",
+    "_perturbation": "unanswerable question"
+  }
+]

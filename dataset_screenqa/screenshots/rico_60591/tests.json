@@ -1,0 +1,101 @@
+[
+  {
+    "test_id": "rico60591_01",
+    "assertion": "Verify that the current mode displayed is 'Map'.",
+    "expected": "PASS",
+    "tags": [
+      "state"
+    ],
+    "_source_question": "Which option is selected of \"Map or Radar mode\"?"
+  },
+  {
+    "test_id": "rico60591_02",
+    "assertion": "Verify that the current value shown for this setting is 'kmh'.",
+    "expected": "PASS",
+    "tags": [
+      "state"
+    ],
+    "_source_question": "Which option is selected for the speed unit?"
+  },
+  {
+    "test_id": "rico60591_03",
+    "assertion": "Verify that the current mode displayed is 'off'.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the status of \"Night mode for map\"?"
+  },
+  {
+    "test_id": "rico60591_04",
+    "assertion": "Verify that the exact text 'on' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_antonym"
+    ],
+    "_source_question": "What is the status of \"Night mode for map\"?",
+    "_perturbation": "'off' → 'on'"
+  },
+  {
+    "test_id": "rico60591_05",
+    "assertion": "Verify that the exact text 'on' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the status of \"Use speech when hazard detected\"?"
+  },
+  {
+    "test_id": "rico60591_06",
+    "assertion": "Verify that the exact text 'Find my car' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "state"
+    ],
+    "_source_question": "Which option is checked?"
+  },
+  {
+    "test_id": "rico60591_07",
+    "assertion": "Verify that the current mode displayed is 'off'.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the current status of \"City mode (less sensitive)\"?"
+  },
+  {
+    "test_id": "rico60591_08",
+    "assertion": "Verify that the exact text 'on' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_antonym"
+    ],
+    "_source_question": "What is the current status of \"City mode (less sensitive)\"?",
+    "_perturbation": "'off' → 'on'"
+  },
+  {
+    "test_id": "rico60591_09",
+    "assertion": "Verify that 'off' is shown as the current selection or active option.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the current status of \"Auto brightness\"?"
+  },
+  {
+    "test_id": "rico60591_10",
+    "assertion": "Verify that the exact text 'on' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_antonym"
+    ],
+    "_source_question": "What is the current status of \"Auto brightness\"?",
+    "_perturbation": "'off' → 'on'"
+  }
+]

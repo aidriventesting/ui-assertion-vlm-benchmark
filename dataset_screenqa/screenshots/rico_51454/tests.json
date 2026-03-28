@@ -1,0 +1,51 @@
+[
+  {
+    "test_id": "rico51454_01",
+    "assertion": "Verify that the exact text 'Jeremiah M...' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the name of the user?"
+  },
+  {
+    "test_id": "rico51454_02",
+    "assertion": "Verify that the exact text 'Jeremiha M...' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_char_swap"
+    ],
+    "_source_question": "What is the name of the user?",
+    "_perturbation": "'Jeremiah M...' → 'Jeremiha M...'"
+  },
+  {
+    "test_id": "rico51454_03",
+    "assertion": "Verify that the text 'Jeremiah M...' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico51454_04",
+    "assertion": "Verify that the exact text '52' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the age of Jeremiah?"
+  },
+  {
+    "test_id": "rico51454_05",
+    "assertion": "Verify that the exact text '5' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the rating for Daniel Villarreal's profile?"
+  }
+]

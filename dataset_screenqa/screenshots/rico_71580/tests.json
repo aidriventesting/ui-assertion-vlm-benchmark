@@ -1,0 +1,39 @@
+[
+  {
+    "test_id": "rico71580_01",
+    "assertion": "Verify that the exact text '173.00 cm.' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the height?"
+  },
+  {
+    "test_id": "rico71580_02",
+    "assertion": "Verify that the text '173.00 cm.' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico71580_03",
+    "assertion": "Verify that the exact text 'kg.' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the measurement unit of weight?"
+  },
+  {
+    "test_id": "rico71580_04",
+    "assertion": "Verify that the exact text '55.00 kg.' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the weight?"
+  }
+]

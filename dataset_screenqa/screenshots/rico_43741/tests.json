@@ -1,0 +1,90 @@
+[
+  {
+    "test_id": "rico43741_01",
+    "assertion": "Verify that the exact text '2012-16' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "Which year is mentioned for \"Mapway\"?"
+  },
+  {
+    "test_id": "rico43741_02",
+    "assertion": "Verify that the exact text 'support@mapway.com' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the email address?"
+  },
+  {
+    "test_id": "rico43741_03",
+    "assertion": "Verify that the exact text 'support@mapwya.com' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_char_swap"
+    ],
+    "_source_question": "What is the email address?",
+    "_perturbation": "'support@mapway.com' → 'support@mapwya.com'"
+  },
+  {
+    "test_id": "rico43741_04",
+    "assertion": "Verify that the exact text '/NYCSubwayApp' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the Facebook ID?"
+  },
+  {
+    "test_id": "rico43741_05",
+    "assertion": "Verify that the exact text 'on' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the status of \"Analytics\"?"
+  },
+  {
+    "test_id": "rico43741_06",
+    "assertion": "Verify that the exact text 'off' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_antonym"
+    ],
+    "_source_question": "What is the status of \"Analytics\"?",
+    "_perturbation": "'on' → 'off'"
+  },
+  {
+    "test_id": "rico43741_07",
+    "assertion": "Verify that the exact text '2.1.1' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What app version is used?"
+  },
+  {
+    "test_id": "rico43741_08",
+    "assertion": "Verify that the text '2.1.1' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico43741_09",
+    "assertion": "Verify that the exact text 'New York Subway' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the name of the app?"
+  }
+]

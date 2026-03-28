@@ -1,0 +1,98 @@
+[
+  {
+    "test_id": "rico18046_01",
+    "assertion": "Verify that the exact text 'Apr 11, 2017' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the posting date of the article?"
+  },
+  {
+    "test_id": "rico18046_02",
+    "assertion": "Verify that the exact text 'aPR 11, 2017' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_case"
+    ],
+    "_source_question": "What is the posting date of the article?",
+    "_perturbation": "'Apr 11, 2017' → 'aPR 11, 2017'"
+  },
+  {
+    "test_id": "rico18046_03",
+    "assertion": "Verify that the screen does NOT contain a direct answer to: 'How many likes are on the article?'",
+    "expected": "PASS",
+    "tags": [
+      "absence"
+    ],
+    "_source_question": "How many likes are on the article?",
+    "_perturbation": "unanswerable question"
+  },
+  {
+    "test_id": "rico18046_04",
+    "assertion": "Verify that the exact text 'There's going to be a rave at Mt. Everest' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the title of the article?"
+  },
+  {
+    "test_id": "rico18046_05",
+    "assertion": "Verify that the exact text '7:14 PM' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the article's publication time?"
+  },
+  {
+    "test_id": "rico18046_06",
+    "assertion": "Verify that the text '7:14 PM' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico18046_07",
+    "assertion": "Verify that the exact text '1' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "On which page number are we right now?"
+  },
+  {
+    "test_id": "rico18046_08",
+    "assertion": "Verify that the exact text 'FOX 11' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the application name?"
+  },
+  {
+    "test_id": "rico18046_09",
+    "assertion": "Verify that the text 'FOX 11' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico18046_10",
+    "assertion": "Verify that the text '12' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "How many pages in total are there?"
+  }
+]

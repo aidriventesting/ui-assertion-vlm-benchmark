@@ -1,0 +1,62 @@
+[
+  {
+    "test_id": "rico10247_01",
+    "assertion": "Verify that the text '19,921' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "How many followers are there?"
+  },
+  {
+    "test_id": "rico10247_02",
+    "assertion": "Verify that '22' is displayed as the count related to: How many followers are there?",
+    "expected": "FAIL",
+    "tags": [
+      "count_raw",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "How many followers are there?",
+    "_perturbation": "19 → 22"
+  },
+  {
+    "test_id": "rico10247_03",
+    "assertion": "Verify that the text '71' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "How many posts are there?"
+  },
+  {
+    "test_id": "rico10247_04",
+    "assertion": "Verify that the text '19,921' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "How many followers does Julia Larrigue have?"
+  },
+  {
+    "test_id": "rico10247_05",
+    "assertion": "Verify that the exact text 'Public' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "Is the account public or private?"
+  },
+  {
+    "test_id": "rico10247_06",
+    "assertion": "Verify that the exact text 'Publci' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_char_swap"
+    ],
+    "_source_question": "Is the account public or private?",
+    "_perturbation": "'Public' → 'Publci'"
+  }
+]

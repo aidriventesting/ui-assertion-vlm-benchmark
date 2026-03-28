@@ -1,0 +1,41 @@
+[
+  {
+    "test_id": "rico4052_01",
+    "assertion": "Verify that the text '5' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "How many sets are there?"
+  },
+  {
+    "test_id": "rico4052_02",
+    "assertion": "Verify that the exact text '01' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the work interval?"
+  },
+  {
+    "test_id": "rico4052_03",
+    "assertion": "Verify that the exact text '2' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "What is the work interval?",
+    "_perturbation": "'01' → '2'"
+  },
+  {
+    "test_id": "rico4052_04",
+    "assertion": "Verify that the exact text '00' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the rest interval duration?"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "test_id": "rico7607_01",
+    "assertion": "Verify that the exact text '1-5' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the range for the guest rating?"
+  },
+  {
+    "test_id": "rico7607_02",
+    "assertion": "Verify that the text '190' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "How many results are found?"
+  },
+  {
+    "test_id": "rico7607_03",
+    "assertion": "Verify that '189' is displayed as the count related to: How many results are found?",
+    "expected": "FAIL",
+    "tags": [
+      "count_raw",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "How many results are found?",
+    "_perturbation": "190 → 189"
+  },
+  {
+    "test_id": "rico7607_04",
+    "assertion": "Verify that the text '190' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico7607_05",
+    "assertion": "Verify that the exact text '1-5' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the star rating?"
+  },
+  {
+    "test_id": "rico7607_06",
+    "assertion": "Verify that the exact text '1-6' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "What is the star rating?",
+    "_perturbation": "'1-5' → '1-6'"
+  },
+  {
+    "test_id": "rico7607_07",
+    "assertion": "Verify that the tab 'RATING' is currently active (its content is displayed).",
+    "expected": "PASS",
+    "tags": [
+      "state"
+    ],
+    "_source_question": "Which tab is selected?"
+  },
+  {
+    "test_id": "rico7607_08",
+    "assertion": "Verify that the exact text '$10' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the cheapest price?"
+  },
+  {
+    "test_id": "rico7607_09",
+    "assertion": "Verify that the tab 'RATING' is currently active (its content is displayed).",
+    "expected": "PASS",
+    "tags": [
+      "state"
+    ],
+    "_source_question": "Which tab am I on?"
+  },
+  {
+    "test_id": "rico7607_10",
+    "assertion": "Verify that the exact text 'RAITNG' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "state",
+      "near_miss",
+      "perturb_char_swap"
+    ],
+    "_source_question": "Which tab am I on?",
+    "_perturbation": "'RATING' → 'RAITNG'"
+  }
+]

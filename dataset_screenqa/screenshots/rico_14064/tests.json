@@ -1,0 +1,103 @@
+[
+  {
+    "test_id": "rico14064_01",
+    "assertion": "Verify that the exact text '62°' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the temperature in Raleigh?"
+  },
+  {
+    "test_id": "rico14064_02",
+    "assertion": "Verify that the text '62°' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico14064_03",
+    "assertion": "Verify that the exact text 'Raleigh boutique on wheels now a store' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the title of the article?"
+  },
+  {
+    "test_id": "rico14064_04",
+    "assertion": "Verify that the exact text 'Raleigh boutique wheels now a store' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_word_drop"
+    ],
+    "_source_question": "What is the title of the article?",
+    "_perturbation": "'Raleigh boutique on wheels now a store' → 'Raleigh boutique wheels now a store'"
+  },
+  {
+    "test_id": "rico14064_05",
+    "assertion": "Verify that the exact text 'Anna Laurel' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "By whom the article was posted?"
+  },
+  {
+    "test_id": "rico14064_06",
+    "assertion": "Verify that the exact text 'Laurel' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_word_drop"
+    ],
+    "_source_question": "By whom the article was posted?",
+    "_perturbation": "'Anna Laurel' → 'Laurel'"
+  },
+  {
+    "test_id": "rico14064_07",
+    "assertion": "Verify that the text 'Anna Laurel' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico14064_08",
+    "assertion": "Verify that the exact text '12:55 PM' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What time was the article \"Raleigh boutique on wheels now a store\" published?"
+  },
+  {
+    "test_id": "rico14064_09",
+    "assertion": "Verify that the exact text 'Feb 14, 2017' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "On what date was the article posted?"
+  },
+  {
+    "test_id": "rico14064_10",
+    "assertion": "Verify that the exact text 'Feb 14 ,2017' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_char_swap"
+    ],
+    "_source_question": "On what date was the article posted?",
+    "_perturbation": "'Feb 14, 2017' → 'Feb 14 ,2017'"
+  }
+]

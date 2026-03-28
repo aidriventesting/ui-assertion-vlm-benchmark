@@ -1,0 +1,72 @@
+[
+  {
+    "test_id": "rico2677_01",
+    "assertion": "Verify that the exact text '$79.99' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "How much do 100 crowns cost?"
+  },
+  {
+    "test_id": "rico2677_02",
+    "assertion": "Verify that the exact text '$79.98' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "How much do 100 crowns cost?",
+    "_perturbation": "'$79.99' → '$79.98'"
+  },
+  {
+    "test_id": "rico2677_03",
+    "assertion": "Verify that the exact text '150% extra' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "How much discount is there on 100 crowns?"
+  },
+  {
+    "test_id": "rico2677_04",
+    "assertion": "Verify that the text '150% extra' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico2677_05",
+    "assertion": "Verify that the exact text '50%' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "How much discount on 15 Crowns?"
+  },
+  {
+    "test_id": "rico2677_06",
+    "assertion": "Verify that the exact text '52%' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "How much discount on 15 Crowns?",
+    "_perturbation": "'50%' → '52%'"
+  },
+  {
+    "test_id": "rico2677_07",
+    "assertion": "Verify that the exact text '$9.99' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "How much do 5 crowns cost?"
+  }
+]

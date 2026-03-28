@@ -1,0 +1,62 @@
+[
+  {
+    "test_id": "rico41683_01",
+    "assertion": "Verify that the exact text 'ANNA AHRONHEIM' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the author's name?"
+  },
+  {
+    "test_id": "rico41683_02",
+    "assertion": "Verify that the exact text 'ANNA AHRONHEMI' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_char_swap"
+    ],
+    "_source_question": "What is the author's name?",
+    "_perturbation": "'ANNA AHRONHEIM' → 'ANNA AHRONHEMI'"
+  },
+  {
+    "test_id": "rico41683_03",
+    "assertion": "Verify that the exact text 'Israel prepared to evacuate hundreds of thousands from northern border in a war' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the headline of the content?"
+  },
+  {
+    "test_id": "rico41683_04",
+    "assertion": "Verify that the exact text 'iSRAEL PREPARED TO EVACUATE HUNDREDS OF THOUSANDS FROM NORTHERN BORDER IN A WAR' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_case"
+    ],
+    "_source_question": "What is the headline of the content?",
+    "_perturbation": "'Israel prepared to evacuate hundreds of thousands from northern border in a war' → 'iSRAEL PREPARED TO EVACUATE HUNDREDS OF THOUSANDS FROM NORTHERN BORDER IN A WAR'"
+  },
+  {
+    "test_id": "rico41683_05",
+    "assertion": "Verify that the exact text '03/23/17' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the publication date of the article?"
+  },
+  {
+    "test_id": "rico41683_06",
+    "assertion": "Verify that the exact text '02:53 AM' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the publication time of the article?"
+  }
+]

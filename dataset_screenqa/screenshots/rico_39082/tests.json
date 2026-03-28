@@ -1,0 +1,58 @@
+[
+  {
+    "test_id": "rico39082_01",
+    "assertion": "Verify that the current value shown for this setting is 'Best Sellers'.",
+    "expected": "PASS",
+    "tags": [
+      "state"
+    ],
+    "_source_question": "What is the selected \"Sort By\"?"
+  },
+  {
+    "test_id": "rico39082_02",
+    "assertion": "Verify that the exact text 'Over $99*' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the available price for free shipping?"
+  },
+  {
+    "test_id": "rico39082_03",
+    "assertion": "Verify that the exact text 'FINISH LINE' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the application name?"
+  },
+  {
+    "test_id": "rico39082_04",
+    "assertion": "Verify that the text 'FINISH LINE' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico39082_05",
+    "assertion": "Verify that the text '0' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "How many items are in the cart?"
+  },
+  {
+    "test_id": "rico39082_06",
+    "assertion": "Verify that the text '0' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  }
+]

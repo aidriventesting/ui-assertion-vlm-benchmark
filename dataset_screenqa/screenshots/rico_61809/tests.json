@@ -1,0 +1,73 @@
+[
+  {
+    "test_id": "rico61809_01",
+    "assertion": "Verify that the exact text '$0.99' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the price of \"PRO version (Abs workout)\"?"
+  },
+  {
+    "test_id": "rico61809_02",
+    "assertion": "Verify that the exact text '$.099' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_char_swap"
+    ],
+    "_source_question": "What is the price of \"PRO version (Abs workout)\"?",
+    "_perturbation": "'$0.99' → '$.099'"
+  },
+  {
+    "test_id": "rico61809_03",
+    "assertion": "Verify that the exact text '$1.49' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "How much does \"Donate #2 (Abs workout)\" cost?"
+  },
+  {
+    "test_id": "rico61809_04",
+    "assertion": "Verify that the text '$1.49' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico61809_05",
+    "assertion": "Verify that the screen does NOT contain a direct answer to: 'How many people support \"Caynax\" at $2.99?'",
+    "expected": "PASS",
+    "tags": [
+      "absence"
+    ],
+    "_source_question": "How many people support \"Caynax\" at $2.99?",
+    "_perturbation": "unanswerable question"
+  },
+  {
+    "test_id": "rico61809_06",
+    "assertion": "Verify that the exact text '$1.99' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the donation amount in \"Donate #3 (Abs workout)\"?"
+  },
+  {
+    "test_id": "rico61809_07",
+    "assertion": "Verify that the exact text '$1.98' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "What is the donation amount in \"Donate #3 (Abs workout)\"?",
+    "_perturbation": "'$1.99' → '$1.98'"
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "test_id": "rico56633_01",
+    "assertion": "Verify that the text '0' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "How many alerts are there?"
+  },
+  {
+    "test_id": "rico56633_02",
+    "assertion": "Verify that '3' is displayed as the count related to: How many alerts are there?",
+    "expected": "FAIL",
+    "tags": [
+      "count_raw",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "How many alerts are there?",
+    "_perturbation": "0 → 3"
+  },
+  {
+    "test_id": "rico56633_03",
+    "assertion": "Verify that the exact text 'WMUR9' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the application name?"
+  },
+  {
+    "test_id": "rico56633_04",
+    "assertion": "Verify that the exact text 'Snow showers, squalls possible in northern NH as strong cold front pushes through' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What news was published by Kevin Skarupa?"
+  },
+  {
+    "test_id": "rico56633_05",
+    "assertion": "Verify that the exact text '32°F' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the temperature in Manchester?"
+  },
+  {
+    "test_id": "rico56633_06",
+    "assertion": "Verify that the exact text '33min' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "When was the news posted?"
+  }
+]

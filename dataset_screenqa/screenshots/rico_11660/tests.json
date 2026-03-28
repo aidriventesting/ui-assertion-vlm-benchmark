@@ -1,0 +1,63 @@
+[
+  {
+    "test_id": "rico11660_01",
+    "assertion": "Verify that the tab 'LOGIN' is currently active (its content is displayed).",
+    "expected": "PASS",
+    "tags": [
+      "state"
+    ],
+    "_source_question": "Which tab has been selected?"
+  },
+  {
+    "test_id": "rico11660_02",
+    "assertion": "Verify that the exact text 'LOIGN' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "state",
+      "near_miss",
+      "perturb_char_swap"
+    ],
+    "_source_question": "Which tab has been selected?",
+    "_perturbation": "'LOGIN' → 'LOIGN'"
+  },
+  {
+    "test_id": "rico11660_03",
+    "assertion": "Verify that the exact text 'Facebook' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "Which applications can be used to log in?"
+  },
+  {
+    "test_id": "rico11660_04",
+    "assertion": "Verify that the exact text 'fACEBOOK' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_case"
+    ],
+    "_source_question": "Which applications can be used to log in?",
+    "_perturbation": "'Facebook' → 'fACEBOOK'"
+  },
+  {
+    "test_id": "rico11660_05",
+    "assertion": "Verify that the exact text 'Facebook' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What applications can be used to sign in?"
+  },
+  {
+    "test_id": "rico11660_06",
+    "assertion": "Verify that the text 'Facebook' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  }
+]

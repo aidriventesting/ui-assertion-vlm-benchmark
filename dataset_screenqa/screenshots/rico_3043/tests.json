@@ -1,0 +1,104 @@
+[
+  {
+    "test_id": "rico3043_01",
+    "assertion": "Verify that the text '1' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "How many travelers will travel?"
+  },
+  {
+    "test_id": "rico3043_02",
+    "assertion": "Verify that '3' is displayed as the count related to: How many travelers will travel?",
+    "expected": "FAIL",
+    "tags": [
+      "count_raw",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "How many travelers will travel?",
+    "_perturbation": "1 → 3"
+  },
+  {
+    "test_id": "rico3043_03",
+    "assertion": "Verify that the exact text '6/11/2017' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the return date?"
+  },
+  {
+    "test_id": "rico3043_04",
+    "assertion": "Verify that 'Economy' is shown as the current selection or active option.",
+    "expected": "PASS",
+    "tags": [
+      "state"
+    ],
+    "_source_question": "Which type of cabin is selected?"
+  },
+  {
+    "test_id": "rico3043_05",
+    "assertion": "Verify that the exact text 'eCONOMY' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "state",
+      "near_miss",
+      "perturb_case"
+    ],
+    "_source_question": "Which type of cabin is selected?",
+    "_perturbation": "'Economy' → 'eCONOMY'"
+  },
+  {
+    "test_id": "rico3043_06",
+    "assertion": "Verify that the exact text 'San Francisco, CA - SFO International Ai...' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the location of \"From\"?"
+  },
+  {
+    "test_id": "rico3043_07",
+    "assertion": "Verify that the exact text 'San Francisco, CA - SFO International' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_word_drop"
+    ],
+    "_source_question": "What is the location of \"From\"?",
+    "_perturbation": "'San Francisco, CA - SFO International Ai...' → 'San Francisco, CA - SFO International'"
+  },
+  {
+    "test_id": "rico3043_08",
+    "assertion": "Verify that the exact text '5/23/2017' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "When will the flight depart?"
+  },
+  {
+    "test_id": "rico3043_09",
+    "assertion": "Verify that the exact text '5/23/2015' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "When will the flight depart?",
+    "_perturbation": "'5/23/2017' → '5/23/2015'"
+  },
+  {
+    "test_id": "rico3043_10",
+    "assertion": "Verify that the exact text 'Round' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What type of trip is it?"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "test_id": "rico70243_01",
+    "assertion": "Verify that the exact text 'Canvsly' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What application will receive my public profile and email address?"
+  },
+  {
+    "test_id": "rico70243_02",
+    "assertion": "Verify that the exact text 'John' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the login name?"
+  },
+  {
+    "test_id": "rico70243_03",
+    "assertion": "Verify that the screen does NOT contain a direct answer to: 'What version of \"Canvsly\" is being used?'",
+    "expected": "PASS",
+    "tags": [
+      "absence"
+    ],
+    "_source_question": "What version of \"Canvsly\" is being used?",
+    "_perturbation": "unanswerable question"
+  }
+]

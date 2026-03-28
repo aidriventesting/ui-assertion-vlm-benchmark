@@ -1,0 +1,39 @@
+[
+  {
+    "test_id": "rico68560_01",
+    "assertion": "Verify that the exact text 'That's a wrap: a look back at A0 2016' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the headline?"
+  },
+  {
+    "test_id": "rico68560_02",
+    "assertion": "Verify that the exact text 'Monday 1 February 2016' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the publication date?"
+  },
+  {
+    "test_id": "rico68560_03",
+    "assertion": "Verify that the text 'Monday 1 February 2016' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico68560_04",
+    "assertion": "Verify that the exact text 'Michael Beattie' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the author name?"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "test_id": "rico17386_01",
+    "assertion": "Verify that the exact text 'Falcons' Julio Jones: Dealing with turf toe' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What are the headlines?"
+  },
+  {
+    "test_id": "rico17386_02",
+    "assertion": "Verify that the exact text 'fALCONS' jULIO jONES: dEALING WITH TURF TOE' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_case"
+    ],
+    "_source_question": "What are the headlines?",
+    "_perturbation": "'Falcons' Julio Jones: Dealing with turf toe' → 'fALCONS' jULIO jONES: dEALING WITH TURF TOE'"
+  },
+  {
+    "test_id": "rico17386_03",
+    "assertion": "Verify that the tab 'MY TEAMS' is currently active (its content is displayed).",
+    "expected": "PASS",
+    "tags": [
+      "state"
+    ],
+    "_source_question": "What is the selected tab?"
+  },
+  {
+    "test_id": "rico17386_04",
+    "assertion": "Verify that the text 'MY TEAMS' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico17386_05",
+    "assertion": "Verify that the exact text 'RotoWire Staff' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the name of the author of the news \"Falcons' Julio Jones: Dealing with turf toe\"?"
+  },
+  {
+    "test_id": "rico17386_06",
+    "assertion": "Verify that the exact text 'RotoWire' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_word_drop"
+    ],
+    "_source_question": "What is the name of the author of the news \"Falcons' Julio Jones: Dealing with turf toe\"?",
+    "_perturbation": "'RotoWire Staff' → 'RotoWire'"
+  },
+  {
+    "test_id": "rico17386_07",
+    "assertion": "Verify that the text '35' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "How many hours ago was \"Falcons' Julio Jones: Dealing with turf toe\" published?"
+  }
+]

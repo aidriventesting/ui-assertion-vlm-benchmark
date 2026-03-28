@@ -1,0 +1,80 @@
+[
+  {
+    "test_id": "rico66914_01",
+    "assertion": "Verify that the exact text '4155791638' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the phone number shown on the screen?"
+  },
+  {
+    "test_id": "rico66914_02",
+    "assertion": "Verify that the exact text '4155791637' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "What is the phone number shown on the screen?",
+    "_perturbation": "'4155791638' → '4155791637'"
+  },
+  {
+    "test_id": "rico66914_03",
+    "assertion": "Verify that the exact text 'Grace' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the first name?"
+  },
+  {
+    "test_id": "rico66914_04",
+    "assertion": "Verify that the exact text 'rGace' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_char_swap"
+    ],
+    "_source_question": "What is the first name?",
+    "_perturbation": "'Grace' → 'rGace'"
+  },
+  {
+    "test_id": "rico66914_05",
+    "assertion": "Verify that the exact text '13/02/1989' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the birth date of the person?"
+  },
+  {
+    "test_id": "rico66914_06",
+    "assertion": "Verify that the exact text 'Zip code' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What does the code 94101 represent?"
+  },
+  {
+    "test_id": "rico66914_07",
+    "assertion": "Verify that the exact text 'Chan' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the last name?"
+  },
+  {
+    "test_id": "rico66914_08",
+    "assertion": "Verify that the tab 'Ms.' is currently active (its content is displayed).",
+    "expected": "PASS",
+    "tags": [
+      "state"
+    ],
+    "_source_question": "Which tab has been selected?"
+  }
+]

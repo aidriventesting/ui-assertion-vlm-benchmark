@@ -1,0 +1,100 @@
+[
+  {
+    "test_id": "rico9138_01",
+    "assertion": "Verify that the exact text 'San Francisco, California' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the entered location?"
+  },
+  {
+    "test_id": "rico9138_02",
+    "assertion": "Verify that the exact text 'sAN fRANCISCO, cALIFORNIA' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_case"
+    ],
+    "_source_question": "What is the entered location?",
+    "_perturbation": "'San Francisco, California' → 'sAN fRANCISCO, cALIFORNIA'"
+  },
+  {
+    "test_id": "rico9138_03",
+    "assertion": "Verify that the text '24.1' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "How many miles away is Elder Consult Medical Associates?"
+  },
+  {
+    "test_id": "rico9138_04",
+    "assertion": "Verify that the text '24.1' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico9138_05",
+    "assertion": "Verify that the exact text 'Chestnut House, 167 Alameda De Las Pulgas Redwood City, CA 94062' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the address of \"Seniors With Grace Home Care\"?"
+  },
+  {
+    "test_id": "rico9138_06",
+    "assertion": "Verify that the exact text 'Grace Chan' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the person's name?"
+  },
+  {
+    "test_id": "rico9138_07",
+    "assertion": "Verify that 'LIST' is shown as the current selection or active option.",
+    "expected": "PASS",
+    "tags": [
+      "state"
+    ],
+    "_source_question": "Which option has been selected?"
+  },
+  {
+    "test_id": "rico9138_08",
+    "assertion": "Verify that the exact text 'ILST' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "state",
+      "near_miss",
+      "perturb_char_swap"
+    ],
+    "_source_question": "Which option has been selected?",
+    "_perturbation": "'LIST' → 'ILST'"
+  },
+  {
+    "test_id": "rico9138_09",
+    "assertion": "Verify that the exact text '80 Grand Ave. Suite 610 Oakland, CA 94612' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the address of Physical Medicine & Rehabilitation?"
+  },
+  {
+    "test_id": "rico9138_10",
+    "assertion": "Verify that the text '80 Grand Ave. Suite 610 Oakland, CA 94612' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "test_id": "rico9432_01",
+    "assertion": "Verify that the exact text '52°' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the temperature in Fahrenheit?"
+  },
+  {
+    "test_id": "rico9432_02",
+    "assertion": "Verify that the text '52°' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico9432_03",
+    "assertion": "Verify that the exact text 'San Francisco, US' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the location?"
+  },
+  {
+    "test_id": "rico9432_04",
+    "assertion": "Verify that the text 'San Francisco, US' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico9432_05",
+    "assertion": "Verify that the exact text '11°' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the temperature in Celsius?"
+  },
+  {
+    "test_id": "rico9432_06",
+    "assertion": "Verify that the exact text '10°' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "What is the temperature in Celsius?",
+    "_perturbation": "'11°' → '10°'"
+  },
+  {
+    "test_id": "rico9432_07",
+    "assertion": "Verify that the text '11°' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  }
+]

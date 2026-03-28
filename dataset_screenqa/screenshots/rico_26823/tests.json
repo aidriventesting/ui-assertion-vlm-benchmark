@@ -1,0 +1,62 @@
+[
+  {
+    "test_id": "rico26823_01",
+    "assertion": "Verify that the text '2' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "How many answers did \"Windows PC Cannot access shared folder\" get?"
+  },
+  {
+    "test_id": "rico26823_02",
+    "assertion": "Verify that '0' is displayed as the count related to: How many answers did \"Windows PC Cannot access shared folder\" get?",
+    "expected": "FAIL",
+    "tags": [
+      "count_raw",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "How many answers did \"Windows PC Cannot access shared folder\" get?",
+    "_perturbation": "2 → 0"
+  },
+  {
+    "test_id": "rico26823_03",
+    "assertion": "Verify that the text '0' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "What is the number of answers to the question \"Receiving email bounces for emails I never sent\"?"
+  },
+  {
+    "test_id": "rico26823_04",
+    "assertion": "Verify that the text '7' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "How many minutes ago was the question \"Windows PC Cannot access shared folder\" asked?"
+  },
+  {
+    "test_id": "rico26823_05",
+    "assertion": "Verify that the exact text '21 min. ago' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "When was the question \"iptables won't load with iptables-restore\" uploaded?"
+  },
+  {
+    "test_id": "rico26823_06",
+    "assertion": "Verify that the exact text '19 min. ago' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "When was the question \"iptables won't load with iptables-restore\" uploaded?",
+    "_perturbation": "'21 min. ago' → '19 min. ago'"
+  }
+]

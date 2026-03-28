@@ -1,0 +1,62 @@
+[
+  {
+    "test_id": "rico2776_01",
+    "assertion": "Verify that the exact text 'Create Your Profile' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the first step?"
+  },
+  {
+    "test_id": "rico2776_02",
+    "assertion": "Verify that the exact text 'Verify Your Identity' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the last step?"
+  },
+  {
+    "test_id": "rico2776_03",
+    "assertion": "Verify that the exact text 'vERIFY yOUR iDENTITY' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_case"
+    ],
+    "_source_question": "What is the last step?",
+    "_perturbation": "'Verify Your Identity' → 'vERIFY yOUR iDENTITY'"
+  },
+  {
+    "test_id": "rico2776_04",
+    "assertion": "Verify that the exact text 'Link Your Bank and Select Your' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the second step?"
+  },
+  {
+    "test_id": "rico2776_05",
+    "assertion": "Verify that the text '3' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "How many steps in total are there?"
+  },
+  {
+    "test_id": "rico2776_06",
+    "assertion": "Verify that '5' is displayed as the count related to: How many steps in total are there?",
+    "expected": "FAIL",
+    "tags": [
+      "count_raw",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "How many steps in total are there?",
+    "_perturbation": "3 → 5"
+  }
+]

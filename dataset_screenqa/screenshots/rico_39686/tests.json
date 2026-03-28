@@ -1,0 +1,41 @@
+[
+  {
+    "test_id": "rico39686_01",
+    "assertion": "Verify that the exact text '00:19' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "How much of the audio has finished?"
+  },
+  {
+    "test_id": "rico39686_02",
+    "assertion": "Verify that the exact text '0:19' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "How much of the audio has finished?",
+    "_perturbation": "'00:19' → '0:19'"
+  },
+  {
+    "test_id": "rico39686_03",
+    "assertion": "Verify that the exact text 'Jeremy' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "Which audiobook is playing?"
+  },
+  {
+    "test_id": "rico39686_04",
+    "assertion": "Verify that the exact text '48:19' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the duration of the audiobook?"
+  }
+]

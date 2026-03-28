@@ -1,0 +1,51 @@
+[
+  {
+    "test_id": "rico22874_01",
+    "assertion": "Verify that the exact text '22.0°' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the temperature?"
+  },
+  {
+    "test_id": "rico22874_02",
+    "assertion": "Verify that the tab 'FACTS' is currently active (its content is displayed).",
+    "expected": "PASS",
+    "tags": [
+      "state"
+    ],
+    "_source_question": "Which tab is selected?"
+  },
+  {
+    "test_id": "rico22874_03",
+    "assertion": "Verify that the exact text 'FCATS' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "state",
+      "near_miss",
+      "perturb_char_swap"
+    ],
+    "_source_question": "Which tab is selected?",
+    "_perturbation": "'FACTS' → 'FCATS'"
+  },
+  {
+    "test_id": "rico22874_04",
+    "assertion": "Verify that the text 'FACTS' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico22874_05",
+    "assertion": "Verify that the exact text 'Dec 16, 2016' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the date?"
+  }
+]

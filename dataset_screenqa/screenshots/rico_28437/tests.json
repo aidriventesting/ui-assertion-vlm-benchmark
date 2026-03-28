@@ -1,0 +1,102 @@
+[
+  {
+    "test_id": "rico28437_01",
+    "assertion": "Verify that the exact text 'English (United States)' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "Which language is set as the voice language?"
+  },
+  {
+    "test_id": "rico28437_02",
+    "assertion": "Verify that the exact text '(United States)' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_word_drop"
+    ],
+    "_source_question": "Which language is set as the voice language?",
+    "_perturbation": "'English (United States)' → '(United States)'"
+  },
+  {
+    "test_id": "rico28437_03",
+    "assertion": "Verify that the exact text '100%' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the percentage of \"Voice volume\"?"
+  },
+  {
+    "test_id": "rico28437_04",
+    "assertion": "Verify that the exact text '100' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "How much is the percentage of \"Beep volume\"?"
+  },
+  {
+    "test_id": "rico28437_05",
+    "assertion": "Verify that the exact text '86%' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the percentage of the master volume?"
+  },
+  {
+    "test_id": "rico28437_06",
+    "assertion": "Verify that the exact text '84%' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "What is the percentage of the master volume?",
+    "_perturbation": "'86%' → '84%'"
+  },
+  {
+    "test_id": "rico28437_07",
+    "assertion": "Verify that the text '86%' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico28437_08",
+    "assertion": "Verify that 'on' is shown as the current selection or active option.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the current status of \"Approximation notifications\"?"
+  },
+  {
+    "test_id": "rico28437_09",
+    "assertion": "Verify that the exact text 'off' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_antonym"
+    ],
+    "_source_question": "What is the current status of \"Approximation notifications\"?",
+    "_perturbation": "'on' → 'off'"
+  },
+  {
+    "test_id": "rico28437_10",
+    "assertion": "Verify that the exact text 'on' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the status of \"Voice notifications\"?"
+  }
+]

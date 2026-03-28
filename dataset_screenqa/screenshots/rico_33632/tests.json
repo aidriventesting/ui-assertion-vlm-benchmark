@@ -1,0 +1,53 @@
+[
+  {
+    "test_id": "rico33632_01",
+    "assertion": "Verify that the items 'ACMC Gateway network address', 'Access password', 'ACMC Gateway port' are all visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "What are the options available in the \"Remote access\" settings?"
+  },
+  {
+    "test_id": "rico33632_02",
+    "assertion": "Verify that the exact text 'acmc gATEWAY NETWORK ADDRESS' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "count_raw",
+      "near_miss",
+      "perturb_case"
+    ],
+    "_source_question": "What are the options available in the \"Remote access\" settings?",
+    "_perturbation": "'ACMC Gateway network address' → 'acmc gATEWAY NETWORK ADDRESS'"
+  },
+  {
+    "test_id": "rico33632_03",
+    "assertion": "Verify that the items 'ACMC Gateway IP address', 'ACMC Gateway port' are all visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "What are the options available in the local network settings?"
+  },
+  {
+    "test_id": "rico33632_04",
+    "assertion": "Verify that the exact text 'ACMC Gateway address' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "count_raw",
+      "near_miss",
+      "perturb_word_drop"
+    ],
+    "_source_question": "What are the options available in the local network settings?",
+    "_perturbation": "'ACMC Gateway IP address' → 'ACMC Gateway address'"
+  },
+  {
+    "test_id": "rico33632_05",
+    "assertion": "Verify that 'Discover' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "What are the options available in the \"Devices\" settings?"
+  }
+]

@@ -1,0 +1,75 @@
+[
+  {
+    "test_id": "rico38231_01",
+    "assertion": "Verify that the exact text 'General Info' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "Which are the different forum categories?"
+  },
+  {
+    "test_id": "rico38231_02",
+    "assertion": "Verify that the exact text 'Info' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_word_drop"
+    ],
+    "_source_question": "Which are the different forum categories?",
+    "_perturbation": "'General Info' → 'Info'"
+  },
+  {
+    "test_id": "rico38231_03",
+    "assertion": "Verify that the text '2' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "How many topics are under \"Admin Test Forum\"?"
+  },
+  {
+    "test_id": "rico38231_04",
+    "assertion": "Verify that '5' is displayed as the count related to: How many topics are under \"Admin Test Forum\"?",
+    "expected": "FAIL",
+    "tags": [
+      "count_raw",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "How many topics are under \"Admin Test Forum\"?",
+    "_perturbation": "2 → 5"
+  },
+  {
+    "test_id": "rico38231_05",
+    "assertion": "Verify that the text '2' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico38231_06",
+    "assertion": "Verify that the text '12930' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "count_raw"
+    ],
+    "_source_question": "How many posts are there in \"Investor Deal Diaries\"?"
+  },
+  {
+    "test_id": "rico38231_07",
+    "assertion": "Verify that '12933' is displayed as the count related to: How many posts are there in \"Investor Deal Diaries\"?",
+    "expected": "FAIL",
+    "tags": [
+      "count_raw",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "How many posts are there in \"Investor Deal Diaries\"?",
+    "_perturbation": "12930 → 12933"
+  }
+]

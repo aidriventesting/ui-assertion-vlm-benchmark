@@ -1,0 +1,64 @@
+[
+  {
+    "test_id": "rico48105_01",
+    "assertion": "Verify that the screen does NOT contain a direct answer to: 'What is the name of the baby?'",
+    "expected": "PASS",
+    "tags": [
+      "absence"
+    ],
+    "_source_question": "What is the name of the baby?",
+    "_perturbation": "unanswerable question"
+  },
+  {
+    "test_id": "rico48105_02",
+    "assertion": "Verify that the exact text '5' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the setting of \"Select personal warning radius\"?"
+  },
+  {
+    "test_id": "rico48105_03",
+    "assertion": "Verify that the exact text '7' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_number"
+    ],
+    "_source_question": "What is the setting of \"Select personal warning radius\"?",
+    "_perturbation": "'5' → '7'"
+  },
+  {
+    "test_id": "rico48105_04",
+    "assertion": "Verify that the text '5' is NOT visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "absence",
+      "perturb_absence"
+    ],
+    "_perturbation": "absence of present element"
+  },
+  {
+    "test_id": "rico48105_05",
+    "assertion": "Verify that the exact text 'on' is visible on the screen.",
+    "expected": "PASS",
+    "tags": [
+      "text_match_exact"
+    ],
+    "_source_question": "What is the status of \"Group warnings in map\"?"
+  },
+  {
+    "test_id": "rico48105_06",
+    "assertion": "Verify that the exact text 'off' is visible on the screen.",
+    "expected": "FAIL",
+    "tags": [
+      "text_match_exact",
+      "near_miss",
+      "perturb_antonym"
+    ],
+    "_source_question": "What is the status of \"Group warnings in map\"?",
+    "_perturbation": "'on' → 'off'"
+  }
+]
