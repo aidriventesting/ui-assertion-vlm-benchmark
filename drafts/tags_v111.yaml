@@ -1,0 +1,71 @@
+# UI Assertion Benchmark — Tag Taxonomy v1
+# Minimal, orthogonal, research-grounded dimensions for VLM evaluation.
+#
+# Design principles:
+#   1. Each dimension is INDEPENDENT (low correlation)
+#   2. Each dimension answers a DIFFERENT question about VLM capability
+#   3. Simple to tag → consistent annotations
+#
+# Research basis:
+#   - VQA v2: Balanced pairs (polarity) to detect yes-bias
+#   - ScreenQA: Task types (OCR, grounding, content extraction)
+#   - VisualWebBench: Granularity levels (element vs screen)
+
+# =============================================================================
+# DIMENSION 1: TASK — What capability is being tested?
+# =============================================================================
+# Maps to ScreenQA/VisualWebBench task types
+# Question: "What VLM skill does this assertion require?"
+task:
+  read: "Extract/verify text (OCR capability)"
+  detect: "Find/confirm element exists (object detection)"
+  count: "Count visible elements"
+  state: "Check widget state (toggle, selected, enabled)"
+  compare: "Verify relationship between 2+ elements (layout, order)"
+  reason: "Apply logic or business rule"
+
+# =============================================================================
+# DIMENSION 2: POLARITY — Expected answer direction
+# =============================================================================
+# From VQA v2 balanced pairs methodology
+# Question: "Is this a positive or negative check?"
+# WHY: VLMs have yes-bias — must balance PASS/FAIL per task category
+polarity:
+  positive: "Assertion expects PASS (element present/correct)"
+  negative: "Assertion expects FAIL (element absent/wrong)"
+
+# =============================================================================
+# DIMENSION 3: GRANULARITY — Scope of visual attention required
+# =============================================================================
+# From VisualWebBench multi-level evaluation
+# Question: "How localized is the target?"
+granularity:
+  element: "Single widget/text (button, label, icon)"
+  region: "Zone of screen (header, footer, card)"
+  screen: "Whole screen check (no errors, layout ok)"
+
+# =============================================================================
+# DIMENSION 4: DIFFICULTY — Why might VLM fail?
+# =============================================================================
+# From perceptual literature + common VLM failure modes
+# Question: "What makes this hard?"
+# NOTE: Can have MULTIPLE values (additive)
+difficulty:
+  baseline: "Standard visibility, no special challenge"
+  near_miss: "Subtle difference (typo, off-by-one, similar icon)"
+  small_text: "Text requires fine OCR"
+  low_contrast: "Poor color contrast / dark mode"
+  clutter: "Busy screen with many distractors"
+  negation: "Question phrased as negation ('is NOT visible')"
+
+# =============================================================================
+# TAGGING RULES
+# =============================================================================
+# 1. Every assertion gets exactly ONE value for: task, polarity, granularity
+# 2. difficulty can have 0, 1, or multiple values
+# 3. If unsure between two task types, pick the PRIMARY skill required
+#
+# Example tags:
+#   ["task:read", "polarity:positive", "granularity:element", "difficulty:baseline"]
+#   ["task:state", "polarity:negative", "granularity:element", "difficulty:near_miss"]
+#   ["task:count", "polarity:positive", "granularity:region", "difficulty:clutter"]
