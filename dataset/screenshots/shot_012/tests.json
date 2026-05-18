@@ -1,0 +1,21 @@
+[
+  {
+    "test_id": "shot012_01",
+    "assertion": "Vérifier que accèder à 3117 et verifier l'affichage des différents élements présent sur l'écran.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/1_Homepage/alerte.robot",
+      "test_name": "TC01- Alerte 3117",
+      "category": [
+        "1_Homepage"
+      ],
+      "documentation": "Accèder à 3117 et verifier l'affichage des différents élements présent sur l'écran",
+      "last_verification_keyword": "Check Alert Screen Display",
+      "robot_tags": []
+    }
+  }
+]

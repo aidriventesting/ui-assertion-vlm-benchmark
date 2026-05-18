@@ -1,0 +1,25 @@
+[
+  {
+    "test_id": "shot093_01",
+    "assertion": "Vérifier que après recherche RITI sans modification d'options, le compteur du bouton Options est à 0 (badge masqué).",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "count_filtered"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/menuActionsEtCompteur.robot",
+      "test_name": "TC05- Compteur Options- Absent Par Défaut",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "6_optionsTrajets"
+      ],
+      "documentation": "après recherche RITI sans modification d'options, le compteur du bouton Options est à 0 (badge masqué)",
+      "last_verification_keyword": "Verify Counter Badge On Options Button Equals",
+      "robot_tags": [
+        "Smoke"
+      ]
+    }
+  }
+]

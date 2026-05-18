@@ -1,0 +1,20 @@
+[
+  {
+    "test_id": "shot139_01",
+    "assertion": "Vérifier que infos trafic > ligne sans perturbation > onglet À venir > messages d'état vide affichés.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/7_InfoTrafic/structureInfoTrafic.robot",
+      "test_name": "TC05- Messages empty state onglet A venir",
+      "category": [
+        "7_InfoTrafic"
+      ],
+      "documentation": "Infos trafic > ligne sans perturbation > onglet À venir > messages d'état vide affichés.",
+      "last_verification_keyword": "Verify Empty State Messages A Venir",
+      "robot_tags": []
+    }
+  }
+]

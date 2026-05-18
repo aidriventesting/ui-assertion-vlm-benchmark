@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot071_01",
+    "assertion": "Vérifier que le ratio temps/distance est plus favorable pour le vélo électrique.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "consistency"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC08 - RI - Vélo - Vérification Du Ratio Temps/Distance",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "4_bike"
+      ],
+      "documentation": "Vérifie que le ratio temps/distance est plus favorable pour le vélo électrique",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": []
+    }
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "test_id": "shot082_01",
+    "assertion": "Vérifier que les 6 toggles de la section Transports publics (Train/RER, Métro, Funiculaire, Tramway, Câble, Bus) sont activés par défaut.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "state",
+      "count_raw"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/filtresTransportsPublics.robot",
+      "test_name": "TC01- Transports Publics- Toggles Activés Par Défaut",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "6_optionsTrajets"
+      ],
+      "documentation": "vérifie que les 6 toggles de la section Transports publics (Train/RER, Métro, Funiculaire, Tramway, Câble, Bus) sont activés par défaut",
+      "last_verification_keyword": "Verify All Public Transport Toggles Enabled By Default",
+      "robot_tags": [
+        "Smoke"
+      ]
+    }
+  }
+]

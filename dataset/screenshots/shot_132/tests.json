@@ -1,0 +1,20 @@
+[
+  {
+    "test_id": "shot132_01",
+    "assertion": "Vérifier que message attendu lorsque j'ai pas commencé encore la recherche : Pour rechercher une ligne, tapez son nom dans la barre de recherche.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/7_InfoTrafic/infoTraficBus.robot",
+      "test_name": "TC01- Verifier Affichage Message Sur La Barre De Recherche Bus",
+      "category": [
+        "7_InfoTrafic"
+      ],
+      "documentation": "Message attendu lorsque j'ai pas commencé encore la recherche : Pour rechercher une ligne, tapez son nom dans la barre de recherche",
+      "last_verification_keyword": "Wait Until Page Contains",
+      "robot_tags": []
+    }
+  }
+]

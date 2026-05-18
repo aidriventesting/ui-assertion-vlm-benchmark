@@ -1,0 +1,22 @@
+[
+  {
+    "test_id": "shot115_01",
+    "assertion": "Vérifier que depuis FDR, cliquer sur Acheter un titre puis Contacter le service Vélib -> Vérifier La redirection vers le webview.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/2_FDR/bike/velib.robot",
+      "test_name": "TC09- Velib - Ecran Achat Vélib - Contacter Le Service Vélib",
+      "category": [
+        "4_RechercheItineraires",
+        "2_FDR",
+        "bike"
+      ],
+      "documentation": "Depuis FDR, cliquer sur Acheter un titre puis Contacter le service Vélib -> Vérifier La redirection vers le webview",
+      "last_verification_keyword": "Verifier La Redirection",
+      "robot_tags": []
+    }
+  }
+]

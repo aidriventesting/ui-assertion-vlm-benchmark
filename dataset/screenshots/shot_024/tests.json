@@ -1,0 +1,20 @@
+[
+  {
+    "test_id": "shot024_01",
+    "assertion": "Vérifier que navigation carrousel avant/arrière sans casser l'affichage du bloc actualités.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC12- Carrousel Suivant Puis Precedent",
+      "category": [
+        "1_Homepage"
+      ],
+      "documentation": "Navigation carrousel avant/arrière sans casser l'affichage du bloc actualités",
+      "last_verification_keyword": "Verifier Affichage Elements Actualites",
+      "robot_tags": []
+    }
+  }
+]

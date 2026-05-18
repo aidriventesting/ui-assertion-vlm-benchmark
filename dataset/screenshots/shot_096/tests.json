@@ -1,0 +1,25 @@
+[
+  {
+    "test_id": "shot096_01",
+    "assertion": "Vérifier que désactiver Métro puis Bus, retour RITI → compteur = 2.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "state",
+      "count_filtered",
+      "consistency"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/menuActionsEtCompteur.robot",
+      "test_name": "TC06- Compteur Options- Incrémente Sur Toggle Transports Publics",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "6_optionsTrajets"
+      ],
+      "documentation": "désactiver Métro puis Bus, retour RITI → compteur = 2",
+      "last_verification_keyword": "Verify Counter Badge On Options Button Equals",
+      "robot_tags": []
+    }
+  }
+]

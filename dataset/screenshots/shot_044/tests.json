@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot044_01",
+    "assertion": "Vérifier que l'affichage correct de la modale d'évitement d'arrêt.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/eviterLarret.robot",
+      "test_name": "TC02- Vérification De La Modale Éviter Un Arrêt",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "2_transportEnCommun"
+      ],
+      "documentation": "Vérifier l'affichage correct de la modale d'évitement d'arrêt",
+      "last_verification_keyword": "Verifier Popup Eviter Un Arret Affichee",
+      "robot_tags": []
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot088_01",
+    "assertion": "Vérifier que le temps de marche d'un bon marcheur est inférieur au temps de marche normal.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "state"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/profilVoyageur.robot",
+      "test_name": "TC03- Profil Voyageur- Configurer Vitesse De Marche 'Bon Marcheur'",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "6_optionsTrajets"
+      ],
+      "documentation": "vérifie que le temps de marche d'un bon marcheur est inférieur au temps de marche normal",
+      "last_verification_keyword": "Should Be True",
+      "robot_tags": []
+    }
+  }
+]

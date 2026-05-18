@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot052_01",
+    "assertion": "Vérifier que l'affichage des arrêts avec correspondances.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "consistency"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/eviterLarret.robot",
+      "test_name": "TC09- Vérification Des Arrêts De Correspondance",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "2_transportEnCommun"
+      ],
+      "documentation": "Vérifier l'affichage des arrêts avec correspondances",
+      "last_verification_keyword": "Verifier Popup Eviter Un Arret Affichee",
+      "robot_tags": []
+    }
+  }
+]

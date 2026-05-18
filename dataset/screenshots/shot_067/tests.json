@@ -1,0 +1,22 @@
+[
+  {
+    "test_id": "shot067_01",
+    "assertion": "Vérifier que l'information sur les pistes cyclables est affichée en couleur verte.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC06 - RI - Vélo - Vérification Visuelle Des Pistes Cyclables",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "4_bike"
+      ],
+      "documentation": "Vérifie que l'information sur les pistes cyclables est affichée en couleur verte",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": []
+    }
+  }
+]

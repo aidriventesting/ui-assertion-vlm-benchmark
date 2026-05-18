@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot119_01",
+    "assertion": "Vérifier que 1 : click à partir du FDR Sachant que je suis sur l'étape parking du guidage Lorsque clique sur le bouton \"En Savoir plus\" dans le bloc parking Alors je suis redirigée vers une webview : https://www.iledefrance-mobilites.fr/le-reseau/services-de-mobilite/parcs-relais.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/3_Guidage/voitureEtTrajetCombine/6_guidageEtapeParking.robot",
+      "test_name": "TC02- Voiture & Transport En Commun - Depuis FDR - Verifier La Redirection Au Clic Sur En Savoir Plus",
+      "category": [
+        "4_RechercheItineraires",
+        "3_Guidage",
+        "voitureEtTrajetCombine"
+      ],
+      "documentation": "Critère 2.1   : click à partir du FDR Sachant que je suis sur l'étape parking du guidage Lorsque clique sur le bouton \"En Savoir plus\" dans le bloc parking Alors je suis redirigée vers une webview : https://www.iledefrance-mobilites.fr/le-reseau/services-de-mobilite/parcs-relais",
+      "last_verification_keyword": "Verifier La Redirection",
+      "robot_tags": []
+    }
+  }
+]

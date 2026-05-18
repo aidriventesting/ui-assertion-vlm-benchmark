@@ -1,0 +1,20 @@
+[
+  {
+    "test_id": "shot028_01",
+    "assertion": "Vérifier que qu'il remonte les addresses fnac par valider deux addresses connu.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/3_AutourDeMoi/mapSearchBar.robot",
+      "test_name": "TC01- Affichage Adresses Sur Search Bar Map",
+      "category": [
+        "3_AutourDeMoi"
+      ],
+      "documentation": "Verifier qu'il remonte les addresses fnac par valider deux addresses connu",
+      "last_verification_keyword": "Verifier Resultats Recherche Map Contiennent Fnac",
+      "robot_tags": []
+    }
+  }
+]

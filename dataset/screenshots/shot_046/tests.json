@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot046_01",
+    "assertion": "Vérifier que chaque itinéraire affiche clairement le temps de marche à pied à côté du pictogramme de marche à pied.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "layout"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/affichageElementRiti.robot",
+      "test_name": "TC03- RI- Verifier Affichage Temps De Marche A Pied",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "2_transportEnCommun"
+      ],
+      "documentation": "Vérifie que chaque itinéraire affiche clairement le temps de marche à pied à côté du pictogramme de marche à pied",
+      "last_verification_keyword": "Verifier Resultats RI Affichent Heures Duree Et Infos",
+      "robot_tags": []
+    }
+  }
+]

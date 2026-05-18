@@ -1,0 +1,20 @@
+[
+  {
+    "test_id": "shot022_01",
+    "assertion": "Vérifier que ouvre la liste complète des actualités puis revient à l'accueil; le bloc carrousel Actualités reste conforme.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC10- Retour Accueil Depuis Liste Actualites",
+      "category": [
+        "1_Homepage"
+      ],
+      "documentation": "Ouvre la liste complète des actualités puis revient à l'accueil; le bloc carrousel Actualités reste conforme",
+      "last_verification_keyword": "Return From All News Screen To Homepage",
+      "robot_tags": []
+    }
+  }
+]

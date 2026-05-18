@@ -1,0 +1,26 @@
+[
+  {
+    "test_id": "shot086_01",
+    "assertion": "Vérifier que les options de tri disponibles sont 'Le plus rapide (par défaut)', 'Le moins de marche' et 'Le moins de correspondances'.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "consistency",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/triResultats.robot",
+      "test_name": "TC02- Tri Résultats- Verifier Les Options",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "6_optionsTrajets"
+      ],
+      "documentation": "vérifie que les options de tri disponibles sont 'Le plus rapide (par défaut)', 'Le moins de marche' et 'Le moins de correspondances'",
+      "last_verification_keyword": "Verify Sort Options",
+      "robot_tags": [
+        "Smoke"
+      ]
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot041_01",
+    "assertion": "Vérifier que cliquer sur \"Fermer\" ferme le popup et revient à l'écran résultats TC.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/comprendreRecommandations.robot",
+      "test_name": "TC02- CR- Fermeture Popup Via Bouton Fermer",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "2_transportEnCommun"
+      ],
+      "documentation": "Cliquer sur \"Fermer\" ferme le popup et revient à l'écran résultats TC.",
+      "last_verification_keyword": "Page Should Contain Text",
+      "robot_tags": []
+    }
+  }
+]

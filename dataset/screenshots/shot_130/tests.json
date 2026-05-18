@@ -1,0 +1,20 @@
+[
+  {
+    "test_id": "shot130_01",
+    "assertion": "Vérifier que détail P1 (RER C), clic sur lien puis vérif site iledefrance-mobilites.fr.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/7_InfoTrafic/permanentInfoTrafficLien.robot",
+      "test_name": "TC01- Clic lien perturbation RER C redirige vers site IDFM",
+      "category": [
+        "7_InfoTrafic"
+      ],
+      "documentation": "détail P1 (RER C), clic sur lien puis vérif site iledefrance-mobilites.fr",
+      "last_verification_keyword": "Verifier Redirection Site IDFM",
+      "robot_tags": []
+    }
+  }
+]

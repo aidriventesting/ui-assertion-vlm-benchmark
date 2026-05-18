@@ -1,0 +1,22 @@
+[
+  {
+    "test_id": "shot072_01",
+    "assertion": "Vérifier que les heures de départ et d'arrivée sont affichées au format HH:MM.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC09 - RI - Vélo - Vérification Des Horaires",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "4_bike"
+      ],
+      "documentation": "Vérifie que les heures de départ et d'arrivée sont affichées au format HH:MM",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": []
+    }
+  }
+]

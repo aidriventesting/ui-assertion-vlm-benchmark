@@ -1,0 +1,20 @@
+[
+  {
+    "test_id": "shot030_01",
+    "assertion": "Vérifier que bascule en mode 3D depuis la carte et vérifie l'affichage en 3D (la carte est visible en 3D).",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/3_AutourDeMoi/bouton3D2D.robot",
+      "test_name": "TC02- Verifier Affichage Map En 3D",
+      "category": [
+        "3_AutourDeMoi"
+      ],
+      "documentation": "Bascule en mode 3D depuis la carte et vérifie l'affichage en 3D (la carte est visible en 3D)",
+      "last_verification_keyword": "Verifier Affichage Map En 3D",
+      "robot_tags": []
+    }
+  }
+]

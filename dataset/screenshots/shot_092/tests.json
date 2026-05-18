@@ -1,0 +1,25 @@
+[
+  {
+    "test_id": "shot092_01",
+    "assertion": "Vérifier que sélectionner \"Le moins de correspondances\" → subtitle mis à jour et résultats toujours présents.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "state",
+      "consistency",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/triResultats.robot",
+      "test_name": "TC04- Tri Résultats- Configurer 'Le Moins De Correspondances'",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "6_optionsTrajets"
+      ],
+      "documentation": "sélectionner \"Le moins de correspondances\" → subtitle mis à jour et résultats toujours présents",
+      "last_verification_keyword": "Refresh If RI Result Does Not Appear",
+      "robot_tags": []
+    }
+  }
+]

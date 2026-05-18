@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot083_01",
+    "assertion": "Vérifier que la valeur par défaut du tri est \"Le plus rapide (par défaut)\".",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/triResultats.robot",
+      "test_name": "TC01- Tri Résultats- Valeur Par Défaut",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "6_optionsTrajets"
+      ],
+      "documentation": "vérifie que la valeur par défaut du tri est \"Le plus rapide (par défaut)\"",
+      "last_verification_keyword": "Verify Text Elements Presence",
+      "robot_tags": []
+    }
+  }
+]

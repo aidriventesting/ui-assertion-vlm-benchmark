@@ -1,0 +1,20 @@
+[
+  {
+    "test_id": "shot133_01",
+    "assertion": "Vérifier que saisir la ligne 67 dans la barre de recherche et cliquer sur la ligne > Vérifier la redirection vers l'écran IT de la ligne de bus 67.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/7_InfoTrafic/infoTraficBus.robot",
+      "test_name": "TC02- Affichage Page Infos Trafic Bus",
+      "category": [
+        "7_InfoTrafic"
+      ],
+      "documentation": "Saisir la ligne 67 dans la barre de recherche et cliquer sur la ligne > Vérifier la redirection vers l'écran IT de la ligne de bus 67",
+      "last_verification_keyword": "Verifier Affichage Ecran Infos Trafic Bus",
+      "robot_tags": []
+    }
+  }
+]

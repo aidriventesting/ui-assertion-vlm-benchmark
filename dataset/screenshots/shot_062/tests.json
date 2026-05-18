@@ -1,0 +1,22 @@
+[
+  {
+    "test_id": "shot062_01",
+    "assertion": "Vérifier que le dénivelé est affiché correctement pour le trajet Vélib.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velib_affichageElementRiti.robot",
+      "test_name": "TC04 - RI - Vélib - Vérification De L'Affichage Des Dénivelés",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "4_bike"
+      ],
+      "documentation": "Vérifie que le dénivelé est affiché correctement pour le trajet Vélib",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": []
+    }
+  }
+]

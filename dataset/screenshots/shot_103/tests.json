@@ -1,0 +1,27 @@
+[
+  {
+    "test_id": "shot103_01",
+    "assertion": "Vérifier que qu'activer/désactiver le toggle \"Itinéraires accessibles\" fonctionne aussi en cliquant sur le texte (a11y — la zone actionnable doit couvrir le label entier, pas juste le Switch).",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "state",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/profilVoyageur.robot",
+      "test_name": "TC09- Profil Voyageur- Itinéraires Accessibles- Activation Par Clic Sur Texte (A11y)",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "6_optionsTrajets"
+      ],
+      "documentation": "vérifie qu'activer/désactiver le toggle \"Itinéraires accessibles\" fonctionne aussi en cliquant sur le texte (a11y — la zone actionnable doit couvrir le label entier, pas juste le Switch)",
+      "last_verification_keyword": "Check Toggle Disabled",
+      "robot_tags": [
+        "Smoke",
+        "A11y"
+      ]
+    }
+  }
+]

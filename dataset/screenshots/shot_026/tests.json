@@ -1,0 +1,20 @@
+[
+  {
+    "test_id": "shot026_01",
+    "assertion": "Vérifier que tape sur un article natif (sans lien externe) depuis la liste actualités, vérifie l'ouverture puis le retour à la liste.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC14- Tap Article Natif Liste Actualites Et Retour",
+      "category": [
+        "1_Homepage"
+      ],
+      "documentation": "Tape sur un article natif (sans lien externe) depuis la liste actualités, vérifie l'ouverture puis le retour à la liste",
+      "last_verification_keyword": "Tap Article Natif Sur Liste Et Retour",
+      "robot_tags": []
+    }
+  }
+]

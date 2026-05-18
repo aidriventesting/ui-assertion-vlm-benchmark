@@ -1,0 +1,25 @@
+[
+  {
+    "test_id": "shot080_01",
+    "assertion": "Vérifier que ouvrir le 3-points top-right de Options de trajets affiche un bottom sheet contenant \"Réinitialiser\" et \"Annuler\".",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/menuActionsEtCompteur.robot",
+      "test_name": "TC01- Menu Kebab- Affichage Du Bottom Sheet",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "6_optionsTrajets"
+      ],
+      "documentation": "ouvrir le 3-points top-right de Options de trajets affiche un bottom sheet contenant \"Réinitialiser\" et \"Annuler\"",
+      "last_verification_keyword": "Verify Kebab Menu Bottom Sheet Display",
+      "robot_tags": [
+        "Smoke"
+      ]
+    }
+  }
+]

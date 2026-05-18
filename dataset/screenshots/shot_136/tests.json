@@ -1,0 +1,21 @@
+[
+  {
+    "test_id": "shot136_01",
+    "assertion": "Vérifier que infos trafic > ligne > onglet À venir > sections \"Cette semaine\" + \"Dans le mois\" affichées.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/7_InfoTrafic/structureInfoTrafic.robot",
+      "test_name": "TC03- Sections onglet A venir Cette semaine et Dans le mois",
+      "category": [
+        "7_InfoTrafic"
+      ],
+      "documentation": "Infos trafic > ligne > onglet À venir > sections \"Cette semaine\" + \"Dans le mois\" affichées.",
+      "last_verification_keyword": "Verify Section Headers A Venir Tab",
+      "robot_tags": []
+    }
+  }
+]

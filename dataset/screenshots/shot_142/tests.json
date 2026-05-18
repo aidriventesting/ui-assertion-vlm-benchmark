@@ -1,0 +1,21 @@
+[
+  {
+    "test_id": "shot142_01",
+    "assertion": "Vérifier que sachant que je suis sur la tab bar Lorsque je clique sur la nouvelle entrée \"Mon espace\" en mode déconnecté Alors je dois être redirigé vers le nouvel écran de l'espace perso Alors je dois visualiser une section \"Mes services\" composé de la card \"Vélib'\" ainsi que de l'entrée \"Découvrir les services\".",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/9_EspacePerso/5_mesServices.robot",
+      "test_name": "TC01- Espace Perso - Mode Déconnecté - Verifier Affichage Velib & Mes services",
+      "category": [
+        "9_EspacePerso"
+      ],
+      "documentation": "P002593-4443:  Critère 1 Sachant que je suis sur la tab bar Lorsque je clique sur la nouvelle entrée \"Mon espace\" en mode déconnecté Alors je dois être redirigé vers le nouvel écran de l'espace perso Alors je dois visualiser une section \"Mes services\" composé de la card \"Vélib'\" ainsi que de l'entrée \"Découvrir les services\"",
+      "last_verification_keyword": "Verifier Affichage Mes Services En Mode Déconnecté",
+      "robot_tags": []
+    }
+  }
+]

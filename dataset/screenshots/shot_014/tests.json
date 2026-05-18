@@ -1,0 +1,21 @@
+[
+  {
+    "test_id": "shot014_01",
+    "assertion": "Vérifier que sur l'écran d'accueil la présence du texte invitant à consulter plus d'actualités.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC02- Affichage Texte Last News Homepage",
+      "category": [
+        "1_Homepage"
+      ],
+      "documentation": "Vérifie sur l'écran d'accueil la présence du texte invitant à consulter plus d'actualités",
+      "last_verification_keyword": "Verifier L'Affichage D'un Text",
+      "robot_tags": []
+    }
+  }
+]

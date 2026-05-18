@@ -1,0 +1,21 @@
+[
+  {
+    "test_id": "shot017_01",
+    "assertion": "Vérifier que accèder 'Plan locaux' depuis HP, télécharger un plan et verifier qu'il est téléchargeable et s'affiche Arrondissement séléctionnée: Paris (75) Plan téléchargé: Secteur Paris.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/1_Homepage/planDesReseaux.robot",
+      "test_name": "TC03- Plan Locaux",
+      "category": [
+        "1_Homepage"
+      ],
+      "documentation": "Accèder 'Plan locaux' depuis HP, télécharger un plan et verifier qu'il est téléchargeable et s'affiche \\n Arrondissement séléctionnée: Paris (75) \\n Plan téléchargé: Secteur Paris",
+      "last_verification_keyword": "#Verify If The Specific Regional Or Local Plan Has Been Downloaded",
+      "robot_tags": []
+    }
+  }
+]

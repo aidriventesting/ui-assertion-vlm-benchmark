@@ -1,0 +1,21 @@
+[
+  {
+    "test_id": "shot027_01",
+    "assertion": "Vérifier que parcourt le carrousel en avant jusqu'au CTA puis en arrière jusqu'au premier article.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC16- Carrousel Navigation Complete Aller Retour",
+      "category": [
+        "1_Homepage"
+      ],
+      "documentation": "Parcourt le carrousel en avant jusqu'au CTA puis en arrière jusqu'au premier article",
+      "last_verification_keyword": "Carrousel Aller Retour Complet",
+      "robot_tags": []
+    }
+  }
+]

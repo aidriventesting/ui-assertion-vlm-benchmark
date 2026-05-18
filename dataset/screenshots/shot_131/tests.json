@@ -1,0 +1,21 @@
+[
+  {
+    "test_id": "shot131_01",
+    "assertion": "Vérifier que recherche itinéraire Gambetta → Porte des Lilas, sélection d'un trajet Métro 3bis, vérif affichage bouton \"Trafic perturbé\", clic, vérif popup (titre + description P3).",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/7_InfoTrafic/permanentInfoTrafficRiti.robot",
+      "test_name": "TC01- Riti Détails trajet Métro 3bis – bouton Trafic perturbé et popup P3",
+      "category": [
+        "7_InfoTrafic"
+      ],
+      "documentation": "Recherche itinéraire Gambetta → Porte des Lilas, sélection d'un trajet Métro 3bis, vérif affichage bouton \"Trafic perturbé\", clic, vérif popup (titre + description P3).",
+      "last_verification_keyword": "Verifier Description Perturbation Permanente",
+      "robot_tags": []
+    }
+  }
+]

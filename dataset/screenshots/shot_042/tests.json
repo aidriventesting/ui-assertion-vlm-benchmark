@@ -1,0 +1,22 @@
+[
+  {
+    "test_id": "shot042_01",
+    "assertion": "Vérifier que ce test vérifie que le clic sur le bouton de rafraîchissement sur l'écran des transports publics met à jour correctement les données.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/scrollndrefresh.robot",
+      "test_name": "TC02- Click On Refresh Button - Screen Transport Publique",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "2_transportEnCommun"
+      ],
+      "documentation": "Ce test vérifie que le clic sur le bouton de rafraîchissement sur l'écran des transports publics met à jour correctement les données.",
+      "last_verification_keyword": "Verifier Le Refresh Data",
+      "robot_tags": []
+    }
+  }
+]

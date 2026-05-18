@@ -1,0 +1,22 @@
+[
+  {
+    "test_id": "shot037_01",
+    "assertion": "Vérifier que l'inversion des destinations pour un itinéraire en transport en commun fonctionne correctement.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/inverserDestination.robot",
+      "test_name": "TC01- Inverser Destination Transport En Commun",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "2_transportEnCommun"
+      ],
+      "documentation": "Vérifie que l'inversion des destinations pour un itinéraire en transport en commun fonctionne correctement.",
+      "last_verification_keyword": "Verifier Resultats RI Affichent Depart Et Arrivee",
+      "robot_tags": []
+    }
+  }
+]

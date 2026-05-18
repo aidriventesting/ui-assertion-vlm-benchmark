@@ -1,0 +1,26 @@
+[
+  {
+    "test_id": "shot087_01",
+    "assertion": "Vérifier que désactiver Métro et Bus, Réinitialiser → 6 toggles Transports publics réactivés.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "state",
+      "count_raw"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/menuActionsEtCompteur.robot",
+      "test_name": "TC03- Menu Kebab- Réinitialiser Restaure Les Toggles Transports Publics",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "6_optionsTrajets"
+      ],
+      "documentation": "désactiver Métro et Bus, Réinitialiser → 6 toggles Transports publics réactivés",
+      "last_verification_keyword": "Verify All Options Trajet At Default",
+      "robot_tags": [
+        "Smoke"
+      ]
+    }
+  }
+]

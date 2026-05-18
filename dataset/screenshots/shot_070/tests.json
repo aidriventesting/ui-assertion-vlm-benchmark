@@ -1,0 +1,24 @@
+[
+  {
+    "test_id": "shot070_01",
+    "assertion": "Vérifier que toutes les informations sont cohérentes et bien alignées.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "layout",
+      "consistency"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velib_affichageElementRiti.robot",
+      "test_name": "TC08 - RI - Vélib - Vérification De La Cohérence Des Informations",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "4_bike"
+      ],
+      "documentation": "Vérifie que toutes les informations sont cohérentes et bien alignées",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": []
+    }
+  }
+]

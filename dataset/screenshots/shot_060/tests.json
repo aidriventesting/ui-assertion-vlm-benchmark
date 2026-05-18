@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot060_01",
+    "assertion": "Vérifier que les distances sont affichées dans un format cohérent pour les deux options de vélo.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "consistency"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC03 - RI - Vélo - Vérification De L'Affichage Des Distances",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "4_bike"
+      ],
+      "documentation": "Vérifie que les distances sont affichées dans un format cohérent pour les deux options de vélo",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": []
+    }
+  }
+]

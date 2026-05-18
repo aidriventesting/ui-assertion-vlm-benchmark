@@ -1,0 +1,22 @@
+[
+  {
+    "test_id": "shot040_01",
+    "assertion": "Vérifier que https://e-3d-dc1.capgemini.com/jira/browse/P002593-8013.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/notationScreeb.robot",
+      "test_name": "TC01- Verifier Affichage Popup Satisfaction",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "2_transportEnCommun"
+      ],
+      "documentation": "https://e-3d-dc1.capgemini.com/jira/browse/P002593-8013",
+      "last_verification_keyword": "Verifier Popup Notation Satisfaction Affichee",
+      "robot_tags": []
+    }
+  }
+]

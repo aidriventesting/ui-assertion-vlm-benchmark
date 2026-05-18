@@ -1,0 +1,26 @@
+[
+  {
+    "test_id": "shot097_01",
+    "assertion": "Vérifier que le temps en vélo d'un cycliste débutant est supérieur au temps d'un cycliste intermédiaire.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "state",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/profilVoyageur.robot",
+      "test_name": "TC06- Profil Voyageur- Cycliste- Configurer Vitesse à Vélo 'Débutant'",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "6_optionsTrajets"
+      ],
+      "documentation": "vérifie que le temps en vélo d'un cycliste débutant est supérieur au temps d'un cycliste intermédiaire",
+      "last_verification_keyword": "Should Be True",
+      "robot_tags": [
+        "Smoke"
+      ]
+    }
+  }
+]

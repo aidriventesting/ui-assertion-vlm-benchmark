@@ -1,0 +1,20 @@
+[
+  {
+    "test_id": "shot126_01",
+    "assertion": "Vérifier que accéder à une ligne Train et vérifier l’affichage du tableau des horaires temps réel via la keyword finale de vérification.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/6_Horaires/3_AffichageHorairesTempsReel.robot",
+      "test_name": "TC02- Horaires Temps Réel - Train J",
+      "category": [
+        "6_Horaires"
+      ],
+      "documentation": "Accéder à une ligne Train et vérifier l’affichage du tableau des horaires temps réel via la keyword finale de vérification.",
+      "last_verification_keyword": "Verify Display Of Real Time TimeTable",
+      "robot_tags": []
+    }
+  }
+]

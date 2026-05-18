@@ -1,0 +1,21 @@
+[
+  {
+    "test_id": "shot127_01",
+    "assertion": "Vérifier que accéder aux horaires théoriques d'une ligne Train et vérifier l'affichage du tableau d'horaires théoriques via la keyword finale de vérification.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/6_Horaires/4_AffichageHorairesTheorique.robot",
+      "test_name": "TC02- Horaires Temps Théorique - Train H",
+      "category": [
+        "6_Horaires"
+      ],
+      "documentation": "Accéder aux horaires théoriques d'une ligne Train et vérifier l'affichage du tableau d'horaires théoriques via la keyword finale de vérification.",
+      "last_verification_keyword": "Verify hypothetical timetable display",
+      "robot_tags": []
+    }
+  }
+]

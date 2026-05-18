@@ -1,0 +1,21 @@
+[
+  {
+    "test_id": "shot145_01",
+    "assertion": "Vérifier que sachant que je suis sur la tab bar Lorsque je clique sur la nouvelle entrée \"Mon espace\" Alors je dois être redirigé vers le nouvel écran de l'espace perso.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/9_EspacePerso/1_connectezVous.robot",
+      "test_name": "TC03- Espace Perso - Mode Déconnecté - Verifier Affichage Ecran Espace Perso",
+      "category": [
+        "9_EspacePerso"
+      ],
+      "documentation": "P002593-4416:  Critère 2 Sachant que je suis sur la tab bar Lorsque je clique sur la nouvelle entrée \"Mon espace\" Alors je dois être redirigé vers le nouvel écran de l'espace perso",
+      "last_verification_keyword": "Vérifier Affichage Espace Perso En Mode Déconnecté",
+      "robot_tags": []
+    }
+  }
+]

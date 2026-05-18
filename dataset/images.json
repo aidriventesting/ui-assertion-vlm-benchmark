@@ -141,5 +141,3965 @@
       "build": "unknown"
     },
     "notes": []
+  },
+  {
+    "image_id": "shot_009",
+    "file": "screenshots/shot_009/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "0_Lancement"
+    ],
+    "source_test": {
+      "robot_file": "Tests/0_Lancement/Consentement.robot",
+      "test_name": "TC02- Accepter Les Cookies Nécessaires - Continuer vers welcome screen",
+      "documentation": "Cas de test pour vérifier l'affichage du welcome screen en cliquant sur j'accepte les cookies nécessaires",
+      "last_verification_keyword": "Verifier Affichage Welcome Screen",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/0_Lancement/TC02- Accepter Les Cookies Nécessaires - Continuer vers welcome screen_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_010",
+    "file": "screenshots/shot_010/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "0_Lancement"
+    ],
+    "source_test": {
+      "robot_file": "Tests/0_Lancement/Consentement.robot",
+      "test_name": "TC03- Je Paramètre Mes Choix - Continuer vers welcome screen",
+      "documentation": "Cas de test pour vérifier que l'utilisateur peut utiliser l'application en paramétrant ses choix",
+      "last_verification_keyword": "Verifier Affichage Welcome Screen",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/0_Lancement/TC03- Je Paramètre Mes Choix - Continuer vers welcome screen_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_011",
+    "file": "screenshots/shot_011/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "1_Homepage"
+    ],
+    "source_test": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC01- Affichage Actualites",
+      "documentation": "Vérifie sur l'écran d'accueil que les actualités sont correctement affichées avec un titre, une description et une image",
+      "last_verification_keyword": "Verifier Affichage Elements Actualites",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/1_Homepage/TC01- Affichage Actualites_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_012",
+    "file": "screenshots/shot_012/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "1_Homepage"
+    ],
+    "source_test": {
+      "robot_file": "Tests/1_Homepage/alerte.robot",
+      "test_name": "TC01- Alerte 3117",
+      "documentation": "Accèder à 3117 et verifier l'affichage des différents élements présent sur l'écran",
+      "last_verification_keyword": "Check Alert Screen Display",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/1_Homepage/TC01- Alerte 3117_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_013",
+    "file": "screenshots/shot_013/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "1_Homepage"
+    ],
+    "source_test": {
+      "robot_file": "Tests/1_Homepage/planDesReseaux.robot",
+      "test_name": "TC01- Plan Général",
+      "documentation": "Accèder 'Plan général' depuis HP, Verifier qu'il s'affiche bien",
+      "last_verification_keyword": "Verifier Affichage Du Plan Général",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/1_Homepage/TC01- Plan Général_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_014",
+    "file": "screenshots/shot_014/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "1_Homepage"
+    ],
+    "source_test": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC02- Affichage Texte Last News Homepage",
+      "documentation": "Vérifie sur l'écran d'accueil la présence du texte invitant à consulter plus d'actualités",
+      "last_verification_keyword": "Verifier L'Affichage D'un Text",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/1_Homepage/TC02- Affichage Texte Last News Homepage_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_015",
+    "file": "screenshots/shot_015/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "1_Homepage"
+    ],
+    "source_test": {
+      "robot_file": "Tests/1_Homepage/planDesReseaux.robot",
+      "test_name": "TC02- Plan Régionaux",
+      "documentation": "Accèder 'Plan régionaux' depuis HP, télécharger un plan et verifier qu'il est téléchargeable et s'affiche \\n Plan téléchargé: Plan Métro",
+      "last_verification_keyword": "#Verify If The Specific Regional Or Local Plan Has Been Downloaded",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/1_Homepage/TC02- Plan Régionaux_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_016",
+    "file": "screenshots/shot_016/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "1_Homepage"
+    ],
+    "source_test": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC03- Articles Liens Externes",
+      "documentation": "Vérifie sur l'écran d'accueil que les liens externes des actualités redirigent correctement vers les sites externes",
+      "last_verification_keyword": "Verifier La Redirection Des Actualites Disposants Lien Externe",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/1_Homepage/TC03- Articles Liens Externes_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_017",
+    "file": "screenshots/shot_017/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "1_Homepage"
+    ],
+    "source_test": {
+      "robot_file": "Tests/1_Homepage/planDesReseaux.robot",
+      "test_name": "TC03- Plan Locaux",
+      "documentation": "Accèder 'Plan locaux' depuis HP, télécharger un plan et verifier qu'il est téléchargeable et s'affiche \\n Arrondissement séléctionnée: Paris (75) \\n Plan téléchargé: Secteur Paris",
+      "last_verification_keyword": "#Verify If The Specific Regional Or Local Plan Has Been Downloaded",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/1_Homepage/TC03- Plan Locaux_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_018",
+    "file": "screenshots/shot_018/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "1_Homepage"
+    ],
+    "source_test": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC05- Affichage Et Fonctionnement Pagination Ecran Actualites",
+      "documentation": "Vérifie sur l'écran des actualités que la pagination est présente et fonctionne correctement",
+      "last_verification_keyword": "Verifier Présence Et Fonctionnement Pagination",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/1_Homepage/TC05- Affichage Et Fonctionnement Pagination Ecran Actualites_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_019",
+    "file": "screenshots/shot_019/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "1_Homepage"
+    ],
+    "source_test": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC06- Affichage Image Sur Chaque Article",
+      "documentation": "Vérifie sur l'écran d'accueil que chaque article d'actualité possède bien une image",
+      "last_verification_keyword": "Verifier Presence Image Sur Chaque Articles Homepage",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/1_Homepage/TC06- Affichage Image Sur Chaque Article_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_020",
+    "file": "screenshots/shot_020/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "1_Homepage"
+    ],
+    "source_test": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC07- Affichage Articles Selon Ordre",
+      "documentation": "Vérifie que l'ordre des articles est identique entre l'écran d'accueil et l'écran des actualités",
+      "last_verification_keyword": "News Screen Titles Match Homepage Order",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/1_Homepage/TC07- Affichage Articles Selon Ordre_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_021",
+    "file": "screenshots/shot_021/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "1_Homepage"
+    ],
+    "source_test": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC08- Verifier Affichage Articles En Français",
+      "documentation": "Vérifie sur l'écran d'accueil que les articles sont bien affichés en français quand la langue sélectionnée est le français",
+      "last_verification_keyword": "Assert Language Is FR",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/1_Homepage/TC08- Verifier Affichage Articles En Français_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_022",
+    "file": "screenshots/shot_022/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "1_Homepage"
+    ],
+    "source_test": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC10- Retour Accueil Depuis Liste Actualites",
+      "documentation": "Ouvre la liste complète des actualités puis revient à l'accueil; le bloc carrousel Actualités reste conforme",
+      "last_verification_keyword": "Return From All News Screen To Homepage",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/1_Homepage/TC10- Retour Accueil Depuis Liste Actualites_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_023",
+    "file": "screenshots/shot_023/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "1_Homepage"
+    ],
+    "source_test": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC11- Carrousel Au Moins Un Titre Collecte",
+      "documentation": "Vérifie qu'au moins un titre d'article est lu depuis le carrousel homepage",
+      "last_verification_keyword": "Should Be True",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/1_Homepage/TC11- Carrousel Au Moins Un Titre Collecte_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_024",
+    "file": "screenshots/shot_024/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "1_Homepage"
+    ],
+    "source_test": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC12- Carrousel Suivant Puis Precedent",
+      "documentation": "Navigation carrousel avant/arrière sans casser l'affichage du bloc actualités",
+      "last_verification_keyword": "Verifier Affichage Elements Actualites",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/1_Homepage/TC12- Carrousel Suivant Puis Precedent_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_025",
+    "file": "screenshots/shot_025/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "1_Homepage"
+    ],
+    "source_test": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC13- Ecran Liste Actualites Charge En Tete",
+      "documentation": "Liste actualités: texte Actualités et bouton retour visibles (écran chargé)",
+      "last_verification_keyword": "Expect Element",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/1_Homepage/TC13- Ecran Liste Actualites Charge En Tete_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_026",
+    "file": "screenshots/shot_026/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "1_Homepage"
+    ],
+    "source_test": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC14- Tap Article Natif Liste Actualites Et Retour",
+      "documentation": "Tape sur un article natif (sans lien externe) depuis la liste actualités, vérifie l'ouverture puis le retour à la liste",
+      "last_verification_keyword": "Tap Article Natif Sur Liste Et Retour",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/1_Homepage/TC14- Tap Article Natif Liste Actualites Et Retour_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_027",
+    "file": "screenshots/shot_027/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "1_Homepage"
+    ],
+    "source_test": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC16- Carrousel Navigation Complete Aller Retour",
+      "documentation": "Parcourt le carrousel en avant jusqu'au CTA puis en arrière jusqu'au premier article",
+      "last_verification_keyword": "Carrousel Aller Retour Complet",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/1_Homepage/TC16- Carrousel Navigation Complete Aller Retour_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_028",
+    "file": "screenshots/shot_028/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "3_AutourDeMoi"
+    ],
+    "source_test": {
+      "robot_file": "Tests/3_AutourDeMoi/mapSearchBar.robot",
+      "test_name": "TC01- Affichage Adresses Sur Search Bar Map",
+      "documentation": "Verifier qu'il remonte les addresses fnac par valider deux addresses connu",
+      "last_verification_keyword": "Verifier Resultats Recherche Map Contiennent Fnac",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/3_AutourDeMoi/TC01- Affichage Adresses Sur Search Bar Map_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_029",
+    "file": "screenshots/shot_029/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "3_AutourDeMoi"
+    ],
+    "source_test": {
+      "robot_file": "Tests/3_AutourDeMoi/filtres.robot",
+      "test_name": "TC01- Verifier La Présence Des Filtres Attendus",
+      "documentation": "En tant qu'utilisateur de l'application IDFM \\n Je souhaite visualiser un filtre \"Grandes gares\" lorsque je suis sur la page options de carte \\n Afin de gérer l'affichage ou non des grandes gares sur la carte selon mes souhaits",
+      "last_verification_keyword": "Acceder Aux Filtres",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/3_AutourDeMoi/TC01- Verifier La Présence Des Filtres Attendus_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_030",
+    "file": "screenshots/shot_030/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "3_AutourDeMoi"
+    ],
+    "source_test": {
+      "robot_file": "Tests/3_AutourDeMoi/bouton3D2D.robot",
+      "test_name": "TC02- Verifier Affichage Map En 3D",
+      "documentation": "Bascule en mode 3D depuis la carte et vérifie l'affichage en 3D (la carte est visible en 3D)",
+      "last_verification_keyword": "Verifier Affichage Map En 3D",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/3_AutourDeMoi/TC02- Verifier Affichage Map En 3D_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_031",
+    "file": "screenshots/shot_031/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "1_rechercheDestination"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/1_rechercheDestination/autocompletion.robot",
+      "test_name": "TC01- Vérification Des Résultats Autocomplétion Avec Recherche Partiel",
+      "documentation": "Validation que l'autocomplétion filtre correctement les résultats  Scénario de test: | Étant donné | L'utilisateur saisit un terme de recherche partiel \"arri\" | | Quand       | Le système affiche les suggestions d'autocomplétion | | Alors       | Tous les résultats doivent contenir \"arri\" dans l'adresse principale ou complémentaire |",
+      "last_verification_keyword": "Verifier Resultats Autocompletion Contiennent",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/1_rechercheDestination/TC01- Vérification Des Résultats Autocomplétion Avec Recherche Partiel_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_032",
+    "file": "screenshots/shot_032/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "1_rechercheDestination"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/1_rechercheDestination/autocompletion.robot",
+      "test_name": "TC02- Vérification Autocomplétion Backend Insensible À La Casse",
+      "documentation": "Prouve que le backend d'autocomplétion ne discrimine pas la casse.  Scénario de test: | Étant donné | L'utilisateur saisit un terme en minuscules \"nation\" | | Quand       | Le système affiche les suggestions d'autocomplétion | | Alors       | Au moins un résultat contient \"Nation\" (N majuscule) prouvant le matching case-insensitive |",
+      "last_verification_keyword": "Verifier Au Moins Un Resultat Contient",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/1_rechercheDestination/TC02- Vérification Autocomplétion Backend Insensible À La Casse_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_033",
+    "file": "screenshots/shot_033/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "1_rechercheDestination"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/1_rechercheDestination/autocompletion.robot",
+      "test_name": "TC03- Vérification Autocomplétion Backend Insensible À L'Accent",
+      "documentation": "Prouve que le backend d'autocomplétion gère l'insensibilité aux accents (UTF-8).  Scénario de test: | Étant donné | L'utilisateur saisit un terme sans accent \"cha\" | | Quand       | Le système affiche les suggestions d'autocomplétion | | Alors       | Au moins un résultat contient \"Châ\" (C majuscule + â accent) prouvant le matching case+accent insensitive |",
+      "last_verification_keyword": "Verifier Au Moins Un Resultat Contient",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/1_rechercheDestination/TC03- Vérification Autocomplétion Backend Insensible À L'Accent_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_034",
+    "file": "screenshots/shot_034/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "1_rechercheDestination"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/1_rechercheDestination/autocompletion.robot",
+      "test_name": "TC04- Vérification Autocomplétion Section Arrêts",
+      "documentation": "Validation du pattern locator sur la section \"Arrêts\" (stations / arrêts de transport) en plus de la section \"Résultats\" (adresses).  Scénario de test: | Étant donné | L'utilisateur saisit un nom de station \"Nation\" | | Quand       | Le système affiche les suggestions d'autocomplétion | | Alors       | Tous les résultats (section Arrêts et/ou Résultats) doivent contenir \"Nation\" |",
+      "last_verification_keyword": "Verifier Resultats Autocompletion Contiennent",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/1_rechercheDestination/TC04- Vérification Autocomplétion Section Arrêts_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_035",
+    "file": "screenshots/shot_035/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "1_rechercheDestination"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/1_rechercheDestination/autocompletion.robot",
+      "test_name": "TC05- Vérification Autocomplétion Recherche Adresse Trim Espaces",
+      "documentation": "Prouve que la recherche d'adresse supprime les espaces superflus (trailing) avant le matching.  Scénario de test: | Étant donné | L'utilisateur saisit un terme suivi d'espaces superflus \"Nation   \" | | Quand       | Le système affiche les suggestions d'autocomplétion | | Alors       | Les résultats apparaissent normalement (comme si l'utilisateur avait saisi \"Nation\" sans espaces) |",
+      "last_verification_keyword": "Verifier Au Moins Un Resultat Contient",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/1_rechercheDestination/TC05- Vérification Autocomplétion Recherche Adresse Trim Espaces_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_036",
+    "file": "screenshots/shot_036/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/comprendreRecommandations.robot",
+      "test_name": "TC01- CR- Ouverture Popup Et Affichage Des 4 Categories De Recommandations",
+      "documentation": "Sur l'écran résultats TC, scroller sous la liste fait apparaître le lien \"Comprendre nos recommandations d'itinéraires\". Cliquer ouvre le popup avec intro, sous-titre et les 4 catégories (titre + description).",
+      "last_verification_keyword": "Verifier Affichage Popup Comprendre Recommandations",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC01- CR- Ouverture Popup Et Affichage Des 4 Categories De Recommandations_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_037",
+    "file": "screenshots/shot_037/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/inverserDestination.robot",
+      "test_name": "TC01- Inverser Destination Transport En Commun",
+      "documentation": "Vérifie que l'inversion des destinations pour un itinéraire en transport en commun fonctionne correctement.",
+      "last_verification_keyword": "Verifier Resultats RI Affichent Depart Et Arrivee",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC01- Inverser Destination Transport En Commun_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_038",
+    "file": "screenshots/shot_038/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/affichageElementRiti.robot",
+      "test_name": "TC01- RI- Verifier Affichage Des Heures De Depart Et Arrivee",
+      "documentation": "Vérifie que chaque itinéraire proposé affiche clairement les heures de départ et d'arrivée ainsi que la durée totale du trajet",
+      "last_verification_keyword": "Verifier Resultats RI Affichent Heures Duree Et Infos",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC01- RI- Verifier Affichage Des Heures De Depart Et Arrivee_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_039",
+    "file": "screenshots/shot_039/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/scrollndrefresh.robot",
+      "test_name": "TC01- Scroll To Refresh Data - Screen Transport Publique",
+      "documentation": "Ce test vérifie que le fait de faire défiler vers le bas sur l'écran des transports publics met à jour correctement les données.",
+      "last_verification_keyword": "Verifier Le Refresh Data",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC01- Scroll To Refresh Data - Screen Transport Publique_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_040",
+    "file": "screenshots/shot_040/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/notationScreeb.robot",
+      "test_name": "TC01- Verifier Affichage Popup Satisfaction",
+      "documentation": "https://e-3d-dc1.capgemini.com/jira/browse/P002593-8013",
+      "last_verification_keyword": "Verifier Popup Notation Satisfaction Affichee",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC01- Verifier Affichage Popup Satisfaction_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_041",
+    "file": "screenshots/shot_041/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/comprendreRecommandations.robot",
+      "test_name": "TC02- CR- Fermeture Popup Via Bouton Fermer",
+      "documentation": "Cliquer sur \"Fermer\" ferme le popup et revient à l'écran résultats TC.",
+      "last_verification_keyword": "Page Should Contain Text",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC02- CR- Fermeture Popup Via Bouton Fermer_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_042",
+    "file": "screenshots/shot_042/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/scrollndrefresh.robot",
+      "test_name": "TC02- Click On Refresh Button - Screen Transport Publique",
+      "documentation": "Ce test vérifie que le clic sur le bouton de rafraîchissement sur l'écran des transports publics met à jour correctement les données.",
+      "last_verification_keyword": "Verifier Le Refresh Data",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC02- Click On Refresh Button - Screen Transport Publique_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_043",
+    "file": "screenshots/shot_043/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/affichageElementRiti.robot",
+      "test_name": "TC02- RI- Verifier Affichage Des Modes De Transport Et Lignes",
+      "documentation": "Vérifie que chaque itinéraire affiche les modes de transport (métro, RER, bus) avec leurs lignes et les temps de marche entre correspondances",
+      "last_verification_keyword": "Verifier Resultats RI Affichent Heures Duree Et Infos",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC02- RI- Verifier Affichage Des Modes De Transport Et Lignes_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_044",
+    "file": "screenshots/shot_044/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/eviterLarret.robot",
+      "test_name": "TC02- Vérification De La Modale Éviter Un Arrêt",
+      "documentation": "Vérifier l'affichage correct de la modale d'évitement d'arrêt",
+      "last_verification_keyword": "Verifier Popup Eviter Un Arret Affichee",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC02- Vérification De La Modale Éviter Un Arrêt_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_045",
+    "file": "screenshots/shot_045/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/eviterLaLigne.robot",
+      "test_name": "TC03- Eviter Une Ligne - Vérification Du Titre",
+      "documentation": "https://e-3d-dc1.capgemini.com/jira/browse/P002593-5842 Ce test vérifie la présence et l'exactitude du titre dans la modale d'évitement de ligne",
+      "last_verification_keyword": "Verifier Popup Eviter Une Ligne Affichee",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC03- Eviter Une Ligne - Vérification Du Titre_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_046",
+    "file": "screenshots/shot_046/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/affichageElementRiti.robot",
+      "test_name": "TC03- RI- Verifier Affichage Temps De Marche A Pied",
+      "documentation": "Vérifie que chaque itinéraire affiche clairement le temps de marche à pied à côté du pictogramme de marche à pied",
+      "last_verification_keyword": "Verifier Resultats RI Affichent Heures Duree Et Infos",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC03- RI- Verifier Affichage Temps De Marche A Pied_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_047",
+    "file": "screenshots/shot_047/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/eviterLaLigne.robot",
+      "test_name": "TC04- Eviter Une Ligne - Vérification Des Boutons",
+      "documentation": "https://e-3d-dc1.capgemini.com/jira/browse/P002593-5842 Ce test vérifie la présence et l'état des boutons d'action dans la modale d'évitement de ligne",
+      "last_verification_keyword": "Verifier Popup Eviter Une Ligne Affichee",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC04- Eviter Une Ligne - Vérification Des Boutons_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_048",
+    "file": "screenshots/shot_048/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/affichageElementRiti.robot",
+      "test_name": "TC05- RI- Verifier Affichage Des Prochains Passages",
+      "documentation": "Vérifie l'affichage des 2-3 prochains temps de passage et des arrêts pour chaque itinéraire",
+      "last_verification_keyword": "Verifier Resultats RI Affichent Heures Duree Et Infos",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC05- RI- Verifier Affichage Des Prochains Passages_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_049",
+    "file": "screenshots/shot_049/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/eviterLaLigne.robot",
+      "test_name": "TC07- Vérification De L'Absence De Doublons Dans La Liste Des Lignes",
+      "documentation": "https://e-3d-dc1.capgemini.com/jira/browse/P002593-5842 Ce test vérifie qu'il n'y a pas de doublons ou d'anomalies dans la liste des lignes à éviter et que chaque ligne est correctement affichée une seule fois",
+      "last_verification_keyword": "Verifier Popup Eviter Une Ligne Affichee",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC07- Vérification De L'Absence De Doublons Dans La Liste Des Lignes_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_050",
+    "file": "screenshots/shot_050/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/eviterLarret.robot",
+      "test_name": "TC07- Vérification Des Boutons D'Action",
+      "documentation": "Vérifier l'état des boutons dans la modale d'évitement d'arrêt",
+      "last_verification_keyword": "Verifier Popup Eviter Un Arret Affichee",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC07- Vérification Des Boutons D'Action_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_051",
+    "file": "screenshots/shot_051/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/eviterLarret.robot",
+      "test_name": "TC08- Vérification Du Format D'Affichage Des Arrêts",
+      "documentation": "Vérifier que chaque arrêt est affiché avec le bon format et ses lignes associées",
+      "last_verification_keyword": "Verifier Popup Eviter Un Arret Affichee",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC08- Vérification Du Format D'Affichage Des Arrêts_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_052",
+    "file": "screenshots/shot_052/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/eviterLarret.robot",
+      "test_name": "TC09- Vérification Des Arrêts De Correspondance",
+      "documentation": "Vérifier l'affichage des arrêts avec correspondances",
+      "last_verification_keyword": "Verifier Popup Eviter Un Arret Affichee",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC09- Vérification Des Arrêts De Correspondance_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_053",
+    "file": "screenshots/shot_053/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "2_transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/eviterLarret.robot",
+      "test_name": "TC10- Vérification De L'Organisation De La Liste",
+      "documentation": "Vérifier l'organisation et la présentation de la liste des arrêts",
+      "last_verification_keyword": "Verifier Popup Eviter Un Arret Affichee",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/TC10- Vérification De L'Organisation De La Liste_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_054",
+    "file": "screenshots/shot_054/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "3_marchePied"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/3_marchePied/inverserDestination.robot",
+      "test_name": "TC01- Inverser Destination Marche Pied",
+      "documentation": "Vérifie que l'inversion des destinations pour un itinéraire à pied fonctionne correctement.",
+      "last_verification_keyword": "Verifier Resultats RI Affichent Depart Et Arrivee",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/3_marchePied/TC01- Inverser Destination Marche Pied_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_055",
+    "file": "screenshots/shot_055/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "3_marchePied"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/3_marchePied/profilVoyageur.robot",
+      "test_name": "TC02- Profil Voyageur- Vitesse De Marche- Verifier les options",
+      "documentation": "vérifie que les options de vitesse de marche disponibles sont 'Bon marcheur', 'Marcheur normal' et 'Marcheur avec difficultés'",
+      "last_verification_keyword": "Verify Walking Speed Options",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/3_marchePied/TC02- Profil Voyageur- Vitesse De Marche- Verifier les options_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_056",
+    "file": "screenshots/shot_056/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "3_marchePied"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/3_marchePied/affichageElementRiti.robot",
+      "test_name": "TC03- MP- Verifier Affichage De L'Icone Pieton",
+      "documentation": "Vérifie que l'icône du mode piéton est bien affichée sur le résultat de recherche d'itinéraire",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/3_marchePied/TC03- MP- Verifier Affichage De L'Icone Pieton_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_057",
+    "file": "screenshots/shot_057/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "3_marchePied"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/3_marchePied/affichageElementRiti.robot",
+      "test_name": "TC04- MP- Verifier Affichage De La Duree Totale",
+      "documentation": "Vérifie que la durée totale du trajet est affichée et correspond à la différence entre l'heure d'arrivée et de départ",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/3_marchePied/TC04- MP- Verifier Affichage De La Duree Totale_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_058",
+    "file": "screenshots/shot_058/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/profilVoyageur.robot",
+      "test_name": "TC02- Profil Voyageur- Cycliste- Configurer Vitesse à Vélo 'Débutant'",
+      "documentation": "Ce test vérifie que le temps de trajet à vélo pour un cycliste débutant est supérieur au temps de trajet pour un cycliste normal",
+      "last_verification_keyword": "Should Be True",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC02- Profil Voyageur- Cycliste- Configurer Vitesse à Vélo 'Débutant'_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_059",
+    "file": "screenshots/shot_059/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velib_affichageElementRiti.robot",
+      "test_name": "TC03 - RI - Vélib - Vérification De L'Affichage Des Distances",
+      "documentation": "Vérifie que la distance est affichée dans un format cohérent pour le trajet Vélib",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC03 - RI - Vélib - Vérification De L'Affichage Des Distances_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_060",
+    "file": "screenshots/shot_060/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC03 - RI - Vélo - Vérification De L'Affichage Des Distances",
+      "documentation": "Vérifie que les distances sont affichées dans un format cohérent pour les deux options de vélo",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC03 - RI - Vélo - Vérification De L'Affichage Des Distances_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_061",
+    "file": "screenshots/shot_061/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/profilVoyageur.robot",
+      "test_name": "TC03- Profil Voyageur- Cycliste- Configurer Vitesse à Vélo 'Expérimenté'",
+      "documentation": "Ce test vérifie que le temps de trajet à vélo pour un cycliste expérimenté est inférieur au temps de trajet pour un cycliste normal",
+      "last_verification_keyword": "Should Be True",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC03- Profil Voyageur- Cycliste- Configurer Vitesse à Vélo 'Expérimenté'_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_062",
+    "file": "screenshots/shot_062/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velib_affichageElementRiti.robot",
+      "test_name": "TC04 - RI - Vélib - Vérification De L'Affichage Des Dénivelés",
+      "documentation": "Vérifie que le dénivelé est affiché correctement pour le trajet Vélib",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC04 - RI - Vélib - Vérification De L'Affichage Des Dénivelés_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_063",
+    "file": "screenshots/shot_063/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC04 - RI - Vélo - Vérification De L'Affichage Des Dénivelés",
+      "documentation": "Vérifie que les dénivelés sont affichés correctement pour les deux options de vélo",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC04 - RI - Vélo - Vérification De L'Affichage Des Dénivelés_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_064",
+    "file": "screenshots/shot_064/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velib_affichageElementRiti.robot",
+      "test_name": "TC05 - RI - Vélib - Vérification Du Pourcentage De Pistes Cyclables",
+      "documentation": "Vérifie que le pourcentage de pistes cyclables est affiché en vert pour le trajet Vélib",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC05 - RI - Vélib - Vérification Du Pourcentage De Pistes Cyclables_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_065",
+    "file": "screenshots/shot_065/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC05 - RI - Vélo - Vérification Du Pourcentage De Pistes Cyclables",
+      "documentation": "Vérifie que le pourcentage de pistes cyclables est affiché correctement et est identique pour les deux options",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC05 - RI - Vélo - Vérification Du Pourcentage De Pistes Cyclables_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_066",
+    "file": "screenshots/shot_066/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velib_affichageElementRiti.robot",
+      "test_name": "TC06 - RI - Vélib - Vérification Des Horaires",
+      "documentation": "Vérifie que les heures de départ et d'arrivée sont affichées au format HH:MM",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC06 - RI - Vélib - Vérification Des Horaires_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_067",
+    "file": "screenshots/shot_067/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC06 - RI - Vélo - Vérification Visuelle Des Pistes Cyclables",
+      "documentation": "Vérifie que l'information sur les pistes cyclables est affichée en couleur verte",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC06 - RI - Vélo - Vérification Visuelle Des Pistes Cyclables_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_068",
+    "file": "screenshots/shot_068/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velib_affichageElementRiti.robot",
+      "test_name": "TC07 - RI - Vélib - Vérification Du Temps De Trajet",
+      "documentation": "Vérifie que le temps de trajet est affiché en minutes",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC07 - RI - Vélib - Vérification Du Temps De Trajet_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_069",
+    "file": "screenshots/shot_069/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC07 - RI - Vélo - Vérification Des Temps De Trajet",
+      "documentation": "Vérifie que le temps de trajet en vélo électrique est inférieur au temps en vélo personnel",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC07 - RI - Vélo - Vérification Des Temps De Trajet_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_070",
+    "file": "screenshots/shot_070/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velib_affichageElementRiti.robot",
+      "test_name": "TC08 - RI - Vélib - Vérification De La Cohérence Des Informations",
+      "documentation": "Vérifie que toutes les informations sont cohérentes et bien alignées",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC08 - RI - Vélib - Vérification De La Cohérence Des Informations_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_071",
+    "file": "screenshots/shot_071/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC08 - RI - Vélo - Vérification Du Ratio Temps/Distance",
+      "documentation": "Vérifie que le ratio temps/distance est plus favorable pour le vélo électrique",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC08 - RI - Vélo - Vérification Du Ratio Temps_Distance_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_072",
+    "file": "screenshots/shot_072/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC09 - RI - Vélo - Vérification Des Horaires",
+      "documentation": "Vérifie que les heures de départ et d'arrivée sont affichées au format HH:MM",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC09 - RI - Vélo - Vérification Des Horaires_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_073",
+    "file": "screenshots/shot_073/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC10 - RI - Vélo - Vérification De La Cohérence Des Heures De Départ",
+      "documentation": "Vérifie que l'heure de départ est cohérente avec l'heure sélectionnée",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC10 - RI - Vélo - Vérification De La Cohérence Des Heures De Départ_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_074",
+    "file": "screenshots/shot_074/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC11 - RI - Vélo - Vérification De La Cohérence Des Heures D'Arrivée (Vélo Personnel)",
+      "documentation": "Vérifie que l'heure d'arrivée pour le vélo personnel correspond à l'heure de départ plus la durée du trajet",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC11 - RI - Vélo - Vérification De La Cohérence Des Heures D'Arrivée (Vélo Personnel)_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_075",
+    "file": "screenshots/shot_075/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC12 - RI - Vélo - Vérification De La Cohérence Des Heures D'Arrivée (Vélo Électrique)",
+      "documentation": "Vérifie que l'heure d'arrivée pour le vélo électrique correspond à l'heure de départ plus la durée du trajet",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC12 - RI - Vélo - Vérification De La Cohérence Des Heures D'Arrivée (Vélo Électrique)_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_076",
+    "file": "screenshots/shot_076/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC13 - RI - Vélo - Vérification De La Cohérence Visuelle",
+      "documentation": "Vérifie que toutes les informations sont présentées de manière cohérente et alignée",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC13 - RI - Vélo - Vérification De La Cohérence Visuelle_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_077",
+    "file": "screenshots/shot_077/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC14 - RI - Vélo - Vérification Des Libellés",
+      "documentation": "Vérifie que les libellés des options de vélo sont clairement identifiables",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC14 - RI - Vélo - Vérification Des Libellés_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_078",
+    "file": "screenshots/shot_078/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "4_bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC15 - RI - Vélo - Vérification Des Indicateurs De Sélection",
+      "documentation": "Vérifie s'il existe des indicateurs visuels pour distinguer une option sélectionnée",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/4_bike/TC15 - RI - Vélo - Vérification Des Indicateurs De Sélection_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_079",
+    "file": "screenshots/shot_079/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/filtresAutresModes.robot",
+      "test_name": "TC01- Autres Modes- Toggles Activés Par Défaut",
+      "documentation": "vérifie que les 3 toggles de la section Autres Modes (Vélo personnel, Vélo partagé, Covoiturage) sont activés par défaut",
+      "last_verification_keyword": "Verify All Other Modes Toggles Enabled By Default",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC01- Autres Modes- Toggles Activés Par Défaut_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_080",
+    "file": "screenshots/shot_080/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/menuActionsEtCompteur.robot",
+      "test_name": "TC01- Menu Kebab- Affichage Du Bottom Sheet",
+      "documentation": "ouvrir le 3-points top-right de Options de trajets affiche un bottom sheet contenant \"Réinitialiser\" et \"Annuler\"",
+      "last_verification_keyword": "Verify Kebab Menu Bottom Sheet Display",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC01- Menu Kebab- Affichage Du Bottom Sheet_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_081",
+    "file": "screenshots/shot_081/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/profilVoyageur.robot",
+      "test_name": "TC01- Profil Voyageur- Affichage Sur L'écran Filtres",
+      "documentation": "vérifie que la vitesse de marche par défaut est \"Marcheur Normal\", la vitesse à vélo par défaut est \"Intermédiaire\" et que l'option \"Voyageur en fauteuil roulant\" existe mais est désactivée par défaut",
+      "last_verification_keyword": "Verify Text Elements Presence ${options_trajets}[profil_voyageur][vitesse_marche][label] ${options_trajets}[profil_voyageur][vitesse_marche][defaut] ${options_trajets}[profil_voyageur][je_suis_un_cycliste][label] ${options_trajets}[profil_voyageur][je_suis_un_cycliste][defaut] ${options_trajets}[profil_voyageur][itineraires_accessibles][label]",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC01- Profil Voyageur- Affichage Sur L'écran Filtres_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_082",
+    "file": "screenshots/shot_082/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/filtresTransportsPublics.robot",
+      "test_name": "TC01- Transports Publics- Toggles Activés Par Défaut",
+      "documentation": "vérifie que les 6 toggles de la section Transports publics (Train/RER, Métro, Funiculaire, Tramway, Câble, Bus) sont activés par défaut",
+      "last_verification_keyword": "Verify All Public Transport Toggles Enabled By Default",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC01- Transports Publics- Toggles Activés Par Défaut_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_083",
+    "file": "screenshots/shot_083/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/triResultats.robot",
+      "test_name": "TC01- Tri Résultats- Valeur Par Défaut",
+      "documentation": "vérifie que la valeur par défaut du tri est \"Le plus rapide (par défaut)\"",
+      "last_verification_keyword": "Verify Text Elements Presence",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC01- Tri Résultats- Valeur Par Défaut_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_084",
+    "file": "screenshots/shot_084/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/menuActionsEtCompteur.robot",
+      "test_name": "TC02- Menu Kebab- Annuler Ferme Sans Modifier",
+      "documentation": "désactiver Métro, ouvrir kebab, taper Annuler → toggle Métro reste désactivé",
+      "last_verification_keyword": "Check Toggle Disabled",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC02- Menu Kebab- Annuler Ferme Sans Modifier_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_085",
+    "file": "screenshots/shot_085/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/profilVoyageur.robot",
+      "test_name": "TC02- Profil Voyageur- Vitesse De Marche- Verifier les options",
+      "documentation": "vérifie que les options de vitesse de marche disponibles sont 'Bon marcheur', 'Marcheur normal' et 'Marcheur avec difficultés'",
+      "last_verification_keyword": "Verify Walking Speed Options",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC02- Profil Voyageur- Vitesse De Marche- Verifier les options_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_086",
+    "file": "screenshots/shot_086/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/triResultats.robot",
+      "test_name": "TC02- Tri Résultats- Verifier Les Options",
+      "documentation": "vérifie que les options de tri disponibles sont 'Le plus rapide (par défaut)', 'Le moins de marche' et 'Le moins de correspondances'",
+      "last_verification_keyword": "Verify Sort Options",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC02- Tri Résultats- Verifier Les Options_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_087",
+    "file": "screenshots/shot_087/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/menuActionsEtCompteur.robot",
+      "test_name": "TC03- Menu Kebab- Réinitialiser Restaure Les Toggles Transports Publics",
+      "documentation": "désactiver Métro et Bus, Réinitialiser → 6 toggles Transports publics réactivés",
+      "last_verification_keyword": "Verify All Options Trajet At Default",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC03- Menu Kebab- Réinitialiser Restaure Les Toggles Transports Publics_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_088",
+    "file": "screenshots/shot_088/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/profilVoyageur.robot",
+      "test_name": "TC03- Profil Voyageur- Configurer Vitesse De Marche 'Bon Marcheur'",
+      "documentation": "vérifie que le temps de marche d'un bon marcheur est inférieur au temps de marche normal",
+      "last_verification_keyword": "Should Be True",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC03- Profil Voyageur- Configurer Vitesse De Marche 'Bon Marcheur'_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_089",
+    "file": "screenshots/shot_089/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/triResultats.robot",
+      "test_name": "TC03- Tri Résultats- Configurer 'Le Moins De Marche'",
+      "documentation": "sélectionner \"Le moins de marche\" → subtitle mis à jour et résultats toujours présents",
+      "last_verification_keyword": "Refresh If RI Result Does Not Appear",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC03- Tri Résultats- Configurer 'Le Moins De Marche'_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_090",
+    "file": "screenshots/shot_090/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/menuActionsEtCompteur.robot",
+      "test_name": "TC04- Menu Kebab- Réinitialiser Restaure Profil Voyageur",
+      "documentation": "changer vitesse marche + vitesse cycliste + itinéraires accessibles, Réinitialiser → tout revient au défaut",
+      "last_verification_keyword": "Verify All Options Trajet At Default",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC04- Menu Kebab- Réinitialiser Restaure Profil Voyageur_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_091",
+    "file": "screenshots/shot_091/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/profilVoyageur.robot",
+      "test_name": "TC04- Profil Voyageur- Configurer Vitesse De Marche 'Marcheur Avec Difficultés'",
+      "documentation": "vérifie que le temps de marche d'un marcheur avec difficultés est supérieur au temps de marche normal",
+      "last_verification_keyword": "Should Be True",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC04- Profil Voyageur- Configurer Vitesse De Marche 'Marcheur Avec Difficultés'_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_092",
+    "file": "screenshots/shot_092/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/triResultats.robot",
+      "test_name": "TC04- Tri Résultats- Configurer 'Le Moins De Correspondances'",
+      "documentation": "sélectionner \"Le moins de correspondances\" → subtitle mis à jour et résultats toujours présents",
+      "last_verification_keyword": "Refresh If RI Result Does Not Appear",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC04- Tri Résultats- Configurer 'Le Moins De Correspondances'_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_093",
+    "file": "screenshots/shot_093/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/menuActionsEtCompteur.robot",
+      "test_name": "TC05- Compteur Options- Absent Par Défaut",
+      "documentation": "après recherche RITI sans modification d'options, le compteur du bouton Options est à 0 (badge masqué)",
+      "last_verification_keyword": "Verify Counter Badge On Options Button Equals",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC05- Compteur Options- Absent Par Défaut_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_094",
+    "file": "screenshots/shot_094/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/profilVoyageur.robot",
+      "test_name": "TC05- Profil Voyageur- Cycliste- Verifier les options",
+      "documentation": "vérifier que les options de vitesse à vélo disponibles sont 'Débutant', 'Intermédiaire' et 'Expérimenté'",
+      "last_verification_keyword": "Verify Biking Speed Options",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC05- Profil Voyageur- Cycliste- Verifier les options_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_095",
+    "file": "screenshots/shot_095/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/filtresAutresModes.robot",
+      "test_name": "TC05- Vélo Partagé - Sous-Ecran Et Partenaires",
+      "documentation": "tap sur \"Vélo partagé\" ouvre le sous-écran avec toggle \"Activer l'option\" + les 3 partenaires (Cristolib, Vélib', VelO2)",
+      "last_verification_keyword": "Verify Sous Ecran Mode Partage Display",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC05- Vélo Partagé - Sous-Ecran Et Partenaires_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_096",
+    "file": "screenshots/shot_096/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/menuActionsEtCompteur.robot",
+      "test_name": "TC06- Compteur Options- Incrémente Sur Toggle Transports Publics",
+      "documentation": "désactiver Métro puis Bus, retour RITI → compteur = 2",
+      "last_verification_keyword": "Verify Counter Badge On Options Button Equals",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC06- Compteur Options- Incrémente Sur Toggle Transports Publics_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_097",
+    "file": "screenshots/shot_097/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/profilVoyageur.robot",
+      "test_name": "TC06- Profil Voyageur- Cycliste- Configurer Vitesse à Vélo 'Débutant'",
+      "documentation": "vérifie que le temps en vélo d'un cycliste débutant est supérieur au temps d'un cycliste intermédiaire",
+      "last_verification_keyword": "Should Be True",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC06- Profil Voyageur- Cycliste- Configurer Vitesse à Vélo 'Débutant'_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_098",
+    "file": "screenshots/shot_098/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/menuActionsEtCompteur.robot",
+      "test_name": "TC07- Compteur Options- Incrémente Sur Profil Voyageur",
+      "documentation": "changer vitesse marche, vitesse cycliste, itinéraires accessibles → compteur = 3",
+      "last_verification_keyword": "Verify Counter Badge On Options Button Equals",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC07- Compteur Options- Incrémente Sur Profil Voyageur_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_099",
+    "file": "screenshots/shot_099/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/filtresAutresModes.robot",
+      "test_name": "TC07- Covoiturage - Sous-Ecran Et Partenaires",
+      "documentation": "tap sur \"Covoiturage\" ouvre le sous-écran avec toggle \"Activer l'option\" + les 2 partenaires (Lignes de Covoiturage IDFM, Covoiturage Île-de-France Mobilités)",
+      "last_verification_keyword": "Verify Sous Ecran Mode Partage Display",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC07- Covoiturage - Sous-Ecran Et Partenaires_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_100",
+    "file": "screenshots/shot_100/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/profilVoyageur.robot",
+      "test_name": "TC07- Profil Voyageur- Cycliste- Configurer Vitesse à Vélo 'Débutant'",
+      "documentation": "vérifie que le temps en vélo d'un cycliste expérimenté est inférieur au temps d'un cycliste intermédiaire",
+      "last_verification_keyword": "Should Be True",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC07- Profil Voyageur- Cycliste- Configurer Vitesse à Vélo 'Débutant'_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_101",
+    "file": "screenshots/shot_101/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/menuActionsEtCompteur.robot",
+      "test_name": "TC08- Compteur Options- Incrémente Sur Sous-Écran Vélo Partagé",
+      "documentation": "ouvrir sous-écran Vélo partagé, désactiver Vélib, retour RITI → compteur = 1",
+      "last_verification_keyword": "Verify Counter Badge On Options Button Equals",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC08- Compteur Options- Incrémente Sur Sous-Écran Vélo Partagé_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_102",
+    "file": "screenshots/shot_102/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/menuActionsEtCompteur.robot",
+      "test_name": "TC09- Compteur Options- Réinitialiser Remet Le Compteur À Zéro",
+      "documentation": "plusieurs modifications puis Réinitialiser via kebab → compteur masqué (= 0)",
+      "last_verification_keyword": "Verify Counter Badge On Options Button Equals",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC09- Compteur Options- Réinitialiser Remet Le Compteur À Zéro_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_103",
+    "file": "screenshots/shot_103/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "6_optionsTrajets"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/profilVoyageur.robot",
+      "test_name": "TC09- Profil Voyageur- Itinéraires Accessibles- Activation Par Clic Sur Texte (A11y)",
+      "documentation": "vérifie qu'activer/désactiver le toggle \"Itinéraires accessibles\" fonctionne aussi en cliquant sur le texte (a11y — la zone actionnable doit couvrir le label entier, pas juste le Switch)",
+      "last_verification_keyword": "Check Toggle Disabled",
+      "robot_tags": [
+        "Smoke",
+        "A11y"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/TC09- Profil Voyageur- Itinéraires Accessibles- Activation Par Clic Sur Texte (A11y)_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_104",
+    "file": "screenshots/shot_104/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "7_unProbleme"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/7_unProbleme/popupUnProbleme.robot",
+      "test_name": "TC01- UP- Ouverture Popup Et Affichage Des 4 Liens Utiles",
+      "documentation": "Cliquer sur \"Un problème ?\" ouvre le bottom sheet avec sous-titre et les 4 liens attendus.",
+      "last_verification_keyword": "Verifier Affichage Popup Un Problème",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/7_unProbleme/TC01- UP- Ouverture Popup Et Affichage Des 4 Liens Utiles_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_105",
+    "file": "screenshots/shot_105/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "7_unProbleme"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/7_unProbleme/popupUnProbleme.robot",
+      "test_name": "TC02- UP- Redirection Consulter Les Questions Frequentes",
+      "documentation": "Le lien FAQ ouvre la page \"Questions fréquentes\" (WebView externe IDFM).",
+      "last_verification_keyword": "Verifier La Redirection",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/7_unProbleme/TC02- UP- Redirection Consulter Les Questions Frequentes_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_106",
+    "file": "screenshots/shot_106/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "7_unProbleme"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/7_unProbleme/popupUnProbleme.robot",
+      "test_name": "TC04- UP- Redirection Consulter Notre Service Client",
+      "documentation": "Le lien \"Service client\" ouvre la page SAV. Vérifie via disparition de 2 textes du popup (sous-titre + titre).",
+      "last_verification_keyword": "Verifier Redirection Vers Service Client",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/7_unProbleme/TC04- UP- Redirection Consulter Notre Service Client_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_107",
+    "file": "screenshots/shot_107/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "7_unProbleme"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/7_unProbleme/popupUnProbleme.robot",
+      "test_name": "TC05- UP- Redirection Contacter Le 3117",
+      "documentation": "Le lien 3117 ouvre l'écran alerte — réutilise la vérif de la homepage.",
+      "last_verification_keyword": "Check Alert Screen Display",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/7_unProbleme/TC05- UP- Redirection Contacter Le 3117_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_108",
+    "file": "screenshots/shot_108/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "7_unProbleme"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/7_unProbleme/popupUnProbleme.robot",
+      "test_name": "TC06- UP- Fermeture Popup Via Bouton X",
+      "documentation": "Cliquer sur la croix ferme le popup et revient à l'écran résultats.",
+      "last_verification_keyword": "Page Should Contain Text",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/7_unProbleme/TC06- UP- Fermeture Popup Via Bouton X_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_109",
+    "file": "screenshots/shot_109/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "7_unProbleme"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/7_unProbleme/popupUnProbleme.robot",
+      "test_name": "TC07- UP- Fermeture Popup Via Tap Hors Popup",
+      "documentation": "Tap sur la zone dim au-dessus du bottom sheet le ferme (comportement supporté côté app).",
+      "last_verification_keyword": "Page Should Contain Text",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/7_unProbleme/TC07- UP- Fermeture Popup Via Tap Hors Popup_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_110",
+    "file": "screenshots/shot_110/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "7_unProbleme"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/7_unProbleme/popupUnProbleme.robot",
+      "test_name": "TC08- UP- Trigger Un Problème Affiché En Transport En Commun",
+      "documentation": "Sur l'écran TC (liste de trajets), le bouton \"Un problème ?\" est présent (scroll auto si sous le fold).",
+      "last_verification_keyword": "Verifier Trigger Un Problème Affiché",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/7_unProbleme/TC08- UP- Trigger Un Problème Affiché En Transport En Commun_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_111",
+    "file": "screenshots/shot_111/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "7_unProbleme"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/7_unProbleme/popupUnProbleme.robot",
+      "test_name": "TC09- UP- Trigger Un Problème Affiché En Vélo",
+      "documentation": "Sur l'écran vélo, le bouton \"Un problème ?\" est présent.",
+      "last_verification_keyword": "Verifier Trigger Un Problème Affiché",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/7_unProbleme/TC09- UP- Trigger Un Problème Affiché En Vélo_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_112",
+    "file": "screenshots/shot_112/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "1_RITI",
+      "7_unProbleme"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/7_unProbleme/popupUnProbleme.robot",
+      "test_name": "TC10- UP- Trigger Un Problème Affiché En Voiture",
+      "documentation": "Le trigger \"Un problème ?\" n'apparaît qu'avec au moins une section ayant des trajets. Destinations hardcodées connues pour remonter voiture+TC / covoit / voiture perso (Orgeval → Paris 10e). NOTE : pas de Setup API ici — l'API InstantCore CAR renvoie 400 actuellement pour toutes les routes du yaml (bug backend/API).",
+      "last_verification_keyword": "Verifier Trigger Un Problème Affiché",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/1_RITI/7_unProbleme/TC10- UP- Trigger Un Problème Affiché En Voiture_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_113",
+    "file": "screenshots/shot_113/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "2_FDR",
+      "bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/2_FDR/bike/velib.robot",
+      "test_name": "TC06- Velib - Depuis FDR - Acheter Un Titre",
+      "documentation": "Cliquer sur Achter un titre depuis la FDR et verifier la redirection vers l'écran Achat Vélib",
+      "last_verification_keyword": "Verifier Affichage Ecran Velib",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/2_FDR/bike/TC06- Velib - Depuis FDR - Acheter Un Titre_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_114",
+    "file": "screenshots/shot_114/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "2_FDR",
+      "bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/2_FDR/bike/velib.robot",
+      "test_name": "TC08- Velib - Ecran Achat Vélib - Questions Fréquents Vélib",
+      "documentation": "Depuis FDR, cliquer sur Acheter un titre puis Questions Fréquents Vélib -> Vérifier La redirection vers le webview",
+      "last_verification_keyword": "Verifier La Redirection",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/2_FDR/bike/TC08- Velib - Ecran Achat Vélib - Questions Fréquents Vélib_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_115",
+    "file": "screenshots/shot_115/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "2_FDR",
+      "bike"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/2_FDR/bike/velib.robot",
+      "test_name": "TC09- Velib - Ecran Achat Vélib - Contacter Le Service Vélib",
+      "documentation": "Depuis FDR, cliquer sur Acheter un titre puis Contacter le service Vélib -> Vérifier La redirection vers le webview",
+      "last_verification_keyword": "Verifier La Redirection",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/2_FDR/bike/TC09- Velib - Ecran Achat Vélib - Contacter Le Service Vélib_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_116",
+    "file": "screenshots/shot_116/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "2_FDR",
+      "transportEnCommun"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/2_FDR/transportEnCommun/etatAscenseurs.robot",
+      "test_name": "TC01- Verifier Ecran Etat Ascenseur",
+      "documentation": "https://e-3d-dc1.capgemini.com/jira/browse/P002593-5842 Verifier que l'écran etat des ascenseurs s'affiche bien (et pas de crash = ancien bug)",
+      "last_verification_keyword": "feuilleDeRoute.Verifier Affichage Ecran Etat Des Ascenseurs",
+      "robot_tags": [
+        "Smoke"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/2_FDR/transportEnCommun/TC01- Verifier Ecran Etat Ascenseur_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_117",
+    "file": "screenshots/shot_117/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "3_Guidage",
+      "voitureEtTrajetCombine"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/3_Guidage/voitureEtTrajetCombine/5_guidageEtapeVoiture.robot",
+      "test_name": "TC01- Voiture & Transport En Commun - Guidage - Verifier Affichage Ecran Guidage Au Clic Sur Demarrer",
+      "documentation": "Critère 1 Sachant que je suis sur la feuille de route d'un trajet combiné Lorsque je clique sur 'Démarrer' Alors je suis redirigé vers le guidage",
+      "last_verification_keyword": "Verifier Affichage Ecran Guidage",
+      "robot_tags": [
+        "NA-iOS"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/3_Guidage/voitureEtTrajetCombine/TC01- Voiture & Transport En Commun - Guidage - Verifier Affichage Ecran Guidage Au Clic Sur Demarrer_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_118",
+    "file": "screenshots/shot_118/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "3_Guidage",
+      "voitureEtTrajetCombine"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/3_Guidage/voitureEtTrajetCombine/6_guidageEtapeParking.robot",
+      "test_name": "TC01- Voiture & Transport En Commun - Guidage Etape Parking - Verifier Affichage Guidage Etape Parking",
+      "documentation": "Critère 1 Sachant que je suis sur la feuille de route d'un trajet combiné Lorsque je clique sur 'Démarrer' Alors je suis redirigé vers le guidage incluant l'étape parking",
+      "last_verification_keyword": "Verifier Affichage Guidage Etape Parking",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/3_Guidage/voitureEtTrajetCombine/TC01- Voiture & Transport En Commun - Guidage Etape Parking - Verifier Affichage Guidage Etape Parking_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_119",
+    "file": "screenshots/shot_119/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "4_RechercheItineraires",
+      "3_Guidage",
+      "voitureEtTrajetCombine"
+    ],
+    "source_test": {
+      "robot_file": "Tests/4_RechercheItineraires/3_Guidage/voitureEtTrajetCombine/6_guidageEtapeParking.robot",
+      "test_name": "TC02- Voiture & Transport En Commun - Depuis FDR - Verifier La Redirection Au Clic Sur En Savoir Plus",
+      "documentation": "Critère 2.1   : click à partir du FDR Sachant que je suis sur l'étape parking du guidage Lorsque clique sur le bouton \"En Savoir plus\" dans le bloc parking Alors je suis redirigée vers une webview : https://www.iledefrance-mobilites.fr/le-reseau/services-de-mobilite/parcs-relais",
+      "last_verification_keyword": "Verifier La Redirection",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/4_RechercheItineraires/3_Guidage/voitureEtTrajetCombine/TC02- Voiture & Transport En Commun - Depuis FDR - Verifier La Redirection Au Clic Sur En Savoir Plus_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_120",
+    "file": "screenshots/shot_120/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "5_Favoris"
+    ],
+    "source_test": {
+      "robot_file": "Tests/5_Favoris/FavoriLigneModeConnecte.robot",
+      "test_name": "TC01- Favori Ligne - Affichage Message Lorsqu'Il Y A Aucun Favori",
+      "documentation": "Verifier la presence d'un message lorsqu'il y a aucun ligne ajouté en favori",
+      "last_verification_keyword": "Wait Until Page Contains",
+      "robot_tags": [
+        "ModeConnected"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/5_Favoris/TC01- Favori Ligne - Affichage Message Lorsqu'Il Y A Aucun Favori_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_121",
+    "file": "screenshots/shot_121/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "5_Favoris"
+    ],
+    "source_test": {
+      "robot_file": "Tests/5_Favoris/FavoriLieuModeConnecte.robot",
+      "test_name": "TC01- Verifier les bon messages lorsqu'il y a pas des favoris sur l'écran favori lieu",
+      "documentation": "En mode connecté, accéder à \"Mes favoris\" sans favoris et vérifier les messages d'écran vides attendus.",
+      "last_verification_keyword": "Verifier L'Affichage D'un Text",
+      "robot_tags": [
+        "ModeConnected"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/5_Favoris/TC01- Verifier les bon messages lorsqu'il y a pas des favoris sur l'écran favori lieu_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_122",
+    "file": "screenshots/shot_122/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "5_Favoris"
+    ],
+    "source_test": {
+      "robot_file": "Tests/5_Favoris/FavoriLigneModeConnecte.robot",
+      "test_name": "TC02- Favori Ligne Metro - Verifier Horaires Des Alertes Durant La Semaine",
+      "documentation": "Pour Une Ligne Metro - Cliquer sur 'Alertes' d'une ligne mis en favoris et verifier que l'heure par défault est 'De 06:30 à 09:30' et 'De 16:30 à 19:30'",
+      "last_verification_keyword": "Check Default Time Slots on Weekdays",
+      "robot_tags": [
+        "ModeConnected"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/5_Favoris/TC02- Favori Ligne Metro - Verifier Horaires Des Alertes Durant La Semaine_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_123",
+    "file": "screenshots/shot_123/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "5_Favoris"
+    ],
+    "source_test": {
+      "robot_file": "Tests/5_Favoris/FavoriLigneModeConnecte.robot",
+      "test_name": "TC03- Favori Ligne RER - Verifier Horaires Des Alertes Durant La Semaine",
+      "documentation": "Pour Une Ligne RER - Cliquer sur 'Alertes' d'une ligne mis en favoris et verifier que l'heure par défault est 'De 06:30 à 09:30' et 'De 16:30 à 19:30'",
+      "last_verification_keyword": "Check Default Time Slots on Weekdays",
+      "robot_tags": [
+        "ModeConnected"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/5_Favoris/TC03- Favori Ligne RER - Verifier Horaires Des Alertes Durant La Semaine_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_124",
+    "file": "screenshots/shot_124/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "5_Favoris"
+    ],
+    "source_test": {
+      "robot_file": "Tests/5_Favoris/FavoriLigneModeConnecte.robot",
+      "test_name": "TC04- Favori Ligne RER - Ajouter Une Plage Horaire Le Weekend",
+      "documentation": "Ajouter Une Plage Horaire Le Weekend Et Verifier Que Devant 'Alertes' on affiche \"Tous les jours\" au lieu de 'Lundi à Vendredi'",
+      "last_verification_keyword": "Wait Until Page Contains",
+      "robot_tags": [
+        "ModeConnected"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/5_Favoris/TC04- Favori Ligne RER - Ajouter Une Plage Horaire Le Weekend_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_125",
+    "file": "screenshots/shot_125/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "5_Favoris"
+    ],
+    "source_test": {
+      "robot_file": "Tests/5_Favoris/FavoriLigneModeConnecte.robot",
+      "test_name": "TC06- Favori Ligne Metro - Supprimer Les Alertes Et Verifier La Ligne Ne S'Afiiche Plus",
+      "documentation": "Ajouter Un Favori Metro, Supprimer Les Alertes Puis Verifier Qu'Il S'Affiche PLus",
+      "last_verification_keyword": "Verify Favorite Line Deletion",
+      "robot_tags": [
+        "AndroidOnly",
+        "ModeConnected"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/5_Favoris/TC06- Favori Ligne Metro - Supprimer Les Alertes Et Verifier La Ligne Ne S'Afiiche Plus_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_126",
+    "file": "screenshots/shot_126/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "6_Horaires"
+    ],
+    "source_test": {
+      "robot_file": "Tests/6_Horaires/3_AffichageHorairesTempsReel.robot",
+      "test_name": "TC02- Horaires Temps Réel - Train J",
+      "documentation": "Accéder à une ligne Train et vérifier l’affichage du tableau des horaires temps réel via la keyword finale de vérification.",
+      "last_verification_keyword": "Verify Display Of Real Time TimeTable",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/6_Horaires/TC02- Horaires Temps Réel - Train J_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_127",
+    "file": "screenshots/shot_127/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "6_Horaires"
+    ],
+    "source_test": {
+      "robot_file": "Tests/6_Horaires/4_AffichageHorairesTheorique.robot",
+      "test_name": "TC02- Horaires Temps Théorique - Train H",
+      "documentation": "Accéder aux horaires théoriques d'une ligne Train et vérifier l'affichage du tableau d'horaires théoriques via la keyword finale de vérification.",
+      "last_verification_keyword": "Verify hypothetical timetable display",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/6_Horaires/TC02- Horaires Temps Théorique - Train H_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_128",
+    "file": "screenshots/shot_128/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "6_Horaires"
+    ],
+    "source_test": {
+      "robot_file": "Tests/6_Horaires/10_RefreshHorairesTempsReel.robot",
+      "test_name": "TC02- Refresh Real Time TimeTable - Metro 3",
+      "documentation": "Vérifier qu’un geste de rafraîchissement (pull-to-refresh) réactualise bien le tableau des horaires temps réel pour une ligne Métro.",
+      "last_verification_keyword": "Verify Display Of Real Time TimeTable",
+      "robot_tags": [
+        "AndroidOnly"
+      ],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/6_Horaires/TC02- Refresh Real Time TimeTable - Metro 3_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_129",
+    "file": "screenshots/shot_129/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "6_Horaires"
+    ],
+    "source_test": {
+      "robot_file": "Tests/6_Horaires/3_AffichageHorairesTempsReel.robot",
+      "test_name": "TC03- Horaires Temps Réel - Metro 3",
+      "documentation": "Accéder à une ligne Métro et vérifier l’affichage du tableau des horaires temps réel via la keyword finale de vérification.",
+      "last_verification_keyword": "Verify Display Of Real Time TimeTable",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/6_Horaires/TC03- Horaires Temps Réel - Metro 3_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_130",
+    "file": "screenshots/shot_130/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "7_InfoTrafic"
+    ],
+    "source_test": {
+      "robot_file": "Tests/7_InfoTrafic/permanentInfoTrafficLien.robot",
+      "test_name": "TC01- Clic lien perturbation RER C redirige vers site IDFM",
+      "documentation": "détail P1 (RER C), clic sur lien puis vérif site iledefrance-mobilites.fr",
+      "last_verification_keyword": "Verifier Redirection Site IDFM",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/7_InfoTrafic/TC01- Clic lien perturbation RER C redirige vers site IDFM_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_131",
+    "file": "screenshots/shot_131/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "7_InfoTrafic"
+    ],
+    "source_test": {
+      "robot_file": "Tests/7_InfoTrafic/permanentInfoTrafficRiti.robot",
+      "test_name": "TC01- Riti Détails trajet Métro 3bis – bouton Trafic perturbé et popup P3",
+      "documentation": "Recherche itinéraire Gambetta → Porte des Lilas, sélection d'un trajet Métro 3bis, vérif affichage bouton \"Trafic perturbé\", clic, vérif popup (titre + description P3).",
+      "last_verification_keyword": "Verifier Description Perturbation Permanente",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/7_InfoTrafic/TC01- Riti Détails trajet Métro 3bis – bouton Trafic perturbé et popup P3_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_132",
+    "file": "screenshots/shot_132/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "7_InfoTrafic"
+    ],
+    "source_test": {
+      "robot_file": "Tests/7_InfoTrafic/infoTraficBus.robot",
+      "test_name": "TC01- Verifier Affichage Message Sur La Barre De Recherche Bus",
+      "documentation": "Message attendu lorsque j'ai pas commencé encore la recherche : Pour rechercher une ligne, tapez son nom dans la barre de recherche",
+      "last_verification_keyword": "Wait Until Page Contains",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/7_InfoTrafic/TC01- Verifier Affichage Message Sur La Barre De Recherche Bus_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_133",
+    "file": "screenshots/shot_133/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "7_InfoTrafic"
+    ],
+    "source_test": {
+      "robot_file": "Tests/7_InfoTrafic/infoTraficBus.robot",
+      "test_name": "TC02- Affichage Page Infos Trafic Bus",
+      "documentation": "Saisir la ligne 67 dans la barre de recherche et cliquer sur la ligne > Vérifier la redirection vers l'écran IT de la ligne de bus 67",
+      "last_verification_keyword": "Verifier Affichage Ecran Infos Trafic Bus",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/7_InfoTrafic/TC02- Affichage Page Infos Trafic Bus_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_134",
+    "file": "screenshots/shot_134/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "7_InfoTrafic"
+    ],
+    "source_test": {
+      "robot_file": "Tests/7_InfoTrafic/structureInfoTrafic.robot",
+      "test_name": "TC02- Sections onglet Aujourd'hui En cours et Dans la journée",
+      "documentation": "Infos trafic > ligne > onglet Aujourd'hui > sections \"En cours\" + \"Dans la journée\" affichées.",
+      "last_verification_keyword": "Verify Section Headers Aujourd Hui Tab",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/7_InfoTrafic/TC02- Sections onglet Aujourd'hui En cours et Dans la journée_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_135",
+    "file": "screenshots/shot_135/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "7_InfoTrafic"
+    ],
+    "source_test": {
+      "robot_file": "Tests/7_InfoTrafic/permanentInfoTrafficLien.robot",
+      "test_name": "TC03- Clic lien perturbation Câble C1 redirige vers site IDFM",
+      "documentation": "détail P6 (Câble C1), clic sur lien puis vérif site",
+      "last_verification_keyword": "Verifier Redirection Site IDFM",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/7_InfoTrafic/TC03- Clic lien perturbation Câble C1 redirige vers site IDFM_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_136",
+    "file": "screenshots/shot_136/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "7_InfoTrafic"
+    ],
+    "source_test": {
+      "robot_file": "Tests/7_InfoTrafic/structureInfoTrafic.robot",
+      "test_name": "TC03- Sections onglet A venir Cette semaine et Dans le mois",
+      "documentation": "Infos trafic > ligne > onglet À venir > sections \"Cette semaine\" + \"Dans le mois\" affichées.",
+      "last_verification_keyword": "Verify Section Headers A Venir Tab",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/7_InfoTrafic/TC03- Sections onglet A venir Cette semaine et Dans le mois_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_137",
+    "file": "screenshots/shot_137/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "7_InfoTrafic"
+    ],
+    "source_test": {
+      "robot_file": "Tests/7_InfoTrafic/permanentInfoTrafficLien.robot",
+      "test_name": "TC04- Clic lien perturbation Métro 8 redirige vers site IDFM",
+      "documentation": "détail P12 (Métro 8), clic sur lien puis vérif site",
+      "last_verification_keyword": "Verifier Redirection Site IDFM",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/7_InfoTrafic/TC04- Clic lien perturbation Métro 8 redirige vers site IDFM_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_138",
+    "file": "screenshots/shot_138/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "7_InfoTrafic"
+    ],
+    "source_test": {
+      "robot_file": "Tests/7_InfoTrafic/structureInfoTrafic.robot",
+      "test_name": "TC04- Messages empty state onglet Aujourd'hui",
+      "documentation": "Infos trafic > ligne sans perturbation > onglet Aujourd'hui > messages d'état vide affichés.",
+      "last_verification_keyword": "Verify Empty State Messages Aujourd Hui",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/7_InfoTrafic/TC04- Messages empty state onglet Aujourd'hui_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_139",
+    "file": "screenshots/shot_139/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "7_InfoTrafic"
+    ],
+    "source_test": {
+      "robot_file": "Tests/7_InfoTrafic/structureInfoTrafic.robot",
+      "test_name": "TC05- Messages empty state onglet A venir",
+      "documentation": "Infos trafic > ligne sans perturbation > onglet À venir > messages d'état vide affichés.",
+      "last_verification_keyword": "Verify Empty State Messages A Venir",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/7_InfoTrafic/TC05- Messages empty state onglet A venir_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_140",
+    "file": "screenshots/shot_140/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "7_InfoTrafic"
+    ],
+    "source_test": {
+      "robot_file": "Tests/7_InfoTrafic/structureInfoTrafic.robot",
+      "test_name": "TC07- Accessibilité headers sections onglet Aujourd'hui",
+      "documentation": "Infos trafic > onglet Aujourd'hui > headers sections lus comme \"titre\" (Android) / \"en-tête\" (iOS).",
+      "last_verification_keyword": "Verify Section Headers Aujourd Hui Tab",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/7_InfoTrafic/TC07- Accessibilité headers sections onglet Aujourd'hui_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_141",
+    "file": "screenshots/shot_141/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "7_InfoTrafic"
+    ],
+    "source_test": {
+      "robot_file": "Tests/7_InfoTrafic/structureInfoTrafic.robot",
+      "test_name": "TC08- Régression ancien wording absent",
+      "documentation": "Infos trafic > ligne > onglet À venir > vérifier que \"La semaine prochaine\" et \"Plus tard\" ne sont plus affichés.",
+      "last_verification_keyword": "Page Should Not Contain Text",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/7_InfoTrafic/TC08- Régression ancien wording absent_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_142",
+    "file": "screenshots/shot_142/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "9_EspacePerso"
+    ],
+    "source_test": {
+      "robot_file": "Tests/9_EspacePerso/5_mesServices.robot",
+      "test_name": "TC01- Espace Perso - Mode Déconnecté - Verifier Affichage Velib & Mes services",
+      "documentation": "P002593-4443:  Critère 1 Sachant que je suis sur la tab bar Lorsque je clique sur la nouvelle entrée \"Mon espace\" en mode déconnecté Alors je dois être redirigé vers le nouvel écran de l'espace perso Alors je dois visualiser une section \"Mes services\" composé de la card \"Vélib'\" ainsi que de l'entrée \"Découvrir les services\"",
+      "last_verification_keyword": "Verifier Affichage Mes Services En Mode Déconnecté",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/9_EspacePerso/TC01- Espace Perso - Mode Déconnecté - Verifier Affichage Velib & Mes services_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_143",
+    "file": "screenshots/shot_143/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "9_EspacePerso"
+    ],
+    "source_test": {
+      "robot_file": "Tests/9_EspacePerso/9_mesDeplacements.robot",
+      "test_name": "TC01- Espace Perso - Mode Déconnecté - Vérifier Affichage Mes déplacements Sur Ecran Espace Perso",
+      "documentation": "P002593-4426: Critère 1 Sachant que je suis sur la tab bar Lorsque je clique sur la nouvelle entrée \"Mon espace\" Alors je dois être redirigé vers le nouvel écran de l'espace perso Alors je dois visualiser une section \"Mes déplacements\" composé de l'entrée \"Mes favoris\"",
+      "last_verification_keyword": "Wait Until Page Contains",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/9_EspacePerso/TC01- Espace Perso - Mode Déconnecté - Vérifier Affichage Mes déplacements Sur Ecran Espace Perso_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_144",
+    "file": "screenshots/shot_144/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "9_EspacePerso"
+    ],
+    "source_test": {
+      "robot_file": "Tests/9_EspacePerso/9_mesDeplacements.robot",
+      "test_name": "TC02- Espace Perso - Mode Déconnecté - Vérifier Redirection Ecran Favoris Au Clic Depuis Espace Perso",
+      "documentation": "P002593-4426: Critère 2 Sachant que je suis sur le nouvel espace perso Lorsque je clique sur l'entrée Mes favoris de la section \"Mes déplacements\" Alors je dois être redirigé vers l'écran de favoris IV existant",
+      "last_verification_keyword": "Wait Until Page Contains",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/9_EspacePerso/TC02- Espace Perso - Mode Déconnecté - Vérifier Redirection Ecran Favoris Au Clic Depuis Espace Perso_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_145",
+    "file": "screenshots/shot_145/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "9_EspacePerso"
+    ],
+    "source_test": {
+      "robot_file": "Tests/9_EspacePerso/1_connectezVous.robot",
+      "test_name": "TC03- Espace Perso - Mode Déconnecté - Verifier Affichage Ecran Espace Perso",
+      "documentation": "P002593-4416:  Critère 2 Sachant que je suis sur la tab bar Lorsque je clique sur la nouvelle entrée \"Mon espace\" Alors je dois être redirigé vers le nouvel écran de l'espace perso",
+      "last_verification_keyword": "Vérifier Affichage Espace Perso En Mode Déconnecté",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/9_EspacePerso/TC03- Espace Perso - Mode Déconnecté - Verifier Affichage Ecran Espace Perso_PASS.png"
+    }
+  },
+  {
+    "image_id": "shot_146",
+    "file": "screenshots/shot_146/screenshot.png",
+    "env": {
+      "ui_type": "mobile",
+      "platform": "android",
+      "device": "samsung_galaxy_s24",
+      "locale": "fr_FR",
+      "theme": "light"
+    },
+    "app": {
+      "name": "IDFM",
+      "build": "regression_android"
+    },
+    "notes": [
+      "9_EspacePerso"
+    ],
+    "source_test": {
+      "robot_file": "Tests/9_EspacePerso/12_boutonsTertiaires.robot",
+      "test_name": "TC04- Espace Perso - Mode Déconnecté - Verifier La Redirection Et Affichage 'Confidentialité'",
+      "documentation": "vérifie la redirection et l'affichage de l'écran \"Confidentialité\" après avoir cliqué sur ce bouton depuis l'espace perso en mode déconnecté \\n Critère 1: mode déconnecté",
+      "last_verification_keyword": "Verifier Affichage Ecran 'Confidentialité'",
+      "robot_tags": [],
+      "result": "PASS",
+      "screenshot_origin": "/Users/abdelkader/Downloads/Artifacts/Regression/RobotFrameworkReports_Android/TestCasesResults/Tests/9_EspacePerso/TC04- Espace Perso - Mode Déconnecté - Verifier La Redirection Et Affichage 'Confidentialité'_PASS.png"
+    }
   }
 ]

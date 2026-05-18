@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot084_01",
+    "assertion": "Vérifier que désactiver Métro, ouvrir kebab, taper Annuler → toggle Métro reste désactivé.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "state"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/menuActionsEtCompteur.robot",
+      "test_name": "TC02- Menu Kebab- Annuler Ferme Sans Modifier",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "6_optionsTrajets"
+      ],
+      "documentation": "désactiver Métro, ouvrir kebab, taper Annuler → toggle Métro reste désactivé",
+      "last_verification_keyword": "Check Toggle Disabled",
+      "robot_tags": []
+    }
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "test_id": "shot010_01",
+    "assertion": "Vérifier que l'utilisateur peut utiliser l'application en paramétrant ses choix.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/0_Lancement/Consentement.robot",
+      "test_name": "TC03- Je Paramètre Mes Choix - Continuer vers welcome screen",
+      "category": [
+        "0_Lancement"
+      ],
+      "documentation": "Cas de test pour vérifier que l'utilisateur peut utiliser l'application en paramétrant ses choix",
+      "last_verification_keyword": "Verifier Affichage Welcome Screen",
+      "robot_tags": []
+    }
+  }
+]

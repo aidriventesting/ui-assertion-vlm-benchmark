@@ -1,0 +1,24 @@
+[
+  {
+    "test_id": "shot076_01",
+    "assertion": "Vérifier que toutes les informations sont présentées de manière cohérente et alignée.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "layout",
+      "consistency"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC13 - RI - Vélo - Vérification De La Cohérence Visuelle",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "4_bike"
+      ],
+      "documentation": "Vérifie que toutes les informations sont présentées de manière cohérente et alignée",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": []
+    }
+  }
+]

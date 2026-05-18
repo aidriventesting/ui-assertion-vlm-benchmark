@@ -1,0 +1,24 @@
+[
+  {
+    "test_id": "shot036_01",
+    "assertion": "Vérifier que sur l'écran résultats TC, scroller sous la liste fait apparaître le lien \"Comprendre nos recommandations d'itinéraires\". Cliquer ouvre le popup avec intro, sous-titre et les 4 catégories (titre + description).",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "count_raw",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/comprendreRecommandations.robot",
+      "test_name": "TC01- CR- Ouverture Popup Et Affichage Des 4 Categories De Recommandations",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "2_transportEnCommun"
+      ],
+      "documentation": "Sur l'écran résultats TC, scroller sous la liste fait apparaître le lien \"Comprendre nos recommandations d'itinéraires\". Cliquer ouvre le popup avec intro, sous-titre et les 4 catégories (titre + description).",
+      "last_verification_keyword": "Verifier Affichage Popup Comprendre Recommandations",
+      "robot_tags": []
+    }
+  }
+]

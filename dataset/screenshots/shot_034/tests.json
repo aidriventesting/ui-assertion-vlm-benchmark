@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot034_01",
+    "assertion": "Vérifier que validation du pattern locator sur la section \"Arrêts\" (stations / arrêts de transport) en plus de la section \"Résultats\" (adresses). Scénario de test: | Étant donné | L'utilisateur saisit un nom de station \"Nation\" | | Quand | Le système affiche les suggestions d'autocomplétion | | Alors | Tous les résultats (section Arrêts et/ou Résultats) doivent contenir \"Nation\" |.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/1_rechercheDestination/autocompletion.robot",
+      "test_name": "TC04- Vérification Autocomplétion Section Arrêts",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "1_rechercheDestination"
+      ],
+      "documentation": "Validation du pattern locator sur la section \"Arrêts\" (stations / arrêts de transport) en plus de la section \"Résultats\" (adresses).  Scénario de test: | Étant donné | L'utilisateur saisit un nom de station \"Nation\" | | Quand       | Le système affiche les suggestions d'autocomplétion | | Alors       | Tous les résultats (section Arrêts et/ou Résultats) doivent contenir \"Nation\" |",
+      "last_verification_keyword": "Verifier Resultats Autocompletion Contiennent",
+      "robot_tags": []
+    }
+  }
+]

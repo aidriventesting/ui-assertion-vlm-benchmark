@@ -1,0 +1,22 @@
+[
+  {
+    "test_id": "shot128_01",
+    "assertion": "Vérifier que qu’un geste de rafraîchissement (pull-to-refresh) réactualise bien le tableau des horaires temps réel pour une ligne Métro.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/6_Horaires/10_RefreshHorairesTempsReel.robot",
+      "test_name": "TC02- Refresh Real Time TimeTable - Metro 3",
+      "category": [
+        "6_Horaires"
+      ],
+      "documentation": "Vérifier qu’un geste de rafraîchissement (pull-to-refresh) réactualise bien le tableau des horaires temps réel pour une ligne Métro.",
+      "last_verification_keyword": "Verify Display Of Real Time TimeTable",
+      "robot_tags": [
+        "AndroidOnly"
+      ]
+    }
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "test_id": "shot065_01",
+    "assertion": "Vérifier que le pourcentage de pistes cyclables est affiché correctement et est identique pour les deux options.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC05 - RI - Vélo - Vérification Du Pourcentage De Pistes Cyclables",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "4_bike"
+      ],
+      "documentation": "Vérifie que le pourcentage de pistes cyclables est affiché correctement et est identique pour les deux options",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": []
+    }
+  }
+]

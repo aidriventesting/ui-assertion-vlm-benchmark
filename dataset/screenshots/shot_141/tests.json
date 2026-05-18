@@ -1,0 +1,21 @@
+[
+  {
+    "test_id": "shot141_01",
+    "assertion": "Vérifier que infos trafic > ligne > onglet À venir > vérifier que \"La semaine prochaine\" et \"Plus tard\" ne sont plus affichés.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/7_InfoTrafic/structureInfoTrafic.robot",
+      "test_name": "TC08- Régression ancien wording absent",
+      "category": [
+        "7_InfoTrafic"
+      ],
+      "documentation": "Infos trafic > ligne > onglet À venir > vérifier que \"La semaine prochaine\" et \"Plus tard\" ne sont plus affichés.",
+      "last_verification_keyword": "Page Should Not Contain Text",
+      "robot_tags": []
+    }
+  }
+]

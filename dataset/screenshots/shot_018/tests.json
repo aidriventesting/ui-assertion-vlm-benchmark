@@ -1,0 +1,20 @@
+[
+  {
+    "test_id": "shot018_01",
+    "assertion": "Vérifier que sur l'écran des actualités que la pagination est présente et fonctionne correctement.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC05- Affichage Et Fonctionnement Pagination Ecran Actualites",
+      "category": [
+        "1_Homepage"
+      ],
+      "documentation": "Vérifie sur l'écran des actualités que la pagination est présente et fonctionne correctement",
+      "last_verification_keyword": "Verifier Présence Et Fonctionnement Pagination",
+      "robot_tags": []
+    }
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "test_id": "shot077_01",
+    "assertion": "Vérifier que les libellés des options de vélo sont clairement identifiables.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC14 - RI - Vélo - Vérification Des Libellés",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "4_bike"
+      ],
+      "documentation": "Vérifie que les libellés des options de vélo sont clairement identifiables",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": []
+    }
+  }
+]

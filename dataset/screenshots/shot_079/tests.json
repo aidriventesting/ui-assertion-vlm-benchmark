@@ -1,0 +1,26 @@
+[
+  {
+    "test_id": "shot079_01",
+    "assertion": "Vérifier que les 3 toggles de la section Autres Modes (Vélo personnel, Vélo partagé, Covoiturage) sont activés par défaut.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "state",
+      "count_raw"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/filtresAutresModes.robot",
+      "test_name": "TC01- Autres Modes- Toggles Activés Par Défaut",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "6_optionsTrajets"
+      ],
+      "documentation": "vérifie que les 3 toggles de la section Autres Modes (Vélo personnel, Vélo partagé, Covoiturage) sont activés par défaut",
+      "last_verification_keyword": "Verify All Other Modes Toggles Enabled By Default",
+      "robot_tags": [
+        "Smoke"
+      ]
+    }
+  }
+]

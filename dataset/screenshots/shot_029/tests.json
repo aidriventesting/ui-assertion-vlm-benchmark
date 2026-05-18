@@ -1,0 +1,21 @@
+[
+  {
+    "test_id": "shot029_01",
+    "assertion": "Vérifier que en tant qu'utilisateur de l'application IDFM Je souhaite visualiser un filtre \"Grandes gares\" lorsque je suis sur la page options de carte Afin de gérer l'affichage ou non des grandes gares sur la carte selon mes souhaits.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/3_AutourDeMoi/filtres.robot",
+      "test_name": "TC01- Verifier La Présence Des Filtres Attendus",
+      "category": [
+        "3_AutourDeMoi"
+      ],
+      "documentation": "En tant qu'utilisateur de l'application IDFM \\n Je souhaite visualiser un filtre \"Grandes gares\" lorsque je suis sur la page options de carte \\n Afin de gérer l'affichage ou non des grandes gares sur la carte selon mes souhaits",
+      "last_verification_keyword": "Acceder Aux Filtres",
+      "robot_tags": []
+    }
+  }
+]

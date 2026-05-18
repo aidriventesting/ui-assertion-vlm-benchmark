@@ -1,0 +1,22 @@
+[
+  {
+    "test_id": "shot051_01",
+    "assertion": "Vérifier que chaque arrêt est affiché avec le bon format et ses lignes associées.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/eviterLarret.robot",
+      "test_name": "TC08- Vérification Du Format D'Affichage Des Arrêts",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "2_transportEnCommun"
+      ],
+      "documentation": "Vérifier que chaque arrêt est affiché avec le bon format et ses lignes associées",
+      "last_verification_keyword": "Verifier Popup Eviter Un Arret Affichee",
+      "robot_tags": []
+    }
+  }
+]

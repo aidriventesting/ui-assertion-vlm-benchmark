@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot078_01",
+    "assertion": "Vérifier que s'il existe des indicateurs visuels pour distinguer une option sélectionnée.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "state"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC15 - RI - Vélo - Vérification Des Indicateurs De Sélection",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "4_bike"
+      ],
+      "documentation": "Vérifie s'il existe des indicateurs visuels pour distinguer une option sélectionnée",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": []
+    }
+  }
+]

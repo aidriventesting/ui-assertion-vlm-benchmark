@@ -1,0 +1,21 @@
+[
+  {
+    "test_id": "shot144_01",
+    "assertion": "Vérifier que sachant que je suis sur le nouvel espace perso Lorsque je clique sur l'entrée Mes favoris de la section \"Mes déplacements\" Alors je dois être redirigé vers l'écran de favoris IV existant.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/9_EspacePerso/9_mesDeplacements.robot",
+      "test_name": "TC02- Espace Perso - Mode Déconnecté - Vérifier Redirection Ecran Favoris Au Clic Depuis Espace Perso",
+      "category": [
+        "9_EspacePerso"
+      ],
+      "documentation": "P002593-4426: Critère 2 Sachant que je suis sur le nouvel espace perso Lorsque je clique sur l'entrée Mes favoris de la section \"Mes déplacements\" Alors je dois être redirigé vers l'écran de favoris IV existant",
+      "last_verification_keyword": "Wait Until Page Contains",
+      "robot_tags": []
+    }
+  }
+]

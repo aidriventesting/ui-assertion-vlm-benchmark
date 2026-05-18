@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot016_01",
+    "assertion": "Vérifier que sur l'écran d'accueil que les liens externes des actualités redirigent correctement vers les sites externes.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC03- Articles Liens Externes",
+      "category": [
+        "1_Homepage"
+      ],
+      "documentation": "Vérifie sur l'écran d'accueil que les liens externes des actualités redirigent correctement vers les sites externes",
+      "last_verification_keyword": "Verifier La Redirection Des Actualites Disposants Lien Externe",
+      "robot_tags": [
+        "Smoke"
+      ]
+    }
+  }
+]

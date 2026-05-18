@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot094_01",
+    "assertion": "Vérifier que les options de vitesse à vélo disponibles sont 'Débutant', 'Intermédiaire' et 'Expérimenté'.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/profilVoyageur.robot",
+      "test_name": "TC05- Profil Voyageur- Cycliste- Verifier les options",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "6_optionsTrajets"
+      ],
+      "documentation": "vérifier que les options de vitesse à vélo disponibles sont 'Débutant', 'Intermédiaire' et 'Expérimenté'",
+      "last_verification_keyword": "Verify Biking Speed Options",
+      "robot_tags": []
+    }
+  }
+]

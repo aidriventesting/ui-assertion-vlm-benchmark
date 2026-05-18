@@ -1,0 +1,22 @@
+[
+  {
+    "test_id": "shot113_01",
+    "assertion": "Vérifier que cliquer sur Achter un titre depuis la FDR et verifier la redirection vers l'écran Achat Vélib.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/2_FDR/bike/velib.robot",
+      "test_name": "TC06- Velib - Depuis FDR - Acheter Un Titre",
+      "category": [
+        "4_RechercheItineraires",
+        "2_FDR",
+        "bike"
+      ],
+      "documentation": "Cliquer sur Achter un titre depuis la FDR et verifier la redirection vers l'écran Achat Vélib",
+      "last_verification_keyword": "Verifier Affichage Ecran Velib",
+      "robot_tags": []
+    }
+  }
+]

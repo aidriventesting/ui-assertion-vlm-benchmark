@@ -1,0 +1,25 @@
+[
+  {
+    "test_id": "shot101_01",
+    "assertion": "Vérifier que ouvrir sous-écran Vélo partagé, désactiver Vélib, retour RITI → compteur = 1.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "state",
+      "count_filtered",
+      "consistency"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/menuActionsEtCompteur.robot",
+      "test_name": "TC08- Compteur Options- Incrémente Sur Sous-Écran Vélo Partagé",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "6_optionsTrajets"
+      ],
+      "documentation": "ouvrir sous-écran Vélo partagé, désactiver Vélib, retour RITI → compteur = 1",
+      "last_verification_keyword": "Verify Counter Badge On Options Button Equals",
+      "robot_tags": []
+    }
+  }
+]

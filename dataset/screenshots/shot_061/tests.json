@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot061_01",
+    "assertion": "Vérifier que ce test vérifie que le temps de trajet à vélo pour un cycliste expérimenté est inférieur au temps de trajet pour un cycliste normal.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "state"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/profilVoyageur.robot",
+      "test_name": "TC03- Profil Voyageur- Cycliste- Configurer Vitesse à Vélo 'Expérimenté'",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "4_bike"
+      ],
+      "documentation": "Ce test vérifie que le temps de trajet à vélo pour un cycliste expérimenté est inférieur au temps de trajet pour un cycliste normal",
+      "last_verification_keyword": "Should Be True",
+      "robot_tags": []
+    }
+  }
+]

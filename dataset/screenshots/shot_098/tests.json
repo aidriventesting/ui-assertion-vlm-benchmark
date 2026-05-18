@@ -1,0 +1,25 @@
+[
+  {
+    "test_id": "shot098_01",
+    "assertion": "Vérifier que changer vitesse marche, vitesse cycliste, itinéraires accessibles → compteur = 3.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "state",
+      "count_filtered",
+      "consistency"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/menuActionsEtCompteur.robot",
+      "test_name": "TC07- Compteur Options- Incrémente Sur Profil Voyageur",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "6_optionsTrajets"
+      ],
+      "documentation": "changer vitesse marche, vitesse cycliste, itinéraires accessibles → compteur = 3",
+      "last_verification_keyword": "Verify Counter Badge On Options Button Equals",
+      "robot_tags": []
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot059_01",
+    "assertion": "Vérifier que la distance est affichée dans un format cohérent pour le trajet Vélib.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "consistency"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velib_affichageElementRiti.robot",
+      "test_name": "TC03 - RI - Vélib - Vérification De L'Affichage Des Distances",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "4_bike"
+      ],
+      "documentation": "Vérifie que la distance est affichée dans un format cohérent pour le trajet Vélib",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": []
+    }
+  }
+]

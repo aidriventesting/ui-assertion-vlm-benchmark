@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot056_01",
+    "assertion": "Vérifier que l'icône du mode piéton est bien affichée sur le résultat de recherche d'itinéraire.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/3_marchePied/affichageElementRiti.robot",
+      "test_name": "TC03- MP- Verifier Affichage De L'Icone Pieton",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "3_marchePied"
+      ],
+      "documentation": "Vérifie que l'icône du mode piéton est bien affichée sur le résultat de recherche d'itinéraire",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": []
+    }
+  }
+]

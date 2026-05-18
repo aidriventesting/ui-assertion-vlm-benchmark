@@ -1,0 +1,22 @@
+[
+  {
+    "test_id": "shot053_01",
+    "assertion": "Vérifier que l'organisation et la présentation de la liste des arrêts.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/eviterLarret.robot",
+      "test_name": "TC10- Vérification De L'Organisation De La Liste",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "2_transportEnCommun"
+      ],
+      "documentation": "Vérifier l'organisation et la présentation de la liste des arrêts",
+      "last_verification_keyword": "Verifier Popup Eviter Un Arret Affichee",
+      "robot_tags": []
+    }
+  }
+]

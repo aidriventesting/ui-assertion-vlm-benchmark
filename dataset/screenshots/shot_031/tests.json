@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot031_01",
+    "assertion": "Vérifier que validation que l'autocomplétion filtre correctement les résultats Scénario de test: | Étant donné | L'utilisateur saisit un terme de recherche partiel \"arri\" | | Quand | Le système affiche les suggestions d'autocomplétion | | Alors | Tous les résultats doivent contenir \"arri\" dans l'adresse principale ou complémentaire |.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/1_rechercheDestination/autocompletion.robot",
+      "test_name": "TC01- Vérification Des Résultats Autocomplétion Avec Recherche Partiel",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "1_rechercheDestination"
+      ],
+      "documentation": "Validation que l'autocomplétion filtre correctement les résultats  Scénario de test: | Étant donné | L'utilisateur saisit un terme de recherche partiel \"arri\" | | Quand       | Le système affiche les suggestions d'autocomplétion | | Alors       | Tous les résultats doivent contenir \"arri\" dans l'adresse principale ou complémentaire |",
+      "last_verification_keyword": "Verifier Resultats Autocompletion Contiennent",
+      "robot_tags": []
+    }
+  }
+]

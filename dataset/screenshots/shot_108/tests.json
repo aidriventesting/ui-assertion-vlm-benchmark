@@ -1,0 +1,22 @@
+[
+  {
+    "test_id": "shot108_01",
+    "assertion": "Vérifier que cliquer sur la croix ferme le popup et revient à l'écran résultats.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/7_unProbleme/popupUnProbleme.robot",
+      "test_name": "TC06- UP- Fermeture Popup Via Bouton X",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "7_unProbleme"
+      ],
+      "documentation": "Cliquer sur la croix ferme le popup et revient à l'écran résultats.",
+      "last_verification_keyword": "Page Should Contain Text",
+      "robot_tags": []
+    }
+  }
+]

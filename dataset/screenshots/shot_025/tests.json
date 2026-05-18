@@ -1,0 +1,20 @@
+[
+  {
+    "test_id": "shot025_01",
+    "assertion": "Vérifier que liste actualités: texte Actualités et bouton retour visibles (écran chargé).",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/1_Homepage/actualites.robot",
+      "test_name": "TC13- Ecran Liste Actualites Charge En Tete",
+      "category": [
+        "1_Homepage"
+      ],
+      "documentation": "Liste actualités: texte Actualités et bouton retour visibles (écran chargé)",
+      "last_verification_keyword": "Expect Element",
+      "robot_tags": []
+    }
+  }
+]

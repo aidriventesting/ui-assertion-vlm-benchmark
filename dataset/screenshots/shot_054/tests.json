@@ -1,0 +1,22 @@
+[
+  {
+    "test_id": "shot054_01",
+    "assertion": "Vérifier que l'inversion des destinations pour un itinéraire à pied fonctionne correctement.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/3_marchePied/inverserDestination.robot",
+      "test_name": "TC01- Inverser Destination Marche Pied",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "3_marchePied"
+      ],
+      "documentation": "Vérifie que l'inversion des destinations pour un itinéraire à pied fonctionne correctement.",
+      "last_verification_keyword": "Verifier Resultats RI Affichent Depart Et Arrivee",
+      "robot_tags": []
+    }
+  }
+]

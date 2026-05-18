@@ -1,0 +1,27 @@
+[
+  {
+    "test_id": "shot102_01",
+    "assertion": "Vérifier que plusieurs modifications puis Réinitialiser via kebab → compteur masqué (= 0).",
+    "expected": "PASS",
+    "tags": [
+      "absence",
+      "state",
+      "count_filtered",
+      "consistency"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/6_optionsTrajets/menuActionsEtCompteur.robot",
+      "test_name": "TC09- Compteur Options- Réinitialiser Remet Le Compteur À Zéro",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "6_optionsTrajets"
+      ],
+      "documentation": "plusieurs modifications puis Réinitialiser via kebab → compteur masqué (= 0)",
+      "last_verification_keyword": "Verify Counter Badge On Options Button Equals",
+      "robot_tags": [
+        "Smoke"
+      ]
+    }
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "test_id": "shot069_01",
+    "assertion": "Vérifier que le temps de trajet en vélo électrique est inférieur au temps en vélo personnel.",
+    "expected": "PASS",
+    "tags": [
+      "presence"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/4_bike/velo_affichageElementRiti.robot",
+      "test_name": "TC07 - RI - Vélo - Vérification Des Temps De Trajet",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "4_bike"
+      ],
+      "documentation": "Vérifie que le temps de trajet en vélo électrique est inférieur au temps en vélo personnel",
+      "last_verification_keyword": "Ask AI For Verification",
+      "robot_tags": []
+    }
+  }
+]

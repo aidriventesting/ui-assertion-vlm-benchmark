@@ -1,0 +1,23 @@
+[
+  {
+    "test_id": "shot047_01",
+    "assertion": "Vérifier que https://e-3d-dc1.capgemini.com/jira/browse/P002593-5842 Ce test vérifie la présence et l'état des boutons d'action dans la modale d'évitement de ligne.",
+    "expected": "PASS",
+    "tags": [
+      "presence",
+      "text_match_exact"
+    ],
+    "source": {
+      "robot_file": "Tests/4_RechercheItineraires/1_RITI/2_transportEnCommun/eviterLaLigne.robot",
+      "test_name": "TC04- Eviter Une Ligne - Vérification Des Boutons",
+      "category": [
+        "4_RechercheItineraires",
+        "1_RITI",
+        "2_transportEnCommun"
+      ],
+      "documentation": "https://e-3d-dc1.capgemini.com/jira/browse/P002593-5842 Ce test vérifie la présence et l'état des boutons d'action dans la modale d'évitement de ligne",
+      "last_verification_keyword": "Verifier Popup Eviter Une Ligne Affichee",
+      "robot_tags": []
+    }
+  }
+]
